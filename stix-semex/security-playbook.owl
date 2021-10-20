@@ -206,7 +206,7 @@
 
     <!-- http://docs.oasis-open.org/cti/ns/stix-semex#mitigates -->
 
-    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#mitigates">
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix-semex#mitigates">
         <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
         <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#AttackPattern"/>
         <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Indicator"/>
@@ -217,14 +217,14 @@
 
     <!-- http://docs.oasis-open.org/cti/ns/stix-semex#investigates -->
 
-    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#investigates">
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix-semex#investigates">
         <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
         <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Indicator"/>
     </owl:ObjectProperty>
 
     <!-- http://docs.oasis-open.org/cti/ns/stix-semex#remediates -->
 
-    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#remediates">
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix-semex#remediates">
         <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
         <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Malware"/>
         <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Vulnerability"/>
@@ -339,8 +339,7 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:comment xml:lang="en-us">An integer that represents the impact the playbook has on the organization from 0 to 100. A value of 0 means specifically undefined. Values range from 1, the lowest impact, to a value of 100, the highest. For example, a purely investigative playbook that is non-invasive would have a low impact value of 1, whereas a playbook that performs changes such as adding rules into
-        a firewall would have a higher impact value.</rdfs:comment>
+        <rdfs:comment xml:lang="en-us">An integer that represents the impact the playbook has on the organization from 0 to 100. A value of 0 means specifically undefined. Values range from 1, the lowest impact, to a value of 100, the highest. For example, a purely investigative playbook that is non-invasive would have a low impact value of 1, whereas a playbook that performs changes such as adding rules into a firewall would have a higher impact value.</rdfs:comment>
         <rdfs:label>impact</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -486,6 +485,3 @@
     </owl:Class>
     
 </rdf:RDF>
-
-
-
