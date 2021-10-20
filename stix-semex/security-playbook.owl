@@ -1,0 +1,491 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://docs.oasis-open.org/tac/ns/security-playbook#"
+     xml:base="http://docs.oasis-open.org/tac/ns/security-playbook"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:stixCore="http://docs.oasis-open.org/cti/ns/stix/core#"
+     xmlns:stix-semex="http://docs.oasis-open.org/cti/ns/stix-semex#"
+     xmlns:marking="http://docs.oasis-open.org/cti/ns/stix/marking#">
+     
+    <owl:Ontology rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook">
+        <rdfs:comment xml:lang="en-us">An ontology for encapsulating security playbooks and their metadata. This ontology (security-playbook.owl) is based on the metadata template for security playbooks provided at: https://github.com/Vasileios-Mavroeidis/coa-playbook-metadata</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelOpenVocab -->
+
+    <rdfs:Datatype rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelOpenVocab">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>user-definition-01</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>user-definition-02</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelVocab -->
+
+    <rdfs:Datatype rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelVocab">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>executable</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>template</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeOpenVocab -->
+
+    <rdfs:Datatype rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeOpenVocab">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>user-definition-01</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>user-definition-02</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeVocab -->
+
+    <rdfs:Datatype rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeVocab">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>attack</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>detection</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>investigation</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>mitigation</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>notification</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>prevention</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>remediation</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#created_by_ref -->
+
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#created_by_ref">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:ObjectProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#external_references -->
+
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#external_references">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:ObjectProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/marking#object_marking_refs -->
+
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/marking#object_marking_refs">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://docs.oasis-open.org/cti/ns/stix/marking#granular_markings -->
+
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/marking#granular_markings">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:ObjectProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#extensions -->
+
+    <owl:ObjectProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#extensions">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Relationships with Other SDOs - Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix-semex#mitigates -->
+
+    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#mitigates">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#AttackPattern"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Indicator"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Malware"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Tool"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Vulnerability"/>
+    </owl:ObjectProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix-semex#investigates -->
+
+    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#investigates">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Indicator"/>
+    </owl:ObjectProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix-semex#remediates -->
+
+    <owl:ObjectProperty rdf:about="hhttp://docs.oasis-open.org/cti/ns/stix-semex#remediates">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Malware"/>
+        <rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Vulnerability"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#lang -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#lang">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#confindence -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#confindence">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#spec_version -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#spec_version">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#type -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#type">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#created -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#created">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#description -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#description">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#id -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#id">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#labels -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#labels">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#modified -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#modified">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#revoked -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#revoked">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#valid_from -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#valid_from">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#valid_until -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#valid_until">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#impact -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#impact">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en-us">An integer that represents the impact the playbook has on the organization from 0 to 100. A value of 0 means specifically undefined. Values range from 1, the lowest impact, to a value of 100, the highest. For example, a purely investigative playbook that is non-invasive would have a low impact value of 1, whereas a playbook that performs changes such as adding rules into
+        a firewall would have a higher impact value.</rdfs:comment>
+        <rdfs:label>impact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#organization_type -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#organization_type">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">The type of organization that the playbook is intended for. This can be an industry sector.</rdfs:comment>
+        <rdfs:label>organization_type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#playbook -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#playbook">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">The whole playbook in its native format (e.g., CACAO JSON - Stringified). Security playbook producers and consumers of playbooks use this property to share and retrieve playbooks.</rdfs:comment>
+        <rdfs:label>playbook</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#playbook_abstraction -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#playbook_abstraction">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelOpenVocab"/>
+                    <rdf:Description rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookAbstractionLevelVocab"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en-us">Identifies the playbook abstraction level.</rdfs:comment>
+        <rdfs:label>playbook_abstraction</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#playbook_base64 -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#playbook_base64">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">The whole playbook encoded in base64. Security playbook producers and consumers of playbooks use this property to share and retrieve playbooks.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#playbook_standard -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#playbook_standard">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">Identification of the playbook standard (e.g., CACAO).</rdfs:comment>
+        <rdfs:label>playbook_standard</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#playbook_type -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#playbook_type">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeOpenVocab"/>
+                    <rdf:Description rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybookTypeVocab"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en-us">The security-focused operational functions the playbook addresses. A playbook may account for multiple types (e.g., detection and investigation).</rdfs:comment>
+        <rdfs:label>playbook_type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#priority -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#priority">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en-us">An integer that represents the priority of this playbook relative to other defined playbooks. A value of 0 means specifically undefined. Values range from 1, the highest priority, to a value of 100, the lowest.</rdfs:comment>
+        <rdfs:label>priority</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#severity -->
+
+    <owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#severity">
+        <rdfs:domain rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en-us">An integer that represents the seriousness of the conditions that this playbook addresses. A value of 0 means specifically undefined. Values range from 1, the lowest severity, to a value of 100, the highest.</rdfs:comment>
+        <rdfs:label>severity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://docs.oasis-open.org/cti/ns/stix/core#STIXDomainObject -->
+
+    <owl:Class rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#STIXDomainObject"/>
+    
+
+    <!-- http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook -->
+
+    <owl:Class rdf:about="http://docs.oasis-open.org/tac/ns/security-playbook#SecurityPlaybook">
+        <rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix/core#STIXDomainObject"/>
+    </owl:Class>
+    
+</rdf:RDF>
+
+
+
