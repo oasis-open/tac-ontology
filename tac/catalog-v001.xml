@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix-semex" uri="file:/C:/repositories/tac-ontology/stix-semex/stix-semex.owl"/>
     <uri id="Imports Wizard Entry" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/ns/cti/stix" uri="../stix-spec/stix.owl"/>
