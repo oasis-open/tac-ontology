@@ -106,7 +106,7 @@
 		</rdfs:range>
 	</owl:DatatypeProperty>
 	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/ns/cti/stix/core#Object">
+	<rdf:Description rdf:about="http://docs.oasis-open.org/ns/cti/stix/core#StixObject">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;defanged"/>

@@ -23,8 +23,8 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Relationship">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXObject"/>
-		<rdfs:label>STIXRelationshipObject</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
+		<rdfs:label>StixRelationshipObject</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Relationship object is used to link together two SDOs or SCOs in order to describe how they are related to each other. If SDOs and SCOs are considered &quot;nodes&quot; or &quot;vertices&quot; in the graph, the Relationship Objects (SROs) represent &quot;edges&quot;.</rdfs:comment>
 	</owl:Class>
 	
@@ -40,9 +40,9 @@
 		<rdfs:range>
 			<owl:Class>
 				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&stixCore;STIXDomainObject">
+					<rdf:Description rdf:about="&stixCore;StixDomainObject">
 					</rdf:Description>
-					<rdf:Description rdf:about="&stixCore;STIXCyberObservableObject">
+					<rdf:Description rdf:about="&stixCore;StixCyberObservableObject">
 					</rdf:Description>
 				</owl:unionOf>
 			</owl:Class>
@@ -55,9 +55,9 @@
 		<rdfs:range>
 			<owl:Class>
 				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&stixCore;STIXDomainObject">
+					<rdf:Description rdf:about="&stixCore;StixDomainObject">
 					</rdf:Description>
-					<rdf:Description rdf:about="&stixCore;STIXCyberObservableObject">
+					<rdf:Description rdf:about="&stixCore;StixCyberObservable">
 					</rdf:Description>
 				</owl:unionOf>
 			</owl:Class>

@@ -45,7 +45,7 @@
 	<owl:ObjectProperty rdf:about="&sighting;sighting_of_ref">
 		<rdfs:label xml:lang="en-US">sighting_of_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a reference to the SDO that was sighted (e.g., Indicator or Malware).</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;DomainObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixDomainObject"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&sighting;sighting_of_ref_id">

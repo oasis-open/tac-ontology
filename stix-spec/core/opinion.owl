@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Opinion">
-		<rdfs:subClassOf rdf:resource="&stixCore;DomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Opinion</rdfs:label>
 		<rdfs:comment xml:lang="en-US">An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity. The primary property is the opinion property, which captures the level of agreement or disagreement using a fixed scale. That fixed scale also supports a numeric mapping to allow for consistent statistical operations across opinions.</rdfs:comment>
 	</owl:Class>

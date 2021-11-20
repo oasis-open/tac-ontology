@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Indicator">
-		<rdfs:subClassOf rdf:resource="&stixCore;DomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Indicator</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity. For example, an Indicator may be used to represent a set of malicious domains and use the STIX Patterning Language to specify these domains.\n\nThe Indicator SDO contains a simple textual description, the Kill Chain Phases that it detects behavior in, a time window for when the Indicator is valid or useful, and a required pattern property to capture a structured detection pattern. Conforming STIX implementations MUST support the STIX Patterning Language.\n\nRelationships from the Indicator can describe the malicious or suspicious behavior that it directly detects (Malware, Tool, and Attack Pattern). In addition, it may also imply the presence of a Campaigns, Intrusion Sets, and Threat Actors, etc.</rdfs:comment>
 	</owl:Class>

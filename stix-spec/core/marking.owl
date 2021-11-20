@@ -35,7 +35,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&marking;MarkingDefinition">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
 		<rdfs:label>MarkingDefinition</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Represents a specific marking. Data markings typically represent handling or sharing requirements for data and are applied in the object_marking_refs and granular_markings properties on STIX Objects.</rdfs:comment>
 	</owl:Class>

@@ -18,13 +18,14 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/ns/cti/stix/core">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/marking"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/stix-core"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/vocabulary"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/vocabulary-user-defs"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Grouping">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label>Grouping</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A Grouping object explicitly asserts that the referenced STIX Objects have a shared context, unlike a STIX Bundle (which explicitly conveys no context). A Grouping object should not be confused with an intelligence product, which should be conveyed via a STIX Report.</rdfs:comment>
 	</owl:Class>
@@ -33,19 +34,19 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Note">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label>Note</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A Note is intended to convey informative text to provide further context and/or to provide additional analysis not contained in the STIX Objects, Marking Definition objects, or Language Content objects which the Note relates to. Notes can be created by anyone (not just the original object creator).</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Opinion">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label>Opinion</rdfs:label>
 		<rdfs:comment xml:lang="ne-us">An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity. The primary property is the opinion property, which captures the level of agreement or disagreement using a fixed scale. That fixed scale also supports a numeric mapping to allow for consistent statistical operations across opinions.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Report">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label>Report</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details. They are used to group related threat intelligence together so that it can be published as a comprehensive cyber threat story.</rdfs:comment>
 	</owl:Class>
@@ -57,47 +58,47 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;ExternalReference">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXAbstractType"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixAbstractType"/>
 		<rdfs:label>ExternalReference</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Used to describe pointers to information represented outside of STIX. For example, a Malware object could use an external reference to indicate an ID for that malware in an external database or a report could use references to represent source material.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;Hash">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXAbstractType"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixAbstractType"/>
 		<rdfs:label>Hash</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a cryptographic hashes, as a special set of key/value pairs.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;KeyValuePair">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXAbstractType"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixAbstractType"/>
 		<rdfs:label>KeyValue</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A key-value pair (KVP) is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. The key MUST be unique in each dictionary, MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). Dictionary keys MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;KillChainPhase">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXAbstractType"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixAbstractType"/>
 		<rdfs:label>KillChainPhase</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a phase in a kill chain, which describes the various phases an attacker may undertake in order to achieve their objectives.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stixCore;STIXAbstractType">
+	<owl:Class rdf:about="&stixCore;StixAbstractType">
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stixCore;STIXCyberObservableObject">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXObject"/>
-		<rdfs:label>STIXCyberObservableObject</rdfs:label>
+	<owl:Class rdf:about="&stixCore;StixCyberObservable">
+		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
+		<rdfs:label>StixCyberObservable</rdfs:label>
 		<rdfs:comment xml:lang="en-us">STIX Cyber-observable Object (SCOs)  characterizes a host-based and network-based information.\n\nA STIX Cyber Observable Object (SCOs) document the facts concerning what happened on a network or host, and do not capture the who, when, or why.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stixCore;STIXDomainObject">
-		<rdfs:subClassOf rdf:resource="&stixCore;STIXObject"/>
-		<rdfs:label>STIXDomainObject</rdfs:label>
+	<owl:Class rdf:about="&stixCore;StixDomainObject">
+		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
+		<rdfs:label>StixDomainObject</rdfs:label>
 		<rdfs:comment xml:lang="en-us">STIX Domain Objects (SDOs) represent a corresponding unique concept commonly represented in Cyber Threat Intelligence.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stixCore;STIXObject">
+	<owl:Class rdf:about="&stixCore;StixObject">
 		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:label>STIXObject</rdfs:label>
+		<rdfs:label>StixObject</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Abstract base object from which all STIX objects are derived.</rdfs:comment>
 	</owl:Class>
 	
@@ -128,7 +129,7 @@
 	<owl:ObjectProperty rdf:about="&stixCore;analysis_sco_refs">
 		<rdfs:label>analysis_sco_refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the references to the STIX Cyber-observable Objects that were captured during the analysis process.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;analysis_started">
@@ -179,7 +180,7 @@
 	<owl:ObjectProperty rdf:about="&stixCore;contains_refs">
 		<rdfs:label>contains refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a list of references to other Cyber-observable Objects contained within the file or directory, such as another file that is appended to the end of the file, or an IP address that is contained somewhere in the file.\n\nThis is intended for use cases other than those targeted by the Archive extension.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;content">
@@ -400,13 +401,13 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stixCore;object_ref">
-		<rdfs:range rdf:resource="&stixCore;STIXObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixObject"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stixCore;object_refs">
 		<rdfs:label>object_refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a list of STIX Objects that are referred to by this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;STIXObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixObject"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;opinion">
@@ -486,13 +487,13 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	<owl:ObjectProperty rdf:about="&stixCore;sample_ref">
 		<rdfs:label>sample_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the reference to the Cyber Observable object that this analysis was performed against.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stixCore;sample_refs">
 		<rdfs:label>sample_refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the sample_refs property specifies a list of identifiers of the Cyber Observable objects associated with this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;sid">
