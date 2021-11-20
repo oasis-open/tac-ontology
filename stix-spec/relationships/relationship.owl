@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Relationship">
-		<rdfs:subClassOf rdf:resource="&stixCore;RelationshipObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixRelationshipObject"/>
 		<rdfs:label xml:lang="en-US">Relationship</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Relationship object is used to link together two SDOs or SCOs in order to describe how they are related to each other. If SDOs and SCOs are considered &quot;nodes&quot; or &quot;vertices&quot; in the graph, the Relationship Objects (SROs) represent &quot;edges&quot;.</rdfs:comment>
 	</owl:Class>
@@ -39,7 +39,7 @@
 	<owl:ObjectProperty rdf:about="&relationship;source_ref">
 		<rdfs:label xml:lang="en-US">source_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a reference to the source (from) object. The value MUST be a reference to an SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:range rdf:resource="&stixCore;StixDomainObject"/>
 	</owl:ObjectProperty>
 	
@@ -52,7 +52,7 @@
 	<owl:ObjectProperty rdf:about="&relationship;target_ref">
 		<rdfs:label xml:lang="en-US">target_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a reference to the target (to) object. The value MUST be reference to an SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:range rdf:resource="&stixCore;StixDomainObject"/>
 	</owl:ObjectProperty>
 	

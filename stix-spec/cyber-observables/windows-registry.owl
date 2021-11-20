@@ -26,7 +26,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;WindowsRegistryKey">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">WindowsRegistryKey</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Windows Registry Key object represents the properties of a Windows registry key.\n\nAs all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
 	</owl:Class>

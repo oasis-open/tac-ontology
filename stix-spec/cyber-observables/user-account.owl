@@ -27,7 +27,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;UserAccount">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">User Account</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The User Account object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. As all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
 	</owl:Class>

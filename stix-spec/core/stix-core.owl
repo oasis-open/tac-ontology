@@ -37,7 +37,7 @@
 	<owl:ObjectProperty rdf:about="&stix;analysis_sco_refs">
 		<rdfs:label xml:lang="en-us">analysis_sco_refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies references to STIX Cyber-observable Objects that were captured during the analysis process.</rdfs:comment>
-		<rdfs:range rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:range rdf:resource="&stixCore;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;analysis_sco_refs_id">

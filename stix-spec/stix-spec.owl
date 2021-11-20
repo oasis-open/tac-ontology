@@ -49,7 +49,7 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/opinion/context"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/relationship/context"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/report/context"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/sighting/context"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/sighting-context"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/software/context"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/tool/context"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/uri/context"/>

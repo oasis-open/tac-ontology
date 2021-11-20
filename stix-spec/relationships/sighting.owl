@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Sighting">
-		<rdfs:subClassOf rdf:resource="&stixCore;RelationshipObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixRelationshipObject"/>
 		<rdfs:label xml:lang="en-US">Sighting</rdfs:label>
 		<rdfs:comment xml:lang="en-US">A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen. Sightings are used to track who and what are being targeted, how attacks are carried out, and to track trends in attack behavior.\n\nThe Sighting relationship object is a special type of SRO; it is a relationship that contains extra properties not present on the Generic Relationship object. These extra properties are included to represent data specific to sighting relationships (e.g., count, representing how many times something was seen), but for other purposes a Sighting can be thought of as a Relationship with a name of &quot;sighting-of&quot;. Sighting is captured as a relationship because you cannot have a sighting unless you have something that has been sighted. Sighting does not make sense without the relationship to what was sighted.</rdfs:comment>
 	</owl:Class>

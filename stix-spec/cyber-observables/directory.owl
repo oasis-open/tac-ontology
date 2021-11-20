@@ -24,7 +24,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Directory">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label>Directory</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Directory object represents the properties common to a file system directory.</rdfs:comment>
 	</owl:Class>

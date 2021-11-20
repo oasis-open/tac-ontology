@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;MACAddress">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">MACAddress</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The MAC Address object represents a single Media Access Control (MAC) address.</rdfs:comment>
 	</owl:Class>
