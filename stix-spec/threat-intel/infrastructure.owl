@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Infrastructure">
-		<rdfs:subClassOf rdf:resource="&stixCore;DomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Infrastructure</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Infrastructure SDO represents a type of TTP and describes any systems, software services and any associated physical or virtual resources intended to support some purpose (e.g., C2 servers used as part of an attack, device or server that are part of defense, database servers targeted by an attack, etc.). While elements of an attack can be represented by other SDOs or SCOs, the Infrastructure SDO represents a named group of related data that constitutes the infrastructure.</rdfs:comment>
 	</owl:Class>

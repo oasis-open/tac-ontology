@@ -427,7 +427,7 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;STIXCyberObservableObject">
+	<rdf:Description rdf:about="&stixCore;StixCyberObservable">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stixCore;id"/>
@@ -454,7 +454,7 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;STIXDomainObject">
+	<rdf:Description rdf:about="&stixCore;StixDomainObject">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stixCore;created"/>
@@ -521,7 +521,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;confidence">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;content">
@@ -533,15 +533,15 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;created">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;created_by_ref">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;defanged">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;description">
@@ -555,7 +555,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;extensions">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;external_id">
@@ -563,7 +563,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;external_references">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;hash_algorithm">
@@ -579,8 +579,8 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;id">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;key_identifier">
@@ -596,15 +596,15 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;labels">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;lang">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;modified">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;name">
@@ -636,7 +636,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;revoked">
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;source_name">
@@ -644,14 +644,14 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;spec_version">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;type">
 		<rdfs:domain rdf:resource="&stixCore;Extension"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stixCore;url">
@@ -659,13 +659,13 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/ns/cti/stix/marking#granular_markings">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/ns/cti/stix/marking#object_marking_refs">
-		<rdfs:domain rdf:resource="&stixCore;STIXCyberObservableObject"/>
-		<rdfs:domain rdf:resource="&stixCore;STIXDomainObject"/>
+		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
 	</rdf:Description>
 
 </rdf:RDF>

@@ -37,7 +37,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;File">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">File</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The File object represents the properties of a file. A File object MUST contain at least one of hashes or name.</rdfs:comment>
 	</owl:Class>
@@ -48,7 +48,7 @@
 		<rdfs:comment xml:lang="en-US">The Archive File object represents the properties of an archive file.</rdfs:comment>
 		<owl:disjointWith rdf:resource="&pdfExt;PDFFile"/>
 		<owl:disjointWith rdf:resource="&rasterImgExt;RasterImageFile"/>
-		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEFile"/>
+		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEBinaryFile"/>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&archiveExt;comment">
@@ -108,7 +108,7 @@
 		<rdfs:comment xml:lang="en-US">The PDF File object represents the properties of a PDF file.</rdfs:comment>
 		<owl:disjointWith rdf:resource="&archiveExt;ArchiveFile"/>
 		<owl:disjointWith rdf:resource="&rasterImgExt;RasterImageFile"/>
-		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEFile"/>
+		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEBinaryFile"/>
 	</owl:Class>
 	
 	<owl:ObjectProperty rdf:about="&pdfExt;document_info_dict">
@@ -146,7 +146,7 @@
 		<rdfs:comment xml:lang="en-US">The Raster Image File object represents the properties of a rater image file (e.g., JPEG, PNG).</rdfs:comment>
 		<owl:disjointWith rdf:resource="&archiveExt;ArchiveFile"/>
 		<owl:disjointWith rdf:resource="&pdfExt;PDFFile"/>
-		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEFile"/>
+		<owl:disjointWith rdf:resource="&winPEExt;WindowsPEBinaryFile"/>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&rasterImgExt;bits_per_pixel">

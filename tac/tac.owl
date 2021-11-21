@@ -41,12 +41,12 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tac;ThreatEvent">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 		<rdfs:comment>The ThreatEvent is an event or situation that has the potential for causing undesirable consequences or impact.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tac;ThreatEventPattern">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&tac;hasThreatEvent"/>
@@ -57,7 +57,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tac;ThreatScenario">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&tac;hasThreatEventPattern"/>

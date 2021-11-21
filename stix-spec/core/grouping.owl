@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Grouping">
-		<rdfs:subClassOf rdf:resource="&stixCore;DomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Grouping</rdfs:label>
 		<rdfs:comment xml:lang="en-US">A Grouping object explicitly asserts that the referenced STIX Objects have a shared context, unlike a STIX Bundle (which explicitly conveys no context). A Grouping object should not be confused with an intelligence product, which should be conveyed via a STIX Report.</rdfs:comment>
 	</owl:Class>

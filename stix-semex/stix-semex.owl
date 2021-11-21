@@ -83,11 +83,11 @@
 	</rdf:Description>
 	
 	<owl:Class rdf:about="&stix-semex;Action">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;Activity">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;AttackerActivity">
@@ -103,7 +103,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;Impact">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#DomainObject"/>
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core#StixDomainObject"/>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;InformationalImpact">

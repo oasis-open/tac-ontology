@@ -28,7 +28,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;EmailMessage">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">EmailMessage</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Email Message object represents an instance of an email message, corresponding to the internet message format described in [RFC5322] and related RFCs.\n\nHeader field values that have been encoded as described in section 2 of [RFC2047] MUST be decoded before inclusion in Email Message object properties. For example, this is some text MUST be used instead of =?iso-8859-1?q?this=20is=20some=20text?=. Any characters in the encoded value which cannot be decoded into Unicode SHOULD be replaced with the &apos;REPLACEMENT CHARACTER&apos; (U+FFFD). If it is necessary to capture the header value as observed, this can be achieved by referencing an Artifact object through the raw_email_ref property.</rdfs:comment>
 	</owl:Class>

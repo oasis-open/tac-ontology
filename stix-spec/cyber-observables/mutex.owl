@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Mutex">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">Mutex</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Mutex object represents the properties of a mutual exclusion (mutex) object.</rdfs:comment>
 	</owl:Class>

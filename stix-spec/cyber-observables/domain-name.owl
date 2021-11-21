@@ -24,7 +24,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;DomainName">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">Domain Name</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Domain Name object represents the properties of a network domain name.</rdfs:comment>
 	</owl:Class>

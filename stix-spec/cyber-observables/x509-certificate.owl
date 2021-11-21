@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;X509Certificate">
-		<rdfs:subClassOf rdf:resource="&stixCore;CyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">X509Certificate</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The X.509 Certificate object represents the properties of an X.509 certificate, as defined by ITU recommendation X.509 [X.509]. An X.509 Certificate object MUST contain at least one object specific property (other than type) from this object.</rdfs:comment>
 	</owl:Class>
