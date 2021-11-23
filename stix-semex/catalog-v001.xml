@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security-playbook/security-playbook.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix-semex" uri="stix-semex.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix-semex/sro-props" uri="sro-properties/sro-props.owl"/>
@@ -71,6 +72,7 @@
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/relationship/context" uri="../stix-spec/relationships/relationship-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/report" uri="../stix-spec/core/report.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/report/context" uri="../stix-spec/core/report-context.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security=playbook/security-playbook.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/sighting" uri="../stix-spec/relationships/sighting.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/sighting-context" uri="../stix-spec/relationships/sighting-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/software" uri="../stix-spec/cyber-observables/software.owl"/>
