@@ -50,6 +50,7 @@
 	</owl:ObjectProperty>
 	
 	<owl:Class rdf:about="&security-playbook;SecurityPlaybook">
+		<rdfs:subClassOf rdf:resource="&stix;CourseOfAction"/>
 	</owl:Class>
 	
 	<rdfs:Datatype rdf:about="&security-playbook;SecurityPlaybookAbstractionLevelOpenVocab">

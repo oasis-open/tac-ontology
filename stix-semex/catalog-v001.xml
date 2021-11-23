@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security-playbook/security-playbook.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix-semex" uri="stix-semex.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix-semex/sro-props" uri="sro-properties/sro-props.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security-playbook.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security-playbook/security-playbook.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti" uri="../stix-spec/cti/cti-core.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/context" uri="../stix-spec/cti/cti-core-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/data-marking" uri="../stix-spec/markings/marking.owl"/>
