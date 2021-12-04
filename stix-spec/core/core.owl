@@ -17,7 +17,7 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/ns/cti/stix/core">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/marking"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/stix-core"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/vocabulary"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/vocabulary-user-defs"/>

@@ -48,8 +48,6 @@
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/mac-address/context" uri="cyber-observables/mac-address-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/malware" uri="threat-intel/malware.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/malware/context" uri="threat-intel/malware-context.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/marking" uri="markings/marking.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/marking-context" uri="markings/marking-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/message" uri="cyber-observables/message.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/message/context" uri="cyber-observables/message-context.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/mutex" uri="cyber-observables/mutex.owl"/>
