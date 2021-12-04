@@ -17,6 +17,7 @@
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/ns/cti/stix-semex">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix-semex/sro-props"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook"/>
 	</owl:Ontology>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/ns/cti/stix#Incident">
