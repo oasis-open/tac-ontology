@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix-semex" uri="../stix-semex.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix-semex" uri="../stix-semex.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="security-playbook.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti" uri="../../stix-spec/cti/cti-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix" uri="../../stix-spec/stix.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/attack-pattern" uri="../../stix-spec/threat-intel/attack-pattern.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/core" uri="../../stix-spec/core/core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/indicator" uri="../../stix-spec/threat-intel/indicator.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/malware" uri="../../stix-spec/threat-intel/malware.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/software" uri="../../stix-spec/cyber-observables/software.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/data-marking" uri="../../stix-spec/markings/marking.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/stix-core" uri="../../stix-spec/core/stix-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/stix-spec" uri="../../stix-spec/stix-spec.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/tool" uri="../../stix-spec/threat-intel/tool.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/vocabulary-user-defs" uri="../../stix-spec/vocabularies/vocabulary-user-defs.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/vocabulary" uri="../../stix-spec/vocabularies/vocab.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/ns/cti/stix/vulnerability" uri="../../stix-spec/threat-intel/vulnerability.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns" uri="../../stix-spec/cti/cti-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix" uri="../../stix-spec/stix.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/attack-pattern" uri="../../stix-spec/threat-intel/attack-pattern.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/core" uri="../../stix-spec/core/core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/indicator" uri="../../stix-spec/threat-intel/indicator.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/malware" uri="../../stix-spec/threat-intel/malware.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/software" uri="../../stix-spec/cyber-observables/software.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/data-marking" uri="../../stix-spec/markings/marking.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/stix-core" uri="../../stix-spec/core/stix-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/stix-spec" uri="../../stix-spec/stix-spec.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/tool" uri="../../stix-spec/threat-intel/tool.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/vocabulary-user-defs" uri="../../stix-spec/vocabularies/vocabulary-user-defs.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/vocabulary" uri="../../stix-spec/vocabularies/vocab.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix/vulnerability" uri="../../stix-spec/threat-intel/vulnerability.owl"/>
     </group>
 </catalog>

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY archiveExt "http://docs.oasis-open.org/ns/cti/stix/ext/archive-file#">
-	<!ENTITY cti "http://docs.oasis-open.org/ns/cti#">
-	<!ENTITY file "http://docs.oasis-open.org/ns/cti/stix/file#">
-	<!ENTITY fileCtx "http://docs.oasis-open.org/ns/cti/stix/file/context#">
-	<!ENTITY ntfsExt "http://docs.oasis-open.org/ns/cti/stix/ext/ntfs-file#">
+	<!ENTITY archiveExt "http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#">
+	<!ENTITY cti "http://docs.oasis-open.org/cti/ns#">
+	<!ENTITY file "http://docs.oasis-open.org/cti/ns/stix/file#">
+	<!ENTITY fileCtx "http://docs.oasis-open.org/cti/ns/stix/file/context#">
+	<!ENTITY ntfsExt "http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
-	<!ENTITY pdfExt "http://docs.oasis-open.org/ns/cti/stix/ext/pdf-file#">
-	<!ENTITY rasterImgExt "http://docs.oasis-open.org/ns/cti/stix/ext/raster-image-file#">
+	<!ENTITY pdfExt "http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#">
+	<!ENTITY rasterImgExt "http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-	<!ENTITY stix "http://docs.oasis-open.org/ns/cti/stix#">
-	<!ENTITY winPEExt "http://docs.oasis-open.org/ns/cti/stix/ext/windows-pebinary-file#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY winPEExt "http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
-<rdf:RDF xml:base="http://docs.oasis-open.org/ns/cti/stix/file/context"
-	xmlns:archiveExt="http://docs.oasis-open.org/ns/cti/stix/ext/archive-file#"
-	xmlns:cti="http://docs.oasis-open.org/ns/cti#"
-	xmlns:file="http://docs.oasis-open.org/ns/cti/stix/file#"
-	xmlns:fileCtx="http://docs.oasis-open.org/ns/cti/stix/file/context#"
-	xmlns:ntfsExt="http://docs.oasis-open.org/ns/cti/stix/ext/ntfs-file#"
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/file/context"
+	xmlns:archiveExt="http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#"
+	xmlns:cti="http://docs.oasis-open.org/cti/ns#"
+	xmlns:file="http://docs.oasis-open.org/cti/ns/stix/file#"
+	xmlns:fileCtx="http://docs.oasis-open.org/cti/ns/stix/file/context#"
+	xmlns:ntfsExt="http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:pdfExt="http://docs.oasis-open.org/ns/cti/stix/ext/pdf-file#"
-	xmlns:rasterImgExt="http://docs.oasis-open.org/ns/cti/stix/ext/raster-image-file#"
+	xmlns:pdfExt="http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#"
+	xmlns:rasterImgExt="http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:stix="http://docs.oasis-open.org/ns/cti/stix#"
-	xmlns:winPEExt="http://docs.oasis-open.org/ns/cti/stix/ext/windows-pebinary-file#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:winPEExt="http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
-	<owl:Ontology rdf:about="http://docs.oasis-open.org/ns/cti/stix/file/context">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core/context"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/file"/>
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/file/context">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/core/context"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/file"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	

@@ -3,22 +3,22 @@
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-	<!ENTITY stix "http://docs.oasis-open.org/ns/cti/stix#">
-	<!ENTITY stixCore "http://docs.oasis-open.org/ns/cti/stix/core#">
-	<!ENTITY uri "http://docs.oasis-open.org/ns/cti/stix/uri#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY stixCore "http://docs.oasis-open.org/cti/ns/stix/core#">
+	<!ENTITY uri "http://docs.oasis-open.org/cti/ns/stix/uri#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
-<rdf:RDF xml:base="http://docs.oasis-open.org/ns/cti/stix/uri"
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/uri"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:stix="http://docs.oasis-open.org/ns/cti/stix#"
-	xmlns:stixCore="http://docs.oasis-open.org/ns/cti/stix/core#"
-	xmlns:uri="http://docs.oasis-open.org/ns/cti/stix/uri#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:stixCore="http://docs.oasis-open.org/cti/ns/stix/core#"
+	xmlns:uri="http://docs.oasis-open.org/cti/ns/stix/uri#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
-	<owl:Ontology rdf:about="http://docs.oasis-open.org/ns/cti/stix/uri">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/ns/cti/stix/core"/>
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/uri">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/core"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
