@@ -12,7 +12,9 @@ This third layer of representation will add the concepts of the TAC-TC members.
 	1. stix-semex-context.owl
 
 # Editing Style and Syntax Normalization
-Developers have their own preferences when in comes to ontology editors and writing styles. This causes dificulties in managing a common repository used by multiple ontology contributors. To resolve the problem, all ontology content submitted and persisted in the TAC ontology repository must be ***Normalized*** with a utility called the **RDF Toolkit**. This utility puts the submitted content into a standardized form. It removes any stylistic differences between contributors.
+Developers have their own preferences when in comes to ontology editors and writing styles. 
+This causes dificulties in managing a common repository used by multiple ontology contributors. 
+To resolve the problem, all ontology content submitted and persisted in the TAC ontology repository must be ***Normalized*** with a utility called the **RDF Toolkit**. This utility puts the submitted content into a standardized form. It removes any stylistic differences between contributors.
 
  
 
