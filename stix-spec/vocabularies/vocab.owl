@@ -7,6 +7,7 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/vocabulary"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/vocabulary#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -15,13 +16,13 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary">
 		<rdfs:label>STIX Vocabulary</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Contains the various vocabularies defined by STIX as custom RDF datatypes</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Contains the various vocabularies defined by STIX as custom RDF datatypes</rdfs:comment>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<rdfs:Datatype rdf:about="&vocab;AccountTypeVocab">
 		<rdfs:label>account-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open vocabulary for types of user account.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open vocabulary for types of user account.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -53,10 +54,10 @@
 																						<rdf:first>unix</rdf:first>
 																						<rdf:rest>
 																							<rdf:List>
-																								<rdf:first>windows-local</rdf:first>
+																								<rdf:first>windows-domain</rdf:first>
 																								<rdf:rest>
 																									<rdf:List>
-																										<rdf:first>windows-domain</rdf:first>
+																										<rdf:first>windows-local</rdf:first>
 																										<rdf:rest rdf:resource="&rdf;nil"/>
 																									</rdf:List>
 																								</rdf:rest>
@@ -86,7 +87,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;AttackMotivationVocab">
 		<rdfs:label>attack-motivation-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary for capturing a Threat Actor or Intrusion Set&apos;s motivation for attacking.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary for capturing a Threat Actor or Intrusion Set&apos;s motivation for attacking.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -146,27 +147,27 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;AttackResourceLevelVocab">
 		<rdfs:label>attack-resource-level-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary that captures the general level of resources that a threat actor, intrusion set, or campaign might have access to.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures the general level of resources that a threat actor, intrusion set, or campaign might have access to.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>individual</rdf:first>
+						<rdf:first>club</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>club</rdf:first>
+								<rdf:first>contest</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>contest</rdf:first>
+										<rdf:first>government</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>team</rdf:first>
+												<rdf:first>individual</rdf:first>
 												<rdf:rest>
 													<rdf:List>
 														<rdf:first>organization</rdf:first>
 														<rdf:rest>
 															<rdf:List>
-																<rdf:first>government</rdf:first>
+																<rdf:first>team</rdf:first>
 																<rdf:rest rdf:resource="&rdf;nil"/>
 															</rdf:List>
 														</rdf:rest>
@@ -186,15 +187,15 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;GroupingContextVocab">
 		<rdfs:label>grouping-context-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary that captures the type of context for the grouping.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures the type of context for the grouping.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>suspicious-activity</rdf:first>
+						<rdf:first>malware-analysis</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>malware-analysis</rdf:first>
+								<rdf:first>suspicious-activity</rdf:first>
 								<rdf:rest>
 									<rdf:List>
 										<rdf:first>upsecified</rdf:first>
@@ -211,7 +212,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;HashAlgorithmVocab">
 		<rdfs:label>hash-algorithm-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open vocabulary of hashing algorithms.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open vocabulary of hashing algorithms.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -261,21 +262,21 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;IdentityClassVocab">
 		<rdfs:label>identity-class-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary that captures tthe type of entity that the Identity represents.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures tthe type of entity that the Identity represents.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>individual</rdf:first>
+						<rdf:first>class</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>system</rdf:first>
+								<rdf:first>individual</rdf:first>
 								<rdf:rest>
 									<rdf:List>
 										<rdf:first>organization</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>class</rdf:first>
+												<rdf:first>system</rdf:first>
 												<rdf:rest>
 													<rdf:List>
 														<rdf:first>unknown</rdf:first>
@@ -295,8 +296,8 @@
 	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&vocab;ImplementationLanguageVocab">
-		<rdfs:label xml:lang="en-US">implementation-language-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary of implementation programming languages.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">implementation-language-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary of implementation programming languages.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -310,10 +311,10 @@
 										<rdf:first>c</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>c++</rdf:first>
+												<rdf:first>c#</rdf:first>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>c#</rdf:first>
+														<rdf:first>c++</rdf:first>
 														<rdf:rest>
 															<rdf:List>
 																<rdf:first>go</rdf:first>
@@ -409,9 +410,145 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&vocab;IncidentActionStageVocab">
+		<rdfs:label>incident-action-stage-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>containment</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>detection</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>eradication</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>mitigation</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>post-incident</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>prevention</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>recovery</rdf:first>
+																		<rdf:rest rdf:resource="&rdf;nil"/>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;IncidentConfidentialityLossVocab">
+		<rdfs:label>incident-confidentiality-loss-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>contained</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>major-loss</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>none</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>some-loss</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>suspected-loss</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>suspected-major-loss</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;IncidentDeterminationVocab">
+		<rdfs:label>incident-determination-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>confirmed</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>false-positive</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>low-value</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>suspected</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;IncidentInvestigationVocab">
+		<rdfs:label>incident-investigation-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>closed</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>new</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>open</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&vocab;IndicatorTypeVocab">
-		<rdfs:label xml:lang="en-US">indicator-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to categorize Indicators.  It is intended to be high-level to promote consistent practices.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">indicator-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to categorize Indicators.  It is intended to be high-level to promote consistent practices.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -456,15 +593,15 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;IndustrySectorVocab">
 		<rdfs:label>industry-sector-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary that captures the types of industrial, commercial, and government sectors.  It is intended to be holistic; it has been derived from serveral other lists and is not limited to critical infrastructure sectors.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures the types of industrial, commercial, and government sectors.  It is intended to be holistic; it has been derived from serveral other lists and is not limited to critical infrastructure sectors.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>agriculture</rdf:first>
+						<rdf:first>aerospace</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>aerospace</rdf:first>
+								<rdf:first>agriculture</rdf:first>
 								<rdf:rest>
 									<rdf:List>
 										<rdf:first>automotive</rdf:first>
@@ -482,85 +619,85 @@
 																		<rdf:first>construction</rdf:first>
 																		<rdf:rest>
 																			<rdf:List>
-																				<rdf:first>defense</rdf:first>
+																				<rdf:first>dams</rdf:first>
 																				<rdf:rest>
 																					<rdf:List>
-																						<rdf:first>education</rdf:first>
+																						<rdf:first>defense</rdf:first>
 																						<rdf:rest>
 																							<rdf:List>
-																								<rdf:first>energy</rdf:first>
+																								<rdf:first>education</rdf:first>
 																								<rdf:rest>
 																									<rdf:List>
-																										<rdf:first>entertainment</rdf:first>
+																										<rdf:first>emergency-services</rdf:first>
 																										<rdf:rest>
 																											<rdf:List>
-																												<rdf:first>financial-services</rdf:first>
+																												<rdf:first>energy</rdf:first>
 																												<rdf:rest>
 																													<rdf:List>
-																														<rdf:first>government</rdf:first>
+																														<rdf:first>entertainment</rdf:first>
 																														<rdf:rest>
 																															<rdf:List>
-																																<rdf:first>emergency-services</rdf:first>
+																																<rdf:first>financial-services</rdf:first>
 																																<rdf:rest>
 																																	<rdf:List>
-																																		<rdf:first>government-local</rdf:first>
+																																		<rdf:first>government</rdf:first>
 																																		<rdf:rest>
 																																			<rdf:List>
-																																				<rdf:first>government-national</rdf:first>
+																																				<rdf:first>government-local</rdf:first>
 																																				<rdf:rest>
 																																					<rdf:List>
-																																						<rdf:first>government-public-services</rdf:first>
+																																						<rdf:first>government-national</rdf:first>
 																																						<rdf:rest>
 																																							<rdf:List>
-																																								<rdf:first>government-regional</rdf:first>
+																																								<rdf:first>government-public-services</rdf:first>
 																																								<rdf:rest>
 																																									<rdf:List>
-																																										<rdf:first>healthcare</rdf:first>
+																																										<rdf:first>government-regional</rdf:first>
 																																										<rdf:rest>
 																																											<rdf:List>
-																																												<rdf:first>hospitality-leisure</rdf:first>
+																																												<rdf:first>healthcare</rdf:first>
 																																												<rdf:rest>
 																																													<rdf:List>
-																																														<rdf:first>infrastructure</rdf:first>
+																																														<rdf:first>hospitality-leisure</rdf:first>
 																																														<rdf:rest>
 																																															<rdf:List>
-																																																<rdf:first>dams</rdf:first>
+																																																<rdf:first>infrastructure</rdf:first>
 																																																<rdf:rest>
 																																																	<rdf:List>
-																																																		<rdf:first>nuclear</rdf:first>
+																																																		<rdf:first>insurance</rdf:first>
 																																																		<rdf:rest>
 																																																			<rdf:List>
-																																																				<rdf:first>water</rdf:first>
+																																																				<rdf:first>manufacturing</rdf:first>
 																																																				<rdf:rest>
 																																																					<rdf:List>
-																																																						<rdf:first>insurance</rdf:first>
+																																																						<rdf:first>mining</rdf:first>
 																																																						<rdf:rest>
 																																																							<rdf:List>
-																																																								<rdf:first>manufacturing</rdf:first>
+																																																								<rdf:first>non-profit</rdf:first>
 																																																								<rdf:rest>
 																																																									<rdf:List>
-																																																										<rdf:first>mining</rdf:first>
+																																																										<rdf:first>nuclear</rdf:first>
 																																																										<rdf:rest>
 																																																											<rdf:List>
-																																																												<rdf:first>non-profit</rdf:first>
+																																																												<rdf:first>pharmaceuticals</rdf:first>
 																																																												<rdf:rest>
 																																																													<rdf:List>
-																																																														<rdf:first>pharmaceuticals</rdf:first>
+																																																														<rdf:first>retail</rdf:first>
 																																																														<rdf:rest>
 																																																															<rdf:List>
-																																																																<rdf:first>retail</rdf:first>
+																																																																<rdf:first>technology</rdf:first>
 																																																																<rdf:rest>
 																																																																	<rdf:List>
-																																																																		<rdf:first>technology</rdf:first>
+																																																																		<rdf:first>telecommunications</rdf:first>
 																																																																		<rdf:rest>
 																																																																			<rdf:List>
-																																																																				<rdf:first>telecommunications</rdf:first>
+																																																																				<rdf:first>transportation</rdf:first>
 																																																																				<rdf:rest>
 																																																																					<rdf:List>
-																																																																						<rdf:first>transportation</rdf:first>
+																																																																						<rdf:first>utilities</rdf:first>
 																																																																						<rdf:rest>
 																																																																							<rdf:List>
-																																																																								<rdf:first>utilities</rdf:first>
+																																																																								<rdf:first>water</rdf:first>
 																																																																								<rdf:rest rdf:resource="&rdf;nil"/>
 																																																																							</rdf:List>
 																																																																						</rdf:rest>
@@ -635,8 +772,8 @@
 	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&vocab;InfrastructureTypeVocab">
-		<rdfs:label xml:lang="en-US">infrastructure-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to categorize Indicators.  It is intended to be high-level to promote consistent practices.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">infrastructure-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to categorize Indicators.  It is intended to be high-level to promote consistent practices.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -699,9 +836,53 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&vocab;IntegrityAlterationVocab">
+		<rdfs:label>integrity-alteration-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>full-destruction</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>full-modification</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>none</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>partial-destruction</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>partial-modification</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>potential-destruction</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>potential-modification</rdf:first>
+																		<rdf:rest rdf:resource="&rdf;nil"/>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&vocab;MalwareCapabilityVocab">
 		<rdfs:label>malware-capabilities-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capturing capabilities that may be exhibited by a malware instance or family.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capturing capabilities that may be exhibited by a malware instance or family.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -895,8 +1076,8 @@
 	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&vocab;MalwareResultVocab">
-		<rdfs:label xml:lang="en-US">malware-result-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to ccommon types of scanner or tool analysis process results.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">malware-result-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to ccommon types of scanner or tool analysis process results.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -961,7 +1142,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;MalwareTypeVocab">
 		<rdfs:label>malware-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocbulary that captures the different types and functions of malware.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocbulary that captures the different types and functions of malware.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -972,10 +1153,10 @@
 								<rdf:first>backdoor</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>bot</rdf:first>
+										<rdf:first>bootkit</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>bootkit</rdf:first>
+												<rdf:first>bot</rdf:first>
 												<rdf:rest>
 													<rdf:List>
 														<rdf:first>ddos</rdf:first>
@@ -1017,16 +1198,16 @@
 																																						<rdf:first>trojan</rdf:first>
 																																						<rdf:rest>
 																																							<rdf:List>
-																																								<rdf:first>virus</rdf:first>
+																																								<rdf:first>unknown</rdf:first>
 																																								<rdf:rest>
 																																									<rdf:List>
-																																										<rdf:first>wiper</rdf:first>
+																																										<rdf:first>virus</rdf:first>
 																																										<rdf:rest>
 																																											<rdf:List>
-																																												<rdf:first>worm</rdf:first>
+																																												<rdf:first>wiper</rdf:first>
 																																												<rdf:rest>
 																																													<rdf:List>
-																																														<rdf:first>unknown</rdf:first>
+																																														<rdf:first>worm</rdf:first>
 																																														<rdf:rest rdf:resource="&rdf;nil"/>
 																																													</rdf:List>
 																																												</rdf:rest>
@@ -1075,8 +1256,8 @@
 	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&vocab;MarkingDefinitionTypeVocab">
-		<rdfs:label xml:lang="en-US">marking-definition-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the type of the marking definition.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">marking-definition-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the type of the marking definition.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1095,22 +1276,22 @@
 	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&vocab;PatternTypeVocab">
-		<rdfs:label xml:lang="en-US">pattern-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture common pattern languages and is intended to characterize the pattern language that the indicator pattern is expressed in.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">pattern-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture common pattern languages and is intended to characterize the pattern language that the indicator pattern is expressed in.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>stix</rdf:first>
+						<rdf:first>pcre</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>pcre</rdf:first>
+								<rdf:first>sigma</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>sigma</rdf:first>
+										<rdf:first>snort</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>snort</rdf:first>
+												<rdf:first>stix</rdf:first>
 												<rdf:rest>
 													<rdf:List>
 														<rdf:first>suricata</rdf:first>
@@ -1136,7 +1317,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;ProcessorArchitectureVocab">
 		<rdfs:label>processor-architecture-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open vocabulary for capturing common processor architectures and is intended to characterize the architectures that a malware instance or family may be able to execute on.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open vocabulary for capturing common processor architectures and is intended to characterize the architectures that a malware instance or family may be able to execute on.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1184,9 +1365,43 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&vocab;RecoverabilityVocab">
+		<rdfs:label>recoverability-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>extended</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>not-applicable</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>not-recoverable</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>regular</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>supplemented</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&vocab;ReportTypeVocab">
-		<rdfs:label xml:lang="en-US">report-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the primary purpose or subject of a report.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">report-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the primary purpose or subject of a report.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1251,7 +1466,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;ThreatActorRoleVocab">
 		<rdfs:label>threat-actor-role-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the different roles that a threat actor can play.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the different roles that a threat actor can play.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1296,27 +1511,27 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;ThreatActorSophisticationVocab">
 		<rdfs:label>threat-actor-sophistication-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the skill level of a threat actor.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the skill level of a threat actor.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>none</rdf:first>
+						<rdf:first>advanced</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>minimal</rdf:first>
+								<rdf:first>expert</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>intermediate</rdf:first>
+										<rdf:first>innovator</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>advanced</rdf:first>
+												<rdf:first>intermediate</rdf:first>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>expert</rdf:first>
+														<rdf:first>minimal</rdf:first>
 														<rdf:rest>
 															<rdf:List>
-																<rdf:first>innovator</rdf:first>
+																<rdf:first>none</rdf:first>
 																<rdf:rest>
 																	<rdf:List>
 																		<rdf:first>strategic</rdf:first>
@@ -1341,7 +1556,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;ThreatActorTypeVocab">
 		<rdfs:label>threat-actor-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture what type of threat actor the individual or group is.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture what type of threat actor the individual or group is.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1411,33 +1626,33 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;ToolTypeVocab">
 		<rdfs:label>tool-label-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the categories of tools that can be used to perform attacks.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the categories of tools that can be used to perform attacks.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>denial-of-service</rdf:first>
+						<rdf:first>credential-exploitation</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>exploitation</rdf:first>
+								<rdf:first>denial-of-service</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>information-gathering</rdf:first>
+										<rdf:first>exploitation</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>network-capture</rdf:first>
+												<rdf:first>information-gathering</rdf:first>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>credential-exploitation</rdf:first>
+														<rdf:first>network-capture</rdf:first>
 														<rdf:rest>
 															<rdf:List>
 																<rdf:first>remote-access</rdf:first>
 																<rdf:rest>
 																	<rdf:List>
-																		<rdf:first>vulnerability-scanning</rdf:first>
+																		<rdf:first>unknown</rdf:first>
 																		<rdf:rest>
 																			<rdf:List>
-																				<rdf:first>unknown</rdf:first>
+																				<rdf:first>vulnerability-scanning</rdf:first>
 																				<rdf:rest rdf:resource="&rdf;nil"/>
 																			</rdf:List>
 																		</rdf:rest>
@@ -1459,23 +1674,47 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
-	<rdfs:Datatype rdf:about="&vocab;WinPEBinaryTypeVocab">
-		<rdfs:label>windows-pebinary-type-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
+	<rdfs:Datatype rdf:about="&vocab;TraceabilityVocab">
+		<rdfs:label>traceability-enum</rdfs:label>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>exe</rdf:first>
+						<rdf:first>accountability-lost</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>dll</rdf:first>
+								<rdf:first>partial-accountability</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>sys</rdf:first>
+										<rdf:first>provable-accountability</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;WinPEBinaryTypeVocab">
+		<rdfs:label>windows-pebinary-type-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>dll</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>exe</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>invalid</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>invalid</rdf:first>
+												<rdf:first>sys</rdf:first>
 												<rdf:rest rdf:resource="&rdf;nil"/>
 											</rdf:List>
 										</rdf:rest>
@@ -1491,7 +1730,7 @@
 	
 	<rdfs:Datatype rdf:about="&vocab;WorldRegionVocab">
 		<rdfs:label>region-ov</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Defines an open-vocabulary that captures the world regions based on the United Nations geoscheme.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures the world regions based on the United Nations geoscheme.</rdfs:comment>
 		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
@@ -1499,88 +1738,88 @@
 						<rdf:first>africa</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>eastern-africa</rdf:first>
+								<rdf:first>americas</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>middle-africa</rdf:first>
+										<rdf:first>antarctica</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>northern-africa</rdf:first>
+												<rdf:first>asia</rdf:first>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>southern-africa</rdf:first>
+														<rdf:first>australia-new-zealand</rdf:first>
 														<rdf:rest>
 															<rdf:List>
-																<rdf:first>western-africa</rdf:first>
+																<rdf:first>caribbean</rdf:first>
 																<rdf:rest>
 																	<rdf:List>
-																		<rdf:first>americas</rdf:first>
+																		<rdf:first>central-america</rdf:first>
 																		<rdf:rest>
 																			<rdf:List>
-																				<rdf:first>caribbean</rdf:first>
+																				<rdf:first>central-asia</rdf:first>
 																				<rdf:rest>
 																					<rdf:List>
-																						<rdf:first>central-america</rdf:first>
+																						<rdf:first>eastern-africa</rdf:first>
 																						<rdf:rest>
 																							<rdf:List>
-																								<rdf:first>latin-america-caribbean</rdf:first>
+																								<rdf:first>eastern-asia</rdf:first>
 																								<rdf:rest>
 																									<rdf:List>
-																										<rdf:first>northern-america</rdf:first>
+																										<rdf:first>eastern-europe</rdf:first>
 																										<rdf:rest>
 																											<rdf:List>
-																												<rdf:first>south-america</rdf:first>
+																												<rdf:first>europe</rdf:first>
 																												<rdf:rest>
 																													<rdf:List>
-																														<rdf:first>asia</rdf:first>
+																														<rdf:first>latin-america-caribbean</rdf:first>
 																														<rdf:rest>
 																															<rdf:List>
-																																<rdf:first>central-asia</rdf:first>
+																																<rdf:first>melanesia</rdf:first>
 																																<rdf:rest>
 																																	<rdf:List>
-																																		<rdf:first>eastern-asia</rdf:first>
+																																		<rdf:first>micronesia</rdf:first>
 																																		<rdf:rest>
 																																			<rdf:List>
-																																				<rdf:first>southern-asia</rdf:first>
+																																				<rdf:first>middle-africa</rdf:first>
 																																				<rdf:rest>
 																																					<rdf:List>
-																																						<rdf:first>south-eastern-asia</rdf:first>
+																																						<rdf:first>northern-africa</rdf:first>
 																																						<rdf:rest>
 																																							<rdf:List>
-																																								<rdf:first>western-asia</rdf:first>
+																																								<rdf:first>northern-america</rdf:first>
 																																								<rdf:rest>
 																																									<rdf:List>
-																																										<rdf:first>europe</rdf:first>
+																																										<rdf:first>northern-europe</rdf:first>
 																																										<rdf:rest>
 																																											<rdf:List>
-																																												<rdf:first>eastern-europe</rdf:first>
+																																												<rdf:first>oceana</rdf:first>
 																																												<rdf:rest>
 																																													<rdf:List>
-																																														<rdf:first>northern-europe</rdf:first>
+																																														<rdf:first>polynesia</rdf:first>
 																																														<rdf:rest>
 																																															<rdf:List>
-																																																<rdf:first>southern-europe</rdf:first>
+																																																<rdf:first>south-america</rdf:first>
 																																																<rdf:rest>
 																																																	<rdf:List>
-																																																		<rdf:first>western-europe</rdf:first>
+																																																		<rdf:first>south-eastern-asia</rdf:first>
 																																																		<rdf:rest>
 																																																			<rdf:List>
-																																																				<rdf:first>oceana</rdf:first>
+																																																				<rdf:first>southern-africa</rdf:first>
 																																																				<rdf:rest>
 																																																					<rdf:List>
-																																																						<rdf:first>antarctica</rdf:first>
+																																																						<rdf:first>southern-asia</rdf:first>
 																																																						<rdf:rest>
 																																																							<rdf:List>
-																																																								<rdf:first>australia-new-zealand</rdf:first>
+																																																								<rdf:first>southern-europe</rdf:first>
 																																																								<rdf:rest>
 																																																									<rdf:List>
-																																																										<rdf:first>melanesia</rdf:first>
+																																																										<rdf:first>western-africa</rdf:first>
 																																																										<rdf:rest>
 																																																											<rdf:List>
-																																																												<rdf:first>micronesia</rdf:first>
+																																																												<rdf:first>western-asia</rdf:first>
 																																																												<rdf:rest>
 																																																													<rdf:List>
-																																																														<rdf:first>polynesia</rdf:first>
+																																																														<rdf:first>western-europe</rdf:first>
 																																																														<rdf:rest rdf:resource="&rdf;nil"/>
 																																																													</rdf:List>
 																																																												</rdf:rest>
