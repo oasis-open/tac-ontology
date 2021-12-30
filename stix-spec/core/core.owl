@@ -85,19 +85,71 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;StixCyberObservable">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
 		<rdfs:label>StixCyberObservable</rdfs:label>
 		<rdfs:comment xml:lang="en-us">STIX Cyber-observable Object (SCOs)  characterizes a host-based and network-based information.\n\nA STIX Cyber Observable Object (SCOs) document the facts concerning what happened on a network or host, and do not capture the who, when, or why.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;StixDomainObject">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
 		<rdfs:label>StixDomainObject</rdfs:label>
 		<rdfs:comment xml:lang="en-us">STIX Domain Objects (SDOs) represent a corresponding unique concept commonly represented in Cyber Threat Intelligence.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;StixObject">
 		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;confidence"/>
+				<owl:someValuesFrom rdf:resource="&xsd;int"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;created"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;defanged"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;labels"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;lang"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;modified"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;revoked"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;spec_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;type"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label>StixObject</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Abstract base object from which all STIX objects are derived.</rdfs:comment>
 	</owl:Class>
