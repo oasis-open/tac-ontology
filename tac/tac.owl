@@ -45,6 +45,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#analysis_ended"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_sco_refs">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#analysis_sco_refs"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_started">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#analysis_started"/>
 	</rdf:Description>
@@ -65,6 +69,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#confidence"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#contains_refs">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#contains_refs"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#content">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#content"/>
 	</rdf:Description>
@@ -81,6 +89,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#created"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#created_by_ref">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#created_by_ref"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#ctime">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#ctime"/>
 	</rdf:Description>
@@ -89,8 +101,16 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#description"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#extensions">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#extensions"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#external_id">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#external_id"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#external_references">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#external_references"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#first_seen">
@@ -105,6 +125,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#hash_value"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#hashes">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#hashes"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#id">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#id"/>
 	</rdf:Description>
@@ -115,6 +139,14 @@
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#key_value">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#key_value"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#kill_chain_name">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#kill_chain_name"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#kill_chain_phases">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#kill_chain_phases"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#labels">
@@ -145,6 +177,14 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#name"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#object_ref">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#object_ref"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#object_refs">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#object_refs"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#phase_name">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#phase_name"/>
 	</rdf:Description>
@@ -159,6 +199,14 @@
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#revoked">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#revoked"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#sample_ref">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#sample_ref"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#sample_refs">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#sample_refs"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#source_name">
