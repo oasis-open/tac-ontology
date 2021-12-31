@@ -37,6 +37,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#administrative_area"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#aliases">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#aliases"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_ended">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#analysis_ended"/>
 	</rdf:Description>
@@ -169,6 +173,10 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#start_time"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#stop_time">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#stop_time"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#street_address">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#street_address"/>
 	</rdf:Description>
@@ -187,6 +195,10 @@
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#valid_until">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#valid_until"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#vendor">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#vendor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#version">
