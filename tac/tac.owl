@@ -29,6 +29,22 @@
 		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
 	</rdf:Description>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#ExternalReference">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns#ExternalReference"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#Hash">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns#Hash"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#KeyValuePair">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns#KeyValuePair"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#KillChainPhase">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#KillChainPhase"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#abstract">
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#abstract"/>
 	</rdf:Description>
