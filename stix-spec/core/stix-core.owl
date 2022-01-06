@@ -130,6 +130,9 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
+	<owl:Class rdf:about="&stixCore;ExtensionDefinition">
+	</owl:Class>
+	
 	<owl:Class rdf:about="&stixCore;MetaObject">
 		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
 		<rdfs:label xml:lang="en-us">STIX Meta Object</rdfs:label>
@@ -150,18 +153,6 @@
 	
 	<owl:Class rdf:about="&stixCore;StixObject">
 		<rdfs:subClassOf rdf:resource="&cti;Object"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;created_by_ref_id"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;extensions"/>
-				<owl:someValuesFrom rdf:resource="&cti;ExtensionDefinition"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;external_references"/>

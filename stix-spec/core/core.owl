@@ -110,8 +110,20 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;created_by_ref_id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stixCore;defanged"/>
 				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stixCore;extensions"/>
+				<owl:someValuesFrom rdf:resource="&stixCore;ExtensionDefinition"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -279,6 +291,10 @@
 		<rdfs:comment xml:lang="en-us">Specifies the id property of the identity object that describes the entity that created this object.\n\nIf this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;Identity"/>
 	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stixCore;created_by_ref_id">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;ctime">
 		<rdfs:label>ctime</rdfs:label>
