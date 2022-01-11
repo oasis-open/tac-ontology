@@ -72,58 +72,6 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
-	<owl:DatatypeProperty rdf:about="&cti;created_by_ref_id">
-		<rdfs:label xml:lang="en-us">created_by_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the identifier of the Identity object that describes the entity that created this object.\n\nIf this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;extension_properties">
-		<rdfs:label xml:lang="en-us">extension_properties</rdfs:label>
-		<rdfs:comment xml:lang="en-us">This property contains the list of new property names that are added to an object by an extension.\n\nThis property MUST only be used when the extension_types property includes a value of toplevel-property-extension. In other words, when new properties are being added at the top-level of an existing object</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;extension_types">
-		<rdfs:label xml:lang="en-us">extension types</rdfs:label>
-		<rdfs:comment xml:lang="en-us">This property specifies one or more extension types contained within this extension.\n\The values for this property MUST come from the extension-type-enum enumeration.\n\nWhen this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>legacy</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>new-sco</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>new-sdo</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>new-sro</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>property-extension</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>toplevel-property-extension</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</rdfs:range>
-	</owl:DatatypeProperty>
-	
 	<owl:DatatypeProperty rdf:about="&cti;latitude">
 		<rdfs:label xml:lang="en-us">latitude</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The WGS84 latitude of a SpatialThing (decimal degrees).\n\nPositive numbers describe latitudes north of the equator, and negative numbers describe latitudes south of the equator. The value of this property MUST be between -90.0 and 90.0, inclusive.\n\nIf the longitude property is present, this property MUST be present.</rdfs:comment>
@@ -134,18 +82,6 @@
 		<rdfs:label xml:lang="en-us">longitude</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The WGS84 longitude of a SpatialThing (decimal degrees).\n\nPositive numbers describe longitudes east of the prime meridian and negative numbers describe longitudes west of the prime meridian. The value of this property MUST be between -180.0 and 180.0, inclusive.\n\nIf the latitude property is present, this property MUST be present.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;decimal"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;mime_type">
-		<rdfs:label xml:lang="en-us">mime_type</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the MIME type name specified for the object.\n\nWhenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types].\n\nMaintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;object_type">
-		<rdfs:label xml:lang="en-us">object_type</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies the type of the Object. The value of the type property MUST be the name of one of the types of Objects or the name of a custom Object.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&cti;precision">
@@ -307,16 +243,6 @@
 				</owl:oneOf>
 			</rdfs:Datatype>
 		</rdfs:range>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;schema">
-		<rdfs:label xml:lang="en-us">schema</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a URL that points to a JSON schema or a location that contains information about the schema.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;anyURI"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&cti;type">
-		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

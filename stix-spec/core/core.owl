@@ -24,6 +24,10 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/data-marking#MarkingDefinition">
+		<rdfs:subClassOf rdf:resource="&stixCore;MetaObject"/>
+	</rdf:Description>
+	
 	<owl:Class rdf:about="&stix;Grouping">
 		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
 		<rdfs:label>Grouping</rdfs:label>
@@ -52,12 +56,13 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;Extension">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+		<rdfs:subClassOf rdf:resource="&stixCore;StixObject"/>
 		<rdfs:label>Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Characterizes the base of all extensions to Cyber Observable objects.</rdfs:comment>
 	</owl:Class>
 	
 	<rdf:Description rdf:about="&stixCore;ExtensionDefinition">
+		<rdfs:subClassOf rdf:resource="&stixCore;MetaObject"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stixCore;created_by_ref_id"/>
@@ -315,6 +320,8 @@
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;created_by_ref_id">
+		<rdfs:label xml:lang="en">created_by_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en">Specifies the identifier of the Identity object that describes the entity that created this object.\n\nIf this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -339,6 +346,12 @@
 	<owl:DatatypeProperty rdf:about="&stixCore;explanation">
 		<rdfs:label>explanation</rdfs:label>
 		<rdfs:comment xml:lang="en-us">An explanation of why the producer has this Opinion.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stixCore;extension_properties">
+		<rdfs:label xml:lang="en">extension_properties</rdfs:label>
+		<rdfs:comment xml:lang="en">This property contains the list of new property names that are added to an object by an extension.\n\nThis property MUST only be used when the extension_types property includes a value of toplevel-property-extension. In other words, when new properties are being added at the top-level of an existing object</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
