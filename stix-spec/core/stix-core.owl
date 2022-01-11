@@ -24,10 +24,6 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
-	<rdf:Description rdf:about="&cti;spec_version">
-		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-	</rdf:Description>
-	
 	<owl:Class rdf:about="&stix;KillChainPhase">
 		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
 		<rdfs:label xml:lang="en-us">KillChainPhase</rdfs:label>
@@ -153,12 +149,6 @@
 	
 	<owl:Class rdf:about="&stixCore;StixObject">
 		<rdfs:subClassOf rdf:resource="&cti;Object"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;external_references"/>
-				<owl:someValuesFrom rdf:resource="&cti;ExternalReference"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#granular_markings"/>

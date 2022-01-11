@@ -46,19 +46,19 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#abstract">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#abstract"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#administrative_area">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#administrative_area"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#aliases">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#aliases"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_ended">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#analysis_ended"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_sco_refs">
@@ -66,23 +66,23 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#analysis_started">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#analysis_started"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#atime">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#atime"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#authors">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#authors"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#city">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#city"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#confidence">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#confidence"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#contains_refs">
@@ -90,75 +90,63 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#content">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#content"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#count">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#count"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#country">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#country"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#created">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#created"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#created_by_ref">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#created_by_ref"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#ctime">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#ctime"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#description">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#description"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#extensions">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#extensions"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#external_id">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#external_id"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#external_references">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#external_references"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#first_seen">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#first_seen"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#hash_algorithm">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#hash_algorithm"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#hash_value">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#hash_value"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#hashes">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#hashes"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#id">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#id"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#key_identifier">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#key_identifier"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#key_value">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#key_value"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#kill_chain_name">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#kill_chain_name"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#kill_chain_phases">
@@ -166,31 +154,31 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#labels">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#labels"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#lang">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#lang"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#languages">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#languages"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#last_seen">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#last_seen"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#modified">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#modified"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#mtime">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#mtime"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#name">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#name"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#object_ref">
@@ -201,20 +189,16 @@
 		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#object_refs"/>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#phase_name">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#phase_name"/>
-	</rdf:Description>
-	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#postal_code">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#postal_code"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#published">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#published"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#revoked">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#revoked"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#sample_ref">
@@ -226,47 +210,47 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#source_name">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#source_name"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#spec_version">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#spec_version"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#start_time">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#start_time"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#stop_time">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#stop_time"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#street_address">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#street_address"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#submitted">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#submitted"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#url">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#url"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#valid_from">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#valid_from"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#valid_until">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#valid_until"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#vendor">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#vendor"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/core#version">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns#version"/>
+		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
 	<owl:Class rdf:about="&tac;Adversary">

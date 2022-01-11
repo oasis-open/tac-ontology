@@ -402,12 +402,6 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stixCore;kill_chain_name">
-		<rdfs:label>kill_chain_name</rdfs:label>
-		<rdfs:comment>Specifies the name of the kill chain.\n\nThe value of this property SHOULD be all lowercase and SHOULD use hyphens instead of spaces or underscores as word separators.@{en-US}</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
 	<owl:ObjectProperty rdf:about="&stixCore;kill_chain_phases">
 		<rdfs:label>kill chain phases</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the kill chain phase(s) to which this indicator corresponds.</rdfs:comment>
@@ -511,12 +505,6 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 				</owl:oneOf>
 			</rdfs:Datatype>
 		</rdfs:range>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stixCore;phase_name">
-		<rdfs:label>phase_name</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the name of the phase in the kill chain.\n\nThe value of this property SHOULD be all lowercase and SHOULD use hyphens instead of spaces or underscores as word separators.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stixCore;postal_code">
