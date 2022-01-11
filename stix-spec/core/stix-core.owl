@@ -25,7 +25,6 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;KillChainPhase">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
 		<rdfs:label xml:lang="en-us">KillChainPhase</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a phase in a kill chain, which describes the various phases an attacker may undertake in order to achieve their objectives.</rdfs:comment>
 	</owl:Class>
@@ -148,7 +147,6 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stixCore;StixObject">
-		<rdfs:subClassOf rdf:resource="&cti;Object"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#granular_markings"/>

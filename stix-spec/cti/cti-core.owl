@@ -24,77 +24,11 @@
 		<rdfs:comment xml:lang="en-us">Abstract base object from which all complex datatypes are derived.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&cti;ExtensionDefinition">
-		<rdfs:subClassOf rdf:resource="&cti;Object"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;created_by_ref_id"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;extension_types"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;schema"/>
-				<owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-us">Extension Definition</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The Extension Definition object defines detailed information about the extensions that are in use in the data model content that they created.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&cti;ExternalReference">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
-		<rdfs:label xml:lang="en-us">ExternalReference</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Used to describe pointers to information represented external to this data model. For example, a Malware object could use an external reference to indicate an ID for that malware in an external database or a report could use references to represent source material.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&cti;Hash">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
-		<rdfs:label xml:lang="en-us">Hash</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Represents a single cryptographic hash.  Accordingly, the name of each hashing algorithm MUST be specified as the value of the hash_algorithm property that identifies the name of the hashing algorithm used to generate the corresponding value. The value of the hashsum of the content cryptographically hashed with that algorithm MUST be specified as the value of the hash_value property.  The name of the hash algorithm SHOULD come from one of the values defined in the hash-algorithm-ov open vocabulary.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&cti;Hashes">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
-		<rdfs:label xml:lang="en-us">Hashes</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Represents one or more cryptographic hashes, as a special set of key/value pairs. Accordingly, the name of each hashing algorithm MUST be specified as a predicate and MUST identify the name of the hashing algorithm used to generate the corresponding value. This name SHOULD come from one of the values defined in the hash-algorithm-ov open vocabulary.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&cti;Identity">
-		<rdfs:subClassOf rdf:resource="&cti;Object"/>
-		<rdfs:label xml:lang="en-us">CTI Identity</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Represents an identity</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&cti;KeyValuePair">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
-		<rdfs:label xml:lang="en-us">KeyValue</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A key-value pair (KVP) is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. The key MUST be unique in each dictionary, MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). Dictionary keys MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase.</rdfs:comment>
-	</owl:Class>
-	
 	<owl:DatatypeProperty rdf:about="&cti;MD5_hash_value">
 		<rdfs:label xml:lang="en-us">MD5 Hash Value</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321].</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-	
-	<owl:Class rdf:about="&cti;Object">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;object_type"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-us">CTI Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base object from which all Cyber Threat Intelligence objects are derived.</rdfs:comment>
-	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&cti;SHA-1_hash_value">
 		<rdfs:label xml:lang="en-us">SHA-1 Hash Value</rdfs:label>
