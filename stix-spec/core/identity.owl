@@ -35,7 +35,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Identity">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:label xml:lang="en-us">STIX Identity</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, systems or groups (e.g., the finance sector).</rdfs:comment>
 	</owl:Class>

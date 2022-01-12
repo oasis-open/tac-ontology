@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Campaign">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Campaign</rdfs:label>
 		<rdfs:comment xml:lang="en-US">A Campaign is a grouping of adversarial behaviors that describes a set of malicious activities or attacks (sometimes called waves) that occur over a period of time against a specific set of targets. Campaigns usually have well defined objectives and may be part of an Intrusion Set.\n\nCampaigns are often attributed to an intrusion set and threat actors. The threat actors may reuse known infrastructure from the intrusion set or may set up new infrastructure specific for conducting that campaign.\n\nCampaigns can be characterized by their objectives and the incidents they cause, people or resources they target, and the resources (infrastructure, intelligence, Malware, Tools, etc.) they use.</rdfs:comment>
 	</owl:Class>

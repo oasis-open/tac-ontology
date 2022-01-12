@@ -26,7 +26,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Software">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">Software</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Software object represents high-level properties associated with software, including software products.</rdfs:comment>
 	</owl:Class>

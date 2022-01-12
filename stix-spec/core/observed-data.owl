@@ -26,7 +26,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;ObservedData">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">ObservedData</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Observed Data conveys information about cyber security related entities such as files, systems, and networks using the STIX Cyber-observable Objects (SCOs).</rdfs:comment>
 	</owl:Class>
