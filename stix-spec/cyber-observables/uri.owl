@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;URL">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">URL</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The URL object represents the properties of a uniform resource locator (URL).</rdfs:comment>
 	</owl:Class>

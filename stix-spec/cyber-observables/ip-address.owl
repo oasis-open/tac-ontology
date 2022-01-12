@@ -29,13 +29,13 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;IPv4Address">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">IPv4Address</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The IPv4 Address object represents one or more IPv4 addresses expressed using CIDR notation.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;IPv6Address">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">IPv6Address</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The IPv6 Address object represents one or more IPv6 addresses expressed using CIDR notation.</rdfs:comment>
 	</owl:Class>
