@@ -23,7 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Incident">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Incident</rdfs:label>
 		<rdfs:comment xml:lang="en-US">An Incident is a set of related security events affecting an organization, along with information discovered or decided during an incident response investigation.</rdfs:comment>
 	</owl:Class>

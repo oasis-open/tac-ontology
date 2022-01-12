@@ -25,7 +25,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Note">
-		<rdfs:subClassOf rdf:resource="&stixCore;StixDomainObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:label xml:lang="en-US">Note</rdfs:label>
 		<rdfs:comment xml:lang="en-US">A Note is intended to convey informative text to provide further context and/or to provide additional analysis not contained in the STIX Objects, Marking Definition objects, or Language Content objects which the Note relates to. Notes can be created by anyone (not just the original object creator).</rdfs:comment>
 	</owl:Class>

@@ -29,77 +29,77 @@
 	</owl:Ontology>
 	
 	<rdf:Description rdf:about="&cti;confidence">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;created">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;created_by_ref">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;created_by_ref_id">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;extensions">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;external_references">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;labels">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;lang">
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;modified">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;revoked">
-		<rdfs:domain rdf:resource="&stixCore;MetaObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixDomainObject"/>
-		<rdfs:domain rdf:resource="&stixCore;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="&stix;MetaObject"/>
+		<rdfs:domain rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:domain rdf:resource="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;spec_version">
-		<rdfs:domain rdf:resource="&stixCore;StixObject"/>
+		<rdfs:domain rdf:resource="&stix;StixObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&marking;granular_markings">
-		<rdfs:domain rdf:resource="&stixCore;StixObject"/>
+		<rdfs:domain rdf:resource="&stix;StixObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&marking;object_marking_refs">
-		<rdfs:domain rdf:resource="&stixCore;StixObject"/>
+		<rdfs:domain rdf:resource="&stix;StixObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&marking;object_marking_refs_id">
-		<rdfs:domain rdf:resource="&stixCore;StixObject"/>
+		<rdfs:domain rdf:resource="&stix;StixObject"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&stix;KillChainPhase">
@@ -117,19 +117,7 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stix;defanged">
-		<rdfs:domain rdf:resource="&stixCore;StixCyberObservable"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="&stix;kill_chain_name">
-		<rdfs:domain rdf:resource="&stix;KillChainPhase"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="&stix;phase_name">
-		<rdfs:domain rdf:resource="&stix;KillChainPhase"/>
-	</rdf:Description>
-	
-	<rdf:Description rdf:about="&stixCore;MetaObject">
+	<rdf:Description rdf:about="&stix;MetaObject">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;created"/>
@@ -180,7 +168,7 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;StixCyberObservable">
+	<rdf:Description rdf:about="&stix;StixCyberObservable">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;id"/>
@@ -207,7 +195,22 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;StixDomainObject">
+	<rdf:Description rdf:about="&stix;StixObject">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cti;id"/>
+				<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cti;object_type"/>
+				<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;StixRelationshipObject">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;created"/>
@@ -270,22 +273,11 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;StixObject">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;id"/>
-				<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&cti;object_type"/>
-				<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-			</owl:Restriction>
-		</rdfs:subClassOf>
+	<rdf:Description rdf:about="&stix;defanged">
+		<rdfs:domain rdf:resource="&stix;StixCyberObservable"/>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stixCore;StixRelationshipObject">
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#http://docs.oasis-open.org/cti/ns/stix#">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;created"/>
@@ -346,6 +338,14 @@
 				<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
 			</owl:Restriction>
 		</rdfs:subClassOf>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;kill_chain_name">
+		<rdfs:domain rdf:resource="&stix;KillChainPhase"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;phase_name">
+		<rdfs:domain rdf:resource="&stix;KillChainPhase"/>
 	</rdf:Description>
 
 </rdf:RDF>
