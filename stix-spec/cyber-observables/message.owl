@@ -21,6 +21,7 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/message">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/core"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/email-address"/>
@@ -35,7 +36,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&message;EmailMimePart">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">MimePart</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies one component of a multi-part body.\n\nThere is no property to capture the value of the “Content-Transfer-Encoding” header field, since the body MUST be decoded before being represented in the body property.</rdfs:comment>
 	</owl:Class>

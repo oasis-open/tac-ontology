@@ -80,7 +80,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:Class rdf:about="&ntfsExt;AlternateDataStream">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">Alternate data streams</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a list of NTFS alternate data streams that exist for the file.</rdfs:comment>
 	</owl:Class>
@@ -176,13 +176,13 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&winPEExt;WindowsPEOptionalHeader">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">Windows PE Optional Header</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows PE Optional Header type represents the properties of the PE optional header. An object using the Windows PE Optional Header Type MUST contain at least one property from this type.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&winPEExt;WindowsPESection">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">Windows PE Section</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows PE Section type specifies metadata about a PE file section.</rdfs:comment>
 	</owl:Class>

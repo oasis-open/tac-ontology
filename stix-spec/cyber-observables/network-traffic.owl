@@ -322,7 +322,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:Class rdf:about="&networkTrafficExt;SocketOptions">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">Socket Options</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The SocketOptions object represents any options (e.g., SO_*) that may be used by the socket.</rdfs:comment>
 	</owl:Class>

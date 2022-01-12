@@ -25,21 +25,6 @@
 		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#StixObject">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix#id"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix#object_type"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-	</rdf:Description>
-	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
 	</rdf:Description>
@@ -260,39 +245,6 @@
 		<rdfs:comment>There has been some ambiguity with respect to the differentiation of stix:IntrusionSet and stix:ThreatActor. They are different, and the tac:Adversary class is intended to clarify the differences.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tac;Casebook">
-		<rdfs:comment>The Casebook class is a container class. It is a receptical of the set of objects that provide information about a specific tac:Adversary. The Casebook holds infromation about a stix:IntrusionSet or a stix:ThreatActor. The &quot;Threat Actor&quot; may be an individual or an organization.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&tac;ThreatActorProfile">
-	</owl:Class>
-	
-	<owl:Class rdf:about="&tac;ThreatEvent">
-		<rdfs:comment>The ThreatEvent is an event or situation that has the potential for causing undesirable consequences or impact.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&tac;ThreatEventPattern">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&tac;hasThreatEvent"/>
-				<owl:someValuesFrom rdf:resource="&tac;ThreatEvent"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:comment>A ThreatEventPattern is a sibling class to the stix:AttackPattern class. A primary difference between the two classes is that the ThreatEventPattern provides the ability to sequence the ThreatEvent objects in contains, whereas an AttackPattern object does not provide the ability to order the TTPs it contains.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&tac;ThreatScenario">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&tac;hasThreatEventPattern"/>
-				<owl:someValuesFrom rdf:resource="&tac;ThreatEventPattern"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:comment>A ThreatScenario is a set of discrete ThreatEvent objects contained within a ThreatEventPattern object.. The ThreatScenario is associated with one or multiple threat sources. The ThreatEvents can be, but are not required to be ordered in time. Many use the term &quot;Threat Scenario&quot; as a synonym for &quot;Threat Campaign&quot;. 
-
-A ThreatScenario is a sibling class to the stix:Campaign class. The primary difference between the two is that the ThreatScenario object represents a potential threat, whereas the Campaign object represents a threat that has been sighted or has already occured.</rdfs:comment>
-	</owl:Class>
-	
 	<owl:ObjectProperty rdf:about="&tac;hasAdversary">
 		<rdfs:subPropertyOf rdf:resource="&tac;topTacObjectProperty"/>
 		<rdfs:range rdf:resource="&tac;Adversary"/>
@@ -329,15 +281,12 @@ A ThreatScenario is a sibling class to the stix:Campaign class. The primary diff
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tac;hasThreatEvent">
-		<rdfs:range rdf:resource="&tac;ThreatEvent"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tac;hasThreatEventPattern">
-		<rdfs:range rdf:resource="&tac;ThreatEventPattern"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tac;hasThreatScenario">
-		<rdfs:range rdf:resource="&tac;ThreatScenario"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tac;topTacObjectProperty">

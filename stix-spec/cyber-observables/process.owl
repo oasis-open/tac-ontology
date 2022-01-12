@@ -44,7 +44,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&processExt;WindowsProcessStartupInfo">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-us">STARTUP_INFO Structure</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The StartupInfo type specifies the window station, desktop, standard handles, and appearance of the main window for a process at creation time</rdfs:comment>
 	</owl:Class>

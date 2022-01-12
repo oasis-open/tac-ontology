@@ -24,6 +24,10 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/data-marking#GranularMarking">
+		<rdfs:subClassOf rdf:resource="&stix;MetaObject"/>
+	</rdf:Description>
+	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/data-marking#MarkingDefinition">
 		<rdfs:subClassOf rdf:resource="&stix;MetaObject"/>
 	</rdf:Description>
@@ -125,6 +129,18 @@
 		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#granular_markings"/>
+				<owl:someValuesFrom rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#GranularMarking"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#object_marking_refs"/>
+				<owl:someValuesFrom rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#MarkingDefinition"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;confidence"/>
 				<owl:someValuesFrom rdf:resource="&xsd;int"/>
 			</owl:Restriction>
@@ -155,6 +171,12 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;labels"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -169,6 +191,12 @@
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;modified"/>
 				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;object_type"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -189,8 +217,8 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label>StixObject</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base object from which all STIX objects are derived.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">STIX Object</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Abstract base class from which all STIX objects are derived.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;abstract">

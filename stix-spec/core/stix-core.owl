@@ -50,23 +50,6 @@
 		<rdfs:comment xml:lang="en-us">Abstract based class from which all STIX Domain Objects (SDOs) derive.\n\nSTIX Domain Objects characterize higher-level intelligence objects that represent behaviors and constructs that threat analysts would typically create or work with while understanding the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stix;StixObject">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#granular_markings"/>
-				<owl:someValuesFrom rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#GranularMarking"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#object_marking_refs"/>
-				<owl:someValuesFrom rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking#MarkingDefinition"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-us">STIX Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base class from which all STIX objects are derived.</rdfs:comment>
-	</owl:Class>
-	
 	<owl:Class rdf:about="&stix;StixRelationshipObject">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
 		<rdfs:label>STIX Relationship Object</rdfs:label>

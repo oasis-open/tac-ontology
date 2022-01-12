@@ -31,7 +31,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&x509Cert;X509v3Extensions">
-		<rdfs:subClassOf rdf:resource="&cti;ComplexType"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixAbstractType"/>
 		<rdfs:label xml:lang="en-US">X509v3Extensions</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The X.509 v3 Extensions type captures properties associated with X.509 v3 extensions, which serve as a mechanism for specifying additional information such as alternative subject names. An object using the X.509 v3 Extensions type MUST contain at least one property from this type.\n\nNote that the use of the term &quot;extensions&quot; in this context refers to the X.509 v3 Extensions type and is not a STIX Cyber Observables extension. Therefore, it is a type that describes X.509 extensions.</rdfs:comment>
 	</owl:Class>

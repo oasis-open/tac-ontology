@@ -18,12 +18,6 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
-	<owl:Class rdf:about="&cti;ComplexType">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:label xml:lang="en-us">ComplexType</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base object from which all complex datatypes are derived.</rdfs:comment>
-	</owl:Class>
-	
 	<owl:DatatypeProperty rdf:about="&cti;MD5_hash_value">
 		<rdfs:label xml:lang="en-us">MD5 Hash Value</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321].</rdfs:comment>
