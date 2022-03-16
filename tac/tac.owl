@@ -21,7 +21,7 @@
 		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
 	</owl:Ontology>
 	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#InstrusionSet">
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#IntrusionSet">
 		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
 	</rdf:Description>
 	
@@ -133,8 +133,8 @@
 		<rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#kill_chain_phases">
-		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#kill_chain_phases"/>
+	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#kill_chain_phase">
+		<rdfs:subPropertyOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#kill_chain_phase"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#labels">
@@ -267,7 +267,7 @@
 	
 	<owl:ObjectProperty rdf:about="&tac;hasIntrusionSet">
 		<rdfs:subPropertyOf rdf:resource="&tac;hasAdversary"/>
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#InstrusionSet"/>
+		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix#IntrusionSet"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tac;hasOriginator">
@@ -291,5 +291,9 @@
 	
 	<owl:ObjectProperty rdf:about="&tac;topTacObjectProperty">
 	</owl:ObjectProperty>
+	
+	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#ThreatActor">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#ThreatActor"/>
+	</rdf:Description>
 
 </rdf:RDF>

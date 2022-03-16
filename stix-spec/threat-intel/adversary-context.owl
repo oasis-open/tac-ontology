@@ -26,39 +26,39 @@
 	</owl:Ontology>
 	
 	<rdf:Description rdf:about="&cti;aliases">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;created">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;description">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;external_references">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;first_seen">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;last_seen">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&cti;name">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
-	<rdf:Description rdf:about="&stix;InstrusionSet">
+	<rdf:Description rdf:about="&stix;IntrusionSet">
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&cti;created"/>
@@ -275,7 +275,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&adversary;goals">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
@@ -284,12 +284,12 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&adversary;primary_motivation">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&adversary;resource_level">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	
@@ -298,7 +298,7 @@
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="&adversary;secondary_motivations">
-		<rdfs:domain rdf:resource="&stix;InstrusionSet"/>
+		<rdfs:domain rdf:resource="&stix;IntrusionSet"/>
 		<rdfs:domain rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
 	

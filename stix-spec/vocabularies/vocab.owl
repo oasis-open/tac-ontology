@@ -85,6 +85,35 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&vocab;ActivityOutcomeVocab">
+		<rdfs:label>activity-outcome-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>blocked</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>failed</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>successful</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>unknown</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&vocab;AttackMotivationVocab">
 		<rdfs:label>attack-motivation-ov</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary for capturing a Threat Actor or Intrusion Set&apos;s motivation for attacking.</rdfs:comment>
@@ -168,6 +197,79 @@
 														<rdf:rest>
 															<rdf:List>
 																<rdf:first>team</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;DetectionMethodsVocab">
+		<rdfs:label>detection-methods-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>automated-tool</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>human-review</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>message-from-attacker</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>system-outage</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>user-reporting</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;ExternalImpactVocab">
+		<rdfs:label>external-impact-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>civil-liberties</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>economic</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>foreign-relations</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>national-security</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>public-confidence</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>public-health</rdf:first>
 																<rdf:rest rdf:resource="&rdf;nil"/>
 															</rdf:List>
 														</rdf:rest>
@@ -463,20 +565,30 @@
 						<rdf:first>contained</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>major-loss</rdf:first>
+								<rdf:first>exploited-loss</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>none</rdf:first>
+										<rdf:first>exploited-major-loss</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>some-loss</rdf:first>
+												<rdf:first>major-loss</rdf:first>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>suspected-loss</rdf:first>
+														<rdf:first>none</rdf:first>
 														<rdf:rest>
 															<rdf:List>
-																<rdf:first>suspected-major-loss</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
+																<rdf:first>some-loss</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>suspected-loss</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>suspected-major-loss</rdf:first>
+																				<rdf:rest rdf:resource="&rdf;nil"/>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
 															</rdf:List>
 														</rdf:rest>
 													</rdf:List>
@@ -499,17 +611,27 @@
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
-						<rdf:first>confirmed</rdf:first>
+						<rdf:first>blocked</rdf:first>
 						<rdf:rest>
 							<rdf:List>
-								<rdf:first>false-positive</rdf:first>
+								<rdf:first>failed-attempt</rdf:first>
 								<rdf:rest>
 									<rdf:List>
-										<rdf:first>low-value</rdf:first>
+										<rdf:first>false-positive</rdf:first>
 										<rdf:rest>
 											<rdf:List>
-												<rdf:first>suspected</rdf:first>
-												<rdf:rest rdf:resource="&rdf;nil"/>
+												<rdf:first>low-value</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>successful-attempt</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>suspected</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
 											</rdf:List>
 										</rdf:rest>
 									</rdf:List>
@@ -536,6 +658,75 @@
 									<rdf:List>
 										<rdf:first>open</rdf:first>
 										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;IncidentTypeVocab">
+		<rdfs:label>incident-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>compromised-system</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>denial-of-service</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>destruction</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>equipment-loss</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>equipment-theft</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>major</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>supply-chain-customer</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>supply-chain-vendor</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>unauthorized-access</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>unauthorized-equipment</rdf:first>
+																								<rdf:rest>
+																									<rdf:List>
+																										<rdf:first>unauthorized-release</rdf:first>
+																										<rdf:rest>
+																											<rdf:List>
+																												<rdf:first>unauthorized-use</rdf:first>
+																												<rdf:rest rdf:resource="&rdf;nil"/>
+																											</rdf:List>
+																										</rdf:rest>
+																									</rdf:List>
+																								</rdf:rest>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
 									</rdf:List>
 								</rdf:rest>
 							</rdf:List>
@@ -747,6 +938,65 @@
 																										</rdf:rest>
 																									</rdf:List>
 																								</rdf:rest>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;InformationTypeVocab">
+		<rdfs:label>information-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>classified-material</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>communication</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>credentials-admin</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>credentials-user</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>financial</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>legal</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>payment</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>phi</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>pii</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>proprietary</rdf:first>
+																								<rdf:rest rdf:resource="&rdf;nil"/>
 																							</rdf:List>
 																						</rdf:rest>
 																					</rdf:List>
@@ -1275,6 +1525,55 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&vocab;MonetaryImpactTypeVocab">
+		<rdfs:label>monetary-impact-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>asset-and-fraud</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>brand-damage</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>business-disruption</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>competitive-advantage</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>legal-and-regulatory</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>operating-costs</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>response-and-recovery</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>uncategorized</rdf:first>
+																				<rdf:rest rdf:resource="&rdf;nil"/>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&vocab;PatternTypeVocab">
 		<rdfs:label xml:lang="en-us">pattern-type-ov</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture common pattern languages and is intended to characterize the pattern language that the indicator pattern is expressed in.</rdfs:comment>
@@ -1298,6 +1597,45 @@
 														<rdf:rest>
 															<rdf:List>
 																<rdf:first>yara</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;PhysicalImpactVocab">
+		<rdfs:label>physical-impact-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>damaged-complete</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>damaged-limited</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>destruction-complete</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>destruction-limited</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>none</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>unknown</rdf:first>
 																<rdf:rest rdf:resource="&rdf;nil"/>
 															</rdf:List>
 														</rdf:rest>
@@ -1608,6 +1946,45 @@
 																		</rdf:rest>
 																	</rdf:List>
 																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&vocab;TimestampFidelityVocab">
+		<rdfs:label>timestamp-fidelity-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>day</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>hour</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>minute</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>month</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>second</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>year</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
 															</rdf:List>
 														</rdf:rest>
 													</rdf:List>
