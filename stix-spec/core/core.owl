@@ -505,7 +505,7 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
-	<owl:ObjectProperty rdf:about="&stix;kill_chain_phases">
+	<owl:ObjectProperty rdf:about="&stix;kill_chain_phase">
 		<rdfs:label>kill chain phases</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the kill chain phase(s) to which this indicator corresponds.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;KillChainPhase"/>

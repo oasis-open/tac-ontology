@@ -77,16 +77,20 @@
 		</rdfs:subClassOf>
 	</rdf:Description>
 	
-	<owl:Class rdf:about="&stix-semex;Action">
-		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#StixDomainObject"/>
-	</owl:Class>
-	
 	<owl:Class rdf:about="&stix-semex;Activity">
 		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#StixDomainObject"/>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;AttackerActivity">
 		<rdfs:subClassOf rdf:resource="&stix-semex;Activity"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix-semex;AvailabilityImpact">
+		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix-semex;ConfidentialityImpact">
+		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix-semex;DefenderActivity">
@@ -101,7 +105,23 @@
 		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#StixDomainObject"/>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix-semex;IncidentScore">
+		<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/cti/ns/stix#StixDomainObject"/>
+	</owl:Class>
+	
 	<owl:Class rdf:about="&stix-semex;InformationalImpact">
+		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix-semex;IntegrityImpact">
+		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix-semex;MonetaryImpact">
+		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix-semex;PhysicalImpact">
 		<rdfs:subClassOf rdf:resource="&stix-semex;Impact"/>
 	</owl:Class>
 	
@@ -113,8 +133,12 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix-semex;availability_impact">
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix-semex;criticality">
-		<rdfs:range rdf:resource="&xsd;string"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;defender_activities">
@@ -132,8 +156,12 @@
 		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ExternalImpactOpenVocab"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix-semex;goal">
+		<rdfs:label>goal</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasAction">
-		<rdfs:range rdf:resource="&stix-semex;Action"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasActivity">
@@ -155,6 +183,11 @@
 		</rdfs:range>
 	</owl:ObjectProperty>
 	
+	<owl:ObjectProperty rdf:about="&stix-semex;hasConfidentialityImpact">
+		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
+		<rdfs:range rdf:resource="&stix-semex;ConfidentialityImpact"/>
+	</owl:ObjectProperty>
+	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasDefenderActivity">
 		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasActivity"/>
 		<rdfs:range>
@@ -167,12 +200,7 @@
 	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasFunctionalImpact">
 		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
-		<rdfs:range>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix-semex;hasFunctionalImpact"/>
-				<owl:someValuesFrom rdf:resource="&stix-semex;FunctionalImpact"/>
-			</owl:Restriction>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&stix-semex;FunctionalImpact"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasImpact">
@@ -184,28 +212,44 @@
 		</rdfs:range>
 	</owl:ObjectProperty>
 	
+	<owl:ObjectProperty rdf:about="&stix-semex;hasIncidentScore">
+		<rdfs:range rdf:resource="&stix-semex;IncidentScore"/>
+	</owl:ObjectProperty>
+	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasInformationalImpact">
 		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
-		<rdfs:range>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix-semex;hasInformationalImpact"/>
-				<owl:someValuesFrom rdf:resource="&stix-semex;InformationalImpact"/>
-			</owl:Restriction>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&stix-semex;InformationalImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix-semex;hasIntegrityImpact">
+		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
+		<rdfs:range rdf:resource="&stix-semex;IntegrityImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix-semex;hasMonetaryImpact">
+		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
+		<rdfs:range rdf:resource="&stix-semex;MonetaryImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix-semex;hasPhysicalImpact">
+		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
+		<rdfs:range rdf:resource="&stix-semex;PhysicalImpact"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix-semex;hasRecoverabilityImpact">
 		<rdfs:subPropertyOf rdf:resource="&stix-semex;hasImpact"/>
-		<rdfs:range>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix-semex;hasRecoverabilityImpact"/>
-				<owl:someValuesFrom rdf:resource="&stix-semex;RecoverabilityImpact"/>
-			</owl:Restriction>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&stix-semex;RecoverabilityImpact"/>
 	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix-semex;impacted_entity_counts">
+	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;incident_types">
 		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#IncidentTypeOpenVocab"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix-semex;integrity_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;investigation_status">
@@ -216,11 +260,33 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix-semex;monetary_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix-semex;outcome">
+		<rdfs:label>The outcome of the attacker activity</rdfs:label>
+		<rdfs:label>attack activity outcome</rdfs:label>
+		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ActivityOutcomeVocab"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix-semex;physical_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix-semex;recoverability">
 		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#RecoverabilityVocab"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix-semex;scores">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix-semex;traceability">
+		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#TraceabilityVocab"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix-semex;traceability_impact">
 		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#TraceabilityVocab"/>
 	</owl:DatatypeProperty>
 
