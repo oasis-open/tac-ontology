@@ -105,5 +105,9 @@
 			</rdfs:Datatype>
 		</rdfs:range>
 	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;kill_chain_phases">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>
