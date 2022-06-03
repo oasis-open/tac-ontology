@@ -19,8 +19,6 @@
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/core">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/stix-core"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary-user-defs"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -284,16 +282,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;confidence">
 		<rdfs:label>confidence</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Identifies the confidence that the creator has in the correctness of their data. The confidence value MUST be a number in the range of 0-100.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:onDatatype rdf:resource="&xsd;nonNegativeInteger"/>
-				<owl:withRestrictions rdf:parseType="Collection">
-					<rdf:Description>
-						<xsd:maxInclusive rdf:datatype="&xsd;nonNegativeInteger">100</xsd:maxInclusive>
-					</rdf:Description>
-				</owl:withRestrictions>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;int"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;contains_refs">
@@ -311,16 +300,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;context">
 		<rdfs:label>context</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A short descriptor of the particular context shared by the content referenced by the Grouping.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#GroupingContextOpenVocab">
-					</rdf:Description>
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#GroupingContextVocab">
-					</rdf:Description>
-				</owl:unionOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;count">
@@ -386,41 +366,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;extension_types">
 		<rdfs:label xml:lang="en">extension types</rdfs:label>
 		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension.\n\The values for this property MUST come from the extension-type-enum enumeration.\n\nWhen this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>legacy</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>new-sco</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>new-sdo</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>new-sro</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>property-extension</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>toplevel-property-extension</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;extensions">
@@ -450,16 +396,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;hash_algorithm">
 		<rdfs:label>hash_algorithm</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents the cryptographic hash algorithm used.\n\nThe name of the cryptographic hash algorithm used SHOULD come from one of the values defined in the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#HashAlgorithmOpenVocab">
-					</rdf:Description>
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#HashAlgorithmVocab">
-					</rdf:Description>
-				</owl:unionOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;hash_value">
@@ -478,16 +415,7 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	<owl:DatatypeProperty rdf:about="&stix;id">
 		<rdfs:label>id</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Uniquely identifies this object.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:onDatatype rdf:resource="&xsd;string"/>
-				<owl:withRestrictions rdf:parseType="Collection">
-					<rdf:Description>
-						<xsd:pattern>^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</xsd:pattern>
-					</rdf:Description>
-				</owl:withRestrictions>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;key_identifier">
@@ -583,36 +511,7 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	<owl:DatatypeProperty rdf:about="&stix;opinion">
 		<rdfs:label>opinion</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies he opinion that the producer has about all of the STIX Object(s) listed in the object_refs property.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>agree</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>disagree</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>neutral</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>strongly-agree</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>strongly-disagree</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;postal_code">
@@ -630,16 +529,7 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	<owl:DatatypeProperty rdf:about="&stix;report_types">
 		<rdfs:label>report_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the primary type(s) of content found in this report.\n\nThe values for this property SHOULD come from the report-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ReportTypeOpenVocab">
-					</rdf:Description>
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ReportTypeVocab">
-					</rdf:Description>
-				</owl:unionOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;revoked">
@@ -681,21 +571,7 @@ Dictionary keys MUST come from one of the entries listed in the hash-algorithm-o
 	<owl:DatatypeProperty rdf:about="&stix;spec_version">
 		<rdfs:label>spec_version</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Identifies the version of the STIX specification used to represent this object.</rdfs:comment>
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>2.0</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>2.1</rdf:first>
-								<rdf:rest rdf:resource="&rdf;nil"/>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;start_time">

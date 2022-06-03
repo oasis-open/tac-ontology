@@ -17,7 +17,6 @@
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix-semex">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix-semex/sro-props"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/security-playbook"/>
 	</owl:Ontology>
 	
 	<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#Incident">
@@ -145,15 +144,15 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;detection_methods">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#DetectionMethodsOpenVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;determination">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#IncidentDeterminationVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;external_impacts">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ExternalImpactOpenVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;goal">
@@ -245,7 +244,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;incident_types">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#IncidentTypeOpenVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;integrity_impacts">
@@ -253,7 +252,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;investigation_status">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#IncidentInvestigationVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;mitigation">
@@ -267,7 +266,7 @@
 	<owl:DatatypeProperty rdf:about="&stix-semex;outcome">
 		<rdfs:label>The outcome of the attacker activity</rdfs:label>
 		<rdfs:label>attack activity outcome</rdfs:label>
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#ActivityOutcomeVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;physical_impacts">
@@ -275,7 +274,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;recoverability">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#RecoverabilityVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;scores">
@@ -283,11 +282,11 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;traceability">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#TraceabilityVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix-semex;traceability_impact">
-		<rdfs:range rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary#TraceabilityVocab"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

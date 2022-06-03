@@ -50,9 +50,6 @@
 		<rdfs:comment xml:lang="en-us">Abstract based class from which all STIX Domain Objects (SDOs) derive.\n\nSTIX Domain Objects characterize higher-level intelligence objects that represent behaviors and constructs that threat analysts would typically create or work with while understanding the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stix;StixObject">
-	</owl:Class>
-	
 	<owl:Class rdf:about="&stix;StixRelationshipObject">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
 		<rdfs:label>STIX Relationship Object</rdfs:label>
