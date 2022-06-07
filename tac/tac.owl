@@ -298,19 +298,8 @@
 	<owl:ObjectProperty rdf:about="&tac;topTacObjectProperty">
 	</owl:ObjectProperty>
 	
-	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#CivilActivist">
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#ThreatActor">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&adversary;threat_actor_types"/>
-						<owl:hasValue>activist</owl:hasValue>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
+	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#GovernmentSpy">
+		<rdfs:comment>tal:ThreatActor and (adversary:threat_actor_types value &quot;nation-state&quot; AND “spy”)</rdfs:comment>
 	</rdf:Description>
 	
 	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#ThreatActor">
