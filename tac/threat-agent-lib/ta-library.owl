@@ -34,77 +34,77 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;Accidental">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Accidental">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;AdeptSkills">
-		<rdfs:subClassOf rdf:resource="&tal;Skills"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;AdeptSkills">
+		<rdf:type rdf:resource="&tal;Skills"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Anarchist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;AnyObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;AnyObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;AnyVisibility">
-		<rdfs:subClassOf rdf:resource="&tal;Visibility"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;AnyVisibility">
+		<rdf:type rdf:resource="&tal;Visibility"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;BusinessAdvantageOutcome">
-		<rdfs:subClassOf rdf:resource="&tal;Outcome"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;BusinessAdvantageOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;CivilActivist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;ClandestineVisibility">
-		<rdfs:subClassOf rdf:resource="&tal;Visibility"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;ClandestineVisibility">
+		<rdf:type rdf:resource="&tal;Visibility"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;ClubResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;ClubResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;CodeOfConductLimits">
-		<rdfs:subClassOf rdf:resource="&tal;Limits"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;CodeOfConductLimits">
+		<rdf:type rdf:resource="&tal;Limits"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;Coercion">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Coercion">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Competitor">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;ContestResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;ContestResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;CopyObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;CopyObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;CorruptGovernmentOfficial">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;CovertVisibility">
-		<rdfs:subClassOf rdf:resource="&tal;Visibility"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;CovertVisibility">
+		<rdf:type rdf:resource="&tal;Visibility"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;DamageObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;DamageObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;DamageOutcome">
-		<rdfs:subClassOf rdf:resource="&tal;Outcome"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;DamageOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;DataMiner">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -113,41 +113,41 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	<owl:Class rdf:about="&tal;DefiningAttribute">
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;DenyObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;DenyObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;DestroyObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;DestroyObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;DisgruntledEmployee">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;Disgruntlement">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Disgruntlement">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;Dominance">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Dominance">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;EmbarrassmentOutcome">
-		<rdfs:subClassOf rdf:resource="&tal;Outcome"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;EmbarrassmentOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;ExternalAccess">
-		<rdfs:subClassOf rdf:resource="&tal;Access"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;ExtternalAccess">
+		<rdf:type rdf:resource="&tal;Access"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;GovernmentCyberWarrior">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;GovernmentResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;GovernmentResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;GovernmentSpy">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -173,21 +173,21 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdfs:subClassOf rdf:resource="&tal;ThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;Ideology">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Ideology">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;IndividualResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;IndividualResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;InformationPartner">
 		<rdfs:subClassOf rdf:resource="&tal;NonHostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;InternalAccess">
-		<rdfs:subClassOf rdf:resource="&tal;Access"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;InternalAccess">
+		<rdf:type rdf:resource="&tal;Access"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;InternalSpy">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -221,25 +221,25 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;LegalLimits">
-		<rdfs:subClassOf rdf:resource="&tal;Limits"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;LegalLimits">
+		<rdf:type rdf:resource="&tal;Limits"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Limits">
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;MajorExtraLegalLimits">
-		<rdfs:subClassOf rdf:resource="&tal;Limits"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;MajorExtraLegalLimits">
+		<rdf:type rdf:resource="&tal;Limits"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;MinimalSkills">
-		<rdfs:subClassOf rdf:resource="&tal;Skills"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;MinimalSkills">
+		<rdf:type rdf:resource="&tal;Skills"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;MinorExtraLegalLimits">
-		<rdfs:subClassOf rdf:resource="&tal;Limits"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;MinorExtraLegalLimits">
+		<rdf:type rdf:resource="&tal;Limits"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Mobster">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -249,49 +249,49 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;NoSkills">
-		<rdfs:subClassOf rdf:resource="&tal;Skills"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;NoSkills">
+		<rdf:type rdf:resource="&tal;Skills"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;NonHostileThreatActor">
 		<rdfs:subClassOf rdf:resource="&tal;ThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;Notoriety">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Notoriety">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Objective">
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;OperationalSkills">
-		<rdfs:subClassOf rdf:resource="&tal;Skills"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;OperationalSkills">
+		<rdf:type rdf:resource="&tal;Skills"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;OrganizationResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;OrganizationResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;OrganizationalGain">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;OrganizationalGain">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Outcome">
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;OvertVisibility">
-		<rdfs:subClassOf rdf:resource="&tal;Visibility"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;OvertVisibility">
+		<rdf:type rdf:resource="&tal;Visibility"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;PersonalFinancialGain">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;PersonalFinancialGain">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;PersonalSatisfaction">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;PersonalStatisfaction">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;RadicalActivist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -313,25 +313,25 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;TakeObjective">
-		<rdfs:subClassOf rdf:resource="&tal;Objective"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;TakeObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;TeamResources">
-		<rdfs:subClassOf rdf:resource="&tal;Resources"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;TeamResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
+	</owl:NamedIndividual>
 	
-	<owl:Class rdf:about="&tal;TechAdvantageOutcome">
-		<rdfs:subClassOf rdf:resource="&tal;Outcome"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;TechnologyAdvantageOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Terrorist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;TheftOutcome">
-		<rdfs:subClassOf rdf:resource="&tal;Outcome"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;TheftOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Thief">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
@@ -418,9 +418,9 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		</rdfs:subClassOf>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&tal;Unpredictable">
-		<rdfs:subClassOf rdf:resource="&tal;Motivation"/>
-	</owl:Class>
+	<owl:NamedIndividual rdf:about="&tal;Unpredictable">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;UntrainedEmployee">
 		<rdfs:subClassOf rdf:resource="&tal;NonHostileThreatActor"/>
@@ -440,8 +440,6 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:ObjectProperty rdf:about="&tal;hasAccessAttribute">
 		<rdfs:subPropertyOf rdf:resource="&tal;hasDefiningAttribute"/>
-		<rdfs:range rdf:resource="&tal;ExternalAccess"/>
-		<rdfs:range rdf:resource="&tal;InternalAccess"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tal;hasBindingMotivation">
@@ -464,10 +462,6 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:ObjectProperty rdf:about="&tal;hasLimitsAttribute">
 		<rdfs:subPropertyOf rdf:resource="&tal;hasDefiningAttribute"/>
-		<rdfs:range rdf:resource="&tal;CodeOfConductLimits"/>
-		<rdfs:range rdf:resource="&tal;LegalLimits"/>
-		<rdfs:range rdf:resource="&tal;MajorExtraLegalLimits"/>
-		<rdfs:range rdf:resource="&tal;MinorExtraLegalLimits"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&tal;hasMotivationAttribute">
