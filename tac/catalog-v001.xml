@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
     <group id="Folder Repository, directory=, recursive=false, Auto-Update=false, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://attack.mitre.org/ns/attack" uri="mitre-custom-properties/x_mitre.owl"/>	
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://www.intel.com/ns/ta-library" uri="threat-agent-lib/ta-library.owl"/>	
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/ta-classification-axioms" uri="ta-classification-axioms.owl"/>	
-        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>	
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://attack.mitre.org/ns/attack" uri="mitre-custom-properties/x_mitre.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://www.intel.com/ns/ta-library" uri="threat-agent-lib/ta-library.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/ta-classification-axioms" uri="ta-classification-axioms.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix-semex" uri="../stix-semex/stix-semex.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/cti/ns/stix-semex/sro-props" uri="../stix-semex/sro-properties/sro-props.owl"/>
         <uri id="Automatically generated entry, Timestamp=1637452031434" name="http://docs.oasis-open.org/tac/ns/security-playbook" uri="../stix-semex/security-playbook/security-playbook.owl"/>

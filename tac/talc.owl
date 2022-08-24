@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://hohimer.net/talc"
+	xmlns="http://hohimer.net/talc#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://hohimer.net/talc">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
+	</owl:Ontology>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/talc#_Ryan_the_Terrible">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#AdeptSkills"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#BusinessAdvantageOutcome"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#ClandestineVisibility"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#CopyObjective"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#ExternalAccess"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#GovernmentResources"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#MajorExtraLegalLimits"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#TechnologyAdvantageOutcome"/>
+	</owl:NamedIndividual>
+	
+	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#GovernmentSpy">
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#BusinessAdvantageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#ClandestineVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#CopyObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#GovernmentResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#MajorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#TechnologyAdvantageOutcome"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</rdf:Description>
+
+</rdf:RDF>

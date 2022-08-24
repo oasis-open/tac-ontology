@@ -250,6 +250,10 @@
 		<rdfs:comment>There has been some ambiguity with respect to the differentiation of stix:IntrusionSet and stix:ThreatActor. They are different, and the tac:Adversary class is intended to clarify the differences.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:ObjectProperty rdf:about="&tac;categorizedBy">
+		<rdfs:subPropertyOf rdf:resource="&tac;topTacObjectProperty"/>
+	</owl:ObjectProperty>
+	
 	<owl:ObjectProperty rdf:about="&tac;hasAdversary">
 		<rdfs:subPropertyOf rdf:resource="&tac;topTacObjectProperty"/>
 		<rdfs:range rdf:resource="&tac;Adversary"/>

@@ -137,7 +137,7 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdf:type rdf:resource="&tal;Outcome"/>
 	</owl:NamedIndividual>
 	
-	<owl:NamedIndividual rdf:about="&tal;ExtternalAccess">
+	<owl:NamedIndividual rdf:about="&tal;ExternalAccess">
 		<rdf:type rdf:resource="&tal;Access"/>
 	</owl:NamedIndividual>
 	
