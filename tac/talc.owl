@@ -31,48 +31,5 @@
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#MajorExtraLegalLimits"/>
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#TechnologyAdvantageOutcome"/>
 	</owl:NamedIndividual>
-	
-	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#GovernmentSpy">
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&stix;ThreatActor">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#AdeptSkills"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#BusinessAdvantageOutcome"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#ClandestineVisibility"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#CopyObjective"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#ExternalAccess"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#GovernmentResources"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#MajorExtraLegalLimits"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="http://www.intel.com/ns/ta-library#TechnologyAdvantageOutcome"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-	</rdf:Description>
 
 </rdf:RDF>
