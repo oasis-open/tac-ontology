@@ -20,7 +20,7 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
 	</owl:Ontology>
 	
-	<owl:NamedIndividual rdf:about="http://hohimer.net/talc#_Ryan_the_Terrible">
+	<owl:NamedIndividual rdf:about="http://hohimer.net/talc#_Rogue-Ryan">
 		<rdf:type rdf:resource="&stix;ThreatActor"/>
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#AdeptSkills"/>
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#BusinessAdvantageOutcome"/>
@@ -28,8 +28,11 @@
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#CopyObjective"/>
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#ExternalAccess"/>
 		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#GovernmentResources"/>
-		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#MajorExtraLegalLimits"/>
-		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#TechnologyAdvantageOutcome"/>
+		<tac:categorizedBy rdf:resource="http://www.intel.com/ns/ta-library#MinorExtraLegalLimits"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/talc#_Terrifying-Tim">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
 	</owl:NamedIndividual>
 
 </rdf:RDF>

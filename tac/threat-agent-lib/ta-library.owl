@@ -45,6 +45,10 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdf:type rdf:resource="&tal;Skills"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&tal;AllDontCareObjective">
+		<rdf:type rdf:resource="&tal;Objective"/>
+	</owl:NamedIndividual>
+	
 	<owl:Class rdf:about="&tal;Anarchist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
 		<owl:equivalentClass>
@@ -93,6 +97,10 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 		<rdf:type rdf:resource="&tal;Visibility"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&tal;AquisitionOutcome">
+		<rdf:type rdf:resource="&tal;Outcome"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&tal;BusinessAdvantageOutcome">
 		<rdf:type rdf:resource="&tal;Outcome"/>
 	</owl:NamedIndividual>
@@ -130,7 +138,7 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;OrganizationResources"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -160,13 +168,21 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
@@ -183,10 +199,6 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -208,13 +220,21 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
@@ -230,11 +250,11 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -260,13 +280,21 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
@@ -282,11 +310,11 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TeamResources"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+						<owl:hasValue rdf:resource="&tal;TeamResources"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -331,6 +359,34 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;CopyObjective"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;DenyObjective"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;DestroyObjective"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
@@ -338,26 +394,6 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AnyVisibility"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;CopyObjective"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;DenyObjective"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;DestroyObjective"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
@@ -387,13 +423,21 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
@@ -414,10 +458,6 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;MajorExtraLegalLimits"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -454,6 +494,46 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;InformationPartner">
 		<rdfs:subClassOf rdf:resource="&tal;NonHostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;IndividualResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;InternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;LegalLimits"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:NamedIndividual rdf:about="&tal;InternalAccess">
@@ -493,6 +573,10 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AquisitionOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;ClandestineVisibility"/>
 					</owl:Restriction>
 					<owl:Restriction>
@@ -509,15 +593,11 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;OrganizationResources"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;TheftOutcome"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
@@ -526,10 +606,98 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;IrrationalIndividual">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;IndividualResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MajorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MultipleDontCareVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;NoSkills"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;LegalAdversary">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;CopyObjective"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TakeObjective"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;LegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:NamedIndividual rdf:about="&tal;LegalLimits">
@@ -554,11 +722,51 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;Mobster">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AquisitionOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MajorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;TakeObjective"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Motivation">
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
+	
+	<owl:NamedIndividual rdf:about="&tal;MultipleDontCareVisibility">
+		<rdf:type rdf:resource="&tal;Visibility"/>
+	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&tal;NoSkills">
 		<rdf:type rdf:resource="&tal;Skills"/>
@@ -581,11 +789,14 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&tal;OrganizationResources">
-		<rdf:type rdf:resource="&tal;Resources"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&tal;OrganizationalGain">
 		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&tal;OrganizationalResources">
+		<rdf:type rdf:resource="&tal;Resources"/>
 	</owl:NamedIndividual>
 	
 	<owl:Class rdf:about="&tal;Outcome">
@@ -606,10 +817,90 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;RadicalActivist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;RecklessEmployee">
 		<rdfs:subClassOf rdf:resource="&tal;NonHostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;IndividualResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;InternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;LegalLimits"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Resources">
@@ -618,6 +909,46 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;Sensationalist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ClubResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinimalSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Skills">
@@ -638,6 +969,54 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;Terrorist">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;DamageObjective"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;DestroyObjective"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MajorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OrganizationalResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;TakeObjective"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:NamedIndividual rdf:about="&tal;TheftOutcome">
@@ -646,6 +1025,42 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;Thief">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AquisitionOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ClandestineVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;IndividualResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;InternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OperationalSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;TakeObjective"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;ThreatActor">
@@ -735,14 +1150,134 @@ https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/unders
 	
 	<owl:Class rdf:about="&tal;UntrainedEmployee">
 		<rdfs:subClassOf rdf:resource="&tal;NonHostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CodeOfConductLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;EmbarrassmentOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;IndividualResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;InternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinimalSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OvertVisibility"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Vandal">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ContestResources"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;DamageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OperationalSkills"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Vendor">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+							</owl:Restriction>
+							<owl:Restriction>
+								<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
+							</owl:Restriction>
+						</owl:unionOf>
+					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ClandestineVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CopyObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;InternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;LegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;OperationalSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://docs.oasis-open.org/tac/ns/tac#categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;TeamResources"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;Visibility">
