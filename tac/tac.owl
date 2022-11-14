@@ -301,10 +301,6 @@
 	<owl:ObjectProperty rdf:about="&tac;topTacObjectProperty">
 	</owl:ObjectProperty>
 	
-	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#GovernmentSpy">
-		<rdfs:comment>tal:ThreatActor and (adversary:threat_actor_types value &quot;nation-state&quot; AND “spy”)</rdfs:comment>
-	</rdf:Description>
-	
 	<rdf:Description rdf:about="http://www.intel.com/ns/ta-library#ThreatActor">
 		<rdfs:subClassOf rdf:resource="&stix;ThreatActor"/>
 	</rdf:Description>
