@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY tal "http://www.intel.com/ns/ta-library#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://hohimer.net/tal-kb-example"
+	xmlns="http://hohimer.net/tal-kb-example#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:tal="http://www.intel.com/ns/ta-library#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://hohimer.net/tal-kb-example">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
+		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
+	</owl:Ontology>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#_Rogue-Ryan">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
+		<tac:categorizedBy rdf:resource="&tal;AdeptSkills"/>
+		<tac:categorizedBy rdf:resource="&tal;BusinessAdvantageOutcome"/>
+		<tac:categorizedBy rdf:resource="&tal;ClandestineVisibility"/>
+		<tac:categorizedBy rdf:resource="&tal;CopyObjective"/>
+		<tac:categorizedBy rdf:resource="&tal;ExternalAccess"/>
+		<tac:categorizedBy rdf:resource="&tal;GovernmentResources"/>
+		<tac:categorizedBy rdf:resource="&tal;MinorExtraLegalLimits"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#_Terrifying-Tim">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
+	</owl:NamedIndividual>
+	
+	<rdf:Description rdf:about="&tal;ThreatActor">
+		<rdfs:subClassOf rdf:resource="&stix;ThreatActor"/>
+	</rdf:Description>
+
+</rdf:RDF>

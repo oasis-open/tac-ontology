@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/candidate-concepts" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/candidate-concepts.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/tac-properties/tac-properties.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/adversary" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/tac-objects/adversary.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/tac-objects/tac-objects.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/tac" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/tac.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/candidate-concepts.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/tac/tac.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/adversary" uri="tac-objects/adversary.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
@@ -50,10 +57,7 @@
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/data-marking" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/stix/meta-objects/data-marking/data-marking.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix" uri="file:/Users/mateusdz/Desktop/TAC/cyentific/tac-ontology/stix/stix.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1672248555750" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="candidate-concepts.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672248555750" name="http://docs.oasis-open.org/tac/ns/adversary" uri="tac-objects/adversary.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672248555750" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672248555750" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672248555750" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1672251883702" name="http://hohimer.net/tal-kb-example" uri="tal-kb-example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1672251883702" name="http://www.intel.com/ns/ta-library" uri="ta-library.owl"/>
     </group>
 </catalog>

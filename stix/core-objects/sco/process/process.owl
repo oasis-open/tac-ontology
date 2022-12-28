@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY process "http://docs.oasis-open.org/cti/ns/stix/process#">
+	<!ENTITY processExt "http://docs.oasis-open.org/cti/ns/stix/ext/process#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/process"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/process#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:process="http://docs.oasis-open.org/cti/ns/stix/process#"
+	xmlns:processExt="http://docs.oasis-open.org/cti/ns/stix/ext/process#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/process">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/file"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/network-traffic"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Process">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:label xml:lang="en-us">Process</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Process object represents common properties of an instance of a computer program as executed on an operating system. A Process object MUST contain at least one property (other than type) from this object (or one of its extensions).</rdfs:comment>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&stix;child_refs">
+		<rdfs:label xml:lang="en-us">child_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies references to other Process objects that represent the other processes that were spawned by (i.e. children of) this process.\n\nThe objects referenced in this list MUST be of type process.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Process"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;child_refs_id">
+		<rdfs:label xml:lang="en-us">child_refs_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the list of identifiers of Process objects that represent the other processes that were spawned by (i.e. children of) this process.\n\nThe identifiers of the objects specified MUST be of type process.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;command_line">
+		<rdfs:label xml:lang="en-us">command_line</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the full command line used in executing the process, including the process name (which may be specified individually via the image_ref.name property) and any arguments.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;created_time">
+		<rdfs:label xml:lang="en-us">created_time</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the date and time at which the process was created.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;creator_user_ref">
+		<rdfs:label xml:lang="en-us">creator_user_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a reference to a UserAccount object that represents the user that created the process.\n\nThe reference to the object specified MUST be of type user-account.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;UserAccount"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;creator_user_ref_id">
+		<rdfs:label xml:lang="en-us">creator_user_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the idetifier of a UserAccount object that represents the user that created the process.\n\nThe idetntifier of the object specified MUST be of type user-account.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;cwd">
+		<rdfs:label xml:lang="en-us">cwd</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the current working directory of the process.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;environment_variables">
+		<rdfs:label xml:lang="en-us">environment_variables</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the list of environment variables associated with the process as a dictionary. Each key in the dictionary MUST be a case preserved version of the name of the environment variable, and each corresponding value MUST be the environment variable value as a string.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;image_ref">
+		<rdfs:label xml:lang="en-us">image_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a reference to a File object tha represents the executable binary that was executed as the process image.\n\nThe object referenced in this property MUST be of type file.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;File"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;image_ref_id">
+		<rdfs:label xml:lang="en-us">image_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the identifier of a File object tha represents the executable binary that was executed as the process image.\n\nThe identifier of the object specified MUST be of type file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;is_hidden">
+		<rdfs:label xml:lang="en-us">is_hidden</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies whether the process is hidden.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;opened_connection_refs">
+		<rdfs:label xml:lang="en-us">opened_connection_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a list of references to Network Traffic objects that represent the network connections opened by the process.\n\nThe objects referenced in this list MUST be of type network-traffic.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;NetworkTraffic"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;opened_connection_refs_id">
+		<rdfs:label xml:lang="en-us">opened_connection_refs_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a list of identifiers of Network Traffic objects that represent the network connections opened by the process.\n\nThe identifiers of the objects specified MUST be of type network-traffic.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;parent_ref">
+		<rdfs:label xml:lang="en-us">parent_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a reference to the Process object that references the other process that spawned (i.e. is the parent of) this one.\n\nThe object referenced in this property MUST be of type process.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Process"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;parent_ref_id">
+		<rdfs:label xml:lang="en-us">parent_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the identifier of the Process object that references the other process that spawned (i.e. is the parent of) this one.\n\nThe identifier of the object specified MUST be of type process.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;pid">
+		<rdfs:label xml:lang="en-us">pid</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the Process ID, or PID, of the process.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

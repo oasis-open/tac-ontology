@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY marking "http://docs.oasis-open.org/cti/ns/data-marking#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/core"
+	xmlns:marking="http://docs.oasis-open.org/cti/ns/data-marking#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/core">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<rdf:Description rdf:about="&marking;granular_markings">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&marking;object_marking_refs">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&marking;object_marking_refs_id">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<owl:Class rdf:about="&stix;Extension">
+		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
+		<rdfs:label>Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Characterizes the base of all extensions to Cyber Observable objects.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ExtensionDefinition">
+		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;created_by_ref_id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;extension_types"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;schema"/>
+				<owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en">Extension Definition</rdfs:label>
+	</owl:Class>
+	
+	<rdf:Description rdf:about="&stix;created">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;created_by_ref">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;created_by_ref_id">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;description">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<owl:DatatypeProperty rdf:about="&stix;extension_properties">
+		<rdfs:label xml:lang="en">extension_properties</rdfs:label>
+		<rdfs:comment xml:lang="en">This property contains the list of new property names that are added to an object by an extension.\n\nThis property MUST only be used when the extension_types property includes a value of toplevel-property-extension. In other words, when new properties are being added at the top-level of an existing object</rdfs:comment>
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;extension_type">
+		<rdfs:range>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>legacy</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>new-sco</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>new-sdo</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>new-sro</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>property-extension</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>toplevel-property-extension</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</rdfs:range>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;extension_types">
+		<rdfs:label xml:lang="en">extension types</rdfs:label>
+		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension.\n\The values for this property MUST come from the extension-type-enum enumeration.\n\nWhen this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdf:Description rdf:about="&stix;external_references">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;labels">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;modified">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;name">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="&stix;revoked">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<owl:DatatypeProperty rdf:about="&stix;schema">
+		<rdfs:label xml:lang="en">schema</rdfs:label>
+		<rdfs:comment xml:lang="en">Specifies a URL that points to a JSON schema or a location that contains information about the schema.</rdfs:comment>
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<rdf:Description rdf:about="&stix;spec_version">
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+	</rdf:Description>
+	
+	<owl:DatatypeProperty rdf:about="&stix;version">
+		<rdfs:label>version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the version of the entity.</rdfs:comment>
+		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

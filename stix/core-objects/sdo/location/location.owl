@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY location "http://docs.oasis-open.org/cti/ns/stix/location#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/location"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/location#"
+	xmlns:location="http://docs.oasis-open.org/cti/ns/stix/location#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/location">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;CivicLocation">
+		<rdfs:subClassOf rdf:resource="&stix;Location"/>
+		<rdfs:label xml:lang="en-us">Civic Location</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies an actual civic location (e.g., street address, city, administrative area, postal code).</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Country">
+		<rdfs:subClassOf rdf:resource="&stix;Location"/>
+		<rdfs:label xml:lang="en-us">Country</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies an actual country.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;GlobalPosition">
+		<rdfs:subClassOf rdf:resource="&stix;Location"/>
+		<rdfs:label xml:lang="en-us">Global Position</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies a physical position on the globe.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Location">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;administrative_area"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;city"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;country"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;latitude"/>
+				<owl:someValuesFrom rdf:resource="&xsd;float"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;longitude"/>
+				<owl:someValuesFrom rdf:resource="&xsd;float"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;postal_code"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;precision"/>
+				<owl:someValuesFrom rdf:resource="&xsd;float"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;region"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;street_address"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">STIX Location</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Region">
+		<rdfs:subClassOf rdf:resource="&stix;Location"/>
+		<rdfs:label xml:lang="en-us">Region</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies an actual region in the world.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;administrative_area">
+		<rdfs:label>administrative_area</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The state, province, or other sub-national administrative area that this Location describes.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;building_details">
+		<rdfs:label xml:lang="en-us">building details</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies additional details about the location within a building including things like floor, room, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;city">
+		<rdfs:label>city</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of the city.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;country">
+		<rdfs:label>country</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The valid ISO 3166-1 ALPHA-2 Code [ISO3166-1] that is asigned to the country.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;latitude">
+		<rdfs:label xml:lang="en-us">latitude</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The WGS84 latitude of a SpatialThing (decimal degrees).\n\nPositive numbers describe latitudes north of the equator, and negative numbers describe latitudes south of the equator. The value of this property MUST be between -90.0 and 90.0, inclusive.\n\nIf the longitude property is present, this property MUST be present.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;longitude">
+		<rdfs:label xml:lang="en-us">longitude</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The WGS84 longitude of a SpatialThing (decimal degrees).\n\nPositive numbers describe longitudes east of the prime meridian and negative numbers describe longitudes west of the prime meridian. The value of this property MUST be between -180.0 and 180.0, inclusive.\n\nIf the latitude property is present, this property MUST be present.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;network_details">
+		<rdfs:label xml:lang="en-us">network details</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies additional details about this network location including things like wiring closet, rack number, rack location, and VLANs.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;postal_code">
+		<rdfs:label>postal_code</rdfs:label>
+		<rdfs:comment xml:lang="en-us"></rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;precision">
+		<rdfs:label xml:lang="en-us">precision</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines the precision of the coordinates specified by the latitude and longitude properties. This is measured in meters. The actual Location may be anywhere up to precision meters from the defined point.\n\nIf this property is not present, then the precision is unspecified.\n\nIf this property is present, the latitude and longitude properties MUST be present.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;street_address">
+		<rdfs:label>street_address</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The street address that this Location describes. This property includes all aspects or parts of the street address. For example, some addresses may have multiple lines including a mailstop or apartment number.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

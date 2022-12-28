@@ -12,7 +12,7 @@ As documented in [Public Participation Invited](https://github.com/oasis-open/ta
 
 ## Statement of Purpose
 
-The OASIS Threat Actor Context Technical Committee (TAC-TC) is chartered to create an ontology for expressing the rich context around Threat Actors.
+The OASIS Threat Actor Context Technical Committee (TAC-TC) is chartered to create an ontology for expressing the rich context around Threat Actors.  
 
 *Additions to Statement of Purpose*
 

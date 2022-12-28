@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY relationship "http://docs.oasis-open.org/cti/ns/stix/relationship#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/relationship"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:relationship="http://docs.oasis-open.org/cti/ns/stix/relationship#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/relationship">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/sro-props"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Relationship">
+		<rdfs:subClassOf rdf:resource="&stix;StixRelationshipObject"/>
+		<rdfs:label xml:lang="en-US">Relationship</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The Relationship object is used to link together two SDOs or SCOs in order to describe how they are related to each other. If SDOs and SCOs are considered &quot;nodes&quot; or &quot;vertices&quot; in the graph, the Relationship Objects (SROs) represent &quot;edges&quot;.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;relationship_type">
+		<rdfs:label xml:lang="en-US">relationship_type</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The name used to identify the type of Relationship. This value SHOULD be an exact value listed in the relationships for the source and target SDO, but MAY be any string. The value of this property MUST be in ASCII and is limited to characters a–z (lowercase ASCII), 0–9, and hyphen (-).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;source_ref">
+		<rdfs:label xml:lang="en-US">source_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a reference to the source (from) object. The value MUST be a reference to an SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;source_ref_id">
+		<rdfs:label xml:lang="en-US">source_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the identifier of the source (from) object. The value MUST be the identifier of a SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;start_time">
+		<rdfs:label>start_time</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Represents the earliest date and time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the start_time property is defined, then this represents an estimate by the producer of the intelligence of the earliest time at which relationship will be asserted to be true.\n\nIf it is not specified, then the earliest time at which the relationship between the objects exists is not defined.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;stop_time">
+		<rdfs:label>stop_time</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the latest date and time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the stop_time property is defined, then this represents an estimate by the producer of the intelligence of the latest time at which relationship will be asserted to be true.\n\nIf start_time and stop_time are both defined, then stop_time MUST be later than the start_time value.\n\nIf stop_time is not specified, then the latest time at which the relationship between the objects exists is either not known, not disclosed, or has no defined stop time.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;target_ref">
+		<rdfs:label xml:lang="en-US">target_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a reference to the target (to) object. The value MUST be reference to an SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;target_ref_id">
+		<rdfs:label xml:lang="en-US">target_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the identifier of the target (to) object. The value MUST be the identifier of a SDO or SCO (i.e., it cannot point to an SRO, Bundle, Language Content, or Marking Definition).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

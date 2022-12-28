@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY adversary "http://docs.oasis-open.org/cti/ns/stix/adversary#">
+	<!ENTITY attack "http://attack.mitre.org/ns/attack#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/adversary#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/tac/ns/adversary"
+	xmlns="http://docs.oasis-open.org/tac/ns/adversary#"
+	xmlns:adversary="http://docs.oasis-open.org/cti/ns/stix/adversary#"
+	xmlns:attack="http://attack.mitre.org/ns/attack#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/adversary#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/tac/ns/adversary">
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&tac;Adversary">
+		<rdfs:comment>There has been some ambiguity with respect to the differentiation of stix:IntrusionSet and stix:ThreatActor. They are different, and the tac:Adversary class is intended to clarify the differences.</rdfs:comment>
+	</owl:Class>
+
+</rdf:RDF>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY archiveExt "http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#">
+	<!ENTITY file "http://docs.oasis-open.org/cti/ns/stix/file#">
+	<!ENTITY ntfsExt "http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY pdfExt "http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#">
+	<!ENTITY rasterImgExt "http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY winPEExt "http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/file"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/file#"
+	xmlns:archiveExt="http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#"
+	xmlns:file="http://docs.oasis-open.org/cti/ns/stix/file#"
+	xmlns:ntfsExt="http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:pdfExt="http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#"
+	xmlns:rasterImgExt="http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:winPEExt="http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/file">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/directory"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;File">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:label xml:lang="en-us">File</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The File object represents the properties of a file. A File object MUST contain at least one of hashes or name.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;checksum_hex">
+		<rdfs:label xml:lang="en-us">checksum_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the checksum of the file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;comment">
+		<rdfs:label>comment</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a comment included as part of the associated entity.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;content_ref">
+		<rdfs:label xml:lang="en-us">content_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the content of the file, represented as an Artifact object.\n\nThe object referenced in this property MUST be of type artifact.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Artifact"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;content_ref_id">
+		<rdfs:label xml:lang="en-us">content_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the identifier of an Artifact object that contains the contents of the file.\n\nThe identifier of the object specified in this property MUST be of type artifact.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;entropy">
+		<rdfs:label xml:lang="en-us">entropy</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the calculated entropy for the section, as calculated using the Shannon algorithm</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;float"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;machine_hex">
+		<rdfs:label>machine_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the type of target machine.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;magic_number_hex">
+		<rdfs:label xml:lang="en-us">magic_number_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the hexadecimal constant associated with a specific file format that corresponds to the file, if applicable.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;mime_type">
+		<rdfs:label>mime_type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the MIME type name specified for the object.\n\nWhenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types].\n\nMaintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name_enc">
+		<rdfs:label xml:lang="en-us">name_enc</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the observed encoding for the name of the file. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry. If the value from the Preferred MIME Name column for a character set is defined, this value MUST be used; if it is not defined, then the value from the Name column in the registry MUST be used instead.\n\nThis property allows for the capture of the original text encoding for the file name, which may be forensically relevant; for example, a file on an NTFS volume whose name was created using the windows-1251 encoding, commonly used for languages based on Cyrillic script.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;parent_directory_ref">
+		<rdfs:label xml:lang="en-us">parent_directory_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a reference to a SCO Directory object that represents the  parent directory of the file.\n\nThe object referenced in this property MUST be of type directory.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Directory"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;parent_directory_ref_id">
+		<rdfs:label xml:lang="en-us">parent_directory_ref_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the identifier of a SCO Directory object that represents the  parent directory of the file.\n\nThe identifier of the object referenced in this property MUST be of type directory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;sid">
+		<rdfs:label>sid</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the Windows Security ID (SID) value</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size">
+		<rdfs:label xml:lang="en-us">size</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size, in bytes. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>
