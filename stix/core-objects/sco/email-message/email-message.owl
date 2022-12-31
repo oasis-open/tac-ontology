@@ -33,6 +33,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;EmailMimePart">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">MimePart</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies one component of a multi-part body.\n\nThere is no property to capture the value of the “Content-Transfer-Encoding” header field, since the body MUST be decoded before being represented in the body property.</rdfs:comment>
 	</owl:Class>

@@ -23,9 +23,15 @@
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/tac/ns/tac">
 		<rdf:comment>Concepts that have been developed and approved at a committee level by the OASIS Threat Actor Context Technical Committee are called TAC TC concepts. TAC TC concepts are incorporated as import statements into the main tac.owl file and thus are part of the core ontology.</rdf:comment>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/candidate-concepts"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac-objects"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac-properties"/>
 	</owl:Ontology>
+	
+	<rdf:Description rdf:about="&stix;ThreatActor">
+		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
+	</rdf:Description>
+	
+	<owl:AnnotationProperty rdf:about="&rdf;comment">
+	</owl:AnnotationProperty>
 
 </rdf:RDF>

@@ -20,25 +20,25 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;ExternalReference">
-		<rdfs:subClassOf rdf:resource="&stix;StixDatatypeWrapperObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label>external_reference</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Used to describe pointers to information represented outside of STIX. For example, a Malware object could use an external reference to indicate an ID for that malware in an external database or a report could use references to represent source material.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Hash">
-		<rdfs:subClassOf rdf:resource="&stix;StixDatatypeWrapperObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label>Hash</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a cryptographic hashes, as a special set of key/value pairs.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;KeyValuePair">
-		<rdfs:subClassOf rdf:resource="&stix;StixDatatypeWrapperObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label>KeyValue</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A key-value pair (KVP) is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. The key MUST be unique in each dictionary, MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). Dictionary keys MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;KillChainPhase">
-		<rdfs:subClassOf rdf:resource="&stix;StixDatatypeWrapperObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label>KillChainPhase</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a phase in a kill chain, which describes the various phases an attacker may undertake in order to achieve their objectives.</rdfs:comment>
 	</owl:Class>

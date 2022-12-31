@@ -4,7 +4,8 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac-concepts#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY tac-concepts "http://docs.oasis-open.org/tac/ns/tac-concepts#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/candidate-concepts"
@@ -13,12 +14,12 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac-concepts#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:tac-concepts="http://docs.oasis-open.org/tac/ns/tac-concepts#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/candidate-concepts">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
 	</owl:Ontology>
 	
 	<rdf:Description rdf:about="&stix;Incident">

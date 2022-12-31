@@ -83,7 +83,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;external_referece"/>
-				<owl:someValuesFrom rdf:resource="&stix;ExternalReferece"/>
+				<owl:someValuesFrom rdf:resource="&stix;ExternalReference"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>

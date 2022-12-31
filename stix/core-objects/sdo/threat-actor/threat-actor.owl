@@ -106,10 +106,40 @@
 		<rdfs:comment xml:lang="en-us">Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. A Threat Actor is not an Intrusion Set but may support or be affiliated with various Intrusion Sets, groups, or organizations over time.\n\nThreat Actors leverage their resources, and possibly the resources of an Intrusion Set, to conduct attacks and run Campaigns against targets.\n\nThreat Actors can be characterized by their motives, capabilities, goals, sophistication level, past activities, resources they have access to, and their role in the organization.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:DatatypeProperty rdf:about="&stix;aliases">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;first_seen">
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix;goals">
 		<rdfs:label xml:lang="en-us">goals</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the high-level goals of this Intrusion Set, namely, what are they trying to do. For example, they may be motivated by personal gain, but their goal is to steal credit card numbers. To do this, they may execute specific Campaigns that have detailed objectives like compromising point of sale systems at a large retailer.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;last_seen">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;personal_motivations">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;resource_level">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;roles">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;sophistication">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;threat_actor_types">
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

@@ -29,7 +29,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;WindowsRegistryValue">
-		<rdfs:subClassOf rdf:resource="&stix;StixDatatypeWrapperObject"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label xml:lang="en-US">RegistryValue</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Windows Registry Value type captures the properties of a Windows Registry Key Value.\n\nAs all properties of this type are optional, at least one of the properties defined below MUST be included when using this type.</rdfs:comment>
 	</owl:Class>
