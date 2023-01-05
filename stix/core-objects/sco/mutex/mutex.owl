@@ -23,8 +23,20 @@
 	
 	<owl:Class rdf:about="&stix;Mutex">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">Mutex</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Mutex object represents the properties of a mutual exclusion (mutex) object.</rdfs:comment>
 	</owl:Class>
+
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the name of the mutex object.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>

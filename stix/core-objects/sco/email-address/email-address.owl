@@ -17,13 +17,30 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/email-address">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;EmailAddress">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;display_name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_ref"/>
+				<owl:someValuesFrom rdf:resource="&xsd;UserAccount"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">Email Address</rdfs:label>
 		<rdfs:comment xml:lang="en-US">An Email Address object represents a single email address.</rdfs:comment>
 	</owl:Class>
@@ -43,6 +60,12 @@
 	<owl:DatatypeProperty rdf:about="&stix;display_name">
 		<rdfs:label xml:lang="en-US">display_name</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a single email display name, i.e., the name that is displayed to the human user of a mail application.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;value">
+		<rdfs:label>value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the value of the subject as a string.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

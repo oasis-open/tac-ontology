@@ -17,12 +17,29 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/autonomous-system">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;AutonomousSystem">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;number"/>
+				<owl:someValuesFrom rdf:resource="&xsd;positiveInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;rir"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">AutonomousSystem</rdfs:label>
 		<rdfs:comment xml:lang="en-US">This object represents the properties of an Autonomous System (AS).</rdfs:comment>
 	</owl:Class>
@@ -31,6 +48,12 @@
 		<rdfs:label xml:lang="en-US">number</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-US">name</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the name of the AS.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;rir">
