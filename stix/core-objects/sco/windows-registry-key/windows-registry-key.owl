@@ -17,12 +17,48 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/windows-registry">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;WindowsRegistryKey">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;key"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;values"/>
+				<owl:someValuesFrom rdf:resource="&stix;WindowsRegistryValue"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;modified_time"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;creator_user_ref"/>
+				<owl:someValuesFrom rdf:resource="&stix;id"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;creator_user_ref_id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;number_of_subkeys"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">WindowsRegistryKey</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Windows Registry Key object represents the properties of a Windows registry key.\n\nAs all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
@@ -30,19 +66,44 @@
 	
 	<owl:Class rdf:about="&stix;WindowsRegistryValue">
 		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;data"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;data_type"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		
 		<rdfs:label xml:lang="en-US">RegistryValue</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Windows Registry Value type captures the properties of a Windows Registry Key Value.\n\nAs all properties of this type are optional, at least one of the properties defined below MUST be included when using this type.</rdfs:comment>
 	</owl:Class>
+
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the name of the registry value. For specifying the default value in a registry key, an empty string MUST be used.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;creator_user_ref">
 		<rdfs:label xml:lang="en-US">creator_user_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies a reference to the UsedrAccount object that represents the user account that created the registry key.\n\nThe object referenced in this property MUST be of type user-account.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies a reference to the user account that created the registry key. The object referenced in this property MUST be of type user-account.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;UserAccount"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;creator_user_ref_id">
 		<rdfs:label xml:lang="en-US">creator_user_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the identifier of the UserAccount object that represents the user account that created the registry key.\n\nThe identifier of the object specified MUST be of type user-account.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies a reference to the user account that created the registry key. The object referenced in this property MUST be of type user-account.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -134,7 +195,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;key">
 		<rdfs:label xml:lang="en-US">key</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the full registry key including the hive.\n\nThe value of the key, including the hive portion, SHOULD be case-preserved. The hive portion of the key MUST be fully expanded and not truncated; e.g., HKEY_LOCAL_MACHINE must be used instead of HKLM.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the full registry key including the hive. The value of the key, including the hive portion, SHOULD be case-preserved. The hive portion of the key MUST be fully expanded and not truncated; e.g., HKEY_LOCAL_MACHINE must be used instead of HKLM.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -152,7 +213,7 @@
 	
 	<owl:ObjectProperty rdf:about="&stix;values">
 		<rdfs:label xml:lang="en-US">values</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the values found under the registry key.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the number of subkeys contained under the registry key.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;WindowsRegistryValue"/>
 	</owl:ObjectProperty>
 

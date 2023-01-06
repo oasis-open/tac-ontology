@@ -166,7 +166,6 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
-
 	<owl:DatatypeProperty rdf:about="&stix;account_created">
 		<rdfs:label xml:lang="en-US">account_created</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies when the account was created.</rdfs:comment>

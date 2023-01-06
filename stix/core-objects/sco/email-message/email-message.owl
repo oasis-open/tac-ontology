@@ -20,7 +20,6 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/email-address"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/file"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
@@ -154,11 +153,22 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">EmailMessage</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Email Message object represents an instance of an email message, corresponding to the internet message format described in [RFC5322] and related RFCs.\n\nHeader field values that have been encoded as described in section 2 of [RFC2047] MUST be decoded before inclusion in Email Message object properties. For example, this is some text MUST be used instead of =?iso-8859-1?q?this=20is=20some=20text?=. Any characters in the encoded value which cannot be decoded into Unicode SHOULD be replaced with the &apos;REPLACEMENT CHARACTER&apos; (U+FFFD). If it is necessary to capture the header value as observed, this can be achieved by referencing an Artifact object through the raw_email_ref property.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;EmailMimePart">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;body"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;body_raw_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
-				<owl:someValuesFrom rdf:resource="&stix;File"/>
+				<owl:someValuesFrom rdf:resource="&stix;id"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -169,16 +179,16 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;content_type"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;content_disposition"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-us">EmailMessage</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The Email Message object represents an instance of an email message, corresponding to the internet message format described in [RFC5322] and related RFCs.\n\nHeader field values that have been encoded as described in section 2 of [RFC2047] MUST be decoded before inclusion in Email Message object properties. For example, this is some text MUST be used instead of =?iso-8859-1?q?this=20is=20some=20text?=. Any characters in the encoded value which cannot be decoded into Unicode SHOULD be replaced with the &apos;REPLACEMENT CHARACTER&apos; (U+FFFD). If it is necessary to capture the header value as observed, this can be achieved by referencing an Artifact object through the raw_email_ref property.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&stix;EmailMimePart">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">MimePart</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies one component of a multi-part body.\n\nThere is no property to capture the value of the “Content-Transfer-Encoding” header field, since the body MUST be decoded before being represented in the body property.</rdfs:comment>
 	</owl:Class>
@@ -202,7 +212,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;body">
 		<rdfs:label xml:lang="en-us">body</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a string containing the body. \n\nIn an EmailMessage, this property MUST NOT be used if is_multipart is true.\n\nIn a MIME Part, specifies the contents of the MIME part if the content_type is not provided or starts with text/ (e.g., in the case of plain text or HTML email). For inclusion in this property, the contents MUST be decoded to Unicode. Note that the charset provided in content_type is for informational usage and not for decoding of this property.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the contents of the MIME part if the content_type is not provided or starts with text/ (e.g., in the case of plain text or HTML email). For inclusion in this property, the contents MUST be decoded to Unicode. Note that the charset provided in content_type is for informational usage and not for decoding of this property.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -214,14 +224,14 @@
 	
 	<owl:ObjectProperty rdf:about="&stix;body_raw_ref">
 		<rdfs:label xml:lang="en-us">body_raw_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the contents of non-textual MIME parts, that is those whose content_type does not start with text/, as a reference to an Artifact object or File object.\n\nThe object referenced in this property MUST be of type artifact or file. For use cases where conveying the actual data contained in the MIME part is of primary importance, artifact SHOULD be used. Otherwise, for use cases where conveying metadata about the file-like properties of the MIME part is of primary importance, file SHOULD be used.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the contents of non-textual MIME parts, that is those whose content_type does not start with text/, as a reference to an Artifact object or File object. The object referenced in this property MUST be of type artifact or file. For use cases where conveying the actual data contained in the MIME part is of primary importance, artifact SHOULD be used. Otherwise, for use cases where conveying metadata about the file-like properties of the MIME part is of primary importance, file SHOULD be used.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;Artifact"/>
 		<rdfs:range rdf:resource="&stix;File"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;body_raw_ref_id">
 		<rdfs:label xml:lang="en-us">body_raw_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the contents of non-textual MIME parts, that is those whose content_type does not start with text/, as the identifier to an Artifact object or File object.\n\nThe object referenced in this property MUST be of type artifact or file. For use cases where conveying the actual data contained in the MIME part is of primary importance, artifact SHOULD be used. Otherwise, for use cases where conveying metadata about the file-like properties of the MIME part is of primary importance, file SHOULD be used.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the contents of non-textual MIME parts, that is those whose content_type does not start with text/, as a reference to an Artifact object or File object. The object referenced in this property MUST be of type artifact or file. For use cases where conveying the actual data contained in the MIME part is of primary importance, artifact SHOULD be used. Otherwise, for use cases where conveying metadata about the file-like properties of the MIME part is of primary importance, file SHOULD be used.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -245,7 +255,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;content_type">
 		<rdfs:label xml:lang="en-us">content_type</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the value of the “Content-Type” header of the email message or MIME part.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us"></rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
