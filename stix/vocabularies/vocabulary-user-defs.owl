@@ -730,27 +730,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&vocab;WinPEBinaryTypeOpenVocab">
-		<rdfs:label>windows-pebinary-type-ov-open</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>user-definition-01</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>user-definition-02</rdf:first>
-								<rdf:rest rdf:resource="&rdf;nil"/>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
+		
 	<rdfs:Datatype rdf:about="&vocab;WorldRegionOpenVocab">
 		<rdfs:label>region-ov-open</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary that captures the world regions based on the United Nations geoscheme.</rdfs:comment>
