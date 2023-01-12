@@ -25,7 +25,7 @@
 		<rdfs:comment xml:lang="en-us">Used to describe pointers to information represented outside of STIX. For example, a Malware object could use an external reference to indicate an ID for that malware in an external database or a report could use references to represent source material.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:Class rdf:about="&stix;Hash">
+	<owl:Class rdf:about="&stix;Hashes">
 		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:label>Hash</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a cryptographic hashes, as a special set of key/value pairs.</rdfs:comment>
@@ -124,7 +124,7 @@
 	<owl:ObjectProperty rdf:about="&stix;hashes">
 		<rdfs:label>hashes</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a set of hashes for the contents of the url. This SHOULD be provided when the url property is present. Dictionary keys MUST come from one of the entries listed in the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Hash"/>
+		<rdfs:range rdf:resource="&stix;Hashes"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;key_identifier">

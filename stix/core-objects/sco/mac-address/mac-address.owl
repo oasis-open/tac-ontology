@@ -28,7 +28,7 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-US">MACAddress</rdfs:label>
+		<rdfs:label xml:lang="en-US">MAC Address Object</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The MAC Address object represents a single Media Access Control (MAC) address.</rdfs:comment>
 	</owl:Class>
 

@@ -23,6 +23,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;UserAccount">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;user_id"/>
@@ -44,7 +45,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;account_type"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+				<owl:someValuesFrom rdf:resource="&stix;AccountTypeOv"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -107,12 +108,12 @@
 				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">User Account</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The User Account object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. As all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;UnixAccountExt">
+		<rdfs:subClassOf rdf:resource="&stix;UserAccount"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;gid"/>
@@ -137,7 +138,6 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf rdf:resource="&stix;UserAccount"/>
 		<rdfs:label xml:lang="en-US">UNIX Account Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The UNIX account extension specifies a default extension for capturing the additional information for an account on a UNIX system. The key for this extension when used in the extensions dictionary MUST be unix-account-ext. Note that this predefined extension does not use the extension facility described in section 7.3.	An object using the UNIX Account Extension MUST contain at least one property from this extension.</rdfs:comment>
 	</owl:Class>
@@ -195,11 +195,16 @@
 		<rdfs:comment xml:lang="en-US">Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login. For example, in the case of a Unix account with user_id 0, the account_login might be "root".</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-	
+
 	<owl:DatatypeProperty rdf:about="&stix;account_type">
 		<rdfs:label xml:lang="en-US">account_type</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies the type of the account. This is an open vocabulary and values SHOULD come from the account-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
+		<rdfs:range rdf:resource="&stix;AccountTypeOv"/>
+	</owl:DatatypeProperty>
+
+	<rdfs:Datatype rdf:about="&stix;AccountTypeOv">
+		<rdfs:label>account-type-ov</rdfs:label>
+		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:Description>
@@ -258,9 +263,9 @@
 					</rdf:Description>
 				</owl:oneOf>
 			</rdfs:Datatype>
-		</rdfs:range>
-	</owl:DatatypeProperty>
-	
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
 	<owl:DatatypeProperty rdf:about="&stix;can_escalate_privs">
 		<rdfs:label xml:lang="en-US">can_escalate_privs</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account).</rdfs:comment>

@@ -38,7 +38,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hash"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -97,7 +97,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;parent_directory_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;parent_directory_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -109,7 +109,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;contains_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;contains_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -121,7 +121,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;content_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;content_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -130,7 +130,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;ArchiveExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;contains_refs"/>
@@ -139,7 +139,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;contains_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;contains_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -154,7 +154,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;NtfsExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;sid"/>
@@ -172,7 +172,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;AlternateDataStreamType">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;name"/>
@@ -182,7 +182,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hash"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -196,7 +196,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;PdfExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;version"/>
@@ -231,8 +231,8 @@
 		<rdfs:comment xml:lang="en-us">The PDF file extension specifies a default extension for capturing properties specific to PDF files. The key for this extension when used in the extensions dictionary MUST be pdf-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the PDF File Extension MUST contain at least one property from this extension.</rdfs:comment>
 	</owl:Class>
 
-	<owl:Class rdf:about="&stix;PdfExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+	<owl:Class rdf:about="&stix;RasterImageExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;image_height"/>
@@ -262,11 +262,11 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;WindowsPebinaryExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;pe_type"/>
-				<owl:someValuesFrom rdf:resource="&xsd;WinPEBinaryTypeOpenVocab"/>
+				<owl:someValuesFrom rdf:resource="&stix;WinPebinaryTypeOpenVocab"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -320,7 +320,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;file_header_hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hash"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -332,13 +332,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;sections"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;sections_id"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+				<owl:someValuesFrom rdf:resource="&stix;WindowsPeSectionType"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Windows PE Binary File Extension</rdfs:label>
@@ -346,7 +340,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;WindowsPeOptionalHeaderType">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;magic_hex"/>
@@ -499,7 +493,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;size_of_stack_reserve"/>
+				<owl:onProperty rdf:resource="&stix;size_of_stack_commit"/>
 				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -530,7 +524,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hash"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Windows PE Optional Header Type</rdfs:label>
@@ -538,7 +532,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;WindowsPeSectionType">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;name"/>
@@ -560,7 +554,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hash"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Windows PE Section Type</rdfs:label>
@@ -756,10 +750,10 @@
 	<owl:DatatypeProperty rdf:about="&stix;pe_type">
 		<rdfs:label>pe_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the type of the PE binary. This is an open vocabulary and values SHOULD come from the windows-pebinary-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;WinPEBinaryTypeOpenVocab"/>
+		<rdfs:range rdf:resource="&stix;WinPebinaryTypeOpenVocab"/>
 	</owl:DatatypeProperty>
 
-	<rdfs:Datatype rdf:about="&stix;WinPEBinaryTypeOpenVocab">
+	<rdfs:Datatype rdf:about="&stix;WinPebinaryTypeOpenVocab">
 		<rdfs:label>windows-pebinary-type-ov-open</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
 		<owl:equivalentClass>
@@ -830,7 +824,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;file_header_hashes">
 		<rdfs:label>file_header_hashes</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any hashes that were computed for the file header. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Hash"/>
+		<rdfs:range rdf:resource="&stix;Hashes"/>
 	</owl:DatatypeProperty>
 
 	<owl:ObjectProperty rdf:about="&stix;optional_header">
@@ -839,23 +833,11 @@
 		<rdfs:range rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
 	</owl:ObjectProperty>
 
-	<owl:DatatypeProperty rdf:about="&stix;optional_header_id">
-		<rdfs:label>optional_header_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the PE optional header of the PE binary. When used, at least one property from the windows-pe-optional-header-type MUST be included.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
 	<owl:ObjectProperty rdf:about="&stix;sections">
 		<rdfs:label>sections</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies metadata about the sections in the PE file.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
 	</owl:ObjectProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;sections_id">
-		<rdfs:label>sections_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies metadata about the sections in the PE file.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
 
 	<owl:DatatypeProperty rdf:about="&stix;image_height">
 		<rdfs:label>image_height</rdfs:label>
@@ -866,7 +848,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;image_width">
 		<rdfs:label>image_width</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the width of the image in the image file, in pixels.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;ingeter"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
 	</owl:DatatypeProperty>
 
 	<owl:DatatypeProperty rdf:about="&stix;bits_per_pixel">
@@ -981,8 +963,8 @@
 		<rdfs:range rdf:resource="&stix;Directory"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;parent_directory_ref_id">
-		<rdfs:label xml:lang="en-us">parent_directory_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;parent_directory_ref_string">
+		<rdfs:label xml:lang="en-us">parent_directory_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the parent directory of the file, as a reference to a Directory object. The object referenced in this property MUST be of type directory.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -992,8 +974,8 @@
 		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;contains_refs_id">
-		<rdfs:label xml:lang="en-us">contains_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;contains_refs_string">
+		<rdfs:label xml:lang="en-us">contains_refs_string</rdfs:label>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
@@ -1003,8 +985,8 @@
 		<rdfs:range rdf:resource="&stix;Artifact"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;content_ref_id">
-		<rdfs:label xml:lang="en-us">content_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;content_ref_string">
+		<rdfs:label xml:lang="en-us">content_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the content of the file, represented as an Artifact object. The object referenced in this property MUST be of type artifact.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>

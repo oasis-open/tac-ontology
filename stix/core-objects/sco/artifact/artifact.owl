@@ -21,6 +21,7 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Artifact">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;mime_type"/>
@@ -42,7 +43,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -57,9 +58,8 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-US">Artifact</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The Artifact object permits capturing an array of bytes (8-bits), as a base64-encoded string, or linking to a file-like payload.\n\nOne of payload_bin or url MUST be provided. It is incumbent on object creators to ensure that the URL is accessible for downstream consumers.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">The Artifact object permits capturing an array of bytes (8-bits), as a base64-encoded string, or linking to a file-like payload. One of payload_bin or url MUST be provided. It is incumbent on object creators to ensure that the URL is accessible for downstream consumers.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;mime_type">
@@ -70,7 +70,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;payload_bin">
 		<rdfs:label xml:lang="en-US">payload_bin</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the binary data contained in the artifact as a base64-encoded string.\n\nThis property MUST NOT be present if url is provided.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the binary data contained in the artifact as a base64-encoded string. This property MUST NOT be present if url is provided.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;base64Binary"/>
 	</owl:DatatypeProperty>
 
@@ -82,38 +82,43 @@
 
 	<owl:ObjectProperty rdf:about="&stix;hashes">
 		<rdfs:label>hashes</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a dictionary of hashes for the contents of the url or the payload_bin.	This property MUST be present when the url property is present. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Hash"/>
+		<rdfs:comment xml:lang="en-us">Specifies a dictionary of hashes for the contents of the url or the payload_bin. This property MUST be present when the url property is present. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Hashes"/>
 	</owl:ObjectProperty>
 
 	<owl:DatatypeProperty rdf:about="&stix;encryption_algorithm">
 		<rdfs:label xml:lang="en-US">encryption algorithm</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the type of encryption algorithm the binary data (either via payload_bin or url) is encoded in, if the artifact is encrypted.\n\nIf both mime_type and encryption_algorithm are included, this signifies that the artifact represents an encrypted archive.</rdfs:comment>
-		<rdfs:range>
+		<rdfs:comment xml:lang="en-US">If the artifact is encrypted, specifies the type of encryption algorithm the binary data  (either via payload_bin or url) is encoded in. The value of this property MUST come from the encryption-algorithm-enum enumeration. If both mime_type and encryption_algorithm are included, this signifies that the artifact represents an encrypted archive.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;EncryptionAlgorithmEnum"/>
+	</owl:DatatypeProperty>
+
+	<rdfs:Datatype rdf:about="&stix;EncryptionAlgorithmEnum">
+		<rdfs:label>encryption-algorithm-enum</rdfs:label>
+		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
-					<rdf:Description>
+					<rdf:List>
 						<rdf:first>AES-256-GCM</rdf:first>
 						<rdf:rest>
-							<rdf:Description>
+							<rdf:List>
 								<rdf:first>ChaCha20-Poly1035</rdf:first>
 								<rdf:rest>
-									<rdf:Description>
+									<rdf:List>
 										<rdf:first>mime-type-indicated</rdf:first>
 										<rdf:rest rdf:resource="&rdf;nil"/>
-									</rdf:Description>
+									</rdf:List>
 								</rdf:rest>
-							</rdf:Description>
+							</rdf:List>
 						</rdf:rest>
-					</rdf:Description>
+					</rdf:List>
 				</owl:oneOf>
 			</rdfs:Datatype>
-		</rdfs:range>
-	</owl:DatatypeProperty>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
 
 	<owl:DatatypeProperty rdf:about="&stix;decryption_key">
 		<rdfs:label xml:lang="en-US">decryption_key</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the decryption key for the encrypted binary data (either via payload_bin or url). For example, this may be useful in cases of sharing malware samples, which are often encoded in an encrypted archive.\n\nThis property MUST NOT be present when the encryption_algorithm property is absent.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the decryption key for the encrypted binary data (either via payload_bin or url). For example, this may be useful in cases of sharing malware samples, which are often encoded in an encrypted archive. This property MUST NOT be present when the encryption_algorithm property is absent.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	

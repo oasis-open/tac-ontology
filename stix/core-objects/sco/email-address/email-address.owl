@@ -38,34 +38,40 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;belongs_to_ref"/>
-				<owl:someValuesFrom rdf:resource="&xsd;UserAccount"/>
+				<owl:someValuesFrom rdf:resource="&stix;UserAccount"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-US">Email Address</rdfs:label>
-		<rdfs:comment xml:lang="en-US">An Email Address object represents a single email address.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_ref_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-US">Email Address Object</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The Email Address object represents a single email address.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:ObjectProperty rdf:about="&stix;belongs_to_ref">
 		<rdfs:label xml:lang="en-US">belongs_to_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the user account that the email address belongs to, as a reference to a User Account object.\n\nThe object referenced in this property MUST be of type user-account.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the user account that the email address belongs to, as a reference to a User Account object. The object referenced in this property MUST be of type user-account.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;UserAccount"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;belongs_to_ref_id">
+	<owl:DatatypeProperty rdf:about="&stix;belongs_to_ref_string">
 		<rdfs:label xml:lang="en-US">belongs_to_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the identifier of the SCO UserAccount object that the email address belongs to.\n\nThe object referenced in this property MUST be of type user-account.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the user account that the email address belongs to, as a reference to a User Account object. The object referenced in this property MUST be of type user-account.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;display_name">
 		<rdfs:label xml:lang="en-US">display_name</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies a single email display name, i.e., the name that is displayed to the human user of a mail application.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies a single email display name, i.e., the name that is displayed to the human user of a mail application. This property corresponds to the display-name construction in section 3.4 of [RFC5322], for example, Jane Smith.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 	<owl:DatatypeProperty rdf:about="&stix;value">
 		<rdfs:label>value</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the value of the subject as a string.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the value of the email address. This MUST NOT include the display name. This property corresponds to the addr-spec construction in section 3.4 of [RFC5322], for example, jane.smith@example.com.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

@@ -51,13 +51,31 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;src_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv4Address"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv6Address"/>
+				<owl:someValuesFrom rdf:resource="&stix;MACAddress"/>
+				<owl:someValuesFrom rdf:resource="&stix;DomainName"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;src_ref_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;dst_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv4Address"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv6Address"/>
+				<owl:someValuesFrom rdf:resource="&stix;MACAddress"/>
+				<owl:someValuesFrom rdf:resource="&stix;DomainName"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;dst_ref_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -111,48 +129,48 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;src_payload_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;src_payload_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;src_payload_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;dst_payload_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;dst_payload_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;dst_payload_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;encapsulates_refs"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;NetworkTraffic"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;encapsulates_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;encapsulates_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;encapsulated_by_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;NetworkTraffic"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;encapsulated_by_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;encapsulated_by_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -161,7 +179,7 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&stix;HttpRequestExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;NetworkTraffic"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;request_method"/>
@@ -195,12 +213,12 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;message_body_data_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;message_body_data_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;message_body_data_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -209,7 +227,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;IcmpExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;NetworkTraffic"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;icmp_type_hex"/>
@@ -227,7 +245,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;SocketExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf rdf:resource="&stix;NetworkTraffic"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;address_family"/>
@@ -274,8 +292,8 @@
 		<rdfs:comment xml:lang="en-us">The Network Socket extension specifies a default extension for capturing network traffic properties associated with network sockets. The key for this extension when used in the extensions dictionary MUST be socket-ext. Note that this predefined extension does not use the extension facility described in section 7.3.</rdfs:comment>
 	</owl:Class>
 
-	<owl:Class rdf:about="&stix;SocketExt">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+	<owl:Class rdf:about="&stix;TcpExt">
+		<rdfs:subClassOf rdf:resource="&stix;NetworkTraffic"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;src_flags_hex"/>
@@ -388,14 +406,14 @@
 		<rdfs:range rdf:resource="&xsd;integer"/>
 	</owl:DatatypeProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;message_body_data_ref">
+	<owl:ObjectProperty rdf:about="&stix;message_body_data_ref">
 		<rdfs:label xml:lang="en-us">message_body_data_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the data contained in the HTTP message body, if included. The object referenced in this property MUST be of type artifact.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;id"/>
-	</owl:DatatypeProperty>
+		<rdfs:range rdf:resource="&stix;Artifact"/>
+	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;message_body_data_ref_id">
-		<rdfs:label xml:lang="en-us">message_body_data_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;message_body_data_ref_string">
+		<rdfs:label xml:lang="en-us">message_body_data_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the data contained in the HTTP message body, if included. The object referenced in this property MUST be of type artifact.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -418,8 +436,8 @@
 		<rdfs:range rdf:resource="&stix;Artifact"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;dst_payload_ref_id">
-		<rdfs:label xml:lang="en-us">dst_payload_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;dst_payload_ref_string">
+		<rdfs:label xml:lang="en-us">dst_payload_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the bytes sent from the destination to the source. The object referenced in this property MUST be of type artifact.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -458,9 +476,9 @@
 		</rdfs:range>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;dst_ref_id">
-		<rdfs:label xml:lang="en-us">dst_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the destination of the network traffic, as the identifier of a Cyber-observable Object.\n\nThe identifier of object specified  MUST be of type ipv4-addr, ipv6-addr, mac-addr, or domain-name (for cases where the IP address for a domain name is unknown).</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="&stix;dst_ref_string">
+		<rdfs:label xml:lang="en-us">dst_ref_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the destination of the network traffic, as a reference to a Cyber-observable Object. The object referenced MUST be of type ipv4-addr, ipv6-addr, mac-addr, or domain-name (for cases where the IP address for a domain name is unknown).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -470,8 +488,8 @@
 		<rdfs:range rdf:resource="&stix;NetworkTraffic"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;encapsulated_by_ref_id">
-		<rdfs:label xml:lang="en-us">encapsulated_by_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;encapsulated_by_ref_string">
+		<rdfs:label xml:lang="en-us">encapsulated_by_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Links to another network-traffic object which encapsulates this object. The object referenced in this property MUST be of type network-traffic.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -482,8 +500,8 @@
 		<rdfs:range rdf:resource="&stix;NetworkTraffic"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;encapsulates_refs_id">
-		<rdfs:label xml:lang="en-us">encapsulates_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;encapsulates_refs_string">
+		<rdfs:label xml:lang="en-us">encapsulates_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Links to other network-traffic objects encapsulated by this network-traffic object. The objects referenced in this property MUST be of type network-traffic.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -497,6 +515,7 @@
 	<owl:ObjectProperty rdf:about="&stix;ipfix">
 		<rdfs:label xml:lang="en-us">ipfix</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any IP Flow Information Export [IPFIX] data for the traffic, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single IPFIX element. Accordingly, each dictionary key SHOULD be a case-preserved version of the IPFIX element name, e.g., octetDeltaCount. Each dictionary value MUST be either an integer or a string, as well as a valid IPFIX property.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;is_active">
@@ -507,7 +526,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;protocols">
 		<rdfs:label xml:lang="en-us">protocols</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the protocols observed in the network traffic, along with their corresponding state. Protocols MUST be listed in low to high order, from outer to inner in terms of packet encapsulation. That is, the protocols in the outer level of the packet, such as IP, MUST be listed first. The protocol names SHOULD come from the service names defined in the Service Name column of the IANA Service Name and Port Number Registry [Port Numbers]. In cases where there is variance in the name of a network protocol not included in the IANA Registry, content producers should exercise their best judgement, and it is recommended that lowercase names be used for consistency with the IANA registry. If the protocol extension is present, the corresponding protocol value for that extension SHOULD be listed in this property. Examples: ipv4, tcp, http</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the protocols observed in the network traffic, along with their corresponding state. Protocols MUST be listed in low to high order, from outer to inner in terms of packet encapsulation. That is, the protocols in the outer level of the packet, such as IP, MUST be listed first. The protocol names SHOULD come from the service names defined in the Service Name column of the IANA Service Name and Port Number Registry [Port Numbers]. In cases where there is variance in the name of a network protocol not included in the IANA Registry, content producers should exercise their best judgement, and it is recommended that lowercase names be used for consistency with the IANA registry. If the protocol extension is present, the corresponding protocol value for that extension SHOULD be listed in this property. Example: ipv4, tcp, http</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -529,8 +548,8 @@
 		<rdfs:range rdf:resource="&stix;Artifact"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;src_payload_ref_id">
-		<rdfs:label xml:lang="en-us">src_payload_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;src_payload_ref_string">
+		<rdfs:label xml:lang="en-us">src_payload_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the bytes sent from the source to the destination. The object referenced in this property MUST be of type artifact.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -569,9 +588,9 @@
 		</rdfs:range>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;src_ref_id">
-		<rdfs:label xml:lang="en-us">src_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the identifier of a Cyber-observable object that is the source of the network traffic.\n\nThe identifier of the object specified MUST be of type ipv4-addr, ipv6-addr, mac-addr, or domain-name (for cases where the IP address for a domain name is unknown).</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="&stix;src_ref_string">
+		<rdfs:label xml:lang="en-us">src_ref_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the source of the network traffic, as a reference to a Cyber-observable Object. The object referenced MUST be of type ipv4-addr, ipv6-addr, mac-addr, or domain-name (for cases where the IP address for a domain name is unknown).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	

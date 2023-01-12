@@ -17,7 +17,6 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/directory">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/file"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
@@ -57,34 +56,35 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;contains_refs"/>
-				<owl:someValuesFrom rdf:resource="&xsd;StixCyberObservable"/>
+				<owl:someValuesFrom rdf:resource="&stix;File"/>
+				<owl:someValuesFrom rdf:resource="&stix;Directory"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;contains_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;contains_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label>Directory</rdfs:label>
+		<rdfs:label>Directory Object</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Directory object represents the properties common to a file system directory.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;atime">
 		<rdfs:label>atime</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the date and time the directory or file was last accessed.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the directory was last accessed.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;ctime">
 		<rdfs:label>ctime</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the date and time the file or directory was created.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the directory was created.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;mtime">
 		<rdfs:label>mtime</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the date and time the directory or file was last written to/modified.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the directory was last written to/modified.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
@@ -96,19 +96,28 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;path_enc">
 		<rdfs:label xml:lang="en-US">path_enc</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the observed encoding for the path. The value MUST be specified if the path is stored in a non-Unicode encoding. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry. If the preferred MIME name for a character set is defined, this value MUST be used; if it is not defined, then the Name value from the registry MUST be used instead.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the observed encoding for the path. The value MUST be specified if the path is stored in a non-Unicode encoding. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the preferred MIME name for a character set is defined, this value MUST be used; if it is not defined, then the Name value from the registry MUST be used instead.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 	<owl:ObjectProperty rdf:about="&stix;contains_refs">
 		<rdfs:label xml:lang="en-us">contains_refs</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of references to other STIX CyberObservable Objects contained within the file or directory, such as another file that is appended to the end of the file, or an IP address that is contained somewhere in the file.\n\nThis is intended for use cases other than those targeted by the Archive extension.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:comment xml:lang="en-us">Specifies a list of references to other File and/or Directory objects contained within the directory. The objects referenced in this list MUST be of type file or directory.</rdfs:comment>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;File">
+					</rdf:Description>
+					<rdf:Description rdf:about="&stix;Directory">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;contains_refs_id">
+	<owl:DatatypeProperty rdf:about="&stix;contains_refs_string">
 		<rdfs:label xml:lang="en-us">contains_refs_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of identifiers of other STIX Cyber Observable Objects contained within the file or directory, such as another file that is appended to the end of the file, or an IP address that is contained somewhere in the file.\n\nThis is intended for use cases other than those targeted by the Archive extension</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies a list of references to other File and/or Directory objects contained within the directory. The objects referenced in this list MUST be of type file or directory.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

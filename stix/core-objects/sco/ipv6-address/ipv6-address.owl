@@ -42,7 +42,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;resolves_to_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;resolves_to_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -54,11 +54,11 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;belongs_to_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;belongs_to_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-US">IPv6Address</rdfs:label>
+		<rdfs:label xml:lang="en-US">IPv6 Address Object</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The IPv6 Address object represents one or more IPv6 addresses expressed using CIDR notation.</rdfs:comment>
 	</owl:Class>
 	
@@ -68,8 +68,8 @@
 		<rdfs:range rdf:resource="&stix;AutonomousSystem"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;belongs_to_refs_id">
-		<rdfs:label xml:lang="en-US">belongs_to_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;belongs_to_refs_string">
+		<rdfs:label xml:lang="en-US">belongs_to_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more autonomous systems (AS) that the IPv6 address belongs to. The objects referenced in this list MUST be of type autonomous-system.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -80,8 +80,8 @@
 		<rdfs:range rdf:resource="&stix;MACAddress"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;resolves_to_refs_id">
-		<rdfs:label xml:lang="en-US">resolved_to_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;resolves_to_refs_string">
+		<rdfs:label xml:lang="en-US">resolved_to_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more Layer 2 Media Access Control (MAC) addresses that the IPv6 address resolves to. The objects referenced in this list MUST be of type mac-addr.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>

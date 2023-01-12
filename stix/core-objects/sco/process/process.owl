@@ -71,7 +71,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;opened_connection_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;opened_connection_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -83,7 +83,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;creator_user_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;creator_user_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -95,7 +95,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;image_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;image_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -107,7 +107,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;parent_ref_id"/>
+				<owl:onProperty rdf:resource="&stix;parent_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -119,7 +119,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;child_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;child_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -129,6 +129,7 @@
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;WindowsProcessExt">
+		<rdfs:subClassOf rdf:resource="&stix;Process"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;aslr_enabled"/>
@@ -138,7 +139,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;dep_enabled"/>
-				<owl:someValuesFrom rdf:resource="&xsd;positiveInteger"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -150,7 +151,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;owner_sid"/>
-				<owl:someValuesFrom rdf:resource="&stix;File"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -162,7 +163,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;startup_info"/>
-				<owl:someValuesFrom rdf:resource="&stix;Process"/>
+				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -171,12 +172,12 @@
 				<owl:someValuesFrom rdf:resource="&stix;WindowsIntegrityLevelEnum"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">Windows Process Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows Process extension specifies a default extension for capturing properties specific to Windows processes. The key for this extension when used in the extensions dictionary MUST be windows-process-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the Windows Process Extension MUST contain at least one property from this extension.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;WindowsServiceExt">
+		<rdfs:subClassOf rdf:resource="&stix;Process"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;service_name"/>
@@ -215,7 +216,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;service_dll_refs_id"/>
+				<owl:onProperty rdf:resource="&stix;service_dll_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -231,7 +232,6 @@
 				<owl:someValuesFrom rdf:resource="&stix;WindowsServiceStatusEnum"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:label xml:lang="en-us">Windows Service Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows Service extension specifies a default extension for capturing properties specific to Windows services. The key for this extension when used in the extensions dictionary MUST be windows-service-ext. Note that this predefined extension does not use the extension facility described in section 7.3. As all properties of this extension are optional, at least one of the properties defined below MUST be included when using this extension.</rdfs:comment>
 	</owl:Class>
@@ -257,7 +257,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;group_name">
 		<rdfs:label xml:lang="en-us">group_name</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;boolean"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 	<owl:DatatypeProperty rdf:about="&stix;start_type">
@@ -272,8 +272,8 @@
 		<rdfs:range rdf:resource="&stix;File"/>
 	</owl:ObjectProperty>
 
-	<owl:DatatypeProperty rdf:about="&stix;service_dll_refs_id">
-		<rdfs:label xml:lang="en-us">service_dll_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;service_dll_refs_string">
+		<rdfs:label xml:lang="en-us">service_dll_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the DLLs loaded by the service, as a reference to one or more File objects. The objects referenced in this property MUST be of type file.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -397,6 +397,12 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 		
+	<owl:DatatypeProperty rdf:about="&stix;aslr_enabled">
+		<rdfs:label xml:lang="en-us">aslr_enabled</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+		
 	<owl:DatatypeProperty rdf:about="&stix;dep_enabled">
 		<rdfs:label xml:lang="en-us">dep_enabled</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies whether Data Execution Prevention (DEP) is enabled for the process.</rdfs:comment>
@@ -468,8 +474,8 @@
 		<rdfs:range rdf:resource="&stix;Process"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;child_refs_id">
-		<rdfs:label xml:lang="en-us">child_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;child_refs_string">
+		<rdfs:label xml:lang="en-us">child_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the other processes that were spawned by (i.e. children of) this process, as a reference to one or more other Process objects. The objects referenced in this list MUST be of type process.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -492,8 +498,8 @@
 		<rdfs:range rdf:resource="&stix;UserAccount"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;creator_user_ref_id">
-		<rdfs:label xml:lang="en-us">creator_user_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;creator_user_ref_string">
+		<rdfs:label xml:lang="en-us">creator_user_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the user that created the process, as a reference to a User Account object. The object referenced in this property MUST be of type user-account.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -507,6 +513,7 @@
 	<owl:ObjectProperty rdf:about="&stix;environment_variables">
 		<rdfs:label xml:lang="en-us">environment_variables</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the list of environment variables associated with the process as a dictionary. Each key in the dictionary MUST be a case preserved version of the name of the environment variable, and each corresponding value MUST be the environment variable value as a string.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;image_ref">
@@ -515,8 +522,8 @@
 		<rdfs:range rdf:resource="&stix;File"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;image_ref_id">
-		<rdfs:label xml:lang="en-us">image_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;image_ref_string">
+		<rdfs:label xml:lang="en-us">image_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the executable binary that was executed as the process image, as a reference to a File object. The object referenced in this property MUST be of type file.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -533,8 +540,8 @@
 		<rdfs:range rdf:resource="&stix;NetworkTraffic"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;opened_connection_refs_id">
-		<rdfs:label xml:lang="en-us">opened_connection_refs_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;opened_connection_refs_string">
+		<rdfs:label xml:lang="en-us">opened_connection_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the list of network connections opened by the process, as a reference to one or more Network Traffic objects. The objects referenced in this list MUST be of type network-traffic.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
@@ -545,8 +552,8 @@
 		<rdfs:range rdf:resource="&stix;Process"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;parent_ref_id">
-		<rdfs:label xml:lang="en-us">parent_ref_id</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;parent_ref_string">
+		<rdfs:label xml:lang="en-us">parent_ref_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the other process that spawned (i.e. is the parent of) this one, as a reference to a Process object. The object referenced in this property MUST be of type process.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
