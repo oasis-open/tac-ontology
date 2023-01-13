@@ -30,7 +30,13 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:onProperty rdf:resource="&stix;belongs_to_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;AutonomousSystem"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_refs_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -48,13 +54,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;belongs_to_refs"/>
-				<owl:someValuesFrom rdf:resource="&stix;AutonomousSystem"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;belongs_to_refs_string"/>
+				<owl:onProperty rdf:resource="&stix;value"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -85,7 +85,7 @@
 		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more Layer 2 Media Access Control (MAC) addresses that the IPv6 address resolves to. The objects referenced in this list MUST be of type mac-addr.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-
+	
 	<owl:DatatypeProperty rdf:about="&stix;value">
 		<rdfs:label xml:lang="en-us">value</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the values of one or more IPv6 addresses expressed using CIDR notation. If a given IPv6 Address object represents a single IPv6 address, the CIDR /128 suffix MAY be omitted.</rdfs:comment>

@@ -24,14 +24,14 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;number"/>
-				<owl:someValuesFrom rdf:resource="&xsd;positiveInteger"/>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;name"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+				<owl:onProperty rdf:resource="&stix;number"/>
+				<owl:someValuesFrom rdf:resource="&xsd;positiveInteger"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -44,16 +44,16 @@
 		<rdfs:comment xml:lang="en-US">This object represents the properties of an Autonomous System (AS).</rdfs:comment>
 	</owl:Class>
 	
-	<owl:DatatypeProperty rdf:about="&stix;number">
-		<rdfs:label xml:lang="en-US">number</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR).</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
-	</owl:DatatypeProperty>
-	
 	<owl:DatatypeProperty rdf:about="&stix;name">
 		<rdfs:label xml:lang="en-US">name</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Specifies the name of the AS.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;number">
+		<rdfs:label xml:lang="en-US">number</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;rir">

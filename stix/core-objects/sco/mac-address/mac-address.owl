@@ -31,10 +31,10 @@
 		<rdfs:label xml:lang="en-US">MAC Address Object</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The MAC Address object represents a single Media Access Control (MAC) address.</rdfs:comment>
 	</owl:Class>
-
+	
 	<owl:DatatypeProperty rdf:about="&stix;value">
 		<rdfs:label xml:lang="en-us">value</rdfs:label>
-		<rdfs:comment xml:lang="en-us">	Specifies the value of a single MAC address. The MAC address value MUST be represented as a single colon-delimited, lowercase MAC-48 address, which MUST include leading zeros for each octet. Example: 00:00:ab:cd:ef:01</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the value of a single MAC address. The MAC address value MUST be represented as a single colon-delimited, lowercase MAC-48 address, which MUST include leading zeros for each octet. Example: 00:00:ab:cd:ef:01</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

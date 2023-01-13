@@ -31,7 +31,7 @@
 		<rdfs:label xml:lang="en-US">Mutex Object</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Mutex object represents the properties of a mutual exclusion (mutex) object.</rdfs:comment>
 	</owl:Class>
-
+	
 	<owl:DatatypeProperty rdf:about="&stix;name">
 		<rdfs:label xml:lang="en-us">name</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the name of the mutex object.</rdfs:comment>

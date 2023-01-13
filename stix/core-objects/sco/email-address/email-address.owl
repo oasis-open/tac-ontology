@@ -25,7 +25,13 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:onProperty rdf:resource="&stix;belongs_to_ref"/>
+				<owl:someValuesFrom rdf:resource="&stix;UserAccount"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_ref_string"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -37,13 +43,7 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;belongs_to_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;UserAccount"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;belongs_to_ref_string"/>
+				<owl:onProperty rdf:resource="&stix;value"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -68,7 +68,7 @@
 		<rdfs:comment xml:lang="en-US">Specifies a single email display name, i.e., the name that is displayed to the human user of a mail application. This property corresponds to the display-name construction in section 3.4 of [RFC5322], for example, Jane Smith.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-
+	
 	<owl:DatatypeProperty rdf:about="&stix;value">
 		<rdfs:label>value</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the value of the email address. This MUST NOT include the display name. This property corresponds to the addr-spec construction in section 3.4 of [RFC5322], for example, jane.smith@example.com.</rdfs:comment>
