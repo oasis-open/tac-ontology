@@ -15,7 +15,6 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/common-properties">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
@@ -160,18 +159,6 @@
 		<rdfs:label>confidence</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Identifies the confidence that the creator has in the correctness of their data. The confidence value MUST be a number in the range of 0-100.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;int"/>
-	</owl:DatatypeProperty>
-	
-	<owl:ObjectProperty rdf:about="&stix;contains_refs">
-		<rdfs:label xml:lang="en-us">contains_refs</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of references to other STIX CyberObservable Objects contained within the file or directory, such as another file that is appended to the end of the file, or an IP address that is contained somewhere in the file.\n\nThis is intended for use cases other than those targeted by the Archive extension.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
-	</owl:ObjectProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;contains_refs_id">
-		<rdfs:label xml:lang="en-us">contains_refs_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of identifiers of other STIX Cyber Observable Objects contained within the file or directory, such as another file that is appended to the end of the file, or an IP address that is contained somewhere in the file.\n\nThis is intended for use cases other than those targeted by the Archive extension</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;created">

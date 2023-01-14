@@ -19,50 +19,12 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/user-account">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
-	<owl:Class rdf:about="&stix;UserAccount">
-		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
-		<rdfs:label xml:lang="en-US">User Account</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The User Account object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. As all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_created">
-		<rdfs:label xml:lang="en-US">account_created</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies date and time when the account was created.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_expires">
-		<rdfs:label xml:lang="en-US">account_expires</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the expiration date and time of the account.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_first_login">
-		<rdfs:label xml:lang="en-US">account_first_login</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the date and time when the account was first accessed.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_last_login">
-		<rdfs:label xml:lang="en-US">account_last_login</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the date and time when the account was last accessed.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_login">
-		<rdfs:label xml:lang="en-US">account_login</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login.\n\nFor example, in the case of a Unix account with user_id 0, the account_login might be “root”.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;account_type">
-		<rdfs:label xml:lang="en-US">account_type</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the type of the account.\n\nThis is an open vocabulary and values SHOULD come from the account-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
+	<rdfs:Datatype rdf:about="&stix;AccountTypeOv">
+		<rdfs:label>account-type-ov</rdfs:label>
+		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:Description>
@@ -121,12 +83,168 @@
 					</rdf:Description>
 				</owl:oneOf>
 			</rdfs:Datatype>
-		</rdfs:range>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<owl:Class rdf:about="&stix;UnixAccountExt">
+		<rdfs:subClassOf rdf:resource="&stix;UserAccount"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;gid"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;groups"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;home_dir"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;shell"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-US">UNIX Account Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The UNIX account extension specifies a default extension for capturing the additional information for an account on a UNIX system. The key for this extension when used in the extensions dictionary MUST be unix-account-ext. Note that this predefined extension does not use the extension facility described in section 7.3.	An object using the UNIX Account Extension MUST contain at least one property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;UserAccount">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_created"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_expires"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_first_login"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_last_login"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_login"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;account_type"/>
+				<owl:someValuesFrom rdf:resource="&stix;AccountTypeOv"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;can_escalate_privs"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;credential"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;credential_last_changed"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;display_name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;is_disabled"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;is_privileged"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;is_service_account"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;user_id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-US">User Account</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The User Account object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. As all properties of this object are optional, at least one of the properties defined below MUST be included when using this object.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_created">
+		<rdfs:label xml:lang="en-US">account_created</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies when the account was created.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_expires">
+		<rdfs:label xml:lang="en-US">account_expires</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the expiration date of the account.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_first_login">
+		<rdfs:label xml:lang="en-US">account_first_login</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies when the account was first accessed.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_last_login">
+		<rdfs:label xml:lang="en-US">account_last_login</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies when the account was last accessed.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_login">
+		<rdfs:label xml:lang="en-US">account_login</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login. For example, in the case of a Unix account with user_id 0, the account_login might be &quot;root&quot;.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;account_type">
+		<rdfs:label xml:lang="en-US">account_type</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the type of the account. This is an open vocabulary and values SHOULD come from the account-type-ov open vocabulary.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;AccountTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;can_escalate_privs">
 		<rdfs:label xml:lang="en-US">can_escalate_privs</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account)</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;boolean"/>
 	</owl:DatatypeProperty>
 	
@@ -144,7 +262,25 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;display_name">
 		<rdfs:label xml:lang="en-US">display_name</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the display name of the account, to be shown in user interfaces, if applicable.\n\nOn Unix, this is equivalent to the GECOS field.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies the display name of the account, to be shown in user interfaces, if applicable. On Unix, this is equivalent to the GECOS field.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;gid">
+		<rdfs:label xml:lang="en-US">gid</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the primary group ID of the account.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;groups">
+		<rdfs:label xml:lang="en-US">groups</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a list of names of groups that the account is a member of.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;home_dir">
+		<rdfs:label xml:lang="en-US">home_dir</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the home directory of the account.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -164,6 +300,12 @@
 		<rdfs:label xml:lang="en-US">is_service_account</rdfs:label>
 		<rdfs:comment xml:lang="en-US">Indicates that the account is associated with a network service or system process (daemon), not a specific individual.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;shell">
+		<rdfs:label xml:lang="en-US">shell</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies the account&apos;s command shell.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;user_id">

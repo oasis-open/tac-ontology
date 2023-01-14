@@ -17,7 +17,6 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/domain-name">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/ipv4-address"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/ipv6-address"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
@@ -25,13 +24,33 @@
 	
 	<owl:Class rdf:about="&stix;DomainName">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resolves_to_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;DomainName"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv4Address"/>
+				<owl:someValuesFrom rdf:resource="&stix;IPv6Address"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resolves_to_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">Domain Name</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Domain Name object represents the properties of a network domain name.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:ObjectProperty rdf:about="&stix;resolves_to_refs">
 		<rdfs:label xml:lang="en-US">resolved_to_refs</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more IP addresses or domain names that the domain name resolves to.\n\nThe objects referenced in this list MUST be of type ipv4-addr or ipv6-addr or domain-name (for cases such as CNAME records).</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more IP addresses or domain names that the domain name resolves to. The objects referenced in this list MUST be of type ipv4-addr or ipv6-addr or domain-name (for cases such as CNAME records).</rdfs:comment>
 		<rdfs:range>
 			<owl:Class>
 				<owl:unionOf rdf:parseType="Collection">
@@ -46,15 +65,15 @@
 		</rdfs:range>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;resolves_to_refs_id">
+	<owl:DatatypeProperty rdf:about="&stix;resolves_to_refs_string">
 		<rdfs:label xml:lang="en-US">resolved_to_refs_id</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies a list of identifiers to one or more SCO IP Address or Domain Name objectss that the domain name resolves to.\n\nThe object identifiers referenced in this list MUST be for objects of type ipv4-addr or ipv6-addr or domain-name (for cases such as CNAME records).</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more IP addresses or domain names that the domain name resolves to. The objects referenced in this list MUST be of type ipv4-addr or ipv6-addr or domain-name (for cases such as CNAME records).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;value">
-		<rdfs:label>value</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the value of the subject as a string.</rdfs:comment>
+		<rdfs:label xml:lang="en-US">value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the value of the domain name. The value of this property MUST conform to [RFC1034], and each domain and sub-domain contained within the domain name MUST conform to [RFC5890].</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
