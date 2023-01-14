@@ -6,6 +6,7 @@
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY vocab "http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/intrusion-set"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#"
@@ -14,11 +15,12 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -79,7 +81,61 @@
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Intrusion Set</rdfs:label>
-		<rdfs:comment xml:lang="en-us">An Intrusion Set is a grouped set of adversarial behaviors and resources with common properties that is believed to be orchestrated by a single organization. An Intrusion Set may capture multiple Campaigns or other activities that are all tied together by shared attributes indicating a commonly known or unknown Threat Actor. New activity can be attributed to an Intrusion Set even if the Threat Actors behind the attack are not known. Threat Actors can move from supporting one Intrusion Set to supporting another, or they may support multiple Intrusion Sets.\n\nWhere a Campaign is a set of attacks over a period of time against a specific set of targets to achieve some objective, an Intrusion Set is the entire attack package and may be used over a very long period of time in multiple Campaigns to achieve potentially multiple purposes.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">An Intrusion Set is a grouped set of adversarial behaviors and resources with common properties that is believed to be orchestrated by a single organization. An Intrusion Set may capture multiple Campaigns or other activities that are all tied together by shared attributes indicating a commonly known or unknown Threat Actor. New activity can be attributed to an Intrusion Set even if the Threat Actors behind the attack are not known. Threat Actors can move from supporting one Intrusion Set to supporting another, or they may support multiple Intrusion Sets. Where a Campaign is a set of attacks over a period of time against a specific set of targets to achieve some objective, an Intrusion Set is the entire attack package and may be used over a very long period of time in multiple Campaigns to achieve potentially multiple purposes. While sometimes an Intrusion Set is not active, or changes focus, it is usually difficult to know if it has truly disappeared or ended. Analysts may have varying level of fidelity on attributing an Intrusion Set back to Threat Actors and may be able to only attribute it back to a nation state or perhaps back to an organization within that nation state.</rdfs:comment>
 	</owl:Class>
+
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify this Intrusion Set.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Intrusion Set, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;aliases">
+		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Alternative names used to identify this Intrusion Set.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;first_seen">
+		<rdfs:label xml:lang="en-us">first_seen</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;last_seen">
+		<rdfs:label xml:lang="en-us">last_seen</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was last seen. This property is a summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are later than the last seen timestamp, the object may be updated to account for the new data. If this property and the first_seen property are both defined, then this property MUST be greater than or equal to the timestamp in the first_seen property.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;goals">
+		<rdfs:label xml:lang="en-us">goals</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The high-level goals of this Intrusion Set, namely, what are they trying to do. For example, they may be motivated by personal gain, but their goal is to steal credit card numbers. To do this, they may execute specific Campaigns that have detailed objectives like compromising point of sale systems at a large retailer. Another example: to gain information about latest merger and IPO information from ACME Bank.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;resource_level">
+		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
+		<rdfs:comment xml:lang="en-us">This property specifies the organizational level at which this Intrusion Set typically works, which in turn determines the resources available to this Intrusion Set for use in an attack. The value for this property SHOULD come from the attack-resource-level-ov  open vocabulary.</rdfs:comment>
+		<rdfs:range rdf:resource="&vocab;AttackResourceLevelVocab"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
+		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
+		<rdfs:range rdf:resource="&vocab;AttackMotivationVocab"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
+		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
+		<rdfs:range rdf:resource="&vocab;AttackMotivationVocab"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>

@@ -18,19 +18,9 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/identity">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
-	
-	<owl:Class rdf:about="&stix;Group">
-		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
-		<rdfs:label xml:lang="en-us">Group</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identitfies an informal collection of people, without formal governance.</rdfs:comment>
-		<owl:disjointWith rdf:resource="&stix;Individual"/>
-		<owl:disjointWith rdf:resource="&stix;IndustrySector"/>
-		<owl:disjointWith rdf:resource="&stix;Organization"/>
-	</owl:Class>
-	
+
 	<owl:Class rdf:about="&stix;Identity">
 		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:subClassOf>
@@ -69,29 +59,8 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-us">STIX Identity</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, systems or groups (e.g., the finance sector).</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&stix;Individual">
-		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
-		<rdfs:label xml:lang="en-us">Individual</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identitfies an actual individual.</rdfs:comment>
-		<owl:disjointWith rdf:resource="&stix;IndustrySector"/>
-		<owl:disjointWith rdf:resource="&stix;Organization"/>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&stix;IndustrySector">
-		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
-		<rdfs:label xml:lang="en-us">Industy Sector</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies an industry sector.</rdfs:comment>
-		<owl:disjointWith rdf:resource="&stix;Organization"/>
-	</owl:Class>
-	
-	<owl:Class rdf:about="&stix;Organization">
-		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
-		<rdfs:label xml:lang="en-us">Organization</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies an actual formal organization of people, with governance, such as a company.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">Identity</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, systems or groups (e.g., the finance sector). The Identity SDO can capture basic identifying information, contact information, and the sectors that the Identity belongs to. Identity is used in STIX to represent, among other things, targets of attacks, information sources, object creators, and threat actor identities.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;contact_information">
@@ -102,8 +71,13 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;identity_class">
 		<rdfs:label xml:lang="en-us">identity_class</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The type of entity that this Identity describes, e.g., an individual or organization.\n\nThe value for this property SHOULD come from the identity-class-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
+		<rdfs:comment xml:lang="en-us">The type of entity that this Identity describes, e.g., an individual or organization. The value for this property SHOULD come from the identity-class-ov open vocabulary.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;identityClassOv"/>
+	</owl:DatatypeProperty>
+
+	<rdfs:Datatype rdf:about="&stix;IdentityClassOv">
+		<rdfs:label xml:lang="en-us">identity-class-ov</rdfs:label>
+		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
@@ -137,7 +111,19 @@
 					</rdf:List>
 				</owl:oneOf>
 			</rdfs:Datatype>
-		</rdfs:range>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of this Identity. When referring to a specific entity (e.g., an individual or organization), this property SHOULD contain the canonical name of the specific entity.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Identity, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;roles">
@@ -145,11 +131,16 @@
 		<rdfs:comment xml:lang="en-us">The list of roles that this Identity performs (e.g., CEO, Domain Administrators, Doctors, Hospital, or Retailer). No open vocabulary is yet defined for this property.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-	
+
 	<owl:DatatypeProperty rdf:about="&stix;sectors">
 		<rdfs:label xml:lang="en-us">sectors</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The list of industry sectors that this Identity belongs to.\n\nThe values for this property SHOULD come from the industry-sector-ov open vocabulary.</rdfs:comment>
-		<rdfs:range>
+		<rdfs:comment xml:lang="en-us">The list of industry sectors that this Identity belongs to. The values for this property SHOULD come from the industry-sector-ov open vocabulary.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;IndustrySectorOv"/>
+	</owl:DatatypeProperty>
+
+	<rdfs:Datatype rdf:about="&stix;IndustrySectorOv">
+		<rdfs:label xml:lang="en-us">industry-sector-ov</rdfs:label>
+		<owl:equivalentClass>
 			<rdfs:Datatype>
 				<owl:oneOf>
 					<rdf:List>
@@ -323,7 +314,7 @@
 					</rdf:List>
 				</owl:oneOf>
 			</rdfs:Datatype>
-		</rdfs:range>
-	</owl:DatatypeProperty>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
 
 </rdf:RDF>
