@@ -82,12 +82,12 @@
 		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
 	</owl:DatatypeProperty>
 	
-	<rdf:ObjectProperty rdf:about="&stix;objects">
+	<owl:ObjectProperty rdf:about="&stix;objects">
 		<rdfs:label xml:lang="en-us">objects</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A dictionary of SCO representing the observation. The dictionary MUST contain at least one object. The cyber observable content MAY include multiple objects if those objects are related as part of a single observation. Multiple objects not related to each other via cyber observable Relationships MUST NOT be contained within the same Observed Data instance. This property MUST NOT be present if object_refs is provided. For example, a Network Traffic object and two IPv4 Address objects related via the src_ref and dst_ref properties can be contained in the same Observed Data because they are all related and used to characterize that single entity. NOTE: this property is now deprecated in favor of object_refs and will be removed in a future version.</rdfs:comment>
 		<owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
 		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
-	</rdf:ObjectProperty>
+	</owl:ObjectProperty>
 
 	<owl:ObjectProperty rdf:about="&stix;object_refs">
 		<rdfs:label xml:lang="en-us">object_refs</rdfs:label>

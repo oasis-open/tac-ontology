@@ -73,7 +73,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;environment_variables"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValurPair"/>
+				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>

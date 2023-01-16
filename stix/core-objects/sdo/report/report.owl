@@ -50,7 +50,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;object_refs"/>
-				<owl:someValuesFrom rdf:resource="&xsd;StixObject"/>
+				<owl:someValuesFrom rdf:resource="&stix;StixObject"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>

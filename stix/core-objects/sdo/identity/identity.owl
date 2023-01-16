@@ -72,7 +72,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;identity_class">
 		<rdfs:label xml:lang="en-us">identity_class</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The type of entity that this Identity describes, e.g., an individual or organization. The value for this property SHOULD come from the identity-class-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;identityClassOv"/>
+		<rdfs:range rdf:resource="&stix;IdentityClassOv"/>
 	</owl:DatatypeProperty>
 
 	<rdfs:Datatype rdf:about="&stix;IdentityClassOv">

@@ -62,7 +62,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;kill_chain_phases"/>
-				<owl:someValuesFrom rdf:resource="&xsd;KillChainPhase"/>
+				<owl:someValuesFrom rdf:resource="&stix;KillChainPhase"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Infrastructure</rdfs:label>

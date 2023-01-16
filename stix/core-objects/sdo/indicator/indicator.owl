@@ -74,7 +74,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;kill_chain_phases"/>
-				<owl:someValuesFrom rdf:resource="&stix;KillChainPhases"/>
+				<owl:someValuesFrom rdf:resource="&stix;KillChainPhase"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Indicator</rdfs:label>
@@ -215,7 +215,7 @@
 	<owl:ObjectProperty rdf:about="&stix;kill_chain_phases">
 		<rdfs:label xml:lang="en-us">kill_chain_phases</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The kill chain phase(s) to which this Indicator corresponds.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KillChainPhases"/>
+		<rdfs:range rdf:resource="&stix;KillChainPhase"/>
 	</owl:ObjectProperty>
 
 </rdf:RDF>

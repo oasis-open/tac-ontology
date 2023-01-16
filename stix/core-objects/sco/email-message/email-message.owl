@@ -168,7 +168,8 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;body_raw_ref"/>
-				<owl:someValuesFrom rdf:resource="&stix;id"/>
+				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
+				<owl:someValuesFrom rdf:resource="&stix;File"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -218,7 +219,7 @@
 	<owl:ObjectProperty rdf:about="&stix;body_multipart">
 		<rdfs:label xml:lang="en-us">body_multipart</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a list of the MIME parts that make up the email body. This property MUST NOT be used if is_multipart is false.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;EmailMimePart"/>
+		<rdfs:range rdf:resource="&stix;EmailMimePartType"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;body_raw_ref">
