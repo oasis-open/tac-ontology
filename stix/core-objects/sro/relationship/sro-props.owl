@@ -72,6 +72,9 @@
 	<owl:ObjectProperty rdf:about="&stix;hosts">
 	</owl:ObjectProperty>
 	
+	<owl:ObjectProperty rdf:about="&stix;impersonates">
+	</owl:ObjectProperty>
+	
 	<owl:ObjectProperty rdf:about="&stix;indicates">
 	</owl:ObjectProperty>
 	
