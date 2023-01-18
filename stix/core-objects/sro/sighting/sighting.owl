@@ -27,6 +27,12 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixRelationshipObject"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;count"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;description"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -45,8 +51,14 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;count"/>
-				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+				<owl:onProperty rdf:resource="&stix;observed_data_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;ObservedData"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;observed_data_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -63,14 +75,8 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;observed_data_refs"/>
-				<owl:someValuesFrom rdf:resource="&stix;ObservedData"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;observed_data_refs_string"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+				<owl:onProperty rdf:resource="&stix;summary"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -86,39 +92,33 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;summary"/>
-				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">Sighting</rdfs:label>
-		<rdfs:comment xml:lang="en-US">A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen. Sightings are used to track who and what are being targeted, how attacks are carried out, and to track trends in attack behavior. \n\n The Sighting relationship object is a special type of SRO; it is a relationship that contains extra properties not present on the Generic Relationship object. These extra properties are included to represent data specific to sighting relationships (e.g., count, representing how many times something was seen), but for other purposes a Sighting can be thought of as a Relationship with a name of "sighting-of". Sighting is captured as a relationship because you cannot have a sighting unless you have something that has been sighted. Sighting does not make sense without the relationship to what was sighted. \n\n Sighting relationships relate three aspects of the sighting: \n\n What was sighted, such as the Indicator, Malware, Campaign, or other SDO (sighting_of_ref). \n\n Who sighted it and/or where it was sighted, represented as an Identity (where_sighted_refs). \n\n What was actually seen on systems and networks, represented as Observed Data (observed_data_refs). \n\n What was sighted is required; a sighting does not make sense unless you say what you saw. Who sighted it, where it was sighted, and what was actually seen are optional. In many cases it is not necessary to provide that level of detail in order to provide value. \n\n Sightings are used whenever any SDO has been "seen". In some cases, the object creator wishes to convey very little information about the sighting; the details might be sensitive, but the fact that they saw a malware instance or threat actor could still be very useful. In other cases, providing the details may be helpful or even necessary; saying exactly which of the 1000 IP addresses in an indicator were sighted is helpful when tracking which of those IPs is still malicious. \n\n Sighting is distinct from Observed Data in that Sighting is an intelligence assertion ("I saw this threat actor") while Observed Data is simply information ("I saw this file"). When you combine them by including the linked Observed Data (observed_data_refs) from a Sighting, you can say "I saw this file, and that makes me think I saw this threat actor".</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen. Sightings are used to track who and what are being targeted, how attacks are carried out, and to track trends in attack behavior. \n\n The Sighting relationship object is a special type of SRO; it is a relationship that contains extra properties not present on the Generic Relationship object. These extra properties are included to represent data specific to sighting relationships (e.g., count, representing how many times something was seen), but for other purposes a Sighting can be thought of as a Relationship with a name of &quot;sighting-of&quot;. Sighting is captured as a relationship because you cannot have a sighting unless you have something that has been sighted. Sighting does not make sense without the relationship to what was sighted. \n\n Sighting relationships relate three aspects of the sighting: \n\n What was sighted, such as the Indicator, Malware, Campaign, or other SDO (sighting_of_ref). \n\n Who sighted it and/or where it was sighted, represented as an Identity (where_sighted_refs). \n\n What was actually seen on systems and networks, represented as Observed Data (observed_data_refs). \n\n What was sighted is required; a sighting does not make sense unless you say what you saw. Who sighted it, where it was sighted, and what was actually seen are optional. In many cases it is not necessary to provide that level of detail in order to provide value. \n\n Sightings are used whenever any SDO has been &quot;seen&quot;. In some cases, the object creator wishes to convey very little information about the sighting; the details might be sensitive, but the fact that they saw a malware instance or threat actor could still be very useful. In other cases, providing the details may be helpful or even necessary; saying exactly which of the 1000 IP addresses in an indicator were sighted is helpful when tracking which of those IPs is still malicious. \n\n Sighting is distinct from Observed Data in that Sighting is an intelligence assertion (&quot;I saw this threat actor&quot;) while Observed Data is simply information (&quot;I saw this file&quot;). When you combine them by including the linked Observed Data (observed_data_refs) from a Sighting, you can say &quot;I saw this file, and that makes me think I saw this threat actor&quot;.</rdfs:comment>
 	</owl:Class>
-	
-	<owl:DatatypeProperty rdf:about="&stix;description">
-		<rdfs:label xml:lang="en-us">description</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Sighting.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
-	<owl:ObjectProperty rdf:about="&stix;first_seen">
-		<rdfs:label xml:lang="en-US">first_seen</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The beginning of the time window during which the SDO referenced by the sighting_of_ref property was sighted.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:ObjectProperty>
-
-	<owl:ObjectProperty rdf:about="&stix;last_seen">
-		<rdfs:label xml:lang="en-US">last_seen</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The end of the time window during which the SDO referenced by the sighting_of_ref property was sighted. If this property and the first_seen property are both defined, then this property MUST be greater than or equal to the timestamp in the first_seen property.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;dateTime"/>
-	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;count">
 		<rdfs:label xml:lang="en-us">count</rdfs:label>
 		<rdfs:comment xml:lang="en-us">If present, this MUST be an integer between 0 and 999,999,999 inclusive and represents the number of times the SDO referenced by the sighting_of_ref property was sighted. Observed Data has a similar property called number_observed, which refers to the number of times the data was observed. These counts refer to different concepts and are distinct. For example, a single sighting of a DDoS bot might have many millions of observations of the network traffic that it generates. Thus, the Sighting count would be 1 (the bot was observed once) but the Observed Data number_observed would be much higher. As another example, a sighting with a count of 0 can be used to express that an indicator was not seen at all.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
 	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Sighting.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;first_seen">
+		<rdfs:label xml:lang="en-US">first_seen</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The beginning of the time window during which the SDO referenced by the sighting_of_ref property was sighted.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;last_seen">
+		<rdfs:label xml:lang="en-US">last_seen</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The end of the time window during which the SDO referenced by the sighting_of_ref property was sighted. If this property and the first_seen property are both defined, then this property MUST be greater than or equal to the timestamp in the first_seen property.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;observed_data_refs">
 		<rdfs:label xml:lang="en-US">observed_data_refs</rdfs:label>
@@ -134,20 +134,20 @@
 	
 	<owl:ObjectProperty rdf:about="&stix;sighting_of_ref">
 		<rdfs:label xml:lang="en-US">sighting_of_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-US">An ID reference to the SDO that was sighted (e.g., Indicator or Malware). For example, if this is a Sighting of an Indicator, that Indicator's ID would be the value of this property. This property MUST reference only an SDO.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">An ID reference to the SDO that was sighted (e.g., Indicator or Malware). For example, if this is a Sighting of an Indicator, that Indicator&apos;s ID would be the value of this property. This property MUST reference only an SDO.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;StixDomainObject"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;sighting_of_ref_string">
 		<rdfs:label xml:lang="en-US">sighting_of_ref_string</rdfs:label>
-		<rdfs:comment xml:lang="en-US">An ID reference to the SDO that was sighted (e.g., Indicator or Malware). For example, if this is a Sighting of an Indicator, that Indicator's ID would be the value of this property. This property MUST reference only an SDO.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">An ID reference to the SDO that was sighted (e.g., Indicator or Malware). For example, if this is a Sighting of an Indicator, that Indicator&apos;s ID would be the value of this property. This property MUST reference only an SDO.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;summary">
 		<rdfs:label xml:lang="en-US">summary</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The summary property indicates whether the Sighting should be considered summary data. Summary data is an aggregation of previous Sightings reports and should not be considered primary source data. Default value is false.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;boolean">false</rdfs:range>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;where_sighted_refs">

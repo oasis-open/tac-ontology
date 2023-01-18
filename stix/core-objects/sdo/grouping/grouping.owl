@@ -82,16 +82,16 @@
 			</rdfs:Datatype>
 		</rdfs:range>
 	</owl:DatatypeProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;name">
-		<rdfs:label xml:lang="en-us">name</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A name used to identify the Grouping.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Grouping, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify the Grouping.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	

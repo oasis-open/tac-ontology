@@ -25,13 +25,13 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixRelationshipObject"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;relationship_type"/>
+				<owl:onProperty rdf:resource="&stix;description"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:onProperty rdf:resource="&stix;relationship_type"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -50,6 +50,18 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;start_time"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;stop_time"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;target_ref"/>
 				<owl:someValuesFrom rdf:resource="&stix;StixCyberObservable"/>
 				<owl:someValuesFrom rdf:resource="&stix;StixDomainObject"/>
@@ -61,31 +73,19 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;start_time"/>
-				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;stop_time"/>
-				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-US">Relationship</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The Relationship object is used to link together two SDOs or SCOs in order to describe how they are related to each other. If SDOs and SCOs are considered "nodes" or "vertices" in the graph, the Relationship Objects (SROs) represent "edges". \n\n STIX defines many relationship types to link together SDOs and SCOs. These relationships are contained in the "Relationships" table under each SDO and SCO definition. Relationship types defined in the specification SHOULD be used to ensure consistency. An example of a specification-defined relationship is that an indicator indicates a campaign. That relationship type is listed in the Relationships section of the Indicator SDO definition. \n\n STIX also allows relationships from any SDO or SCO to any SDO or SCO that have not been defined in this specification. These relationships MAY use the related-to relationship type or MAY use a user-defined relationship type. As an example, a user might want to link malware directly to a tool. They can do so using related-to to say that the Malware is related to the Tool but not describe how, or they could use delivered-by (a user-defined name they determined) to indicate more detail. \n\n Note that some relationships in STIX may seem like "shortcuts". For example, an Indicator doesn't really detect a Campaign: it detects activity (Attack Patterns, Malware, Infrastructure, etc.) that are often used by that campaign. While some analysts might want all of the source data and think that shortcuts are misleading, in many cases it's helpful to provide just the key points (shortcuts) and leave out the low-level details. In other cases, the low-level analysis may not be known or sharable, while the high-level analysis is. For these reasons, relationships that might appear to be "shortcuts" are not excluded from STIX.</rdfs:comment>
+		<rdfs:comment xml:lang="en-US">The Relationship object is used to link together two SDOs or SCOs in order to describe how they are related to each other. If SDOs and SCOs are considered &quot;nodes&quot; or &quot;vertices&quot; in the graph, the Relationship Objects (SROs) represent &quot;edges&quot;. \n\n STIX defines many relationship types to link together SDOs and SCOs. These relationships are contained in the &quot;Relationships&quot; table under each SDO and SCO definition. Relationship types defined in the specification SHOULD be used to ensure consistency. An example of a specification-defined relationship is that an indicator indicates a campaign. That relationship type is listed in the Relationships section of the Indicator SDO definition. \n\n STIX also allows relationships from any SDO or SCO to any SDO or SCO that have not been defined in this specification. These relationships MAY use the related-to relationship type or MAY use a user-defined relationship type. As an example, a user might want to link malware directly to a tool. They can do so using related-to to say that the Malware is related to the Tool but not describe how, or they could use delivered-by (a user-defined name they determined) to indicate more detail. \n\n Note that some relationships in STIX may seem like &quot;shortcuts&quot;. For example, an Indicator doesn&apos;t really detect a Campaign: it detects activity (Attack Patterns, Malware, Infrastructure, etc.) that are often used by that campaign. While some analysts might want all of the source data and think that shortcuts are misleading, in many cases it&apos;s helpful to provide just the key points (shortcuts) and leave out the low-level details. In other cases, the low-level analysis may not be known or sharable, while the high-level analysis is. For these reasons, relationships that might appear to be &quot;shortcuts&quot; are not excluded from STIX.</rdfs:comment>
 	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-US">description</rdfs:label>
+		<rdfs:comment xml:lang="en-US">A description that provides more details and context about the Relationship, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;relationship_type">
 		<rdfs:label xml:lang="en-US">relationship_type</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The name used to identify the type of Relationship. This value SHOULD be an exact value listed in the relationships for the source and target SDO, but MAY be any string. The value of this property MUST be in ASCII and is limited to characters a-z (lowercase ASCII), 0-9, and hyphen (-).</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;description">
-		<rdfs:label xml:lang="en-US">description</rdfs:label>
-		<rdfs:comment xml:lang="en-US">A description that provides more details and context about the Relationship, potentially including its purpose and its key characteristics.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
