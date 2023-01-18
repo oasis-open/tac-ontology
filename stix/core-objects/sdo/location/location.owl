@@ -5,8 +5,8 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY vocab "http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/location"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/location#"
@@ -15,8 +15,8 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
+	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/location">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
@@ -96,18 +96,6 @@
 		<rdfs:comment xml:lang="en-us">A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude. \n\n Locations are primarily used to give context to other SDOs. For example, a Location could be used in a relationship to describe that the Bourgeois Swallow intrusion set originates from Eastern Europe. \n\n The Location SDO can be related to an Identity or Intrusion Set to indicate that the identity or intrusion set is located in that location. It can also be related from a malware or attack pattern to indicate that they target victims in that location. The Location object describes geographic areas, not governments, even in cases where that area might have a government. For example, a Location representing the United States describes the United States as a geographic area, not the federal government of the United States. \n\n At least one of the following properties/sets of properties MUST be provided: region, country, latitude and longitude. \n\n When a combination of properties is provided (e.g. a region and a latitude and longitude) the more precise properties are what the location describes. In other words, if a location contains both a region of northern-america and a country of us, then the location describes the United States, not all of North America. In cases where a latitude and longitude are specified without a precision, the location describes the most precise other value. \n\n If precision is specified, then the datum for latitude and longitude MUST be WGS 84 [WGS84]. Organizations specifying a designated location using latitude and longitude SHOULD specify the precision which is appropriate for the scope of the location being identified. The scope is defined by the boundary as outlined by the precision around the coordinates.</rdfs:comment>
 	</owl:Class>
 	
-	<owl:DatatypeProperty rdf:about="&stix;name">
-		<rdfs:label>name</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A name used to identify the Location.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;description">
-		<rdfs:label>description</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A textual description of the Location.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
 	<owl:DatatypeProperty rdf:about="&stix;administrative_area">
 		<rdfs:label>administrative_area</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The state, province, or other sub-national administrative area that this Location describes. This property SHOULD contain a valid ISO 3166-2 Code [ISO3166-2].</rdfs:comment>
@@ -132,6 +120,12 @@
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label>description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A textual description of the Location.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix;latitude">
 		<rdfs:label xml:lang="en-us">latitude</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The latitude of the Location in decimal degrees. Positive numbers describe latitudes north of the equator, and negative numbers describe latitudes south of the equator. The value of this property MUST be between -90.0 and 90.0, inclusive. If the longitude property is present, this property MUST be present.</rdfs:comment>
@@ -142,6 +136,12 @@
 		<rdfs:label xml:lang="en-us">longitude</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The longitude of the Location in decimal degrees. Positive numbers describe longitudes east of the prime meridian and negative numbers describe longitudes west of the prime meridian. The value of this property MUST be between -180.0 and 180.0, inclusive. If the latitude property is present, this property MUST be present.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;float"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label>name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify the Location.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;network_details">
@@ -162,16 +162,16 @@
 		<rdfs:range rdf:resource="&xsd;float"/>
 	</owl:DatatypeProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;street_address">
-		<rdfs:label xml:lang="en-us">street_address</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The street address that this Location describes. This property includes all aspects or parts of the street address. For example, some addresses may have multiple lines including a mailstop or apartment number.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
 	<owl:DatatypeProperty rdf:about="&stix;region">
 		<rdfs:label xml:lang="en-us">region</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The region that this Location describes. The value for this property SHOULD come from the region-ov open vocabulary.</rdfs:comment>
 		<rdfs:range rdf:resource="&vocab;RegionOv"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;street_address">
+		<rdfs:label xml:lang="en-us">street_address</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The street address that this Location describes. This property includes all aspects or parts of the street address. For example, some addresses may have multiple lines including a mailstop or apartment number.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

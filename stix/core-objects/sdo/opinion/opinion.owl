@@ -37,12 +37,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;opinion"/>
-				<owl:someValuesFrom rdf:resource="&stix;OpinionEnum"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;object_refs"/>
 				<owl:someValuesFrom rdf:resource="&stix;StixObject"/>
 			</owl:Restriction>
@@ -53,39 +47,15 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;opinion"/>
+				<owl:someValuesFrom rdf:resource="&stix;OpinionEnum"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Opinion</rdfs:label>
-		<rdfs:comment xml:lang="en-us">An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity. The primary property is the opinion property, which captures the level of agreement or disagreement using a fixed scale. That fixed scale also supports a numeric mapping to allow for consistent statistical operations across opinions. \n\n For example, an analyst from a consuming organization might say that they "strongly disagree" with a Campaign object and provide an explanation about why. In a more automated workflow, a SOC operator might give an Indicator "one star" in their TIP (expressing "strongly disagree") because it is considered to be a false positive within their environment. Opinions are subjective, and the specification does not address how best to interpret them. Sharing communities are encouraged to provide clear guidelines to their constituents regarding best practice for the use of Opinion objects within the community. \n\n Because Opinions are typically (though not always) created by human analysts and are comprised of human-oriented text, they contain an additional property to capture the analyst(s) that created the Opinion. This is distinct from the created_by_ref property, which is meant to capture the organization that created the object.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity. The primary property is the opinion property, which captures the level of agreement or disagreement using a fixed scale. That fixed scale also supports a numeric mapping to allow for consistent statistical operations across opinions. \n\n For example, an analyst from a consuming organization might say that they &quot;strongly disagree&quot; with a Campaign object and provide an explanation about why. In a more automated workflow, a SOC operator might give an Indicator &quot;one star&quot; in their TIP (expressing &quot;strongly disagree&quot;) because it is considered to be a false positive within their environment. Opinions are subjective, and the specification does not address how best to interpret them. Sharing communities are encouraged to provide clear guidelines to their constituents regarding best practice for the use of Opinion objects within the community. \n\n Because Opinions are typically (though not always) created by human analysts and are comprised of human-oriented text, they contain an additional property to capture the analyst(s) that created the Opinion. This is distinct from the created_by_ref property, which is meant to capture the organization that created the object.</rdfs:comment>
 	</owl:Class>
-	
-	<owl:DatatypeProperty rdf:about="&stix;explanation">
-		<rdfs:label xml:lang="en-us">explanation</rdfs:label>
-		<rdfs:comment xml:lang="en-us">An explanation of why the producer has this Opinion. For example, if an Opinion of strongly-disagree is given, the explanation can contain an explanation of why the Opinion producer disagrees and what evidence they have for their disagreement.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;authors">
-		<rdfs:label xml:lang="en-us">authors</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The name of the author(s) of this Opinion (e.g., the analyst(s) that created it).</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
-	<owl:ObjectProperty rdf:about="&stix;object_refs">
-		<rdfs:label xml:lang="en-us">object_refs</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The STIX Objects that the Opinion is being applied to.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixObject"/>
-	</owl:ObjectProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;object_refs_string">
-		<rdfs:label xml:lang="en-us">object_refs_string</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The STIX Objects that the Opinion is being applied to.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-
-	<owl:DatatypeProperty rdf:about="&stix;opinion">
-		<rdfs:label xml:lang="en-us">opinion</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The opinion that the producer has about all of the STIX Object(s) listed in the object_refs property. The values of this property MUST come from the opinion-enum enumeration.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;OpinionEnum"/>
-	</owl:DatatypeProperty>
 	
 	<rdfs:Datatype rdf:about="&stix;OpinionEnum">
 		<rdfs:label xml:lang="en-us">opinion-enum</rdfs:label>
@@ -120,5 +90,35 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
+	
+	<owl:DatatypeProperty rdf:about="&stix;authors">
+		<rdfs:label xml:lang="en-us">authors</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of the author(s) of this Opinion (e.g., the analyst(s) that created it).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;explanation">
+		<rdfs:label xml:lang="en-us">explanation</rdfs:label>
+		<rdfs:comment xml:lang="en-us">An explanation of why the producer has this Opinion. For example, if an Opinion of strongly-disagree is given, the explanation can contain an explanation of why the Opinion producer disagrees and what evidence they have for their disagreement.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;object_refs">
+		<rdfs:label xml:lang="en-us">object_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The STIX Objects that the Opinion is being applied to.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixObject"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;object_refs_string">
+		<rdfs:label xml:lang="en-us">object_refs_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The STIX Objects that the Opinion is being applied to.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;opinion">
+		<rdfs:label xml:lang="en-us">opinion</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The opinion that the producer has about all of the STIX Object(s) listed in the object_refs property. The values of this property MUST come from the opinion-enum enumeration.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;OpinionEnum"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>

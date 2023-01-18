@@ -5,8 +5,8 @@
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
 	<!ENTITY threatActor "http://docs.oasis-open.org/cti/ns/stix/threat-actor#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY vocab "http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/threat-actor"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/threat-actor#"
@@ -15,8 +15,8 @@
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
 	xmlns:threatActor="http://docs.oasis-open.org/cti/ns/stix/threat-actor#"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
+	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
@@ -105,25 +105,18 @@
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Threat Actor</rdfs:label>
-		<rdfs:comment xml:lang="en-us">
-			Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. A Threat Actor is not an Intrusion Set but may support or be affiliated with various Intrusion Sets, groups, or organizations over time. \n\nThreat Actors leverage their resources, and possibly the resources of an Intrusion Set, to conduct attacks and run Campaigns against targets. \n\nThreat Actors can be characterized by their motives, capabilities, goals, sophistication level, past activities, resources they have access to, and their role in the organization.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. A Threat Actor is not an Intrusion Set but may support or be affiliated with various Intrusion Sets, groups, or organizations over time. \n\nThreat Actors leverage their resources, and possibly the resources of an Intrusion Set, to conduct attacks and run Campaigns against targets. \n\nThreat Actors can be characterized by their motives, capabilities, goals, sophistication level, past activities, resources they have access to, and their role in the organization.</rdfs:comment>
 	</owl:Class>
-
-	<owl:DatatypeProperty rdf:about="&stix;name">
-		<rdfs:label xml:lang="en-us">name</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A name used to identify this Threat Actor or Threat Actor group.</rdfs:comment>
+	
+	<owl:DatatypeProperty rdf:about="&stix;aliases">
+		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A list of other names that this Threat Actor is believed to use.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Threat Actor, potentially including its purpose and its key characteristics.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;aliases">
-		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A list of other names that this Threat Actor is believed to use.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
@@ -145,9 +138,15 @@
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify this Threat Actor or Threat Actor group.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix;personal_motivations">
 		<rdfs:label xml:lang="en-us">personal_motivations</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Personal motivation, which is independent of the organization's goals, describes what impels an individual to carry out an attack. Personal motivation may align with the organization's motivation—as is common with activists—but more often it supports personal goals. For example, an individual analyst may join a Data Miner corporation because his or her skills may align with the corporation's objectives. But the analyst most likely performs his or her daily work toward those objectives for personal reward in the form of a paycheck. The motivation of personal reward may be even stronger for Threat Actors who commit illegal acts, as it is more difficult for someone to cross that line purely for altruistic reasons. The position in the list has no significance. The values for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Personal motivation, which is independent of the organization&apos;s goals, describes what impels an individual to carry out an attack. Personal motivation may align with the organization&apos;s motivation—as is common with activists—but more often it supports personal goals. For example, an individual analyst may join a Data Miner corporation because his or her skills may align with the corporation&apos;s objectives. But the analyst most likely performs his or her daily work toward those objectives for personal reward in the form of a paycheck. The motivation of personal reward may be even stronger for Threat Actors who commit illegal acts, as it is more difficult for someone to cross that line purely for altruistic reasons. The position in the list has no significance. The values for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
 		<rdfs:range rdf:resource="&vocab;AttackMotivationVocab"/>
 	</owl:DatatypeProperty>
 	
