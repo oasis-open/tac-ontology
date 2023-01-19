@@ -49,6 +49,7 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/opinion"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/process"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/relationship"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/relationship-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/report"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/sighting"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/software"/>
