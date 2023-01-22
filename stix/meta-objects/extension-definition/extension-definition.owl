@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY marking "http://docs.oasis-open.org/cti/ns/data-marking#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -8,7 +7,6 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/extension-definition"
-	xmlns:marking="http://docs.oasis-open.org/cti/ns/data-marking#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -18,16 +16,9 @@
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/extension-definition">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
-	
-	<owl:Class rdf:about="&stix;Extension">
-		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
-		<rdfs:label>Extension</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Characterizes the base of all extensions to Cyber Observable objects.</rdfs:comment>
-	</owl:Class>
-	
+		
 	<owl:Class rdf:about="&stix;ExtensionDefinition">
 		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
 		<rdfs:subClassOf>
@@ -54,53 +45,13 @@
 	<owl:DatatypeProperty rdf:about="&stix;extension_properties">
 		<rdfs:label xml:lang="en">extension_properties</rdfs:label>
 		<rdfs:comment xml:lang="en">This property contains the list of new property names that are added to an object by an extension.\n\nThis property MUST only be used when the extension_types property includes a value of toplevel-property-extension. In other words, when new properties are being added at the top-level of an existing object</rdfs:comment>
-		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;extension_type">
-		<rdfs:range>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>legacy</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>new-sco</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>new-sdo</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>new-sro</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>property-extension</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>toplevel-property-extension</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</rdfs:range>
-	</owl:DatatypeProperty>
-	
+		
 	<owl:DatatypeProperty rdf:about="&stix;extension_types">
 		<rdfs:label xml:lang="en">extension types</rdfs:label>
-		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension.\n\The values for this property MUST come from the extension-type-enum enumeration.\n\nWhen this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
-		<rdfs:domain rdf:resource="&stix;ExtensionDefinition"/>
-		<rdfs:range rdf:resource="&xsd;string"/>
+		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension.\n\nThe values for this property MUST come from the extension-type-enum enumeration.\n\nWhen this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;ExtensionTypeEnum"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

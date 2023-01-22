@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY identity "http://docs.oasis-open.org/cti/ns/stix/identity#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -9,7 +8,6 @@
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/identity"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/identity#"
-	xmlns:identity="http://docs.oasis-open.org/cti/ns/stix/identity#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -18,6 +16,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/identity">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -62,224 +61,6 @@
 		<rdfs:label xml:lang="en-us">Identity</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, systems or groups (e.g., the finance sector). The Identity SDO can capture basic identifying information, contact information, and the sectors that the Identity belongs to. Identity is used in STIX to represent, among other things, targets of attacks, information sources, object creators, and threat actor identities.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;IdentityClassOv">
-		<rdfs:label xml:lang="en-us">identity-class-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>class</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>group</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>individual</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>organization</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>system</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>unknown</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&stix;IndustrySectorOv">
-		<rdfs:label xml:lang="en-us">industry-sector-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>aerospace</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>agriculture</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>automotive</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>chemical</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>commercial</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>communications</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>construction</rdf:first>
-																		<rdf:rest>
-																			<rdf:List>
-																				<rdf:first>dams</rdf:first>
-																				<rdf:rest>
-																					<rdf:List>
-																						<rdf:first>defense</rdf:first>
-																						<rdf:rest>
-																							<rdf:List>
-																								<rdf:first>education</rdf:first>
-																								<rdf:rest>
-																									<rdf:List>
-																										<rdf:first>emergency-services</rdf:first>
-																										<rdf:rest>
-																											<rdf:List>
-																												<rdf:first>energy</rdf:first>
-																												<rdf:rest>
-																													<rdf:List>
-																														<rdf:first>entertainment</rdf:first>
-																														<rdf:rest>
-																															<rdf:List>
-																																<rdf:first>financial-services</rdf:first>
-																																<rdf:rest>
-																																	<rdf:List>
-																																		<rdf:first>government</rdf:first>
-																																		<rdf:rest>
-																																			<rdf:List>
-																																				<rdf:first>government-local</rdf:first>
-																																				<rdf:rest>
-																																					<rdf:List>
-																																						<rdf:first>government-national</rdf:first>
-																																						<rdf:rest>
-																																							<rdf:List>
-																																								<rdf:first>government-public-services</rdf:first>
-																																								<rdf:rest>
-																																									<rdf:List>
-																																										<rdf:first>government-regional</rdf:first>
-																																										<rdf:rest>
-																																											<rdf:List>
-																																												<rdf:first>healthcare</rdf:first>
-																																												<rdf:rest>
-																																													<rdf:List>
-																																														<rdf:first>hospitality-leisure</rdf:first>
-																																														<rdf:rest>
-																																															<rdf:List>
-																																																<rdf:first>infrastructure</rdf:first>
-																																																<rdf:rest>
-																																																	<rdf:List>
-																																																		<rdf:first>insurance</rdf:first>
-																																																		<rdf:rest>
-																																																			<rdf:List>
-																																																				<rdf:first>manufacturing</rdf:first>
-																																																				<rdf:rest>
-																																																					<rdf:List>
-																																																						<rdf:first>mining</rdf:first>
-																																																						<rdf:rest>
-																																																							<rdf:List>
-																																																								<rdf:first>non-profit</rdf:first>
-																																																								<rdf:rest>
-																																																									<rdf:List>
-																																																										<rdf:first>nuclear</rdf:first>
-																																																										<rdf:rest>
-																																																											<rdf:List>
-																																																												<rdf:first>pharmaceuticals</rdf:first>
-																																																												<rdf:rest>
-																																																													<rdf:List>
-																																																														<rdf:first>retail</rdf:first>
-																																																														<rdf:rest>
-																																																															<rdf:List>
-																																																																<rdf:first>technology</rdf:first>
-																																																																<rdf:rest>
-																																																																	<rdf:List>
-																																																																		<rdf:first>telecommunications</rdf:first>
-																																																																		<rdf:rest>
-																																																																			<rdf:List>
-																																																																				<rdf:first>transportation</rdf:first>
-																																																																				<rdf:rest>
-																																																																					<rdf:List>
-																																																																						<rdf:first>utilities</rdf:first>
-																																																																						<rdf:rest>
-																																																																							<rdf:List>
-																																																																								<rdf:first>water</rdf:first>
-																																																																								<rdf:rest rdf:resource="&rdf;nil"/>
-																																																																							</rdf:List>
-																																																																						</rdf:rest>
-																																																																					</rdf:List>
-																																																																				</rdf:rest>
-																																																																			</rdf:List>
-																																																																		</rdf:rest>
-																																																																	</rdf:List>
-																																																																</rdf:rest>
-																																																															</rdf:List>
-																																																														</rdf:rest>
-																																																													</rdf:List>
-																																																												</rdf:rest>
-																																																											</rdf:List>
-																																																										</rdf:rest>
-																																																									</rdf:List>
-																																																								</rdf:rest>
-																																																							</rdf:List>
-																																																						</rdf:rest>
-																																																					</rdf:List>
-																																																				</rdf:rest>
-																																																			</rdf:List>
-																																																		</rdf:rest>
-																																																	</rdf:List>
-																																																</rdf:rest>
-																																															</rdf:List>
-																																														</rdf:rest>
-																																													</rdf:List>
-																																												</rdf:rest>
-																																											</rdf:List>
-																																										</rdf:rest>
-																																									</rdf:List>
-																																								</rdf:rest>
-																																							</rdf:List>
-																																						</rdf:rest>
-																																					</rdf:List>
-																																				</rdf:rest>
-																																			</rdf:List>
-																																		</rdf:rest>
-																																	</rdf:List>
-																																</rdf:rest>
-																															</rdf:List>
-																														</rdf:rest>
-																													</rdf:List>
-																												</rdf:rest>
-																											</rdf:List>
-																										</rdf:rest>
-																									</rdf:List>
-																								</rdf:rest>
-																							</rdf:List>
-																						</rdf:rest>
-																					</rdf:List>
-																				</rdf:rest>
-																			</rdf:List>
-																		</rdf:rest>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:DatatypeProperty rdf:about="&stix;contact_information">
 		<rdfs:label xml:lang="en-us">contact_information</rdfs:label>

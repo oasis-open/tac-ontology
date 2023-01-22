@@ -3,7 +3,6 @@
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-	<!ENTITY report "http://docs.oasis-open.org/cti/ns/stix/report#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
@@ -12,12 +11,12 @@
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:report="http://docs.oasis-open.org/cti/ns/stix/report#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/report">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -62,71 +61,7 @@
 		<rdfs:label xml:lang="en-us">Report</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details. They are used to group related threat intelligence together so that it can be published as a comprehensive cyber threat story.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;ReportTypeOv">
-		<rdfs:label xml:lang="en-us">report-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>attack-pattern</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>campaign</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>identity</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>indicator</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>intrusion-set</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>malware</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>observed-data</rdf:first>
-																		<rdf:rest>
-																			<rdf:List>
-																				<rdf:first>threat-actor</rdf:first>
-																				<rdf:rest>
-																					<rdf:List>
-																						<rdf:first>threat-report</rdf:first>
-																						<rdf:rest>
-																							<rdf:List>
-																								<rdf:first>tool</rdf:first>
-																								<rdf:rest>
-																									<rdf:List>
-																										<rdf:first>vulnerability</rdf:first>
-																										<rdf:rest rdf:resource="&rdf;nil"/>
-																									</rdf:List>
-																								</rdf:rest>
-																							</rdf:List>
-																						</rdf:rest>
-																					</rdf:List>
-																				</rdf:rest>
-																			</rdf:List>
-																		</rdf:rest>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
+
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Report, potentially including its purpose and its key characteristics.</rdfs:comment>

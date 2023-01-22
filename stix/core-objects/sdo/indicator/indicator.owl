@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY indicator "http://docs.oasis-open.org/cti/ns/stix/indicator#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -9,7 +8,6 @@
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/indicator"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/indicator#"
-	xmlns:indicator="http://docs.oasis-open.org/cti/ns/stix/indicator#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -18,6 +16,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/indicator">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -80,89 +79,6 @@
 		<rdfs:label xml:lang="en-us">Indicator</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity. For example, an Indicator may be used to represent a set of malicious domains and use the STIX Patterning Language (see section 9) to specify these domains. The Indicator SDO contains a simple textual description, the Kill Chain Phases that it detects behavior in, a time window for when the Indicator is valid or useful, and a required pattern property to capture a structured detection pattern. Conforming STIX implementations MUST support the STIX Patterning Language as defined in section 9. Relationships from the Indicator can describe the malicious or suspicious behavior that it directly detects (Malware, Tool, and Attack Pattern). In addition, it may also imply the presence of a Campaigns, Intrusion Sets, and Threat Actors, etc.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;IndicatorTypeOv">
-		<rdfs:label xml:lang="en-us">indicator-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>anomalous-activity</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>anonymization</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>attribution</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>benign</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>compromised</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>malicious-activity</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>unknown</rdf:first>
-																		<rdf:rest rdf:resource="&rdf;nil"/>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&stix;PatternTypeOv">
-		<rdfs:label xml:lang="en-us">pattern-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>pcre</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>sigma</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>snort</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>stix</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>suricata</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>yara</rdf:first>
-																<rdf:rest rdf:resource="&rdf;nil"/>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>

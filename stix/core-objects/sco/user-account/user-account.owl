@@ -4,8 +4,6 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY userAccnt "http://docs.oasis-open.org/cti/ns/stix/user-account#">
-	<!ENTITY userAccntExt "http://docs.oasis-open.org/cti/ns/stix/ext/unix-user-account#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/user-account"
@@ -13,78 +11,13 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:userAccnt="http://docs.oasis-open.org/cti/ns/stix/user-account#"
-	xmlns:userAccntExt="http://docs.oasis-open.org/cti/ns/stix/ext/unix-user-account#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/user-account">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
-	
-	<rdfs:Datatype rdf:about="&stix;AccountTypeOv">
-		<rdfs:label>account-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:Description>
-						<rdf:first>facebook</rdf:first>
-						<rdf:rest>
-							<rdf:Description>
-								<rdf:first>ldap</rdf:first>
-								<rdf:rest>
-									<rdf:Description>
-										<rdf:first>nis</rdf:first>
-										<rdf:rest>
-											<rdf:Description>
-												<rdf:first>openid</rdf:first>
-												<rdf:rest>
-													<rdf:Description>
-														<rdf:first>radius</rdf:first>
-														<rdf:rest>
-															<rdf:Description>
-																<rdf:first>skype</rdf:first>
-																<rdf:rest>
-																	<rdf:Description>
-																		<rdf:first>tacacs</rdf:first>
-																		<rdf:rest>
-																			<rdf:Description>
-																				<rdf:first>twitter</rdf:first>
-																				<rdf:rest>
-																					<rdf:Description>
-																						<rdf:first>unix</rdf:first>
-																						<rdf:rest>
-																							<rdf:Description>
-																								<rdf:first>windows-local</rdf:first>
-																								<rdf:rest>
-																									<rdf:Description>
-																										<rdf:first>windows-domain</rdf:first>
-																										<rdf:rest rdf:resource="&rdf;nil"/>
-																									</rdf:Description>
-																								</rdf:rest>
-																							</rdf:Description>
-																						</rdf:rest>
-																					</rdf:Description>
-																				</rdf:rest>
-																			</rdf:Description>
-																		</rdf:rest>
-																	</rdf:Description>
-																</rdf:rest>
-															</rdf:Description>
-														</rdf:rest>
-													</rdf:Description>
-												</rdf:rest>
-											</rdf:Description>
-										</rdf:rest>
-									</rdf:Description>
-								</rdf:rest>
-							</rdf:Description>
-						</rdf:rest>
-					</rdf:Description>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:Class rdf:about="&stix;UnixAccountExt">
 		<rdfs:subClassOf rdf:resource="&stix;UserAccount"/>

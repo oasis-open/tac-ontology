@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY opinion "http://docs.oasis-open.org/cti/ns/stix/opinion#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -9,7 +8,6 @@
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/opinion"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/opinion#"
-	xmlns:opinion="http://docs.oasis-open.org/cti/ns/stix/opinion#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -18,6 +16,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/opinion">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -56,40 +55,6 @@
 		<rdfs:label xml:lang="en-us">Opinion</rdfs:label>
 		<rdfs:comment xml:lang="en-us">An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity. The primary property is the opinion property, which captures the level of agreement or disagreement using a fixed scale. That fixed scale also supports a numeric mapping to allow for consistent statistical operations across opinions. \n\n For example, an analyst from a consuming organization might say that they &quot;strongly disagree&quot; with a Campaign object and provide an explanation about why. In a more automated workflow, a SOC operator might give an Indicator &quot;one star&quot; in their TIP (expressing &quot;strongly disagree&quot;) because it is considered to be a false positive within their environment. Opinions are subjective, and the specification does not address how best to interpret them. Sharing communities are encouraged to provide clear guidelines to their constituents regarding best practice for the use of Opinion objects within the community. \n\n Because Opinions are typically (though not always) created by human analysts and are comprised of human-oriented text, they contain an additional property to capture the analyst(s) that created the Opinion. This is distinct from the created_by_ref property, which is meant to capture the organization that created the object.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;OpinionEnum">
-		<rdfs:label xml:lang="en-us">opinion-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>agree</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>disagree</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>neutral</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>strongly-agree</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>strongly-disagree</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:DatatypeProperty rdf:about="&stix;authors">
 		<rdfs:label xml:lang="en-us">authors</rdfs:label>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
-	<!ENTITY process "http://docs.oasis-open.org/cti/ns/stix/process#">
-	<!ENTITY processExt "http://docs.oasis-open.org/cti/ns/stix/ext/process#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
@@ -11,8 +9,6 @@
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/process"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/process#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:process="http://docs.oasis-open.org/cti/ns/stix/process#"
-	xmlns:processExt="http://docs.oasis-open.org/cti/ns/stix/ext/process#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
@@ -23,6 +19,7 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/file"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/network-traffic"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -127,35 +124,6 @@
 		<rdfs:label xml:lang="en-us">Process</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Process object represents common properties of an instance of a computer program as executed on an operating system. A Process object MUST contain at least one property (other than type) from this object (or one of its extensions).</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;WindowsIntegrityLevelEnum">
-		<rdfs:label>windows-integrity-level-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>low</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>medium</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>high</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>system</rdf:first>
-												<rdf:rest rdf:resource="&rdf;nil"/>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:Class rdf:about="&stix;WindowsProcessExt">
 		<rdfs:subClassOf rdf:resource="&stix;Process"/>
@@ -264,114 +232,7 @@
 		<rdfs:label xml:lang="en-us">Windows Service Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows Service extension specifies a default extension for capturing properties specific to Windows services. The key for this extension when used in the extensions dictionary MUST be windows-service-ext. Note that this predefined extension does not use the extension facility described in section 7.3. As all properties of this extension are optional, at least one of the properties defined below MUST be included when using this extension.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;WindowsServiceStartTypeEnum">
-		<rdfs:label>windows-service-start-type-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>SERVICE_AUTO_START</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>SERVICE_BOOT_START</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>SERVICE_DEMAND_START</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>SERVICE_DISABLED</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>SERVICE_SYSTEM_ALERT</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&stix;WindowsServiceStatusEnum">
-		<rdfs:label>windows-service-status-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>SERVICE_CONTINUE_PENDING</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>SERVICE_PAUSE_PENDING</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>SERVICE_PAUSED</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>SERVICE_RUNNING</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>SERVICE_START_PENDING</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>SERVICE_STOP_PENDING</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>SERVICE_STOPPED</rdf:first>
-																		<rdf:rest rdf:resource="&rdf;nil"/>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&stix;WindowsServiceTypeEnum">
-		<rdfs:label>windows-service-type-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>SERVICE_KERNEL_DRIVER</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>SERVICE_FILE_SYSTEM_DRIVER</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>SERVICE_WIN32_OWN_PROCESS</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>SERVICE_WIN32_SHARE_PROCESS</rdf:first>
-												<rdf:rest rdf:resource="&rdf;nil"/>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
+			
 	<owl:DatatypeProperty rdf:about="&stix;aslr_enabled">
 		<rdfs:label xml:lang="en-us">aslr_enabled</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>
@@ -548,7 +409,7 @@
 	
 	<owl:DatatypeProperty rdf:about="&stix;start_type">
 		<rdfs:label xml:lang="en-us">start_type</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Specifies the start options defined for the service. The values of this property MUST come from the windows-service-start-type-enum enumeration.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;WindowsServiceStartTypeEnum"/>
 	</owl:DatatypeProperty>
 	

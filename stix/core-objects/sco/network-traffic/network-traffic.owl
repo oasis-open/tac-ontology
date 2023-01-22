@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY networkTraffic "http://docs.oasis-open.org/cti/ns/stix/network-traffic#">
-	<!ENTITY networkTrafficExt "http://docs.oasis-open.org/cti/ns/stix/ext/network-traffic#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -10,8 +8,6 @@
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/network-traffic"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/network-traffic#"
-	xmlns:networkTraffic="http://docs.oasis-open.org/cti/ns/stix/network-traffic#"
-	xmlns:networkTrafficExt="http://docs.oasis-open.org/cti/ns/stix/ext/network-traffic#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -25,6 +21,7 @@
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/ipv4-address"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/ipv6-address"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/mac-address"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -93,90 +90,7 @@
 		<rdfs:label xml:lang="en-us">ICMP Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The ICMP extension specifies a default extension for capturing network traffic properties specific to ICMP. The key for this extension when used in the extensions dictionary MUST be icmp-ext. Note that this predefined extension does not use the extension facility described in section 7.3. The corresponding protocol value for this extension is icmp.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;NetworkSocketAddressFamilyEnum">
-		<rdfs:label>network-socket-address-family-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>AF_UNSPEC</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>AF_INET</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>AF_IPX</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>AF_APPLETALK</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>AF_NETBIOS</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>AF_INET6</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>AF_IRDA</rdf:first>
-																		<rdf:rest>
-																			<rdf:List>
-																				<rdf:first>AF_BTH</rdf:first>
-																				<rdf:rest rdf:resource="&rdf;nil"/>
-																			</rdf:List>
-																		</rdf:rest>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
-	<rdfs:Datatype rdf:about="&stix;NetworkSocketTypeEnum">
-		<rdfs:label>network-socket-type-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>SOCK_STREAM</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>SOCK_DGRAM</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>SOCK_RAW</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>SOCK_RDM</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>SOCK_SEQPACKET</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-	
+		
 	<owl:Class rdf:about="&stix;NetworkTraffic">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>

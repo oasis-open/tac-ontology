@@ -4,7 +4,6 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY tool "http://docs.oasis-open.org/cti/ns/stix/tool#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/tool"
@@ -13,11 +12,11 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:tool="http://docs.oasis-open.org/cti/ns/stix/tool#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/tool">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -62,55 +61,6 @@
 		<rdfs:label xml:lang="en-us">Tool</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Tools are legitimate software that can be used by threat actors to perform attacks. Knowing how and when threat actors use such tools can be important for understanding how campaigns are executed. Unlike malware, these tools or software packages are often found on a system and have legitimate purposes for power users, system administrators, network administrators, or even normal users. Remote access tools (e.g., RDP) and network scanning tools (e.g., Nmap) are examples of Tools that may be used by a Threat Actor during an attack. \n\nThe Tool SDO characterizes the properties of these software tools and can be used as a basis for making an assertion about how a Threat Actor uses them during an attack. It contains properties to name and describe the tool, a list of Kill Chain Phases the tool can be used to carry out, and the version of the tool. \n\nThis SDO MUST NOT be used to characterize malware. Further, Tool MUST NOT be used to characterize tools used as part of a course of action in response to an attack.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;ToolTypeOv">
-		<rdfs:label xml:lang="en-us">tool-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>credential-exploitation</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>denial-of-service</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>exploitation</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>information-gathering</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>network-capture</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>remote-access</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>unknown</rdf:first>
-																		<rdf:rest>
-																			<rdf:List>
-																				<rdf:first>vulnerability-scanning</rdf:first>
-																				<rdf:rest rdf:resource="&rdf;nil"/>
-																			</rdf:List>
-																		</rdf:rest>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:DatatypeProperty rdf:about="&stix;aliases">
 		<rdfs:label xml:lang="en-us">aliases</rdfs:label>

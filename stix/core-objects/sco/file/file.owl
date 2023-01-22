@@ -1,35 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY archiveExt "http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#">
-	<!ENTITY file "http://docs.oasis-open.org/cti/ns/stix/file#">
-	<!ENTITY ntfsExt "http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
-	<!ENTITY pdfExt "http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#">
-	<!ENTITY rasterImgExt "http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY winPEExt "http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/file"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/file#"
-	xmlns:archiveExt="http://docs.oasis-open.org/cti/ns/stix/ext/archive-file#"
-	xmlns:file="http://docs.oasis-open.org/cti/ns/stix/file#"
-	xmlns:ntfsExt="http://docs.oasis-open.org/cti/ns/stix/ext/ntfs-file#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:pdfExt="http://docs.oasis-open.org/cti/ns/stix/ext/pdf-file#"
-	xmlns:rasterImgExt="http://docs.oasis-open.org/cti/ns/stix/ext/raster-image-file#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:winPEExt="http://docs.oasis-open.org/cti/ns/stix/ext/windows-pebinary-file#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/file">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/directory"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -260,26 +249,6 @@
 		<rdfs:label xml:lang="en-us">Raster Image File Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Raster Image file extension specifies a default extension for capturing properties specific to raster image files. The key for this extension when used in the extensions dictionary MUST be raster-image-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the Raster Image File Extension MUST contain at least one property from this extension.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;WinPebinaryTypeOpenVocab">
-		<rdfs:label>windows-pebinary-type-ov-open</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>user-definition-01</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>user-definition-02</rdf:first>
-								<rdf:rest rdf:resource="&rdf;nil"/>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:Class rdf:about="&stix;WindowsPeOptionalHeaderType">
 		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
@@ -875,7 +844,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;pe_type">
 		<rdfs:label>pe_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the type of the PE binary. This is an open vocabulary and values SHOULD come from the windows-pebinary-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WinPebinaryTypeOpenVocab"/>
+		<rdfs:range rdf:resource="&stix;WindowsPebinaryTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;pointer_to_symbol_table_hex">

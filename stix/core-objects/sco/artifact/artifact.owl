@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY artifact "http://docs.oasis-open.org/cti/ns/stix/artifact#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
@@ -8,7 +7,6 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/artifact"
-	xmlns:artifact="http://docs.oasis-open.org/cti/ns/stix/artifact#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -17,6 +15,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/artifact">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -61,30 +60,6 @@
 		<rdfs:label xml:lang="en-US">Artifact</rdfs:label>
 		<rdfs:comment xml:lang="en-US">The Artifact object permits capturing an array of bytes (8-bits), as a base64-encoded string, or linking to a file-like payload. One of payload_bin or url MUST be provided. It is incumbent on object creators to ensure that the URL is accessible for downstream consumers.</rdfs:comment>
 	</owl:Class>
-	
-	<rdfs:Datatype rdf:about="&stix;EncryptionAlgorithmEnum">
-		<rdfs:label>encryption-algorithm-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>AES-256-GCM</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>ChaCha20-Poly1035</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>mime-type-indicated</rdf:first>
-										<rdf:rest rdf:resource="&rdf;nil"/>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<owl:DatatypeProperty rdf:about="&stix;decryption_key">
 		<rdfs:label xml:lang="en-US">decryption_key</rdfs:label>

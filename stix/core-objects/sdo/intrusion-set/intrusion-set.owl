@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-	<!ENTITY intrusionSet "http://docs.oasis-open.org/cti/ns/stix/intrusion-set#">
 	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
-	<!ENTITY vocab "http://docs.oasis-open.org/cti/ns/stix/vocabulary#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/intrusion-set"
 	xmlns="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#"
-	xmlns:intrusionSet="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
-	xmlns:vocab="http://docs.oasis-open.org/cti/ns/stix/vocabulary#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set">
@@ -123,19 +119,19 @@
 	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
 		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&vocab;AttackMotivationVocab"/>
+		<rdfs:range rdf:resource="&stix;AttackMotivationVocab"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;resource_level">
 		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
 		<rdfs:comment xml:lang="en-us">This property specifies the organizational level at which this Intrusion Set typically works, which in turn determines the resources available to this Intrusion Set for use in an attack. The value for this property SHOULD come from the attack-resource-level-ov  open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&vocab;AttackResourceLevelVocab"/>
+		<rdfs:range rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
 		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&vocab;AttackMotivationVocab"/>
+		<rdfs:range rdf:resource="&stix;AttackMotivationVocab"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>
