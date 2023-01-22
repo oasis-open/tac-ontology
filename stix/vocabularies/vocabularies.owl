@@ -16,7 +16,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary">
 		<rdfs:label>STIX Vocabulary</rdfs:label>
-		<rdfs:comment xml:lang="en-us">STIX vocabularies that have type names ending in '-ov', are "open": they provide a listing of common and industry accepted terms as a guide to the user but do not limit the user to that defined list. These vocabularies are referenced from the STIX Objects as type open-vocab and have a statement indicating which vocabulary should be used. \n\n STIX vocabularies that have type names ending in '-enum' are "closed": the only valid values are those in the vocabulary. These vocabularies are referenced from the STIX Objects as type enum and have a statement indicating which enumeration must be used.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">STIX vocabularies that have type names ending in &apos;-ov&apos;, are &quot;open&quot;: they provide a listing of common and industry accepted terms as a guide to the user but do not limit the user to that defined list. These vocabularies are referenced from the STIX Objects as type open-vocab and have a statement indicating which vocabulary should be used. \n\n STIX vocabularies that have type names ending in &apos;-enum&apos; are &quot;closed&quot;: the only valid values are those in the vocabulary. These vocabularies are referenced from the STIX Objects as type enum and have a statement indicating which enumeration must be used.</rdfs:comment>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -84,7 +84,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
+	
 	<rdfs:Datatype rdf:about="&stix;AttackMotivationOv">
 		<rdfs:label>attack-motivation-ov</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary for capturing a Threat Actor or Intrusion Set&apos;s motivation for attacking.</rdfs:comment>
@@ -183,7 +183,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;EncryptionAlgorithmEnum">
 		<rdfs:label>encryption-algorithm-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -207,7 +207,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;ExtensionTypeEnum">
 		<rdfs:label>extension-type-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -686,7 +686,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
+	
 	<rdfs:Datatype rdf:about="&stix;InfrastructureTypeOv">
 		<rdfs:label xml:lang="en-us">infrastructure-type-ov</rdfs:label>
 		<owl:equivalentClass>
@@ -711,47 +711,47 @@
 																<rdf:first>exfiltration</rdf:first>
 																<rdf:rest>
 																	<rdf:List>
-																	<rdf:first>firewall</rdf:first>
-																			<rdf:rest>
-																				<rdf:List>
-																					<rdf:first>hosting-malware</rdf:first>
-																					<rdf:rest>
-																						<rdf:List>
-																							<rdf:first>hosting-target-lists</rdf:first>
-																							<rdf:rest>
-																								<rdf:List>
-																									<rdf:first>phishing</rdf:first>
-																									<rdf:rest>
-																										<rdf:List>
-																											<rdf:first>reconnaissance</rdf:first>
-																									<rdf:rest>
-																										<rdf:List>
-																											<rdf:first>routers-switches</rdf:first>
-																											<rdf:rest>
-																												<rdf:List>
-																													<rdf:first>staging</rdf:first>
-																													<rdf:rest>
-																														<rdf:List>
-																															<rdf:first>workstation</rdf:first>
-																															<rdf:rest>
-																																<rdf:List>
-																																	<rdf:first>unknown</rdf:first>
-																																	<rdf:rest rdf:resource="&rdf;nil"/>
-																																</rdf:List>
-																															</rdf:rest>
-																														</rdf:List>
-																													</rdf:rest>
-																												</rdf:List>
-																											</rdf:rest>
-																										</rdf:List>
-																									</rdf:rest>
-																								</rdf:List>
-																							</rdf:rest>
-																						</rdf:List>
-																					</rdf:rest>
-																				</rdf:List>
-																			</rdf:rest>
-																		</rdf:List>
+																		<rdf:first>firewall</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>hosting-malware</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>hosting-target-lists</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>phishing</rdf:first>
+																								<rdf:rest>
+																									<rdf:List>
+																										<rdf:first>reconnaissance</rdf:first>
+																										<rdf:rest>
+																											<rdf:List>
+																												<rdf:first>routers-switches</rdf:first>
+																												<rdf:rest>
+																													<rdf:List>
+																														<rdf:first>staging</rdf:first>
+																														<rdf:rest>
+																															<rdf:List>
+																																<rdf:first>workstation</rdf:first>
+																																<rdf:rest>
+																																	<rdf:List>
+																																		<rdf:first>unknown</rdf:first>
+																																		<rdf:rest rdf:resource="&rdf;nil"/>
+																																	</rdf:List>
+																																</rdf:rest>
+																															</rdf:List>
+																														</rdf:rest>
+																													</rdf:List>
+																												</rdf:rest>
+																											</rdf:List>
+																										</rdf:rest>
+																									</rdf:List>
+																								</rdf:rest>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
 																		</rdf:rest>
 																	</rdf:List>
 																</rdf:rest>
@@ -770,36 +770,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
-	<rdfs:Datatype rdf:about="&stix;MalwareResultOv">
-		<rdfs:label xml:lang="en-us">malware-result-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>benign</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>malicious</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>suspicious</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>unknown</rdf:first>
-												<rdf:rest rdf:resource="&rdf;nil"/>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;MalwareCapabilitiesOv">
 		<rdfs:label>malware-capabilities-ov</rdfs:label>
 		<owl:equivalentClass>
@@ -994,6 +965,35 @@
 		</owl:equivalentClass>
 	</rdfs:Datatype>
 	
+	<rdfs:Datatype rdf:about="&stix;MalwareResultOv">
+		<rdfs:label xml:lang="en-us">malware-result-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>benign</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>malicious</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>suspicious</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>unknown</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&stix;MalwareTypeOv">
 		<rdfs:label>malware-type-ov</rdfs:label>
 		<owl:equivalentClass>
@@ -1062,11 +1062,11 @@
 																																													<rdf:List>
 																																														<rdf:first>wiper</rdf:first>
 																																														<rdf:rest>
-																																													<rdf:List>
-																																														<rdf:first>worm</rdf:first>
-																																														<rdf:rest rdf:resource="&rdf;nil"/>
-																																													</rdf:List>
-																																												</rdf:rest>
+																																															<rdf:List>
+																																																<rdf:first>worm</rdf:first>
+																																																<rdf:rest rdf:resource="&rdf;nil"/>
+																																															</rdf:List>
+																																														</rdf:rest>
 																																													</rdf:List>
 																																												</rdf:rest>
 																																											</rdf:List>
@@ -1112,7 +1112,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;NetworkSocketAddressFamilyEnum">
 		<rdfs:label>network-socket-address-family-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1161,7 +1161,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;NetworkSocketTypeEnum">
 		<rdfs:label>network-socket-type-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1195,7 +1195,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;OpinionEnum">
 		<rdfs:label xml:lang="en-us">opinion-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1535,75 +1535,6 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
-	<rdfs:Datatype rdf:about="&stix;ThreatActorTypeOv">
-		<rdfs:label>threat-actor-type-ov</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>activist</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>competitor</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>crime-syndicate</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>criminal</rdf:first>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>hacker</rdf:first>
-														<rdf:rest>
-															<rdf:List>
-																<rdf:first>insider-accidental</rdf:first>
-																<rdf:rest>
-																	<rdf:List>
-																		<rdf:first>insider-disgruntled</rdf:first>
-																		<rdf:rest>
-																			<rdf:List>
-																				<rdf:first>nation-state</rdf:first>
-																				<rdf:rest>
-																					<rdf:List>
-																						<rdf:first>sensationalist</rdf:first>
-																						<rdf:rest>
-																							<rdf:List>
-																								<rdf:first>spy</rdf:first>
-																								<rdf:rest>
-																									<rdf:List>
-																										<rdf:first>terrorist</rdf:first>
-																										<rdf:rest>
-																											<rdf:List>
-																												<rdf:first>unknown</rdf:first>
-																												<rdf:rest rdf:resource="&rdf;nil"/>
-																											</rdf:List>
-																										</rdf:rest>
-																									</rdf:List>
-																								</rdf:rest>
-																							</rdf:List>
-																						</rdf:rest>
-																					</rdf:List>
-																				</rdf:rest>
-																			</rdf:List>
-																		</rdf:rest>
-																	</rdf:List>
-																</rdf:rest>
-															</rdf:List>
-														</rdf:rest>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
 	
 	<rdfs:Datatype rdf:about="&stix;ThreatActorRoleOv">
 		<rdfs:label>threat-actor-role-ov</rdfs:label>
@@ -1692,7 +1623,76 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
+	
+	<rdfs:Datatype rdf:about="&stix;ThreatActorTypeOv">
+		<rdfs:label>threat-actor-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>activist</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>competitor</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>crime-syndicate</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>criminal</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>hacker</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>insider-accidental</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>insider-disgruntled</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>nation-state</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>sensationalist</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>spy</rdf:first>
+																								<rdf:rest>
+																									<rdf:List>
+																										<rdf:first>terrorist</rdf:first>
+																										<rdf:rest>
+																											<rdf:List>
+																												<rdf:first>unknown</rdf:first>
+																												<rdf:rest rdf:resource="&rdf;nil"/>
+																											</rdf:List>
+																										</rdf:rest>
+																									</rdf:List>
+																								</rdf:rest>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
 	<rdfs:Datatype rdf:about="&stix;ToolTypeOv">
 		<rdfs:label xml:lang="en-us">tool-type-ov</rdfs:label>
 		<owl:equivalentClass>
@@ -1741,7 +1741,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;WindowsIntegrityLevelEnum">
 		<rdfs:label>windows-integrity-level-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1770,7 +1770,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
+	
 	<rdfs:Datatype rdf:about="&stix;WindowsPebinaryTypeOv">
 		<rdfs:label>windows-pebinary-type-ov</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Defines an open-vocabulary used to capture the types of Windows PE files</rdfs:comment>
@@ -1800,7 +1800,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-		
+	
 	<rdfs:Datatype rdf:about="&stix;WindowsRegistryDatatypeEnum">
 		<rdfs:label>windows-registry-datatype-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1879,7 +1879,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;WindowsServiceStartTypeEnum">
 		<rdfs:label>windows-service-start-type-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1913,36 +1913,7 @@
 			</rdfs:Datatype>
 		</owl:equivalentClass>
 	</rdfs:Datatype>
-
-	<rdfs:Datatype rdf:about="&stix;WindowsServiceTypeEnum">
-		<rdfs:label>windows-service-type-enum</rdfs:label>
-		<owl:equivalentClass>
-			<rdfs:Datatype>
-				<owl:oneOf>
-					<rdf:List>
-						<rdf:first>SERVICE_KERNEL_DRIVER</rdf:first>
-						<rdf:rest>
-							<rdf:List>
-								<rdf:first>SERVICE_FILE_SYSTEM_DRIVER</rdf:first>
-								<rdf:rest>
-									<rdf:List>
-										<rdf:first>SERVICE_WIN32_OWN_PROCESS</rdf:first>
-										<rdf:rest>
-											<rdf:List>
-												<rdf:first>SERVICE_WIN32_SHARE_PROCESS</rdf:first>
-												<rdf:rest rdf:resource="&rdf;nil"/>
-											</rdf:List>
-										</rdf:rest>
-									</rdf:List>
-								</rdf:rest>
-							</rdf:List>
-						</rdf:rest>
-					</rdf:List>
-				</owl:oneOf>
-			</rdfs:Datatype>
-		</owl:equivalentClass>
-	</rdfs:Datatype>
-
+	
 	<rdfs:Datatype rdf:about="&stix;WindowsServiceStatusEnum">
 		<rdfs:label>windows-service-status-enum</rdfs:label>
 		<owl:equivalentClass>
@@ -1975,6 +1946,35 @@
 														</rdf:rest>
 													</rdf:List>
 												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;WindowsServiceTypeEnum">
+		<rdfs:label>windows-service-type-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>SERVICE_KERNEL_DRIVER</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>SERVICE_FILE_SYSTEM_DRIVER</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>SERVICE_WIN32_OWN_PROCESS</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>SERVICE_WIN32_SHARE_PROCESS</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
 											</rdf:List>
 										</rdf:rest>
 									</rdf:List>

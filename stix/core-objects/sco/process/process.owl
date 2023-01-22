@@ -232,7 +232,7 @@
 		<rdfs:label xml:lang="en-us">Windows Service Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Windows Service extension specifies a default extension for capturing properties specific to Windows services. The key for this extension when used in the extensions dictionary MUST be windows-service-ext. Note that this predefined extension does not use the extension facility described in section 7.3. As all properties of this extension are optional, at least one of the properties defined below MUST be included when using this extension.</rdfs:comment>
 	</owl:Class>
-			
+	
 	<owl:DatatypeProperty rdf:about="&stix;aslr_enabled">
 		<rdfs:label xml:lang="en-us">aslr_enabled</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>

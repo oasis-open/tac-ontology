@@ -90,7 +90,7 @@
 		<rdfs:label xml:lang="en-us">ICMP Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The ICMP extension specifies a default extension for capturing network traffic properties specific to ICMP. The key for this extension when used in the extensions dictionary MUST be icmp-ext. Note that this predefined extension does not use the extension facility described in section 7.3. The corresponding protocol value for this extension is icmp.</rdfs:comment>
 	</owl:Class>
-		
+	
 	<owl:Class rdf:about="&stix;NetworkTraffic">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
