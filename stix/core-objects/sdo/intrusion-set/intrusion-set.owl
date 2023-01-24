@@ -119,7 +119,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
 		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationVocab"/>
+		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;resource_level">
@@ -131,7 +131,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
 		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationVocab"/>
+		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

@@ -519,7 +519,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;pe_type"/>
-				<owl:someValuesFrom rdf:resource="&stix;WinPebinaryTypeOpenVocab"/>
+				<owl:someValuesFrom rdf:resource="&stix;WindowsPebinaryTypeOv"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>

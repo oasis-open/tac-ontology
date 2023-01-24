@@ -58,7 +58,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;context">
 		<rdfs:label xml:lang="en-us">context</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A short descriptor of the particular context shared by the content referenced by the Grouping. The value for this property SHOULD come from the grouping-context-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;GroupingContextOv"/>
+		<rdfs:range rdf:resource="&stix;GroupingContextOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;description">
