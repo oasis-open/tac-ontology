@@ -19,26 +19,22 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
-	<rdf:Description rdf:about="&stix;GranularMarking">
-		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
-	</rdf:Description>
-	
 	<owl:Class rdf:about="&stix;StixCyberObservable">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
 		<rdfs:label xml:lang="en-us">STIX Cyber-Observable Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base class from which all STIX Cyber-observable Object (SCOs) derive.\n\nSTIX Cyber Observables characterize observed facts about a network or host that may be used and related to higher level intelligence to form a more complete understanding of the threat landscape.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Objects that represent observed facts about a network or host that may be used and related to higher level intelligence to form a more complete understanding of the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;StixDomainObject">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
 		<rdfs:label xml:lang="en-us">STIX Domain Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract based class from which all STIX Domain Objects (SDOs) derive.\n\nSTIX Domain Objects characterize higher-level intelligence objects that represent behaviors and constructs that threat analysts would typically create or work with while understanding the threat landscape.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">Higher Level Intelligence Objects that represent behaviors and constructs that threat analysts would typically create or work with while understanding the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;StixMetaObject">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
 		<rdfs:label xml:lang="en-us">STIX Meta Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base class from which all STIX Meta Objects (SMO) derive.\n\nSTIX Meta Objects characterize the necessary glue and associated metadata to enrich or extend STIX Core Objects to support user and system workflows.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">A STIX Object that provides the necessary glue and associated metadata to enrich or extend STIX Core Objects to support user and system workflows.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;StixObject">
@@ -46,7 +42,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;confidence"/>
-				<owl:someValuesFrom rdf:resource="&xsd;NonNegativeInteger"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -76,12 +72,12 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;extensions"/>
-				<owl:someValuesFrom rdf:resource="&stix;ExtensionDefinition"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;external_referece"/>
+				<owl:onProperty rdf:resource="&stix;external_references"/>
 				<owl:someValuesFrom rdf:resource="&stix;ExternalReference"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -129,6 +125,12 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;object_marking_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;object_type"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -147,141 +149,125 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;spec_version"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;type"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">STIX Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Abstract base class from which all STIX objects are derived.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">STIX Domain Objects (SDOs) and Relationship Objects (SROs) all share a common set of properties which provide core capabilities such as versioning and data markings (representing how data can be shared and used). All STIX Cyber-observable Objects (SCOs) likewise share a common set of properties that are applicable for all SCOs. Similarly, STIX Meta Objects (SMOs) use some but not all of the common properties.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;StixRelationshipObject">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
-		<rdfs:label>STIX Relationship Object</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A bstract base class from which all STIX Relationship objects (SROs) derive.\n\nSTIX Relationship Objects STIX Relationship Objects connect STIX Domain Objects together, STIX Cyber-observable Objects together, and connect STIX Domain Objects and STIX Cyber-observable Objects together to form a more complete understanding of the threat landscape.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">STIX Relationship Object</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Objects that connect STIX Domain Objects together, STIX Cyber-observable Objects together, and connect STIX Domain Objects and STIX Cyber-observable Objects together to form a more complete understanding of the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;confidence">
-		<rdfs:label>confidence</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies the confidence that the creator has in the correctness of their data. The confidence value MUST be a number in the range of 0-100.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;int"/>
+		<rdfs:label xml:lang="en-us">confidence</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The confidence property identifies the confidence that the creator has in the correctness of their data. The confidence value MUST be a number in the range of 0-100. \n\n Appendix A contains a table of normative mappings to other confidence scales that MUST be used when presenting the confidence value in one of those scales. \n\n If the confidence property is not present, then the confidence of the content is unspecified.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;created">
-		<rdfs:label>created</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Idicates the date and time at which the object was originally created.\n\nThe object creator can use the time it deems most appropriate as the time the object was created. The minimum precision MUST be milliseconds (three digits after the decimal place in seconds), but MAY be more precise.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">created</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The created property represents the time at which the object was originally created. The object creator can use the time it deems most appropriate as the time the object was created. The minimum precision MUST be milliseconds (three digits after the decimal place in seconds), but MAY be more precise. The created property MUST NOT be changed when creating a new version of the object. See section 3.6 for further definition of versioning.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
+	<owl:ObjectProperty rdf:about="&stix;external_references">
+		<rdfs:label xml:lang="en-us">external_references</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The external_references property specifies a list of external references which refers to non-STIX information. This property is used to provide one or more URLs, descriptions, or IDs to records in other systems.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;ExternalReference"/>
+	</owl:ObjectProperty>
+
 	<owl:ObjectProperty rdf:about="&stix;created_by_ref">
-		<rdfs:label>created_by_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the id property of the identity object that describes the entity that created this object.\n\nIf this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">created_by_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The created_by_ref property specifies the id property of the identity object that describes the entity that created this object. \n\n If this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;Identity"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;created_by_ref_id">
-		<rdfs:label xml:lang="en">created_by_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en">Specifies the identifier of the Identity object that describes the entity that created this object.\n\nIf this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="&stix;created_by_ref_string">
+		<rdfs:label xml:lang="en">created_by_ref_string</rdfs:label>
+		<rdfs:comment xml:lang="en">The created_by_ref property specifies the id property of the identity object that describes the entity that created this object. \n\n If this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;defanged">
-		<rdfs:label>defanged</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies whether or not the data contained within the object has been defanged.\n\nThis property MUST NOT be used on any STIX Objects other than SCOs.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">defanged</rdfs:label>
+		<rdfs:comment xml:lang="en-us">This property defines whether or not the data contained within the object has been defanged. The default value for this property is false. This property MUST NOT be used on any STIX Objects other than SCOs.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;boolean"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;extensions">
-		<rdfs:label>extensions</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies any extensions of the object</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Extension"/>
+		<rdfs:label xml:lang="en-us">extensions</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies any extensions of the object, as a dictionary. \n\n Dictionary keys SHOULD be the id of a STIX Extension object or the name of a predefined object extension found in this specification, depending on the type of extension being used. \n\n The corresponding dictionary values MUST contain the contents of the extension instance. \n\n Each extension dictionary MAY contain the property extension_type. The value of this property MUST come from the extension-type-enum enumeration. If the extension_type property is not present, then this is a predefined extension which does not use the extension facility described in section 7.3. When this extension facility is used the extension_type property MUST be present.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;id">
-		<rdfs:label>id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Uniquely identifies this object.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The id property uniquely identifies this object. For objects that support versioning, all objects with the same id are considered different versions of the same object and the version of the object is identified by its modified property.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;labels">
-		<rdfs:label>labels</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a set of terms used to describe this object. The terms are user-defined or trust-group defined and their meaning is outside the scope of this specification and MAY be ignored.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">labels</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The labels property specifies a set of terms used to describe this object. The terms are user-defined or trust-group defined and their meaning is outside the scope of this specification and MAY be ignored. \n\n Where an object has a specific property defined in the specification for characterizing subtypes of that object, the labels property MUST NOT be used for that purpose. \n\n For example, the Malware SDO has a property malware_types that contains a list of Malware subtypes (dropper, RAT, etc.). In this example, the labels property cannot be used to describe these Malware subtypes.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;lang">
-		<rdfs:label>lang</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies the language of the text content in this object. When present, it MUST be a language code conformant to [RFC5646]. If the property is not present, then the language of the content is en (English).\n\nThis property SHOULD be present if the object type contains translatable text properties (e.g. name, description).</rdfs:comment>
+		<rdfs:label xml:lang="en-us">lang</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The lang property identifies the language of the text content in this object. When present, it MUST be a language code conformant to [RFC5646]. If the property is not present, then the language of the content is en (English). \n\n This property SHOULD be present if the object type contains translatable text properties (e.g. name, description). \n\n The language of individual fields in this object MAY be overridden by the lang property in granular markings (see section 7.2.3).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;modified">
-		<rdfs:label>modified</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Represents the date and time that this particular version of the object was last modified.\n\nThe object creator can use the time it deems most appropriate as the time this version of the object was modified. The minimum precision MUST be milliseconds (three digits after the decimal place in seconds), but MAY be more precise.\n\nObject creators MUST set the modified property when creating a new version of an object if the created property was set.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">modified</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The modified property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified. \n\n The object creator can use the time it deems most appropriate as the time this version of the object was modified. The minimum precision MUST be milliseconds (three digits after the decimal place in seconds), but MAY be more precise. \n\n If the created property is defined, then the value of the modified property for a given object version MUST be later than or equal to the value of the created property. \n\n Object creators MUST set the modified property when creating a new version of an object if the created property was set. \n\n See section 3.6 for further definition of versioning.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;name">
-		<rdfs:label>name</rdfs:label>
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the name used to identity the entity.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
-	<owl:ObjectProperty rdf:about="&stix;object_ref">
-		<rdfs:label xml:lang="en-us">object_ref</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a reference to a STIX Object that is referred to by this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixObject"/>
+	<owl:ObjectProperty rdf:about="&stix;object_marking_refs">
+		<rdfs:label xml:lang="en-us">object_marking_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The object_marking_refs property specifies a list of id properties of marking-definition objects that apply to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;MarkingDefinition"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="&stix;granular_markings">
+		<rdfs:label xml:lang="en-us">granular_markings</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The granular_markings property specifies a list of granular markings applied to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;GranularMarking"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;object_ref_id">
-		<rdfs:label xml:lang="en-us">object_ref_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies the identifier of a STIX Object that is referred to by this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;object_refs_id">
-		<rdfs:label xml:lang="en-us">object_refs_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of identifiers of STIX Objects that are referred to by this entity.</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="&stix;object_marking_refs_string">
+		<rdfs:label xml:lang="en-us">object_marking_refs_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The object_marking_refs_string property specifies a list of id properties of marking-definition objects that apply to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;revoked">
-		<rdfs:label>revoked</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Indicates whether the object has been revoked.\n\nRevoked objects are no longer considered valid by the object creator. Revoking an object is permanent; future versions of the object with this id MUST NOT be created.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">revoked</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The revoked property is only used by STIX Objects that support versioning and indicates whether the object has been revoked. \n\n Revoked objects are no longer considered valid by the object creator. Revoking an object is permanent; future versions of the object with this id MUST NOT be created. \n\n The default value of this property is false. \n\n See section 3.6 for further definition of versioning.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;boolean"/>
 	</owl:DatatypeProperty>
 	
-	<owl:ObjectProperty rdf:about="&stix;sample_refs">
-		<rdfs:label xml:lang="en-us">sample_refs</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of references to the Cyber Observable objects associated with this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
-	</owl:ObjectProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;sample_refs_id">
-		<rdfs:label xml:lang="en-us">sample_refs_id</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies a list of identifiers to the Cyber Observable objects associated with this entity.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
 	<owl:DatatypeProperty rdf:about="&stix;spec_version">
-		<rdfs:label>spec_version</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies the version of the STIX specification used to represent this object.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
-	</owl:DatatypeProperty>
-	
-	<owl:DatatypeProperty rdf:about="&stix;stix_abstract_type_id">
+		<rdfs:label xml:lang="en-us">spec_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The version of the STIX specification used to represent this object. \n\n The value of this property MUST be 2.1 for STIX Objects defined according to this specification. \n\n If objects are found where this property is not present, the implicit value for all STIX Objects other than SCOs is 2.0. Since SCOs are now top-level objects in STIX 2.1, the default value for SCOs is 2.1.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;type">
-		<rdfs:label>type</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Identifies the type of STIX Object. The value of the type property MUST be the name of one of the types of STIX Objectsor the name of a Custom Object.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The type property identifies the type of STIX Object. The value of the type property MUST be the name of one of the types of STIX Objects defined in sections 4, 5, 6, and 7 (e.g., indicator) or the name of a Custom Object as defined by section 11.2.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

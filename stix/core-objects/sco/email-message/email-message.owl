@@ -28,7 +28,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;additional_header_fields"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>

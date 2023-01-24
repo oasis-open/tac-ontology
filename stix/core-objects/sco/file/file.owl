@@ -189,7 +189,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;document_info_dict"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -231,7 +231,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;exif_tags"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -641,7 +641,7 @@
 	<owl:ObjectProperty rdf:about="&stix;document_info_dict">
 		<rdfs:label xml:lang="en-us">document_info_dict</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies details of the PDF document information dictionary (DID), which includes properties like the document creation data and producer, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the corresponding entry in the document information dictionary without the prepended forward slash, e.g., Title. The corresponding value for the key MUST be the value specified for the document information dictionary entry, as a string.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;entropy">
@@ -653,7 +653,7 @@
 	<owl:ObjectProperty rdf:about="&stix;exif_tags">
 		<rdfs:label xml:lang="en-us">exif_tags</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the set of EXIF tags found in the image file, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single EXIF tag. Accordingly, each dictionary key MUST be a case-preserved version of the EXIF tag name, e.g., XResolution. Each dictionary value MUST be either an integer (for int* EXIF datatypes) or a string (for all other EXIF datatypes).</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;file_alignment">

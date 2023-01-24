@@ -48,7 +48,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;request_header"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -171,7 +171,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;ipfix"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -264,7 +264,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;options"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -428,7 +428,7 @@
 	<owl:ObjectProperty rdf:about="&stix;ipfix">
 		<rdfs:label xml:lang="en-us">ipfix</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any IP Flow Information Export [IPFIX] data for the traffic, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single IPFIX element. Accordingly, each dictionary key SHOULD be a case-preserved version of the IPFIX element name, e.g., octetDeltaCount. Each dictionary value MUST be either an integer or a string, as well as a valid IPFIX property.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;is_active">
@@ -470,7 +470,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;options">
 		<rdfs:label xml:lang="en-us">options</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any options (e.g., SO_*) that may be used by the socket, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the option name, e.g., SO_ACCEPTCONN. Each key value in the dictionary MUST be the value for the corresponding options key.  Each dictionary value MUST be an integer. For SO_RCVTIMEO, SO_SNDTIMEO and SO_LINGER the value represents the number of milliseconds. If the SO_LINGER key is present, it indicates that the SO_LINGER option is active.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;protocols">
@@ -482,7 +482,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;request_header">
 		<rdfs:label xml:lang="en-us">request_header</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies all of the HTTP header fields that may be found in the HTTP client request, as a dictionary. Each key in the dictionary MUST be the name of the header field and SHOULD preserve case, e.g., User-Agent. The corresponding value for each dictionary key MUST always be a list of type string to support when a header field is repeated.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;request_method">

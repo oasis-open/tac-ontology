@@ -70,7 +70,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;environment_variables"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -160,7 +160,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;startup_info"/>
-				<owl:someValuesFrom rdf:resource="&stix;KeyValuePair"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -302,7 +302,7 @@
 	<owl:ObjectProperty rdf:about="&stix;environment_variables">
 		<rdfs:label xml:lang="en-us">environment_variables</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the list of environment variables associated with the process as a dictionary. Each key in the dictionary MUST be a case preserved version of the name of the environment variable, and each corresponding value MUST be the environment variable value as a string.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;group_name">
@@ -416,7 +416,7 @@
 	<owl:ObjectProperty rdf:about="&stix;startup_info">
 		<rdfs:label xml:lang="en-us">startup_info</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the STARTUP_INFO struct used by the process, as a dictionary. Each name/value pair in the struct MUST be represented as a key/value pair in the dictionary, where each key MUST be a case-preserved version of the original name. For example, given a name of &quot;lpDesktop&quot; the corresponding key would be lpDesktop.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KeyValuePair"/>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;window_title">
