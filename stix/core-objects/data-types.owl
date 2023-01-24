@@ -57,6 +57,18 @@
 	
 	<owl:Class rdf:about="&stix;Hashes">
 		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hash_algorithm"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hash_value"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Hash</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents a cryptographic hashes, as a special set of key/value pairs.</rdfs:comment>
 	</owl:Class>
@@ -65,13 +77,13 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;key"/>
+				<owl:onProperty rdf:resource="&stix;dictionary_key"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:onProperty rdf:resource="&stix;dictionary_value"/>
 				<owl:someValuesFrom rdf:resource="&stix;StixObject"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -112,7 +124,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;hash_algorithm">
 		<rdfs:label xml:lang="en-us">hash_algorithm</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Represents the cryptographic hash algorithm used.\n\nThe name of the cryptographic hash algorithm used SHOULD come from one of the values defined in the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
+		<rdfs:range rdf:resource="&xsd;HashAlgorithmOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;hash_value">
@@ -127,19 +139,20 @@
 		<rdfs:range rdf:resource="&stix;Hashes"/>
 	</owl:ObjectProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;key_identifier">
-		<rdfs:label xml:lang="en-us">key_identifier</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;dictionary_key">
+		<rdfs:label xml:lang="en-us">dictionary_key</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies a unique identifer for some item of data.  The key MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). A key identifier MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
-	<owl:DatatypeProperty rdf:about="&stix;key_value">
-		<rdfs:label xml:lang="en-us">key_value</rdfs:label>
+	<owl:DatatypeProperty rdf:about="&stix;dictionary_value">
+		<rdfs:label xml:lang="en-us">dictionary_value</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A key value is the data that is associated with the key identified. The values MUST be valid property base types.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;anyURI"/>
 		<rdfs:range rdf:resource="&xsd;float"/>
 		<rdfs:range rdf:resource="&xsd;integer"/>
 		<rdfs:range rdf:resource="&xsd;string"/>
+		<rdfs:range rdf:resource="&stix;StixObject"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;kill_chain_name">
