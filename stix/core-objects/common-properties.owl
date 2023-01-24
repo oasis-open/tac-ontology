@@ -102,7 +102,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;id"/>
-				<owl:someValuesFrom rdf:resource="&stix;Identifier"/>
+				<owl:someValuesFrom rdf:resource="&stix;identifier"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
