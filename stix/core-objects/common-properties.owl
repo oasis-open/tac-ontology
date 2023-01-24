@@ -15,8 +15,8 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/common-properties">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -90,18 +90,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;labels"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;lang"/>
-				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;id"/>
 				<owl:someValuesFrom rdf:resource="&stix;identifier"/>
 			</owl:Restriction>
@@ -109,6 +97,18 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;id_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;labels"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;lang"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -176,12 +176,6 @@
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
-	<owl:ObjectProperty rdf:about="&stix;external_references">
-		<rdfs:label xml:lang="en-us">external_references</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The external_references property specifies a list of external references which refers to non-STIX information. This property is used to provide one or more URLs, descriptions, or IDs to records in other systems.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ExternalReference"/>
-	</owl:ObjectProperty>
-
 	<owl:ObjectProperty rdf:about="&stix;created_by_ref">
 		<rdfs:label xml:lang="en-us">created_by_ref</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The created_by_ref property specifies the id property of the identity object that describes the entity that created this object. \n\n If this attribute is omitted, the source of this information is undefined. This may be used by object creators who wish to remain anonymous.</rdfs:comment>
@@ -204,6 +198,18 @@
 		<rdfs:label xml:lang="en-us">extensions</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any extensions of the object, as a dictionary. \n\n Dictionary keys SHOULD be the id of a STIX Extension object or the name of a predefined object extension found in this specification, depending on the type of extension being used. \n\n The corresponding dictionary values MUST contain the contents of the extension instance. \n\n Each extension dictionary MAY contain the property extension_type. The value of this property MUST come from the extension-type-enum enumeration. If the extension_type property is not present, then this is a predefined extension which does not use the extension facility described in section 7.3. When this extension facility is used the extension_type property MUST be present.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;Dictionary"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;external_references">
+		<rdfs:label xml:lang="en-us">external_references</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The external_references property specifies a list of external references which refers to non-STIX information. This property is used to provide one or more URLs, descriptions, or IDs to records in other systems.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;ExternalReference"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;granular_markings">
+		<rdfs:label xml:lang="en-us">granular_markings</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The granular_markings property specifies a list of granular markings applied to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;GranularMarking"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;id">
@@ -240,12 +246,6 @@
 		<rdfs:label xml:lang="en-us">object_marking_refs</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The object_marking_refs property specifies a list of id properties of marking-definition objects that apply to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;MarkingDefinition"/>
-	</owl:ObjectProperty>
-
-	<owl:ObjectProperty rdf:about="&stix;granular_markings">
-		<rdfs:label xml:lang="en-us">granular_markings</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The granular_markings property specifies a list of granular markings applied to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;GranularMarking"/>
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;object_marking_refs_string">
