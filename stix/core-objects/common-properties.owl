@@ -16,6 +16,7 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/common-properties">
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-types"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
@@ -208,7 +209,7 @@
 	<owl:DatatypeProperty rdf:about="&stix;id">
 		<rdfs:label xml:lang="en-us">id</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The id property uniquely identifies this object. For objects that support versioning, all objects with the same id are considered different versions of the same object and the version of the object is identified by its modified property.</rdfs:comment>
-		<rdfs:range rdf:resource="&xsd;string"/>
+		<rdfs:range rdf:resource="&stix;identifier"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;labels">
