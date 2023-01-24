@@ -19,13 +19,10 @@
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;GranularMarking">
+		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
 		<rdfs:label xml:lang="en-us">Granular Marking</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies how the marking-definition object referenced by the marking_ref property or a language specified by the lang property applies to a set of content identified by the list of selectors in the selectors property.</rdfs:comment>
 	</owl:Class>
-	
-	<rdf:Description rdf:about="&stix;GranularMarking">
-		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
-	</rdf:Description>
 	
 	<owl:Class rdf:about="&stix;MarkingDefinition">
 		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
