@@ -16,13 +16,14 @@
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix">
 		<rdfs:comment xml:lang="en-us">This ontology is the master ontology for the STIX 2.1.0. It imports all the various STIX ontologies files to create an unified ontology based on the various component ontologies that make up STIX.</rdfs:comment>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/attack-pattern"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/autonomous-system"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/bundle"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/campaign"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/course-of-action"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-marking"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/directory"/>
 		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/domain-name"/>
