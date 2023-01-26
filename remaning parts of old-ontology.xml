@@ -1,0 +1,948 @@
+<!-- From data-types.owl -->
+<owl:DatatypeProperty rdf:about="&stix;MD5_hash_value">
+		<rdfs:label xml:lang="en-us">MD5 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SHA-1_hash_value">
+		<rdfs:label xml:lang="en-us">SHA-1 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the SHA-1 (secure-hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SHA-256_hash_value">
+		<rdfs:label xml:lang="en-us">SHA-256 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the SHA-256 cryptographic hash function (part of the SHA2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SHA-512_hash_value">
+		<rdfs:label xml:lang="en-us">SHA-512 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the SHA-512 cryptographic hash function (part of the SHA2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SHA3-256_hash_value">
+		<rdfs:label xml:lang="en-us">SHA3-256 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SHA3-512_hash_value">
+		<rdfs:label xml:lang="en-us">SHA3-512 Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;SSDEEP_hash_value">
+		<rdfs:label xml:lang="en-us">SSDEEP Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;TLSH_hash_value">
+		<rdfs:label xml:lang="en-us">TLSH Hash Value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+<!-- ______________________________ -->
+
+<!-- From Identity.owl  -->
+
+	<owl:Class rdf:about="&stix;Group">
+		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
+		<rdfs:label xml:lang="en-us">Group</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identitfies an informal collection of people, without formal governance.</rdfs:comment>
+		<owl:disjointWith rdf:resource="&stix;Individual"/>
+		<owl:disjointWith rdf:resource="&stix;IndustrySector"/>
+		<owl:disjointWith rdf:resource="&stix;Organization"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="&stix;Individual">
+		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
+		<rdfs:label xml:lang="en-us">Individual</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identitfies an actual individual.</rdfs:comment>
+		<owl:disjointWith rdf:resource="&stix;IndustrySector"/>
+		<owl:disjointWith rdf:resource="&stix;Organization"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IndustrySector">
+		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
+		<rdfs:label xml:lang="en-us">Industy Sector</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies an industry sector.</rdfs:comment>
+		<owl:disjointWith rdf:resource="&stix;Organization"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Organization">
+		<rdfs:subClassOf rdf:resource="&stix;Identity"/>
+		<rdfs:label xml:lang="en-us">Organization</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Identifies an actual formal organization of people, with governance, such as a company.</rdfs:comment>
+	</owl:Class>
+
+<!-- _____________________ -->
+
+<!-- Location.owl -->
+
+<owl:Class rdf:about="&stix;CivicLocation">
+	<rdfs:subClassOf rdf:resource="&stix;Location"/>
+	<rdfs:label xml:lang="en-us">Civic Location</rdfs:label>
+	<rdfs:comment xml:lang="en-us">Identifies an actual civic location (e.g., street address, city, administrative area, postal code).</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="&stix;Country">
+	<rdfs:subClassOf rdf:resource="&stix;Location"/>
+	<rdfs:label xml:lang="en-us">Country</rdfs:label>
+	<rdfs:comment xml:lang="en-us">Identifies an actual country.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="&stix;GlobalPosition">
+	<rdfs:subClassOf rdf:resource="&stix;Location"/>
+	<rdfs:label xml:lang="en-us">Global Position</rdfs:label>
+	<rdfs:comment xml:lang="en-us">Identifies a physical position on the globe.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="&stix;Region">
+	<rdfs:subClassOf rdf:resource="&stix;Location"/>
+	<rdfs:label xml:lang="en-us">Region</rdfs:label>
+	<rdfs:comment xml:lang="en-us">Identifies an actual region in the world.</rdfs:comment>
+</owl:Class>
+
+
+<!-- __________________________ -->
+
+extension-definition.owl
+
+<owl:Class rdf:about="&stix;Extension">
+    <rdfs:subClassOf rdf:resource="&stix;StixObject"/>
+    <rdfs:label>Extension</rdfs:label>
+    <rdfs:comment xml:lang="en-us">Characterizes the base of all extensions to Cyber Observable objects.</rdfs:comment>
+</owl:Class>
+
+<!-- __________________________ -->
+
+<!-- Vocabulary.owl -->
+
+    <rdfs:Datatype rdf:about="&stix;ActivityOutcomeVocab">
+		<rdfs:label>activity-outcome-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>blocked</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>failed</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>successful</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>unknown</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;DetectionMethodsVocab">
+		<rdfs:label>detection-methods-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>automated-tool</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>human-review</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>message-from-attacker</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>system-outage</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>user-reporting</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;DefenderActivityOpenVocab">
+		<rdfs:label>defender-activity-ov</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Defines an open vocabulary for defender activities associated with an Incident.</rdfs:comment>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>containment-completed</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>containment-started</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>declared</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>detected</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>eradication-completed</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>eradication-started</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>escalated</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>recovery-completed</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>recovery-started</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>reported</rdf:first>
+																								<rdf:rest rdf:resource="&rdf;nil"/>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;DetectionMethodsOpenVocab">
+		<rdfs:label>dectection-methods-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>automated-tool</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>human-review</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>message-from-attacker</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>system-outage</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>user-reporting</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;ExternalImpactOpenVocab">
+		<rdfs:label>external-impact-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>civil-liberties</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>economic</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>foreign-relations</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>national-security</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>public-confidence</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>public-health</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IncidentActionStatusOpenVocab">
+		<rdfs:label>incident-action-status-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>failed</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>new-control</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>planned</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>successful</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unused</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;InformationImpactTypeOpenVocab">
+		<rdfs:label>information-impact-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>classified-material</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>communication</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>credentials-admin</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>credentials-user</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>financial</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>legal</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>payment</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>phi</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>pii</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>proprietary</rdf:first>
+																								<rdf:rest rdf:resource="&rdf;nil"/>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;IncidentActionStageVocab">
+		<rdfs:label>incident-action-stage-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>containment</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>detection</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>eradication</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>mitigation</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>post-incident</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>prevention</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>recovery</rdf:first>
+																		<rdf:rest rdf:resource="&rdf;nil"/>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IncidentConfidentialityLossVocab">
+		<rdfs:label>incident-confidentiality-loss-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>contained</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>exploited-loss</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>exploited-major-loss</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>major-loss</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>none</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>some-loss</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>suspected-loss</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>suspected-major-loss</rdf:first>
+																				<rdf:rest rdf:resource="&rdf;nil"/>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IncidentDeterminationVocab">
+		<rdfs:label>incident-determination-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>blocked</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>failed-attempt</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>false-positive</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>low-value</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>successful-attempt</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>suspected</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IncidentInvestigationVocab">
+		<rdfs:label>incident-investigation-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>closed</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>new</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>open</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IncidentTypeVocab">
+		<rdfs:label>incident-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>compromised-system</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>denial-of-service</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>destruction</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>equipment-loss</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>equipment-theft</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>major</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>supply-chain-customer</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>supply-chain-vendor</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>unauthorized-access</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>unauthorized-equipment</rdf:first>
+																								<rdf:rest>
+																									<rdf:List>
+																										<rdf:first>unauthorized-release</rdf:first>
+																										<rdf:rest>
+																											<rdf:List>
+																												<rdf:first>unauthorized-use</rdf:first>
+																												<rdf:rest rdf:resource="&rdf;nil"/>
+																											</rdf:List>
+																										</rdf:rest>
+																									</rdf:List>
+																								</rdf:rest>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;InformationTypeVocab">
+		<rdfs:label>information-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>classified-material</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>communication</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>credentials-admin</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>credentials-user</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>financial</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>legal</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>payment</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>phi</rdf:first>
+																				<rdf:rest>
+																					<rdf:List>
+																						<rdf:first>pii</rdf:first>
+																						<rdf:rest>
+																							<rdf:List>
+																								<rdf:first>proprietary</rdf:first>
+																								<rdf:rest rdf:resource="&rdf;nil"/>
+																							</rdf:List>
+																						</rdf:rest>
+																					</rdf:List>
+																				</rdf:rest>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;IntegrityAlterationVocab">
+		<rdfs:label>integrity-alteration-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>full-destruction</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>full-modification</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>none</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>partial-destruction</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>partial-modification</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>potential-destruction</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>potential-modification</rdf:first>
+																		<rdf:rest rdf:resource="&rdf;nil"/>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;MarkingDefinitionTypeVocab">
+		<rdfs:label xml:lang="en-us">marking-definition-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>statement</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>tlp</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;MonetaryImpactTypeVocab">
+		<rdfs:label>monetary-impact-type-ov</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>asset-and-fraud</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>brand-damage</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>business-disruption</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>competitive-advantage</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>legal-and-regulatory</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>operating-costs</rdf:first>
+																<rdf:rest>
+																	<rdf:List>
+																		<rdf:first>response-and-recovery</rdf:first>
+																		<rdf:rest>
+																			<rdf:List>
+																				<rdf:first>uncategorized</rdf:first>
+																				<rdf:rest rdf:resource="&rdf;nil"/>
+																			</rdf:List>
+																		</rdf:rest>
+																	</rdf:List>
+																</rdf:rest>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;PhysicalImpactVocab">
+		<rdfs:label>physical-impact-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>damaged-complete</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>damaged-limited</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>destruction-complete</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>destruction-limited</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>none</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>unknown</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+		
+	<rdfs:Datatype rdf:about="&stix;RecoverabilityVocab">
+		<rdfs:label>recoverability-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>extended</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>not-applicable</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>not-recoverable</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>regular</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>supplemented</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+	<rdfs:Datatype rdf:about="&stix;TimestampFidelityVocab">
+		<rdfs:label>timestamp-fidelity-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>day</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>hour</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>minute</rdf:first>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>month</rdf:first>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>second</rdf:first>
+														<rdf:rest>
+															<rdf:List>
+																<rdf:first>year</rdf:first>
+																<rdf:rest rdf:resource="&rdf;nil"/>
+															</rdf:List>
+														</rdf:rest>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&stix;TraceabilityVocab">
+		<rdfs:label>traceability-enum</rdfs:label>
+		<owl:equivalentClass>
+			<rdfs:Datatype>
+				<owl:oneOf>
+					<rdf:List>
+						<rdf:first>accountability-lost</rdf:first>
+						<rdf:rest>
+							<rdf:List>
+								<rdf:first>partial-accountability</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>provable-accountability</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</owl:equivalentClass>
+	</rdfs:Datatype>
+
+<!-- __________________________ -->
