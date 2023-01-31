@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/relationship-types" uri="../stix/core-objects/sro/relationship/relationship-types.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/bundle" uri="../stix/bundle-object/bundle.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/vocabularies" uri="../stix/vocabularies/vocabularies.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/adversary" uri="./tac-objects/adversary.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/directory" uri="../stix/core-objects/sco/directory/directory.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/x509-certificate" uri="../stix/core-objects/sco/x509-vertificate/x509-certificate.owl"/>
@@ -47,9 +50,10 @@
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="../stix/meta-objects/extension-definition/extension-definition.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/data-types" uri="../stix/core-objects/data-types.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1672519436069" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="candidate-concepts.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672519436069" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672519436069" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1672519436069" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="candidate-concepts.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/adversary" uri="tac-objects/adversary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
     </group>
 </catalog>
