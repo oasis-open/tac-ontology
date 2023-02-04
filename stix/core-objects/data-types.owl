@@ -27,12 +27,6 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;dictionary_value"/>
-				<owl:someValuesFrom rdf:resource="&stix;StixObject"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Dictionary</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A dictionary captures an arbitrary set of key/value pairs. Dictionary keys MUST be unique in each dictionary, MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). Dictionary keys MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase. \n\n Empty dictionaries are prohibited in STIX and MUST NOT be used as a substitute for omitting the property if it is optional. If the property is required, the dictionary MUST be present and MUST have at least one key-value pair. \n\n dictionary values MUST be valid property base types.</rdfs:comment>
 	</owl:Class>
