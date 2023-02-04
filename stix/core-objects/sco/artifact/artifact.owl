@@ -7,6 +7,7 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/artifact"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/artifact#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -57,20 +58,22 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-US">Artifact</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The Artifact object permits capturing an array of bytes (8-bits), as a base64-encoded string, or linking to a file-like payload. One of payload_bin or url MUST be provided. It is incumbent on object creators to ensure that the URL is accessible for downstream consumers.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">Artifact</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Artifact object permits capturing an array of bytes (8-bits), as a base64-encoded string, or linking to a file-like payload. One of payload_bin or url MUST be provided. It is incumbent on object creators to ensure that the URL is accessible for downstream consumers.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Hashes">
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;decryption_key">
-		<rdfs:label xml:lang="en-US">decryption_key</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the decryption key for the encrypted binary data (either via payload_bin or url). For example, this may be useful in cases of sharing malware samples, which are often encoded in an encrypted archive. This property MUST NOT be present when the encryption_algorithm property is absent.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">decryption_key</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the decryption key for the encrypted binary data (either via payload_bin or url). For example, this may be useful in cases of sharing malware samples, which are often encoded in an encrypted archive. This property MUST NOT be present when the encryption_algorithm property is absent.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;encryption_algorithm">
-		<rdfs:label xml:lang="en-US">encryption algorithm</rdfs:label>
-		<rdfs:comment xml:lang="en-US">If the artifact is encrypted, specifies the type of encryption algorithm the binary data  (either via payload_bin or url) is encoded in. The value of this property MUST come from the encryption-algorithm-enum enumeration. If both mime_type and encryption_algorithm are included, this signifies that the artifact represents an encrypted archive.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;EncryptionAlgorithmEnum"/>
+		<rdfs:label xml:lang="en-us">encryption algorithm</rdfs:label>
+		<rdfs:comment xml:lang="en-us">If the artifact is encrypted, specifies the type of encryption algorithm the binary data  (either via payload_bin or url) is encoded in. The value of this property MUST come from the encryption-algorithm-enum enumeration. If both mime_type and encryption_algorithm are included, this signifies that the artifact represents an encrypted archive.</rdfs:comment>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;hashes">
@@ -80,20 +83,20 @@
 	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;mime_type">
-		<rdfs:label xml:lang="en-US">mime_type</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Whenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types]. Maintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">mime_type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Whenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types]. Maintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;payload_bin">
-		<rdfs:label xml:lang="en-US">payload_bin</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the binary data contained in the artifact as a base64-encoded string. This property MUST NOT be present if url is provided.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">payload_bin</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the binary data contained in the artifact as a base64-encoded string. This property MUST NOT be present if url is provided.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;base64Binary"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;url">
-		<rdfs:label xml:lang="en-US">url</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The value of this property MUST be a valid URL that resolves to the unencoded content. This property MUST NOT be present if payload_bin is provided.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">url</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The value of this property MUST be a valid URL that resolves to the unencoded content. This property MUST NOT be present if payload_bin is provided.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

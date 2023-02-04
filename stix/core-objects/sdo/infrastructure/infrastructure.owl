@@ -68,6 +68,9 @@
 		<rdfs:comment xml:lang="en-us">The Infrastructure SDO represents a type of TTP and describes any systems, software services and any associated physical or virtual resources intended to support some purpose (e.g., C2 servers used as part of an attack, device or server that are part of defense, database servers targeted by an attack, etc.). While elements of an attack can be represented by other SDOs or SCOs, the Infrastructure SDO represents a named group of related data that constitutes the infrastructure.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix;KillChainPhase">
+	</owl:Class>
+	
 	<owl:DatatypeProperty rdf:about="&stix;aliases">
 		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Alternative names used to identify this Infrastructure.</rdfs:comment>
@@ -89,7 +92,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;infrastructure_types">
 		<rdfs:label xml:lang="en-us">infrastructure_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The type of infrastructure being described. The values for this property SHOULD come from the infrastructure-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;InfrastructureTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;kill_chain_phases">

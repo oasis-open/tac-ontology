@@ -161,7 +161,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;region">
 		<rdfs:label xml:lang="en-us">region</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The region that this Location describes. The value for this property SHOULD come from the region-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;RegionOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;street_address">

@@ -95,7 +95,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;report_types">
 		<rdfs:label xml:lang="en-us">report_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The primary type(s) of content found in this report. The values for this property SHOULD come from the report-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ReportTypeOv"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

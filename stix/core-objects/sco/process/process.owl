@@ -141,12 +141,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;integrity_level"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsIntegrityLevelEnum"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;owner_sid"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -209,24 +203,6 @@
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;service_name"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;service_status"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsServiceStatusEnum"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;service_type"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsServiceTypeEnum"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;start_type"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsServiceStartTypeEnum"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Windows Service Extension</rdfs:label>
@@ -326,7 +302,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;integrity_level">
 		<rdfs:label xml:lang="en-us">integrity_level</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the Windows integrity level, or trustworthiness, of the process. The values of this property MUST come from the windows-integrity-level-enum enumeration.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WindowsIntegrityLevelEnum"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;is_hidden">
@@ -398,19 +373,16 @@
 	<owl:DatatypeProperty rdf:about="&stix;service_status">
 		<rdfs:label xml:lang="en-us">service_status</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the current status of the service. The values of this property MUST come from the windows-service-status-enum enumeration.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WindowsServiceStatusEnum"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;service_type">
 		<rdfs:label xml:lang="en-us">service_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the type of the service. The values of this property MUST come from the windows-service-type-enum enumeration.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WindowsServiceTypeEnum"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;start_type">
 		<rdfs:label xml:lang="en-us">start_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the start options defined for the service. The values of this property MUST come from the windows-service-start-type-enum enumeration.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WindowsServiceStartTypeEnum"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;startup_info">

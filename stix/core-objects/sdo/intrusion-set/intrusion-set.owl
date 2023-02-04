@@ -119,19 +119,16 @@
 	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
 		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;resource_level">
 		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
 		<rdfs:comment xml:lang="en-us">This property specifies the organizational level at which this Intrusion Set typically works, which in turn determines the resources available to this Intrusion Set for use in an attack. The value for this property SHOULD come from the attack-resource-level-ov  open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
 		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

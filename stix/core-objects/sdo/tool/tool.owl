@@ -20,6 +20,9 @@
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
+	<owl:Class rdf:about="&stix;KillChainPhase">
+	</owl:Class>
+	
 	<owl:Class rdf:about="&stix;Tool">
 		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
 		<rdfs:subClassOf>
@@ -75,6 +78,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;kill_chain_phases">
+		<rdf:type rdf:resource="&owl;ObjectProperty"/>
 		<rdfs:label xml:lang="en-us">kill_chain_phases</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The list of kill chain phases for which this Tool can be used.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;KillChainPhase"/>
@@ -89,7 +93,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;tool_types">
 		<rdfs:label xml:lang="en-us">tool_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The kind(s) of tool(s) being described. The values for this property SHOULD come from the tool-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ToolTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;tool_version">

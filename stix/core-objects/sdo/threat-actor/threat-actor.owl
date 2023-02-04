@@ -143,43 +143,36 @@
 	<owl:DatatypeProperty rdf:about="&stix;personal_motivations">
 		<rdfs:label xml:lang="en-us">personal_motivations</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Personal motivation, which is independent of the organization&apos;s goals, describes what impels an individual to carry out an attack. Personal motivation may align with the organization&apos;s motivation—as is common with activists—but more often it supports personal goals. For example, an individual analyst may join a Data Miner corporation because his or her skills may align with the corporation&apos;s objectives. But the analyst most likely performs his or her daily work toward those objectives for personal reward in the form of a paycheck. The motivation of personal reward may be even stronger for Threat Actors who commit illegal acts, as it is more difficult for someone to cross that line purely for altruistic reasons. The position in the list has no significance. The values for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
 		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The primary reason, motivation, or purpose behind this Threat Actor. The motivation is why the Threat Actor wishes to achieve the goal (what they are trying to achieve). For example, a Threat Actor with a goal to disrupt the finance sector in a country might be motivated by ideological hatred of capitalism. The value for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;resource_level">
 		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The organizational level at which this Threat Actor typically works, which in turn determines the resources available to this Threat Actor for use in an attack. This attribute is linked to the sophistication property — a specific resource level implies that the Threat Actor has access to at least a specific sophistication level. The value for this property SHOULD come from the attack-resource-level-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;roles">
 		<rdfs:label xml:lang="en-us">roles</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A list of roles the Threat Actor plays. The values for this property SHOULD come from the threat-actor-role-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ThreatActorRoleOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
 		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
 		<rdfs:comment xml:lang="en-us">This property specifies the secondary reasons, motivations, or purposes behind this Threat Actor. These motivations can exist as an equal or near-equal cause to the primary motivation. However, it does not replace or necessarily magnify the primary motivation, but it might indicate additional context. The position in the list has no significance. The value for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;sophistication">
 		<rdfs:label xml:lang="en-us">sophistication</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The skill, specific knowledge, special training, or expertise a Threat Actor must have to perform the attack. The value for this property SHOULD come from the threat-actor-sophistication-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ThreatActorSophisticationOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;threat_actor_types">
 		<rdfs:label xml:lang="en-us">threat_actor_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The type(s) of this threat actor. The values for this property SHOULD come from the threat-actor-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:DatatypeProperty>
 
 </rdf:RDF>

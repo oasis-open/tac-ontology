@@ -80,6 +80,9 @@
 		<rdfs:comment xml:lang="en-us">Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity. For example, an Indicator may be used to represent a set of malicious domains and use the STIX Patterning Language (see section 9) to specify these domains. The Indicator SDO contains a simple textual description, the Kill Chain Phases that it detects behavior in, a time window for when the Indicator is valid or useful, and a required pattern property to capture a structured detection pattern. Conforming STIX implementations MUST support the STIX Patterning Language as defined in section 9. Relationships from the Indicator can describe the malicious or suspicious behavior that it directly detects (Malware, Tool, and Attack Pattern). In addition, it may also imply the presence of a Campaigns, Intrusion Sets, and Threat Actors, etc.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix;KillChainPhase">
+	</owl:Class>
+	
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Indicator, potentially including its purpose and its key characteristics. Producers SHOULD provide this property to help products and analysts understand what this Indicator actually does.</rdfs:comment>
@@ -89,7 +92,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;indicator_types">
 		<rdfs:label xml:lang="en-us">indicator types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A set of categorizations for this indicator. The values for this property SHOULD come from the indicator-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;IndicatorTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:ObjectProperty rdf:about="&stix;kill_chain_phases">
@@ -113,7 +115,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;pattern_type">
 		<rdfs:label xml:lang="en-us">pattern_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The pattern language used in this indicator. The value for this property SHOULD come from the pattern-type-ov open vocabulary. The value of this property MUST match the type of pattern data included in the pattern property.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;PatternTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;pattern_version">

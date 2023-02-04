@@ -70,6 +70,9 @@
 		<rdfs:comment xml:lang="en-us">The Archive File extension specifies a default extension for capturing properties specific to archive files. The key for this extension when used in the extensions dictionary MUST be archive-ext. Note that this predefined extension does not use the extension facility described in section 7.3.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix;Dictionary">
+	</owl:Class>
+	
 	<owl:Class rdf:about="&stix;File">
 		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
 		<rdfs:subClassOf>
@@ -166,6 +169,9 @@
 		<rdfs:comment xml:lang="en-us">The File object represents the properties of a file. A File object MUST contain at least one of hashes or name.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix;Hashes">
+	</owl:Class>
+	
 	<owl:Class rdf:about="&stix;NtfsExt">
 		<rdfs:subClassOf rdf:resource="&stix;File"/>
 		<rdfs:subClassOf>
@@ -248,6 +254,9 @@
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">Raster Image File Extension</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The Raster Image file extension specifies a default extension for capturing properties specific to raster image files. The key for this extension when used in the extensions dictionary MUST be raster-image-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the Raster Image File Extension MUST contain at least one property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixDatatype">
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;WindowsPeOptionalHeaderType">
@@ -518,12 +527,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;pe_type"/>
-				<owl:someValuesFrom rdf:resource="&stix;WindowsPebinaryTypeOv"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;pointer_to_symbol_table_hex"/>
 				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
 			</owl:Restriction>
@@ -663,6 +666,7 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;file_header_hashes">
+		<rdf:type rdf:resource="&owl;ObjectProperty"/>
 		<rdfs:label>file_header_hashes</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies any hashes that were computed for the file header. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary.</rdfs:comment>
 		<rdfs:range rdf:resource="&stix;Hashes"/>
@@ -844,7 +848,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;pe_type">
 		<rdfs:label>pe_type</rdfs:label>
 		<rdfs:comment xml:lang="en-us">Specifies the type of the PE binary. This is an open vocabulary and values SHOULD come from the windows-pebinary-type-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;WindowsPebinaryTypeOv"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;pointer_to_symbol_table_hex">

@@ -7,6 +7,7 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/extension-definition"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/extension-definition#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -30,12 +31,6 @@
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;extension_properties"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;extension_types"/>
-				<owl:someValuesFrom rdf:resource="&stix;ExtensionTypeEnum"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -75,7 +70,6 @@
 	<owl:DatatypeProperty rdf:about="&stix;extension_types">
 		<rdfs:label xml:lang="en">extension_types</rdfs:label>
 		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension. \n\n The values for this property MUST come from the extension-type-enum enumeration. \n\n When this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;ExtensionTypeEnum"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;schema">
