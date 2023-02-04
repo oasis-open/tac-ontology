@@ -47,12 +47,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;request_header"/>
-				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;request_method"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -251,12 +245,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;options"/>
-				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;socket_descriptor"/>
 				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
 			</owl:Restriction>
@@ -449,10 +437,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;options">
-		<rdf:type rdf:resource="&owl;ObjectProperty"/>
-		<rdfs:label xml:lang="en-us">options</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies any options (e.g., SO_*) that may be used by the socket, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the option name, e.g., SO_ACCEPTCONN. Each key value in the dictionary MUST be the value for the corresponding options key.  Each dictionary value MUST be an integer. For SO_RCVTIMEO, SO_SNDTIMEO and SO_LINGER the value represents the number of milliseconds. If the SO_LINGER key is present, it indicates that the SO_LINGER option is active.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;protocols">
@@ -462,10 +446,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;request_header">
-		<rdf:type rdf:resource="&owl;ObjectProperty"/>
-		<rdfs:label xml:lang="en-us">request_header</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies all of the HTTP header fields that may be found in the HTTP client request, as a dictionary. Each key in the dictionary MUST be the name of the header field and SHOULD preserve case, e.g., User-Agent. The corresponding value for each dictionary key MUST always be a list of type string to support when a header field is repeated.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Dictionary"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;request_method">

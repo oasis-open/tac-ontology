@@ -112,9 +112,6 @@
 	<owl:Class rdf:about="&stix;StixDatatype">
 	</owl:Class>
 	
-	<rdfs:Datatype rdf:about="&stix;StixObject">
-	</rdfs:Datatype>
-	
 	<owl:DatatypeProperty rdf:about="&stix;description">
 		<rdfs:label xml:lang="en-us">description</rdfs:label>
 		<rdfs:comment xml:lang="en-us">A human readable description.</rdfs:comment>

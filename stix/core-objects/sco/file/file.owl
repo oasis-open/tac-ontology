@@ -491,12 +491,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;file_header_hashes"/>
-				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;imphash"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -666,10 +660,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;file_header_hashes">
-		<rdf:type rdf:resource="&owl;ObjectProperty"/>
-		<rdfs:label>file_header_hashes</rdfs:label>
-		<rdfs:comment xml:lang="en-us">Specifies any hashes that were computed for the file header. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;Hashes"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;image_base">

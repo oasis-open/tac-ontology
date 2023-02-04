@@ -35,12 +35,6 @@
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;kill_chain_phases"/>
-				<owl:someValuesFrom rdf:resource="&stix;KillChainPhase"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;name"/>
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
@@ -60,12 +54,6 @@
 		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Attack Pattern, potentially including its purpose and its key characteristics.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-	
-	<owl:ObjectProperty rdf:about="&stix;kill_chain_phases">
-		<rdfs:label xml:lang="en-us">kill_chain_phases</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The list of Kill Chain Phases for which this Attack Pattern is used.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;KillChainPhase"/>
-	</owl:ObjectProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;name">
 		<rdfs:label xml:lang="en-us">name</rdfs:label>

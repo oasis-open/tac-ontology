@@ -117,8 +117,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;first_seen">
-		<rdfs:label xml:lang="en-us">first_seen</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The time that this Threat Actor was first seen. This property is a summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
@@ -129,8 +127,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;last_seen">
-		<rdfs:label xml:lang="en-us">last_seen</rdfs:label>
-		<rdfs:comment xml:lang="en-us">The time that this Threat Actor was last seen. This property is a summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are later than the last seen timestamp, the object may be updated to account for the new data. If this property and the first_seen property are both defined, then this property MUST be greater than or equal to the timestamp in the first_seen property.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;dateTime"/>
 	</owl:DatatypeProperty>
 	
