@@ -24,9 +24,6 @@
 	<owl:Class rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 	</owl:Class>
 	
-	<owl:DatatypeProperty rdf:about="http://docs.oasis-open.org/cti/ns/stix/adversary#threat_actor_types">
-	</owl:DatatypeProperty>
-	
 	<owl:Class rdf:about="&tal;Access">
 		<rdfs:subClassOf rdf:resource="&tal;DefiningAttribute"/>
 	</owl:Class>
@@ -456,22 +453,6 @@
 				</owl:intersectionOf>
 			</owl:Class>
 		</owl:equivalentClass>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix/adversary#threat_actor_types"/>
-						<owl:hasValue>nation-state</owl:hasValue>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix/adversary#threat_actor_types"/>
-						<owl:hasValue>spy</owl:hasValue>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&tal;HostileThreatActor">
@@ -536,26 +517,6 @@
 	
 	<owl:Class rdf:about="&tal;InternalSpy">
 		<rdfs:subClassOf rdf:resource="&tal;HostileThreatActor"/>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
-					</rdf:Description>
-					<owl:Class>
-						<owl:intersectionOf rdf:parseType="Collection">
-							<owl:Restriction>
-								<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix/adversary#threat_actor_types"/>
-								<owl:hasValue>insider-disgruntled</owl:hasValue>
-							</owl:Restriction>
-							<owl:Restriction>
-								<owl:onProperty rdf:resource="http://docs.oasis-open.org/cti/ns/stix/adversary#threat_actor_types"/>
-								<owl:hasValue>spy</owl:hasValue>
-							</owl:Restriction>
-						</owl:intersectionOf>
-					</owl:Class>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
 		<owl:equivalentClass>
 			<owl:Class>
 				<owl:intersectionOf rdf:parseType="Collection">

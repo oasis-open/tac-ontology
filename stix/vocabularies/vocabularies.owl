@@ -19,5 +19,200 @@
 		<rdfs:comment xml:lang="en-us">Some STIX properties are defined using open vocabularies or enumerations. Enumerations and open vocabularies are defined in STIX in order to enhance interoperability by increasing the likelihood that different entities use the same exact string to represent the same concept. If used consistently, open vocabularies make it less likely that one entity refers to the energy sector as &quot;Energy&quot; and another as &quot;Energy Sector&quot;, thereby making comparison and correlation easier. \n\n While using predefined values from STIX vocabularies is strongly encouraged, in some cases this may not be feasible. To address this, producers are permitted to use values outside of the open vocabulary. In the case of enumerations, producers are required to use only the values defined within the STIX specification. \n\n STIX open vocabularies and enumerations are defined in section 10. Properties that are defined as open vocabularies identify a suggested vocabulary from that section. For example, the Threat Actor sophistication property, as defined in section 4.17, uses the Threat Actor Sophistication vocabulary as defined in section 10.25.</rdfs:comment>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;AccountTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;AttackMotivationOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;AttackResourceLevelOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;EncryptionAlgorithmEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ExtensionTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;GroupingContextOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;HashAlgorithmOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IdentityClassOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ImplementationLanguageOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IndicatorTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IndustrySectorOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;InfrastructureTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareCapabilitiesOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareResultOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;NetworkSocketFamilyEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;NetworkSocketTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;OpinionEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;PatternTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ProcessorArchitectureOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;RegionOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ReportTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixCategoryObject">
+		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixEnumeration">
+		<rdfs:subClassOf rdf:resource="&stix;StixCategoryObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixObject">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixOpenVocabulary">
+		<rdfs:subClassOf rdf:resource="&stix;StixCategoryObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorRoleOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorSophisticationOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ToolTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsIntegrityLevelEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsPeBinaryTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsRegistryDatatypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceStartTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceStatusEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Activist-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Competitor-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;facebook">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;ldap">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;nis">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;openid">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;radius">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;skype">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;tacacs">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;twitter">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;unix">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;windows-domain">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;windows-local">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
 
 </rdf:RDF>

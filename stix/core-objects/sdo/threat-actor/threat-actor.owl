@@ -4,6 +4,9 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrl "http://www.w3.org/2003/11/swrl#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/threat-actor"
@@ -12,6 +15,9 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor">
@@ -170,5 +176,50 @@
 		<rdfs:label xml:lang="en-us">threat_actor_types</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The type(s) of this threat actor. The values for this property SHOULD come from the threat-actor-type-ov open vocabulary.</rdfs:comment>
 	</owl:DatatypeProperty>
-
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta">
+	</swrl:Variable>
+	
+	<owl:AnnotationProperty rdf:about="&swrla;isRuleEnabled">
+	</owl:AnnotationProperty>
+	
+	<swrl:Imp>
+		<rdfs:label>competitor-tat-ov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2>competitor</swrl:argument2>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest rdf:resource="&rdf;nil"/>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Competitor-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
 </rdf:RDF>

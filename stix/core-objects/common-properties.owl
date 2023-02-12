@@ -164,6 +164,12 @@
 		<rdfs:comment xml:lang="en-us">Objects that connect STIX Domain Objects together, STIX Cyber-observable Objects together, and connect STIX Domain Objects and STIX Cyber-observable Objects together to form a more complete understanding of the threat landscape.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:ObjectProperty rdf:about="&stix;categorizedBy">
+		<rdfs:label xml:lang="en-us">categorizedBy</rdfs:label>
+		<rdfs:comment xml:lang="en-us">the categorized by property specifies the instance of a category</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixCategoryObject"/>
+	</owl:ObjectProperty>
+	
 	<owl:DatatypeProperty rdf:about="&stix;confidence">
 		<rdfs:label xml:lang="en-us">confidence</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The confidence property identifies the confidence that the creator has in the correctness of their data. The confidence value MUST be a number in the range of 0-100. \n\n Appendix A contains a table of normative mappings to other confidence scales that MUST be used when presenting the confidence value in one of those scales. \n\n If the confidence property is not present, then the confidence of the content is unspecified.</rdfs:comment>
