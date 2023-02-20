@@ -53,7 +53,8 @@
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="../stix/meta-objects/extension-definition/extension-definition.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/data-types" uri="../stix/core-objects/data-types.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1676838490086" name="http://hohimer.net/tal-kb-example" uri="tal-kb-example.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1676838490086" name="http://www.intel.com/ns/ta-library" uri="ta-library.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1676857897047" name="http://hohimer.net/tal-kb-example" uri="tal-kb-example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1676857897047" name="http://hohimer.net/tal-kb-example2" uri="tal-kb-example2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1676857897047" name="http://www.intel.com/ns/ta-library" uri="ta-library.owl"/>
     </group>
 </catalog>

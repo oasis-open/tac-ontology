@@ -747,7 +747,7 @@
 												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
 												<rdf:rest>
 													<rdf:List>
-														<rdf:first>competitor</rdf:first>
+														<rdf:first>terrorist</rdf:first>
 														<rdf:rest rdf:resource="&rdf;nil"/>
 													</rdf:List>
 												</rdf:rest>
