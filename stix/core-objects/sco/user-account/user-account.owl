@@ -4,6 +4,9 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrl "http://www.w3.org/2003/11/swrl#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/user-account"
@@ -12,6 +15,9 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/user-account">
@@ -241,5 +247,663 @@
 		<rdfs:comment xml:lang="en-us">Specifies the identifier of the account. The format of the identifier depends on the system the user account is maintained in, and may be a numeric ID, a GUID, an account name, an email address, etc. The user_id property should be populated with whatever field is the unique identifier for the system the account is a member of. For example, on UNIX systems it would be populated with the UID.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
-
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/user-account#acct">
+	</swrl:Variable>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/user-account#type">
+	</swrl:Variable>
+	
+	<owl:AnnotationProperty rdf:about="&swrla;isRuleEnabled">
+	</owl:AnnotationProperty>
+	
+	<swrl:Imp>
+		<rdfs:label>facebook-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>facebook</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Facebook-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>ldap-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>ldap</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Ldap-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>nis-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>nis</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Nis-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>openid-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>openid</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Openid-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>radius-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>radius</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Radius-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>skype-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>skype</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Skype-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>tacacs-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>tacacs</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Tacacs-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>twitter-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>twitter</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Twitter-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unix-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unix</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Unix-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>windows-domain-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>windows-domain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Windows-domain-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>windows-local-contains-uaov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>windows-local</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+						<swrl:argument2 rdf:resource="&stix;_Windows-local-uaov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
 </rdf:RDF>
