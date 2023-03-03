@@ -162,8 +162,16 @@
 		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
 	</owl:Class>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Accidental-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Activist-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Coercion-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Competitor-tatov">
@@ -178,8 +186,16 @@
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Dominance-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Ideology-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Insider-Accidental-tatov">
@@ -192,6 +208,26 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Nation-State-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Notoriety-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Organizational-gain-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Personal-gain-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Personal-satisfaction-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Revenge-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
@@ -208,6 +244,10 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Unknown-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;facebook">
