@@ -27,6 +27,8 @@
 	
 	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#Ryan">
 		<rdf:type rdf:resource="&stix;ThreatActor"/>
+		<stix:primary_motivation>revenge</stix:primary_motivation>
+		<stix:secondary_motivations>personal-gain</stix:secondary_motivations>
 		<stix:threat_actor_types>competitor, government-spy</stix:threat_actor_types>
 	</owl:NamedIndividual>
 	
