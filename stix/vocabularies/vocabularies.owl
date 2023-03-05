@@ -185,12 +185,16 @@
 	<owl:NamedIndividual rdf:about="&stix;_Criminal-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
-	
+
 	<owl:NamedIndividual rdf:about="&stix;_Dominance-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
-	<owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
+	<owl:NamedIndividual rdf:about="&stix;_Facebook-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
@@ -206,6 +210,11 @@
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+
+	<owl:NamedIndividual rdf:about="&stix;_Ldap-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+  </owl:NamedIndividual>  
+
 	<owl:NamedIndividual rdf:about="&stix;_Nation-State-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
@@ -232,65 +241,61 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+  </owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Nis-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Openid-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Radius-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+  
+	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Skype-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Spy-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Tacacs-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Terrorist-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Twitter-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unix-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Unknown-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
-	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
-		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;facebook">
+	<owl:NamedIndividual rdf:about="&stix;_Windows-domain-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
-	<owl:NamedIndividual rdf:about="&stix;ldap">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;nis">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;openid">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;radius">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;skype">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;tacacs">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;twitter">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;unix">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;windows-domain">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;windows-local">
+	<owl:NamedIndividual rdf:about="&stix;_Windows-local-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 

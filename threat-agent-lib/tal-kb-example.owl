@@ -31,5 +31,10 @@
 		<stix:secondary_motivations>personal-gain</stix:secondary_motivations>
 		<stix:threat_actor_types>competitor, government-spy</stix:threat_actor_types>
 	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#_MyUserAccount">
+		<rdf:type rdf:resource="&stix;UserAccount"/>
+		<stix:account_type>twitter</stix:account_type>
+	</owl:NamedIndividual>
 
 </rdf:RDF>
