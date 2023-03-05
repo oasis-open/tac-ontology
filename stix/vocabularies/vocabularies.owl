@@ -185,7 +185,7 @@
 	<owl:NamedIndividual rdf:about="&stix;_Criminal-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
-
+	
 	<owl:NamedIndividual rdf:about="&stix;_Dominance-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
@@ -193,8 +193,8 @@
 	<owl:NamedIndividual rdf:about="&stix;_Facebook-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
-  
-  <owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
+	
+	<owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
@@ -210,17 +210,24 @@
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
-
 	<owl:NamedIndividual rdf:about="&stix;_Ldap-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-  </owl:NamedIndividual>  
-
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Nation-State-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Nis-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Notoriety-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Openid-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Organizational-gain-amov">
@@ -235,30 +242,14 @@
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Radius-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Revenge-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
-	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
-		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
-  </owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;_Nis-aov">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;_Openid-aov">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&stix;_Radius-aov">
-		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
-	</owl:NamedIndividual>
-  
-	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
-		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
-	</owl:NamedIndividual>
-
 	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
@@ -289,6 +280,10 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Unknown-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Windows-domain-aov">
