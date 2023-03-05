@@ -264,10 +264,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>facebook</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -281,20 +291,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>facebook</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -308,7 +308,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Facebook-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Facebook-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -323,10 +323,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>ldap</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -340,20 +350,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>ldap</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -367,7 +367,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Ldap-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Ldap-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -382,19 +382,19 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
+					<swrl:DatavaluedPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+						<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+						<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+					</swrl:DatavaluedPropertyAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
 						<rdf:first>
-							<swrl:DatavaluedPropertyAtom>
+							<swrl:ClassAtom>
 								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
-							</swrl:DatavaluedPropertyAtom>
+								<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+							</swrl:ClassAtom>
 						</rdf:first>
 						<rdf:rest>
 							<swrl:AtomList>
@@ -426,7 +426,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Nis-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Nis-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -441,10 +441,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>openid</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -458,20 +468,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>openid</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -485,7 +485,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Openid-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Openid-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -500,10 +500,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>radius</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -517,20 +527,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>radius</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -544,7 +544,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Radius-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Radius-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -559,10 +559,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>skype</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -576,20 +586,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>skype</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -603,7 +603,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Skype-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Skype-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -618,37 +618,37 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
+					<swrl:DatavaluedPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+						<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+						<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+					</swrl:DatavaluedPropertyAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
 						<rdf:first>
-							<swrl:DatavaluedPropertyAtom>
-								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
-							</swrl:DatavaluedPropertyAtom>
+							<swrl:BuiltinAtom>
+								<swrl:arguments>
+									<rdf:List>
+										<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+										<rdf:rest>
+											<rdf:List>
+												<rdf:first>tacacs</rdf:first>
+												<rdf:rest rdf:resource="&rdf;nil"/>
+											</rdf:List>
+										</rdf:rest>
+									</rdf:List>
+								</swrl:arguments>
+								<swrl:builtin rdf:resource="&swrlb;contains"/>
+							</swrl:BuiltinAtom>
 						</rdf:first>
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>tacacs</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -662,7 +662,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Tacacs-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Tacacs-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -677,10 +677,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>twitter</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -694,20 +704,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>twitter</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -721,7 +721,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Twitter-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Twitter-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -736,19 +736,19 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
+					<swrl:DatavaluedPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+						<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+						<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
+					</swrl:DatavaluedPropertyAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
 						<rdf:first>
-							<swrl:DatavaluedPropertyAtom>
+							<swrl:ClassAtom>
 								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-								<swrl:propertyPredicate rdf:resource="&stix;account_type"/>
-							</swrl:DatavaluedPropertyAtom>
+								<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+							</swrl:ClassAtom>
 						</rdf:first>
 						<rdf:rest>
 							<swrl:AtomList>
@@ -780,7 +780,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Unix-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Unix-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -795,10 +795,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>windows-domain</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -812,20 +822,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>windows-domain</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -839,7 +839,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Windows-domain-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Windows-domain-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
@@ -854,10 +854,20 @@
 		<swrl:body>
 			<swrl:AtomList>
 				<rdf:first>
-					<swrl:ClassAtom>
-						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
-					</swrl:ClassAtom>
+					<swrl:BuiltinAtom>
+						<swrl:arguments>
+							<rdf:List>
+								<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>windows-local</rdf:first>
+										<rdf:rest rdf:resource="&rdf;nil"/>
+									</rdf:List>
+								</rdf:rest>
+							</rdf:List>
+						</swrl:arguments>
+						<swrl:builtin rdf:resource="&swrlb;contains"/>
+					</swrl:BuiltinAtom>
 				</rdf:first>
 				<rdf:rest>
 					<swrl:AtomList>
@@ -871,20 +881,10 @@
 						<rdf:rest>
 							<swrl:AtomList>
 								<rdf:first>
-									<swrl:BuiltinAtom>
-										<swrl:arguments>
-											<rdf:List>
-												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#type"/>
-												<rdf:rest>
-													<rdf:List>
-														<rdf:first>windows-local</rdf:first>
-														<rdf:rest rdf:resource="&rdf;nil"/>
-													</rdf:List>
-												</rdf:rest>
-											</rdf:List>
-										</swrl:arguments>
-										<swrl:builtin rdf:resource="&swrlb;contains"/>
-									</swrl:BuiltinAtom>
+									<swrl:ClassAtom>
+										<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
+										<swrl:classPredicate rdf:resource="&stix;UserAccount"/>
+									</swrl:ClassAtom>
 								</rdf:first>
 								<rdf:rest rdf:resource="&rdf;nil"/>
 							</swrl:AtomList>
@@ -898,7 +898,7 @@
 				<rdf:first>
 					<swrl:IndividualPropertyAtom>
 						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/user-account#acct"/>
-						<swrl:argument2 rdf:resource="&stix;_Windows-local-uaov"/>
+						<swrl:argument2 rdf:resource="&stix;_Windows-local-aov"/>
 						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
 					</swrl:IndividualPropertyAtom>
 				</rdf:first>
