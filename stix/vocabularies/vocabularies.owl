@@ -170,12 +170,20 @@
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Club-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Coercion-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Competitor-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Contest-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Crime-Syndicate-tatov">
@@ -194,12 +202,20 @@
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Government-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Ideology-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Individual-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Insider-Accidental-tatov">
@@ -228,6 +244,10 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Openid-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Organization-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Organizational-gain-amov">
@@ -264,6 +284,10 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Tacacs-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Team-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Terrorist-tatov">
