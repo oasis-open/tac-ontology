@@ -25,9 +25,15 @@
 		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
 	</owl:Ontology>
 	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#My-Intrusion-Set">
+		<rdf:type rdf:resource="&stix;IntrusionSet"/>
+		<stix:resource_level>team</stix:resource_level>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#Ryan">
 		<rdf:type rdf:resource="&stix;ThreatActor"/>
 		<stix:primary_motivation>rebenge</stix:primary_motivation>
+		<stix:resource_level>individual</stix:resource_level>
 		<stix:secondary_motivations>personal-gain</stix:secondary_motivations>
 		<stix:threat_actor_types>competitor, government-spy</stix:threat_actor_types>
 	</owl:NamedIndividual>
