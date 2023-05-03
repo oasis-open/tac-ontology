@@ -214,6 +214,10 @@
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Malware-analysis-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Nation-State-tatov">
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
@@ -262,6 +266,10 @@
 		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Suspicious-activity-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Tacacs-aov">
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
@@ -284,6 +292,10 @@
 	
 	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unspecified-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&stix;_Windows-domain-aov">
