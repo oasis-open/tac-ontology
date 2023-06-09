@@ -250,6 +250,9 @@
 		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="&stix;_Random-gcov">
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="&stix;_Revenge-amov">
 		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
 	</owl:NamedIndividual>
