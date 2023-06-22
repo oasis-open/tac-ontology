@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://docs.oasis-open.org/cti/ns/stix/vocabulary" uri="file:/C:/Users/tcreg/OneDrive/Documents/GitHub/tac-ontology/stix/vocabularies/vocabularies.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1686351982242" name="http://docs.oasis-open.org/cti/ns/stix/grouping" uri="grouping.owl"/>
+    </group>
+</catalog>

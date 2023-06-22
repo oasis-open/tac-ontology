@@ -38,6 +38,13 @@
 		<stix:threat_actor_types>competitor, government-spy</stix:threat_actor_types>
 	</owl:NamedIndividual>
 	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#TestGrouping">
+		<rdf:type rdf:resource="&stix;Grouping"/>
+		<stix:context>malware-analysis</stix:context>
+		<stix:context>suspicious-activity</stix:context>
+		<stix:context>unspecified</stix:context>
+	</owl:NamedIndividual>
+	
 	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#_MyUserAccount">
 		<rdf:type rdf:resource="&stix;UserAccount"/>
 		<stix:account_type>twitter</stix:account_type>
