@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.hc-ta.org/ns/hal-library" uri="hal-library.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.intel.com/ns/ta-library" uri="../threat-agent-lib/ta-library.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/relationship-types" uri="../stix/core-objects/sro/relationship/relationship-types.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/bundle" uri="../stix/bundle-object/bundle.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/vocabularies" uri="../stix/vocabularies/vocabularies.owl"/>
@@ -53,10 +55,7 @@
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="../stix/meta-objects/extension-definition/extension-definition.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/data-types" uri="../stix/core-objects/data-types.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1688046769638" name="duplicate:http://hohimer.net/tal-kb-example" uri="stix-report-00.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1688046769638" name="duplicate:http://hohimer.net/tal-kb-example" uri="stix-report.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1688046769638" name="duplicate:http://hohimer.net/tal-kb-example" uri="tal-kb-example.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1688046769638" name="duplicate:http://hohimer.net/tal-kb-example" uri="template-kb.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1688046769638" name="http://www.intel.com/ns/ta-library" uri="ta-library.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1690664218858" name="http://hohimer.net/hal-example" uri="hal-example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1690664218858" name="http://www.hc-ta.org/ns/hal-library" uri="hal-library.owl"/>
     </group>
 </catalog>
