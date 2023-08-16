@@ -21,7 +21,9 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://hohimer.net/hal-example">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
 		<owl:imports rdf:resource="http://www.hc-ta.org/ns/hal-library"/>
+		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
 	</owl:Ontology>
 
 </rdf:RDF>

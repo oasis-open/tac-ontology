@@ -7,6 +7,7 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/autonomous-system"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/autonomous-system#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -38,25 +39,37 @@
 				<owl:someValuesFrom rdf:resource="&xsd;string"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label xml:lang="en-US">AutonomousSystem</rdfs:label>
-		<rdfs:comment xml:lang="en-US">This object represents the properties of an Autonomous System (AS).</rdfs:comment>
+		<rdfs:label xml:lang="en-us">AutonomousSystem</rdfs:label>
+		<rdfs:comment xml:lang="en-us">This object represents the properties of an Autonomous System (AS).</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>autonomous-system</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;name">
-		<rdfs:label xml:lang="en-US">name</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the name of the AS.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the name of the AS.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;number">
-		<rdfs:label xml:lang="en-US">number</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR).</rdfs:comment>
+		<rdfs:label xml:lang="en-us">number</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR).</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;rir">
-		<rdfs:label xml:lang="en-US">rir</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the name of the Regional Internet Registry (RIR) that assigned the number to the AS.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">rir</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the name of the Regional Internet Registry (RIR) that assigned the number to the AS.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 
