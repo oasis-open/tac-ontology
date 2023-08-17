@@ -7,6 +7,7 @@
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
 <rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/directory"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/directory#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -30,7 +31,6 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;contains_refs"/>
-				<owl:someValuesFrom rdf:resource="&stix;Directory"/>
 				<owl:someValuesFrom rdf:resource="&stix;File"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
@@ -65,7 +65,19 @@
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:label>Directory Object</rdfs:label>
-		<rdfs:comment xml:lang="en-US">The Directory object represents the properties common to a file system directory.</rdfs:comment>
+		<rdfs:comment xml:lang="en-us">The Directory object represents the properties common to a file system directory.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>directory</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:DatatypeProperty rdf:about="&stix;atime">
@@ -80,9 +92,9 @@
 		<rdfs:range>
 			<owl:Class>
 				<owl:unionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&stix;File">
-					</rdf:Description>
 					<rdf:Description rdf:about="&stix;Directory">
+					</rdf:Description>
+					<rdf:Description rdf:about="&stix;File">
 					</rdf:Description>
 				</owl:unionOf>
 			</owl:Class>
@@ -108,14 +120,14 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;path">
-		<rdfs:label xml:lang="en-US">path</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the path, as originally observed, to the directory on the file system.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">path</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the path, as originally observed, to the directory on the file system.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;path_enc">
-		<rdfs:label xml:lang="en-US">path_enc</rdfs:label>
-		<rdfs:comment xml:lang="en-US">Specifies the observed encoding for the path. The value MUST be specified if the path is stored in a non-Unicode encoding. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the preferred MIME name for a character set is defined, this value MUST be used; if it is not defined, then the Name value from the registry MUST be used instead.</rdfs:comment>
+		<rdfs:label xml:lang="en-us">path_enc</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the observed encoding for the path. The value MUST be specified if the path is stored in a non-Unicode encoding. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the preferred MIME name for a character set is defined, this value MUST be used; if it is not defined, then the Name value from the registry MUST be used instead.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
 	</owl:DatatypeProperty>
 

@@ -167,6 +167,18 @@
 		</rdfs:subClassOf>
 		<rdfs:label xml:lang="en-us">File</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The File object represents the properties of a file. A File object MUST contain at least one of hashes or name.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>file</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
 	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;Hashes">

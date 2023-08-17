@@ -161,18 +161,38 @@
 				<owl:intersectionOf rdf:parseType="Collection">
 					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
 					</rdf:Description>
-					<owl:Class>
-						<owl:unionOf rdf:parseType="Collection">
-							<owl:Restriction>
-								<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-								<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
-							</owl:Restriction>
-							<owl:Restriction>
-								<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-								<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
-							</owl:Restriction>
-						</owl:unionOf>
-					</owl:Class>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;BusinessAdvantageOutcome"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ClandestineVisibility"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;CopyObjective"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;ExternalAccess"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://docs.oasis-open.org/cti/ns/stix#ThreatActor">
+					</rdf:Description>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;AdeptSkills"/>
@@ -192,6 +212,10 @@
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;MinorExtraLegalLimits"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
+						<owl:hasValue rdf:resource="&tal;TechnologyAdvantageOutcome"/>
 					</owl:Restriction>
 				</owl:intersectionOf>
 			</owl:Class>
