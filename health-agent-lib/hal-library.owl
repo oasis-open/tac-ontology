@@ -25,6 +25,10 @@
 		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
 	</owl:Ontology>
 	
+	<owl:NamedIndividual rdf:about="&hal;Curiosity">
+		<rdf:type rdf:resource="&tal;Motivation"/>
+	</owl:NamedIndividual>
+	
 	<owl:Class rdf:about="&hal;CuriousHealthcareWorker">
 		<rdfs:subClassOf rdf:resource="&tal;RecklessEmployee"/>
 		<owl:equivalentClass>
@@ -34,7 +38,7 @@
 					</rdf:Description>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="&hal;EnjoymentObjective"/>
+						<owl:hasValue rdf:resource="&hal;Curiosity"/>
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
@@ -50,7 +54,6 @@
 	</owl:Class>
 	
 	<owl:NamedIndividual rdf:about="&hal;EnjoymentObjective">
-		<rdf:type rdf:resource="&tal;Objective"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&hal;PolicyViolationObjective">

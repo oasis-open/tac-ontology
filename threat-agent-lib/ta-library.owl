@@ -850,10 +850,6 @@
 					</owl:Restriction>
 					<owl:Restriction>
 						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
-						<owl:hasValue rdf:resource="&tal;AllDontCareObjective"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&tac;categorizedBy"/>
 						<owl:hasValue rdf:resource="&tal;CovertVisibility"/>
 					</owl:Restriction>
 					<owl:Restriction>
