@@ -18,6 +18,11 @@ The OASIS Threat Actor Context Technical Committee (TAC-TC) is chartered to crea
 
 *The TC may include additional content as descriptive text, reflecting project status, milestones, releases, modifications to statement of purpose, etc.  
 
+## Documentation
+
+[The STIX 2.1 Ontology](docs/stix/stix-ontology-readme.md)
+
+
 ## <a id="maintainers">Maintainers</a>
 
 TC Open Repository [Maintainers](https://www.oasis-open.org/resources/open-repositories/maintainers-guide) are responsible for oversight of this project's community development activities, including evaluation of GitHub [pull requests](https://github.com/oasis-open/tac-ontology/blob/master/CONTRIBUTING.md#fork-and-pull-collaboration-model) and [preserving](https://www.oasis-open.org/policies-guidelines/open-repositories#repositoryManagement) open source principles of openness and fairness. Maintainers are recognized and trusted experts who serve to implement community goals and consensus design preferences.
@@ -28,9 +33,9 @@ Initially, the TC members have designated one or more persons to serve as Mainta
 
 Vasileios Mavroeidis, vasileim@ifi.uio.no, Vasileios-Mavroeidis, University of Oslo
 
-Ryan Hohimer, ryan.hohimer@darklight.ai, rhohimer, Darklight Inc.
+Ryan Hohimer, ryan.hohimer@semanticarts.com, rhohimer, Semantic Arts Inc.
 
-Paul Patrick, ppatrick@darklight.ai, CyberDaedalus00, Darklight Inc.
+
 
 ## About OASIS TC Open Repositories
 
