@@ -20,8 +20,8 @@ The OASIS Threat Actor Context Technical Committee (TAC-TC) is chartered to crea
 
 ## Documentation
 
-[The STIX 2.1 Ontology](docs/stix/stix-ontology-readme.md)
-
+[The STIX 2.1 Ontology](./docs/stix/stix-ontology-readme.md)
+	
 
 ## <a id="maintainers">Maintainers</a>
 
