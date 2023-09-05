@@ -6,3 +6,6 @@ The Threat Agent Library is a contribution from Intel Corp. It is an extension o
 ### STIX 2.1 Standard Specification is extended by the STIX Ontology (stix.owl)
 ### STIX Ontology is extended by the TAC Ontology (tac.owl)
 ### TAC Ontology is extended by the TAL Ontology (ta-library.owl)
+
+
+![Heritage of a TAL Competitor](competitor-heritage.png)
