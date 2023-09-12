@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/file"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/file#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/file">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/artifact"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/directory"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;AlternateDataStreamType">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Alternate Data Stream Type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Alternate Data Stream type represents an NTFS alternate data stream.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ArchiveExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;comment"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;contains_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;StixCyberObservable"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;contains_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Archive File Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Archive File extension specifies a default extension for capturing properties specific to archive files. The key for this extension when used in the extensions dictionary MUST be archive-ext. Note that this predefined extension does not use the extension facility described in section 7.3.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Dictionary">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;File">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;atime"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;contains_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;StixCyberObservable"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;contains_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;content_ref"/>
+				<owl:someValuesFrom rdf:resource="&stix;Artifact"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;content_ref_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;ctime"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;magic_number_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;mime_type"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;mtime"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name_enc"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;parent_directory_ref"/>
+				<owl:someValuesFrom rdf:resource="&stix;Directory"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;parent_directory_ref_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">File</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The File object represents the properties of a file. A File object MUST contain at least one of hashes or name.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>file</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Hashes">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;NtfsExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;alternate_data_streams"/>
+				<owl:someValuesFrom rdf:resource="&stix;AlternateDataStreamType"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;sid"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">NTFS File Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The NTFS file extension specifies a default extension for capturing properties specific to the storage of the file on the NTFS file system. The key for this extension when used in the extensions dictionary MUST be ntfs-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the NTFS File Extension MUST contain at least one property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;PdfExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;document_info_dict"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;is_optimized"/>
+				<owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;pdfid0"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;pdfid1"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">PDF File Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The PDF file extension specifies a default extension for capturing properties specific to PDF files. The key for this extension when used in the extensions dictionary MUST be pdf-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the PDF File Extension MUST contain at least one property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;RasterImageExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;bits_per_pixel"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;exif_tags"/>
+				<owl:someValuesFrom rdf:resource="&stix;Dictionary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;image_height"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;image_width"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Raster Image File Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Raster Image file extension specifies a default extension for capturing properties specific to raster image files. The key for this extension when used in the extensions dictionary MUST be raster-image-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the Raster Image File Extension MUST contain at least one property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixDatatype">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsPeOptionalHeaderType">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;address_of_entry_point"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;base_of_code"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;base_of_data"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;checksum_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;dll_characteristics_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;file_alignment"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;image_base"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;loader_flags_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;magic_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;major_image_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;major_linker_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;major_os_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;major_subsystem_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;minor_image_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;minor_linker_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;minor_os_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;minor_subsystem_version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;number_of_rva_and_sizes"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;section_alignment"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_code"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_headers"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_heap_commit"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_heap_reserve"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_image"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_initialized_data"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_stack_commit"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_stack_reserve"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_uninitialized_data"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;subsystem_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;win32_version_value_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Windows PE Optional Header Type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Windows PE Optional Header type represents the properties of the PE optional header. An object using the Windows PE Optional Header Type MUST contain at least one property from this type.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsPeSectionType">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;entropy"/>
+				<owl:someValuesFrom rdf:resource="&xsd;float"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Windows PE Section Type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Windows PE Section type specifies metadata about a PE file section.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsPebinaryExt">
+		<rdfs:subClassOf rdf:resource="&stix;File"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;characteristics_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;imphash"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;machine_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;number_of_sections"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;number_of_symbols"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;optional_header"/>
+				<owl:someValuesFrom rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;pointer_to_symbol_table_hex"/>
+				<owl:someValuesFrom rdf:resource="&xsd;hexBinary"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;sections"/>
+				<owl:someValuesFrom rdf:resource="&stix;WindowsPeSectionType"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;size_of_optional_header"/>
+				<owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;time_date_stamp"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Windows PE Binary File Extension</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The Windows PE Binary File extension specifies a default extension for capturing properties specific to Windows portable executable (PE) files. The key for this extension when used in the extensions dictionary MUST be windows-pebinary-ext. Note that this predefined extension does not use the extension facility described in section 7.3. An object using the Windows™ PE Binary File Extension MUST contain at least one property other than the required pe_type property from this extension.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;address_of_entry_point">
+		<rdfs:label>address_of_entry_point</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the address of the entry point relative to the image base when the executable is loaded into memory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;alternate_data_streams">
+		<rdfs:label xml:lang="en-us">alternate_data_streams</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a list of NTFS alternate data streams that exist for the file.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;AlternateDataStreamType"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;atime">
+		<rdfs:label>atime</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the file was last accessed.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;base_of_code">
+		<rdfs:label>base_of_code</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the address that is relative to the image base of the beginning-of-code section when it is loaded into memory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;base_of_data">
+		<rdfs:label>base_of_data</rdfs:label>
+		<rdfs:comment xml:lang="en-us">base_of_data</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;bits_per_pixel">
+		<rdfs:label>bits_per_pixel</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the sum of bits used for each color channel in the image file, and thus the total number of pixels used for expressing the color depth of the image.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;characteristics_hex">
+		<rdfs:label>characteristics_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the flags that indicate the file&apos;s characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;checksum_hex">
+		<rdfs:label xml:lang="en-us">checksum_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the checksum of the PE binary.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;comment">
+		<rdfs:label>comment</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a comment included as part of the archive file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;contains_refs">
+		<rdfs:label xml:lang="en-us">contains_refs</rdfs:label>
+		<rdfs:range rdf:resource="&stix;StixCyberObservable"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;contains_refs_string">
+		<rdfs:label xml:lang="en-us">contains_refs_string</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;content_ref">
+		<rdfs:label xml:lang="en-us">content_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the content of the file, represented as an Artifact object. The object referenced in this property MUST be of type artifact.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Artifact"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;content_ref_string">
+		<rdfs:label xml:lang="en-us">content_ref_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the content of the file, represented as an Artifact object. The object referenced in this property MUST be of type artifact.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;ctime">
+		<rdfs:label>ctime</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the file was created.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;dll_characteristics_hex">
+		<rdfs:label>dll_characteristics_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the flags that characterize the PE binary.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;document_info_dict">
+		<rdfs:label xml:lang="en-us">document_info_dict</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies details of the PDF document information dictionary (DID), which includes properties like the document creation data and producer, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the corresponding entry in the document information dictionary without the prepended forward slash, e.g., Title. The corresponding value for the key MUST be the value specified for the document information dictionary entry, as a string.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;entropy">
+		<rdfs:label xml:lang="en-us">entropy</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the calculated entropy for the section, as calculated using the Shannon algorithm (https://en.wiktionary.org/wiki/Shannon_entropy). The size of each input character is defined as a byte, resulting in a possible range of 0 through 8.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;float"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;exif_tags">
+		<rdfs:label xml:lang="en-us">exif_tags</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the set of EXIF tags found in the image file, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single EXIF tag. Accordingly, each dictionary key MUST be a case-preserved version of the EXIF tag name, e.g., XResolution. Each dictionary value MUST be either an integer (for int* EXIF datatypes) or a string (for all other EXIF datatypes).</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Dictionary"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;file_alignment">
+		<rdfs:label>file_alignment</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the factor (in bytes) that is used to align the raw data of sections in the image file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;file_header_hashes">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;image_base">
+		<rdfs:label>image_base</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the preferred address of the first byte of the image when loaded into memory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;image_height">
+		<rdfs:label>image_height</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the height of the image in the image file, in pixels.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;image_width">
+		<rdfs:label>image_width</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the width of the image in the image file, in pixels.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;imphash">
+		<rdfs:label>imphash</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the special import hash, or &apos;imphash&apos;, calculated for the PE Binary based on its imported libraries and functions. For more information on the imphash algorithm, see the original article by Mandiant/FireEye [FireEye 2014].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;is_optimized">
+		<rdfs:label>is_optimized</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies whether the PDF file has been optimized.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;loader_flags_hex">
+		<rdfs:label>loader_flags_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the reserved loader flags.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;machine_hex">
+		<rdfs:label>machine_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the type of target machine.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;magic_hex">
+		<rdfs:label>magic_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the hex value that indicates the type of the PE binary.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;magic_number_hex">
+		<rdfs:label xml:lang="en-us">magic_number_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the hexadecimal constant (&quot;magic number&quot;) associated with a specific file format that corresponds to the file, if applicable.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;major_image_version">
+		<rdfs:label>major_image_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the major version number of the image.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;major_linker_version">
+		<rdfs:label>major_linker_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the linker major version number.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;major_os_version">
+		<rdfs:label>major_os_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the major version number of the required operating system.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;major_subsystem_version">
+		<rdfs:label>major_subsystem_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the major version number of the subsystem.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;mime_type">
+		<rdfs:label>mime_type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the MIME type name specified for the file, e.g., application/msword. Whenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types].Maintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;minor_image_version">
+		<rdfs:label>minor_image_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the minor version number of the image.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;minor_linker_version">
+		<rdfs:label>minor_linker_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the linker minor version number.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;minor_os_version">
+		<rdfs:label>minor_os_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the minor version number of the required operating system.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;minor_subsystem_version">
+		<rdfs:label>minor_subsystem_version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the minor version number of the subsystem.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;mtime">
+		<rdfs:label>mtime</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the date/time the file was last written to/modified.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label>name</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name_enc">
+		<rdfs:label xml:lang="en-us">name_enc</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the observed encoding for the name of the file. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the value from the Preferred MIME Name column for a character set is defined, this value MUST be used; if it is not defined, then the value from the Name column in the registry MUST be used instead. This property allows for the capture of the original text encoding for the file name, which may be forensically relevant; for example, a file on an NTFS volume whose name was created using the windows-1251 encoding, commonly used for languages based on Cyrillic script.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;number_of_rva_and_sizes">
+		<rdfs:label>number_of_rva_and_sizes</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the number of data-directory entries in the remainder of the optional header.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;number_of_sections">
+		<rdfs:label>number_of_sections</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the number of sections in the PE binary, as a non-negative integer.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;number_of_symbols">
+		<rdfs:label>number_of_symbols</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;optional_header">
+		<rdfs:label>optional_header</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the PE optional header of the PE binary. When used, at least one property from the windows-pe-optional-header-type MUST be included.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;parent_directory_ref">
+		<rdfs:label xml:lang="en-us">parent_directory_ref</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the parent directory of the file, as a reference to a Directory object. The object referenced in this property MUST be of type directory.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Directory"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;parent_directory_ref_string">
+		<rdfs:label xml:lang="en-us">parent_directory_ref_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the parent directory of the file, as a reference to a Directory object. The object referenced in this property MUST be of type directory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;pdfid0">
+		<rdfs:label>pdfid0</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the first file identifier found for the PDF file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;pdfid1">
+		<rdfs:label>pdfid1</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the second file identifier found for the PDF file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;pe_type">
+		<rdfs:label>pe_type</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the type of the PE binary. This is an open vocabulary and values SHOULD come from the windows-pebinary-type-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;pointer_to_symbol_table_hex">
+		<rdfs:label>pointer_to_symbol_table_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the file offset of the COFF symbol table.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;section_alignment">
+		<rdfs:label>section_alignment</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the alignment (in bytes) of PE sections when they are loaded into memory.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;sections">
+		<rdfs:label>sections</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies metadata about the sections in the PE file.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;WindowsPeOptionalHeaderType"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;sid">
+		<rdfs:label>sid</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the security ID (SID) value assigned to the file.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size">
+		<rdfs:label xml:lang="en-us">size</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_code">
+		<rdfs:label>size_of_code</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the code (text) section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_headers">
+		<rdfs:label>size_of_headers</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the combined size of the MS-DOS, PE header, and section headers, rounded up to a multiple of the value specified in the file_alignment header. The value of this property MUST NOT be negative..</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_heap_commit">
+		<rdfs:label>size_of_heap_commit</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the local heap space to commit, in bytes. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_heap_reserve">
+		<rdfs:label>size_of_heap_reserve</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the local heap space to reserve, in bytes. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_image">
+		<rdfs:label>size_of_image</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the image in bytes, including all headers, as the image is loaded in memory. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_initialized_data">
+		<rdfs:label>size_of_initialized_data</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the initialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_optional_header">
+		<rdfs:label>size_of_optional_header</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the optional header of the PE binary. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_stack_commit">
+		<rdfs:label>size_of_stack_commit</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the stack to commit, in bytes. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_stack_reserve">
+		<rdfs:label>size_of_stack_reserve</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the stack to reserve, in bytes. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;size_of_uninitialized_data">
+		<rdfs:label>size_of_uninitialized_data</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;subsystem_hex">
+		<rdfs:label>subsystem_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;time_date_stamp">
+		<rdfs:label>time_date_stamp</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the time when the PE binary was created. The timestamp value MUST be precise to the second.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;version">
+		<rdfs:label>version</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the decimal version number of the string from the PDF header that specifies the version of the PDF specification to which the PDF file conforms. E.g., 1.4.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;win32_version_value_hex">
+		<rdfs:label>win32_version_value_hex</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the reserved win32 version value.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,2446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrl "http://www.w3.org/2003/11/swrl#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/threat-actor"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/threat-actor#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;ThreatActor">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;aliases"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;first_seen"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;goals"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;last_seen"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;personal_motivations"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;primary_motivation"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resource_level"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;roles"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;secondary_motivations"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;sophistication"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;threat_actor_types"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Threat Actor</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. A Threat Actor is not an Intrusion Set but may support or be affiliated with various Intrusion Sets, groups, or organizations over time. \n\nThreat Actors leverage their resources, and possibly the resources of an Intrusion Set, to conduct attacks and run Campaigns against targets. \n\nThreat Actors can be characterized by their motives, capabilities, goals, sophistication level, past activities, resources they have access to, and their role in the organization.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>threat-actor</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;aliases">
+		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A list of other names that this Threat Actor is believed to use.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Threat Actor, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;first_seen">
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;goals">
+		<rdfs:label xml:lang="en-us">goals</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The high-level goals of this Threat Actor, namely, what are they trying to do. For example, they may be motivated by personal gain, but their goal is to steal credit card numbers. To do this, they may execute specific Campaigns that have detailed objectives like compromising point of sale systems at a large retailer.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;last_seen">
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify this Threat Actor or Threat Actor group.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;personal_motivations">
+		<rdfs:label xml:lang="en-us">personal_motivations</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Personal motivation, which is independent of the organization&apos;s goals, describes what impels an individual to carry out an attack. Personal motivation may align with the organization&apos;s motivation—as is common with activists—but more often it supports personal goals. For example, an individual analyst may join a Data Miner corporation because his or her skills may align with the corporation&apos;s objectives. But the analyst most likely performs his or her daily work toward those objectives for personal reward in the form of a paycheck. The motivation of personal reward may be even stronger for Threat Actors who commit illegal acts, as it is more difficult for someone to cross that line purely for altruistic reasons. The position in the list has no significance. The values for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
+		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The primary reason, motivation, or purpose behind this Threat Actor. The motivation is why the Threat Actor wishes to achieve the goal (what they are trying to achieve). For example, a Threat Actor with a goal to disrupt the finance sector in a country might be motivated by ideological hatred of capitalism. The value for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;resource_level">
+		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The organizational level at which this Threat Actor typically works, which in turn determines the resources available to this Threat Actor for use in an attack. This attribute is linked to the sophistication property — a specific resource level implies that the Threat Actor has access to at least a specific sophistication level. The value for this property SHOULD come from the attack-resource-level-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;roles">
+		<rdfs:label xml:lang="en-us">roles</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A list of roles the Threat Actor plays. The values for this property SHOULD come from the threat-actor-role-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
+		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
+		<rdfs:comment xml:lang="en-us">This property specifies the secondary reasons, motivations, or purposes behind this Threat Actor. These motivations can exist as an equal or near-equal cause to the primary motivation. However, it does not replace or necessarily magnify the primary motivation, but it might indicate additional context. The position in the list has no significance. The value for this property SHOULD come from the attack-motivation-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;sophistication">
+		<rdfs:label xml:lang="en-us">sophistication</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The skill, specific knowledge, special training, or expertise a Threat Actor must have to perform the attack. The value for this property SHOULD come from the threat-actor-sophistication-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;threat_actor_types">
+		<rdfs:label xml:lang="en-us">threat_actor_types</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The type(s) of this threat actor. The values for this property SHOULD come from the threat-actor-type-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring">
+	</swrl:Variable>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta">
+	</swrl:Variable>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring">
+	</swrl:Variable>
+	
+	<owl:AnnotationProperty rdf:about="&swrla;isRuleEnabled">
+	</owl:AnnotationProperty>
+	
+	<swrl:Imp>
+		<rdfs:label>accidental-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>accidental</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Accidental-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>accidental-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>accidental</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Accidental-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>coercion-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>coercion</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Coercion-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>coercion-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>coercion</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Coercion-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>competitor-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>competitor</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Competitor-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>crime-syndicate-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>crime-syndicate</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Crime-Syndicate-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>criminal-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>criminal</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Criminal-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>dominance-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>dominance</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Dominance-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>dominance-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>dominance</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Dominance-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>hacker-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>hacker</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Hacker-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>ideology-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>ideology</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Ideology-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>ideology-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>ideology</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Ideology-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>insider-accidental-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>insider-accidental</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Insider-Accidental-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>insider-disgruntled-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>insider-disgruntled</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Insider-Disgruntled-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>nation-state-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>nation-state</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Nation-State-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>notoriety-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>notoriety</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Notoriety-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>notoriety-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>notoriety</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Notoriety-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organizational-gain-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organizational-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Organizational-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organizational-gain-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organizational-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Organizational-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-gain-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-gain-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-satisfaction-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-satisfaction</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-satisfaction-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-satisfaction-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-satisfaction</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-satisfaction-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>revenge-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>revenge</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Revenge-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>revenge-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>revenge</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Revenge-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>sensationalist-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>sensationalist</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Sensationalist-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>spy-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>spy</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Spy-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>terrorist-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>terrorist</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Terrorist-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unknown-contains-tatov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unknown</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Unknown-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unpredicatable-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unpredicatable</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Unpredictable-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unpredicatable-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unpredicatable</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Unpredictable-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>activist-contains-tatov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the &quot;activist&quot; STIX open vocabulary term in the threat-actor-types ov</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;threat_actor_types"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#typestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>activist</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Activist-tatov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>club-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;club&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>club</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Club-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>contest-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;contest&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>contest</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Contest-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>government-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;government&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>government</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Government-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>individual-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;individual&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>individual</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Individual-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organization-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;organization&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organization</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Organization-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>team-arlov-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize the term &quot;team&quot; asserted as a value to resource_level.</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:classPredicate rdf:resource="&stix;ThreatActor"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>team</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/threat-actor#ta"/>
+						<swrl:argument2 rdf:resource="&stix;_Team-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+</rdf:RDF>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/report"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/report#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/report">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Report">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;object_refs"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;published"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;report_types"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Report</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details. They are used to group related threat intelligence together so that it can be published as a comprehensive cyber threat story.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>report</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Report, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify the Report.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;object_refs">
+		<rdfs:label xml:lang="en-us">object_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the STIX Objects that are referred to by this Report.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixObject"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;object_refs_string">
+		<rdfs:label xml:lang="en-us">object_refs_string</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the STIX Objects that are referred to by this Report.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;published">
+		<rdfs:label xml:lang="en-us">published</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The date that this Report object was officially published by the creator of this report. The publication date (public release, legal release, etc.) may be different than the date the report was created or shared internally (the date in the created property).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;report_types">
+		<rdfs:label xml:lang="en-us">report_types</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The primary type(s) of content found in this report. The values for this property SHOULD come from the report-type-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

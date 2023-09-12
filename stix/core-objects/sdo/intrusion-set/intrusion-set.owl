@@ -1,0 +1,1694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrl "http://www.w3.org/2003/11/swrl#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/intrusion-set"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;IntrusionSet">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;aliases"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;first_seen"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;goals"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;last_seen"/>
+				<owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;primary_motivation"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resource_level"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;secondary_motivations"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Intrusion Set</rdfs:label>
+		<rdfs:comment xml:lang="en-us">An Intrusion Set is a grouped set of adversarial behaviors and resources with common properties that is believed to be orchestrated by a single organization. An Intrusion Set may capture multiple Campaigns or other activities that are all tied together by shared attributes indicating a commonly known or unknown Threat Actor. New activity can be attributed to an Intrusion Set even if the Threat Actors behind the attack are not known. Threat Actors can move from supporting one Intrusion Set to supporting another, or they may support multiple Intrusion Sets. Where a Campaign is a set of attacks over a period of time against a specific set of targets to achieve some objective, an Intrusion Set is the entire attack package and may be used over a very long period of time in multiple Campaigns to achieve potentially multiple purposes. While sometimes an Intrusion Set is not active, or changes focus, it is usually difficult to know if it has truly disappeared or ended. Analysts may have varying level of fidelity on attributing an Intrusion Set back to Threat Actors and may be able to only attribute it back to a nation state or perhaps back to an organization within that nation state.</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&stix;StixObject">
+					</rdf:Description>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="&stix;type"/>
+						<owl:hasValue>intrusion-set</owl:hasValue>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;aliases">
+		<rdfs:label xml:lang="en-us">aliases</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Alternative names used to identify this Intrusion Set.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A description that provides more details and context about the Intrusion Set, potentially including its purpose and its key characteristics.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;first_seen">
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;goals">
+		<rdfs:label xml:lang="en-us">goals</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The high-level goals of this Intrusion Set, namely, what are they trying to do. For example, they may be motivated by personal gain, but their goal is to steal credit card numbers. To do this, they may execute specific Campaigns that have detailed objectives like compromising point of sale systems at a large retailer. Another example: to gain information about latest merger and IPO information from ACME Bank.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;last_seen">
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;name">
+		<rdfs:label xml:lang="en-us">name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A name used to identify this Intrusion Set.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;primary_motivation">
+		<rdfs:label xml:lang="en-us">primary_motivation</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;resource_level">
+		<rdfs:label xml:lang="en-us">resource_level</rdfs:label>
+		<rdfs:comment xml:lang="en-us">This property specifies the organizational level at which this Intrusion Set typically works, which in turn determines the resources available to this Intrusion Set for use in an attack. The value for this property SHOULD come from the attack-resource-level-ov  open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;secondary_motivations">
+		<rdfs:label xml:lang="en-us">secondary_motivations</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The time that this Intrusion Set was first seen. A summary property of data from sightings and other data that may or may not be available in STIX. If new sightings are received that are earlier than the first seen timestamp, the object may be updated to account for the new data.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset">
+	</swrl:Variable>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation">
+	</swrl:Variable>
+	
+	<swrl:Variable rdf:about="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring">
+	</swrl:Variable>
+	
+	<owl:AnnotationProperty rdf:about="&swrla;isRuleEnabled">
+	</owl:AnnotationProperty>
+	
+	<swrl:Imp>
+		<rdfs:label>accidental-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>accidental</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Accidental-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>accidental-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>accidental</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Accidental-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>coercion-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>coercion</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Coercion-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>coercion-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>coercion</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Coercion-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>dominance-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>dominance</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Dominance-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>dominance-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>dominance</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Dominance-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>ideology-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>ideology</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Ideology-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>ideology-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>ideology</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Ideology-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>notoriety-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>notoriety</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Notoriety-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>notoriety-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>notoriety</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Notoriety-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organizational-gain-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organizational-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Organizational-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organizational-gain-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organizational-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Organizational-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-gain-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-gain-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-gain</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-gain-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-satisfaction-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-satisfaction</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-satisfaction-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>personal-satisfaction-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>personal-satisfaction</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Personal-satisfaction-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>revenge-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>revenge</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Revenge-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>revenge-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>revenge</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Revenge-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unpredictable-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;primary_motivation"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unpredictable</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Unpredictable-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>unpredictable-secondary-amov-rule</rdfs:label>
+		<rdfs:comment></rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+								<swrl:propertyPredicate rdf:resource="&stix;secondary_motivations"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#motivation"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>unpredictable</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Unpredictable-amov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>club-arlov-intrusion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;club&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>club</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Club-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>contest-arlov-intrusion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;contest&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>contest</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Contest-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>government-arlov-intrusion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;government&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>government</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Government-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>individual-arlov-intrustion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;individual&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>individual</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Individual-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>organization-arlov-intrusion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;organization&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>organization</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Organization-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+	<swrl:Imp>
+		<rdfs:label>team-arlov-intrusion-set-rule</rdfs:label>
+		<rdfs:comment>Rule to recognize &quot;team&quot; term asserted on an IntrusionSet</rdfs:comment>
+		<swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+		<swrl:body>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:ClassAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:classPredicate rdf:resource="&stix;IntrusionSet"/>
+					</swrl:ClassAtom>
+				</rdf:first>
+				<rdf:rest>
+					<swrl:AtomList>
+						<rdf:first>
+							<swrl:DatavaluedPropertyAtom>
+								<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+								<swrl:argument2 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+								<swrl:propertyPredicate rdf:resource="&stix;resource_level"/>
+							</swrl:DatavaluedPropertyAtom>
+						</rdf:first>
+						<rdf:rest>
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#resourcestring"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first>team</rdf:first>
+														<rdf:rest rdf:resource="&rdf;nil"/>
+													</rdf:List>
+												</rdf:rest>
+											</rdf:List>
+										</swrl:arguments>
+										<swrl:builtin rdf:resource="&swrlb;contains"/>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;nil"/>
+							</swrl:AtomList>
+						</rdf:rest>
+					</swrl:AtomList>
+				</rdf:rest>
+			</swrl:AtomList>
+		</swrl:body>
+		<swrl:head>
+			<swrl:AtomList>
+				<rdf:first>
+					<swrl:IndividualPropertyAtom>
+						<swrl:argument1 rdf:resource="http://docs.oasis-open.org/cti/ns/stix/intrusion-set#iset"/>
+						<swrl:argument2 rdf:resource="&stix;_Team-arlov"/>
+						<swrl:propertyPredicate rdf:resource="&stix;categorizedBy"/>
+					</swrl:IndividualPropertyAtom>
+				</rdf:first>
+				<rdf:rest rdf:resource="&rdf;nil"/>
+			</swrl:AtomList>
+		</swrl:head>
+	</swrl:Imp>
+</rdf:RDF>

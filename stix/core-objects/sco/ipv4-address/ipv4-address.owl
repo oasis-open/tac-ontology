@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/ipv4-address"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/ipv4-address">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/autonomous-system"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/mac-address"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;IPv4Address">
+		<rdfs:subClassOf rdf:resource="&stix;StixCyberObservable"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;AutonomousSystem"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;belongs_to_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resolves_to_refs"/>
+				<owl:someValuesFrom rdf:resource="&stix;MACAddress"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;resolves_to_refs_string"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;value"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-US">IPv4 Address Object</rdfs:label>
+		<rdfs:comment xml:lang="en-US">The IPv4 Address object represents one or more IPv4 addresses expressed using CIDR notation.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&stix;belongs_to_refs">
+		<rdfs:label xml:lang="en-US">belongs_to_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more autonomous systems (AS) that the IPv4 address belongs to. The objects referenced in this list MUST be of type autonomous-system.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;AutonomousSystem"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;belongs_to_refs_string">
+		<rdfs:label xml:lang="en-US">belongs_to_refs_string</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more autonomous systems (AS) that the IPv4 address belongs to. The objects referenced in this list MUST be of type autonomous-system.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;resolves_to_refs">
+		<rdfs:label xml:lang="en-US">resolved_to_refs</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more Layer 2 Media Access Control (MAC) addresses that the IPv4 address resolves to. The objects referenced in this list MUST be of type mac-addr.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;MACAddress"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;resolves_to_refs_string">
+		<rdfs:label xml:lang="en-US">resolved_to_refs_string</rdfs:label>
+		<rdfs:comment xml:lang="en-US">Specifies a list of references to one or more Layer 2 Media Access Control (MAC) addresses that the IPv4 address resolves to. The objects referenced in this list MUST be of type mac-addr.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;value">
+		<rdfs:label xml:lang="en-us">value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies the values of one or more IPv4 addresses expressed using CIDR notation. If a given IPv4 Address object represents a single IPv4 address, the CIDR /32 suffix MAY be omitted. Example: 10.2.4.5/24</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

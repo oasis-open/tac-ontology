@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.hc-ta.org/ns/hal-library" uri="hal-library.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.intel.com/ns/ta-library" uri="../threat-agent-lib/ta-library.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/relationship-types" uri="../stix/core-objects/sro/relationship/relationship-types.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/bundle" uri="../stix/bundle-object/bundle.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/vocabulary" uri="../stix/vocabularies/vocabularies.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="../tac/tac-properties/tac-properties.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="../tac/tac-objects/tac-objects.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac" uri="../tac/tac.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/adversary" uri="../tac/tac-objects/adversary.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/directory" uri="../stix/core-objects/sco/directory/directory.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/x509-certificate" uri="../stix/core-objects/sco/x509-vertificate/x509-certificate.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/windows-registry" uri="../stix/core-objects/sco/windows-registry-key/windows-registry-key.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/vulnerability" uri="../stix/core-objects/sdo/vulnerability/vulnerability.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/url" uri="../stix/core-objects/sco/url/url.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/tool" uri="../stix/core-objects/sdo/tool/tool.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/threat-actor" uri="../stix/core-objects/sdo/threat-actor/threat-actor.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/sighting" uri="../stix/core-objects/sro/sighting/sighting.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/report" uri="../stix/core-objects/sdo/report/report.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/sro-props" uri="../stix/core-objects/sro/relationship/sro-props.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/relationship" uri="../stix/core-objects/sro/relationship/relationship.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/process" uri="../stix/core-objects/sco/process/process.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/opinion" uri="../stix/core-objects/sdo/opinion/opinion.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/observed-data" uri="../stix/core-objects/sdo/observed-data/observed-data.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/note" uri="../stix/core-objects/sdo/note/note.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/network-traffic" uri="../stix/core-objects/sco/network-traffic/network-traffic.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/mutex" uri="../stix/core-objects/sco/mutex/mutex.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/software" uri="../stix/core-objects/sco/software/software.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/malware" uri="../stix/core-objects/sdo/malware/malware.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/location" uri="../stix/core-objects/sdo/location/location.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/language-content" uri="../stix/meta-objects/language-content/language-content.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/intrusion-set" uri="../stix/core-objects/sdo/intrusion-set/intrusion-set.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/infrastructure" uri="../stix/core-objects/sdo/infrastructure/infrastructure.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/indicator" uri="../stix/core-objects/sdo/indicator/indicator.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/incident" uri="../stix/core-objects/sdo/incident/incident.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/identity" uri="../stix/core-objects/sdo/identity/identity.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/grouping" uri="../stix/core-objects/sdo/grouping/grouping.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/file" uri="../stix/core-objects/sco/file/file.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/email-message" uri="../stix/core-objects/sco/email-message/email-message.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/user-account" uri="../stix/core-objects/sco/user-account/user-account.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/email-address" uri="../stix/core-objects/sco/email-address/email-address.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/ipv6-address" uri="../stix/core-objects/sco/ipv6-address/ipv6-address.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/mac-address" uri="../stix/core-objects/sco/mac-address/mac-address.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/ipv4-address" uri="../stix/core-objects/sco/ipv4-address/ipv4-address.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/domain-name" uri="../stix/core-objects/sco/domain-name/domain-name.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/course-of-action" uri="../stix/core-objects/sdo/course-of-action/course-of-action.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/campaign" uri="../stix/core-objects/sdo/campaign/campaign.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/autonomous-system" uri="../stix/core-objects/sco/autonomus-system/autonomous-system.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/attack-pattern" uri="../stix/core-objects/sdo/attack-pattern/attack-pattern.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/common-properties" uri="../stix/core-objects/common-properties.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/artifact" uri="../stix/core-objects/sco/artifact/artifact.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/data-marking" uri="../stix/meta-objects/data-marking/data-marking.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix" uri="../stix/stix.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="../stix/meta-objects/extension-definition/extension-definition.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/data-types" uri="../stix/core-objects/data-types.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1691468508641" name="http://hohimer.net/hal-example" uri="hal-example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691468508641" name="http://www.hc-ta.org/ns/hal-library" uri="hal-library.owl"/>
+    </group>
+</catalog>

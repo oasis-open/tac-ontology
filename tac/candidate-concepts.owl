@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY tac-concepts "http://docs.oasis-open.org/tac/ns/tac-concepts#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/candidate-concepts"
+	xmlns="http://docs.oasis-open.org/cti/ns/candidate-concepts#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:tac-concepts="http://docs.oasis-open.org/tac/ns/tac-concepts#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/candidate-concepts">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
+	</owl:Ontology>
+	
+	<rdf:Description rdf:about="&stix;Incident">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;criticality"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;detection_methods"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;determination"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;external_impacts"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasAttackerActivity"/>
+				<owl:someValuesFrom rdf:resource="&tac;AttackerActivity"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasDefenderActivity"/>
+				<owl:someValuesFrom rdf:resource="&tac;DefenderActivity"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasInformationalImpact"/>
+				<owl:someValuesFrom rdf:resource="&tac;InformationalImpact"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;incident_types"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;investigation_status"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</rdf:Description>
+	
+	<owl:Class rdf:about="&tac;Activity">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;AttackerActivity">
+		<rdfs:subClassOf rdf:resource="&tac;Activity"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;AvailabilityImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;ConfidentialityImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;DefenderActivity">
+		<rdfs:subClassOf rdf:resource="&tac;Activity"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;FunctionalImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;Impact">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;IncidentScore">
+		<rdfs:subClassOf rdf:resource="&stix;StixDomainObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;InformationalImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;IntegrityImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;MonetaryImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;PhysicalImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&tac;RecoverabilityImpact">
+		<rdfs:subClassOf rdf:resource="&tac;Impact"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&tac;attacker_activities">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;availability_impact">
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;criticality">
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;defender_activities">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;detection_methods">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;determination">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;external_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;goal">
+		<rdfs:label>goal</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasAction">
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasActivity">
+		<rdfs:range>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasActivity"/>
+				<owl:someValuesFrom rdf:resource="&tac;Activity"/>
+			</owl:Restriction>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasAttackerActivity">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasActivity"/>
+		<rdfs:range>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasAttackerActivity"/>
+				<owl:someValuesFrom rdf:resource="&tac;AttackerActivity"/>
+			</owl:Restriction>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasConfidentialityImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;ConfidentialityImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasDefenderActivity">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasActivity"/>
+		<rdfs:range>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasDefenderActivity"/>
+				<owl:someValuesFrom rdf:resource="&tac;DefenderActivity"/>
+			</owl:Restriction>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasFunctionalImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;FunctionalImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasImpact">
+		<rdfs:range>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&tac;hasImpact"/>
+				<owl:someValuesFrom rdf:resource="&tac;Impact"/>
+			</owl:Restriction>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasIncidentScore">
+		<rdfs:range rdf:resource="&tac;IncidentScore"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasInformationalImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;InformationalImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasIntegrityImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;IntegrityImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasMonetaryImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;MonetaryImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasPhysicalImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;PhysicalImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&tac;hasRecoverabilityImpact">
+		<rdfs:subPropertyOf rdf:resource="&tac;hasImpact"/>
+		<rdfs:range rdf:resource="&tac;RecoverabilityImpact"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;impacted_entity_counts">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;incident_types">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;integrity_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;investigation_status">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;mitigation">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;monetary_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;outcome">
+		<rdfs:label>The outcome of the attacker activity</rdfs:label>
+		<rdfs:label>attack activity outcome</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;physical_impacts">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;recoverability">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;scores">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;traceability">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&tac;traceability_impact">
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

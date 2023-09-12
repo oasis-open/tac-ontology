@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/extension-definition"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/extension-definition#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/extension-definition">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;ExtensionDefinition">
+		<rdfs:subClassOf rdf:resource="&stix;StixMetaObject"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;extension_properties"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;schema"/>
+				<owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;version"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en">Extension Definition</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The STIX Extension Definition object allows producers of threat intelligence to extend existing STIX objects or to create entirely new STIX objects in a standardized way. This object contains detailed information about the extension and any additional properties and or objects that it defines. This extension mechanism MUST NOT be used to redefine existing standardized objects or properties.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en">description</rdfs:label>
+		<rdfs:comment xml:lang="en">A detailed explanation of what data the extension conveys and how it is intended to be used. \n\n While the description property is optional this property SHOULD be populated. \n\n Note that the schema property is the normative definition of the extension, and this property, if present, is for documentation purposes only.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;extension_properties">
+		<rdfs:label xml:lang="en">extension_properties</rdfs:label>
+		<rdfs:comment xml:lang="en">This property contains the list of new property names that are added to an object by an extension. \n\n This property MUST only be used when the extension_types property includes a value of toplevel-property-extension. In other words, when new properties are being added at the top-level of an existing object.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;extension_types">
+		<rdfs:label xml:lang="en">extension_types</rdfs:label>
+		<rdfs:comment xml:lang="en">This property specifies one or more extension types contained within this extension. \n\n The values for this property MUST come from the extension-type-enum enumeration. \n\n When this property includes toplevel-property-extension then the  extension_properties property SHOULD include one or more property names.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;schema">
+		<rdfs:label xml:lang="en">schema</rdfs:label>
+		<rdfs:comment xml:lang="en">The normative definition of the extension, either as a URL or as plain text explaining the definition. \n\n A URL SHOULD point to a JSON schema or a location that contains information about the schema. \n\n NOTE: It is recommended that an external reference be provided to the comprehensive documentation of the extension-definition.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;version">
+		<rdfs:label xml:lang="en">version</rdfs:label>
+		<rdfs:comment xml:lang="en">The version of this extension. Producers of STIX extensions are encouraged to follow standard semantic versioning procedures where the version number follows the pattern, MAJOR.MINOR.PATCH. This will allow consumers to distinguish between the three different levels of compatibility typically identified by such versioning strings. \n\n As with all STIX Objects, changing a STIX extension definition could involve STIX versioning. See section 3.6.2 for more information on versioning an object versus creating a new one.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

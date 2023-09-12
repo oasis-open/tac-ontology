@@ -1,4 +1,4 @@
-# README
+# README 
 
 ## OASIS TC Open Repository: tac-ontology
 
@@ -16,7 +16,14 @@ The OASIS Threat Actor Context Technical Committee (TAC-TC) is chartered to crea
 
 *Additions to Statement of Purpose*
 
-*The TC may include additional content as descriptive text, reflecting project status, milestones, releases, modifications to statement of purpose, etc. 
+*The TC may include additional content as descriptive text, reflecting project status, milestones, releases, modifications to statement of purpose, etc.  
+
+## Documentation
+
+[The STIX 2.1 Ontology](./docs/ontologies/stix/stix-ontology-readme.md)
+[The TAC Ontology](./docs/ontologies/tac/tac-ontology-readme.md)
+[The TAL Ontology](./docs/ontologies/tal/tal-ontology-readme.md)
+	
 
 ## <a id="maintainers">Maintainers</a>
 
@@ -28,9 +35,9 @@ Initially, the TC members have designated one or more persons to serve as Mainta
 
 Vasileios Mavroeidis, vasileim@ifi.uio.no, Vasileios-Mavroeidis, University of Oslo
 
-Ryan Hohimer, ryan.hohimer@darklight.ai, rhohimer, Darklight Inc.
+Ryan Hohimer, ryan.hohimer@semanticarts.com, rhohimer, Semantic Arts Inc.
 
-Paul Patrick, ppatrick@darklight.ai, CyberDaedalus00, Darklight Inc.
+
 
 ## About OASIS TC Open Repositories
 

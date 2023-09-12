@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY adversary "http://docs.oasis-open.org/cti/ns/stix/adversary#">
+	<!ENTITY attack "http://attack.mitre.org/ns/attack#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/tac/ns/tac"
+	xmlns="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:adversary="http://docs.oasis-open.org/cti/ns/stix/adversary#"
+	xmlns:attack="http://attack.mitre.org/ns/attack#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/tac/ns/tac">
+		<rdf:comment>Concepts that have been developed and approved at a committee level by the OASIS Threat Actor Context Technical Committee are called TAC TC concepts. TAC TC concepts are incorporated as import statements into the main tac.owl file and thus are part of the core ontology.</rdf:comment>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac-objects"/>
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac-properties"/>
+	</owl:Ontology>
+	
+	<rdf:Description rdf:about="&stix;ThreatActor">
+		<rdfs:subClassOf rdf:resource="&tac;Adversary"/>
+	</rdf:Description>
+	
+	<owl:AnnotationProperty rdf:about="&rdf;comment">
+	</owl:AnnotationProperty>
+
+</rdf:RDF>

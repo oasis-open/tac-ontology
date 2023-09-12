@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/data-types"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/data-types#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/data-types">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/vocabulary"/>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Dictionary">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;dictionary_key"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Dictionary</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A dictionary captures an arbitrary set of key/value pairs. Dictionary keys MUST be unique in each dictionary, MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). Dictionary keys MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase. \n\n Empty dictionaries are prohibited in STIX and MUST NOT be used as a substitute for omitting the property if it is optional. If the property is required, the dictionary MUST be present and MUST have at least one key-value pair. \n\n dictionary values MUST be valid property base types.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ExternalReference">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;description"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;external_id"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hashes"/>
+				<owl:someValuesFrom rdf:resource="&stix;Hashes"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;source_name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;url"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>External Reference</rdfs:label>
+		<rdfs:comment xml:lang="en-us">External references are used to describe pointers to information represented outside of STIX. For example, a Malware object could use an external reference to indicate an ID for that malware in an external database or a report could use references to represent source material. \n\n The JSON MTI serialization uses the JSON Object type [RFC8259] when representing external-reference.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;Hashes">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hash_algorithm"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;hash_value"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Hash</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Represents a cryptographic hashes, as a special set of key/value pairs.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;KillChainPhase">
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;kill_chain_name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;phase_name"/>
+				<owl:someValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label xml:lang="en-us">Kill Chain Phase</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The kill-chain-phase represents a phase in a kill chain, which describes the various phases an attacker may undertake in order to achieve their objectives. \n\n The JSON MTI serialization uses the JSON Object type [RFC8259] when representing kill-chain-phase.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixDatatype">
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&stix;description">
+		<rdfs:label xml:lang="en-us">description</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A human readable description.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;dictionary_key">
+		<rdfs:label xml:lang="en-us">dictionary_key</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a unique identifer for some item of data.  The key MUST be in ASCII, and are limited to the characters a-z (lowercase ASCII), A-Z (uppercase ASCII), numerals 0-9, hyphen (-), and underscore (_). A key identifier MUST be no longer than 250 ASCII characters in length and SHOULD be lowercase.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;dictionary_value">
+		<rdfs:label xml:lang="en-us">dictionary_value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A key value is the data that is associated with the key identified. The values MUST be valid property base types.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;StixObject"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+		<rdfs:range rdf:resource="&xsd;float"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;external_id">
+		<rdfs:label xml:lang="en-us">external_id</rdfs:label>
+		<rdfs:comment xml:lang="en-us">An identifier for the external reference content.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;external_references">
+		<rdfs:label xml:lang="en-us">external_references</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a list of external references which refers to non-STIX information. This property is used to provide one or more URLs, descriptions, or IDs to records in other systems.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;ExternalReference"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;hash_algorithm">
+		<rdfs:label xml:lang="en-us">hash_algorithm</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Represents the cryptographic hash algorithm used.\n\nThe name of the cryptographic hash algorithm used SHOULD come from one of the values defined in the hash-algorithm-ov open vocabulary.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;hash_value">
+		<rdfs:label xml:lang="en-us">hash_value</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Represents the cryptographic hash value.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;hashes">
+		<rdfs:label xml:lang="en-us">hashes</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Specifies a dictionary of hashes for the contents of the url. This SHOULD be provided when the url property is present. \n\n Dictionary keys MUST come from one of the entries listed in the hash-algorithm-ov open vocabulary. \n\n As stated in Section 2.7, to ensure interoperability, a SHA-256 hash SHOULD be included whenever possible.</rdfs:comment>
+		<rdfs:range rdf:resource="&stix;Hashes"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;identifier">
+		<rdf:type rdf:resource="&owl;Class"/>
+		<rdfs:subClassOf rdf:resource="&stix;StixDatatype"/>
+		<rdfs:label xml:lang="en-us">identifier</rdfs:label>
+		<rdfs:comment xml:lang="en-us">An identifier uniquely identifies a STIX Object and MAY do so in a deterministic way. A deterministic identifier means that the identifier generated by more than one producer for the exact same STIX Object using the same namespace, &quot;ID Contributing Properties&quot;, and UUID method will have the exact same identifier value. \n\n All identifiers, excluding those used in the deprecated Cyber Observable Container, MUST follow the form object-type--UUID, where object-type is the exact value (all type names are lowercase strings, by definition) from the type property of the object being identified or referenced and where the UUID MUST be an RFC 4122-compliant UUID [RFC4122].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;kill_chain_name">
+		<rdfs:label xml:lang="en-us">kill_chain_name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of the kill chain. The value of this property SHOULD be all lowercase and SHOULD use hyphens instead of spaces or underscores as word separators.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;phase_name">
+		<rdfs:label xml:lang="en-us">phase_name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of the phase in the kill chain. The value of this property SHOULD be all lowercase and SHOULD use hyphens instead of spaces or underscores as word separators.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;source_name">
+		<rdfs:label xml:lang="en-us">source_name</rdfs:label>
+		<rdfs:comment xml:lang="en-us">The name of the source that the external-reference is defined within (system, registry, organization, etc.).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;url">
+		<rdfs:label xml:lang="en-us">url</rdfs:label>
+		<rdfs:comment xml:lang="en-us">A URL reference to an external resource [RFC3986].</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

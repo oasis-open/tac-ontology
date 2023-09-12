@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY tal "http://www.intel.com/ns/ta-library#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://hohimer.net/tal-kb-example"
+	xmlns="http://hohimer.net/tal-kb-example#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:tal="http://www.intel.com/ns/ta-library#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://hohimer.net/tal-kb-example">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
+		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
+	</owl:Ontology>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#My-Intrusion-Set">
+		<rdf:type rdf:resource="&stix;IntrusionSet"/>
+		<stix:resource_level>team</stix:resource_level>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#Ryan">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
+		<stix:primary_motivation>rebenge</stix:primary_motivation>
+		<stix:resource_level>individual</stix:resource_level>
+		<stix:secondary_motivations>personal-gain</stix:secondary_motivations>
+		<stix:threat_actor_types>competitor, government-spy</stix:threat_actor_types>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#TestGrouping">
+		<rdf:type rdf:resource="&stix;Grouping"/>
+		<stix:context>malware-analysis</stix:context>
+		<stix:context>suspicious-activity</stix:context>
+		<stix:context>unspecified</stix:context>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://hohimer.net/tal-kb-example#_MyUserAccount">
+		<rdf:type rdf:resource="&stix;UserAccount"/>
+		<stix:account_type>twitter</stix:account_type>
+	</owl:NamedIndividual>
+
+</rdf:RDF>

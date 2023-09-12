@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://docs.oasis-open.org/cti/ns/stix/vocabulary"
+	xmlns="http://docs.oasis-open.org/cti/ns/stix/vocabulary#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/vocabulary">
+		<rdfs:label>STIX Vocabulary</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Some STIX properties are defined using open vocabularies or enumerations. Enumerations and open vocabularies are defined in STIX in order to enhance interoperability by increasing the likelihood that different entities use the same exact string to represent the same concept. If used consistently, open vocabularies make it less likely that one entity refers to the energy sector as &quot;Energy&quot; and another as &quot;Energy Sector&quot;, thereby making comparison and correlation easier. \n\n While using predefined values from STIX vocabularies is strongly encouraged, in some cases this may not be feasible. To address this, producers are permitted to use values outside of the open vocabulary. In the case of enumerations, producers are required to use only the values defined within the STIX specification. \n\n STIX open vocabularies and enumerations are defined in section 10. Properties that are defined as open vocabularies identify a suggested vocabulary from that section. For example, the Threat Actor sophistication property, as defined in section 4.17, uses the Threat Actor Sophistication vocabulary as defined in section 10.25.</rdfs:comment>
+		<owl:versionInfo>2.1.0</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;AccountTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;AttackMotivationOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;AttackResourceLevelOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;EncryptionAlgorithmEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ExtensionTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;GroupingContextOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;HashAlgorithmOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IdentityClassOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ImplementationLanguageOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IndicatorTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;IndustrySectorOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;InfrastructureTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareCapabilitiesOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareResultOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;MalwareTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;NetworkSocketFamilyEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;NetworkSocketTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;OpinionEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;PatternTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ProcessorArchitectureOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;RegionOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ReportTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixCategoryObject">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixEnumeration">
+		<rdfs:subClassOf rdf:resource="&stix;StixCategoryObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixObject">
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;StixOpenVocabulary">
+		<rdfs:subClassOf rdf:resource="&stix;StixCategoryObject"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorRoleOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorSophisticationOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ThreatActorTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;ToolTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsIntegrityLevelEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsPeBinaryTypeOv">
+		<rdfs:subClassOf rdf:resource="&stix;StixOpenVocabulary"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsRegistryDatatypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceStartTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceStatusEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stix;WindowsServiceTypeEnum">
+		<rdfs:subClassOf rdf:resource="&stix;StixEnumeration"/>
+	</owl:Class>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Accidental-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Activist-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Club-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Coercion-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Competitor-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Contest-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Crime-Syndicate-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Criminal-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Dominance-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Facebook-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Government-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Hacker-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Ideology-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Individual-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Insider-Accidental-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Insider-Disgruntled-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Ldap-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Malware-analysis-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Nation-State-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Nis-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Notoriety-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Openid-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Organization-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Organizational-gain-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Personal-gain-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Personal-satisfaction-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Radius-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Random-gcov">
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Revenge-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Sensationalist-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Skype-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Spy-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Suspicious-activity-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Tacacs-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Team-arlov">
+		<rdf:type rdf:resource="&stix;AttackResourceLevelOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Terrorist-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Twitter-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unix-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unknown-tatov">
+		<rdf:type rdf:resource="&stix;ThreatActorTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unpredictable-amov">
+		<rdf:type rdf:resource="&stix;AttackMotivationOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Unspecified-gcov">
+		<rdf:type rdf:resource="&stix;GroupingContextOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Windows-domain-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&stix;_Windows-local-aov">
+		<rdf:type rdf:resource="&stix;AccountTypeOv"/>
+	</owl:NamedIndividual>
+
+</rdf:RDF>

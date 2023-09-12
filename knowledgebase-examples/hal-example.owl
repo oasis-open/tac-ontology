@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY demo "http://hohimer.net/hal-example#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://docs.oasis-open.org/cti/ns/stix#">
+	<!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+	<!ENTITY tac "http://docs.oasis-open.org/tac/ns/tac#">
+	<!ENTITY tal "http://www.intel.com/ns/ta-library#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="http://hohimer.net/hal-example"
+	xmlns="http://hohimer.net/hal-example#"
+	xmlns:demo="http://hohimer.net/hal-example#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#"
+	xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+	xmlns:tac="http://docs.oasis-open.org/tac/ns/tac#"
+	xmlns:tal="http://www.intel.com/ns/ta-library#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://hohimer.net/hal-example">
+		<owl:imports rdf:resource="http://docs.oasis-open.org/tac/ns/tac"/>
+		<owl:imports rdf:resource="http://www.hc-ta.org/ns/hal-library"/>
+		<owl:imports rdf:resource="http://www.intel.com/ns/ta-library"/>
+	</owl:Ontology>
+	
+	<owl:NamedIndividual rdf:about="&demo;Person-of-Interest">
+		<rdf:type rdf:resource="&stix;ThreatActor"/>
+		<tac:categorizedBy rdf:resource="http://www.hc-ta.org/ns/hal-library#Curiosity"/>
+		<tac:categorizedBy rdf:resource="http://www.hc-ta.org/ns/hal-library#PolicyViolationOutcome"/>
+		<tac:categorizedBy rdf:resource="&tal;AdeptSkills"/>
+		<tac:categorizedBy rdf:resource="&tal;CovertVisibility"/>
+		<tac:categorizedBy rdf:resource="&tal;DamageOutcome"/>
+		<tac:categorizedBy rdf:resource="&tal;EmbarrassmentOutcome"/>
+		<tac:categorizedBy rdf:resource="&tal;IndividualResources"/>
+		<tac:categorizedBy rdf:resource="&tal;InternalAccess"/>
+		<tac:categorizedBy rdf:resource="&tal;LegalLimits"/>
+		<tac:categorizedBy rdf:resource="&tal;PersonalStatisfaction"/>
+	</owl:NamedIndividual>
+
+</rdf:RDF>
