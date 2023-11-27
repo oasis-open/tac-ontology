@@ -1,0 +1,494 @@
+@prefix example: <http://example/ns/> .
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz: <http://sparql.xyz/facade-x/data/> .
+
+stix:ExternalReference-501f2d6b-4ce0-45bc-b7a3-e0c33f35147e
+	a stix:StixObject ;
+	stix:source_name "website" ;
+	stix:url "http://www.bpp.bn" ;
+	.
+
+stix:ExternalReference-7e19e144-5b42-4764-88eb-a1df6f743cac
+	a stix:StixObject ;
+	stix:external-id "CAPEC-488" ;
+	stix:source_name "capec" ;
+	stix:url "https://capec.mitre.org/data/definitions/488.html" ;
+	.
+
+stix:ExternalReference-96e4c119-1209-4910-9267-a6534343d813
+	a stix:StixObject ;
+	stix:external-id "CAPEC-148" ;
+	stix:source_name "capec" ;
+	stix:url "https://capec.mitre.org/data/definitions/148.html" ;
+	.
+
+stix:alias
+	a owl:DatatypeProperty ;
+	.
+
+stix:created
+	a owl:DatatypeProperty ;
+	.
+
+stix:description
+	a owl:DatatypeProperty ;
+	.
+
+stix:external-id
+	a owl:DatatypeProperty ;
+	.
+
+stix:external_reference
+	a owl:ObjectProperty ;
+	.
+
+stix:first_seen
+	a owl:DatatypeProperty ;
+	.
+
+stix:goals
+	a owl:DatatypeProperty ;
+	.
+
+stix:id
+	a owl:DatatypeProperty ;
+	.
+
+stix:identity_class
+	a owl:DatatypeProperty ;
+	.
+
+stix:indicator_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phase
+	a owl:ObjectProperty ;
+	.
+
+stix:kill_chain_phase_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phases
+	a owl:DatatypeProperty ;
+	.
+
+stix:malware_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:modified
+	a owl:DatatypeProperty ;
+	.
+
+stix:name
+	a owl:DatatypeProperty ;
+	.
+
+stix:objective
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:primary_motivation
+	a owl:DatatypeProperty ;
+	.
+
+stix:relationship_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:resource_level
+	a owl:DatatypeProperty ;
+	.
+
+stix:roles
+	a owl:DatatypeProperty ;
+	.
+
+stix:secondary_motivations
+	a owl:DatatypeProperty ;
+	.
+
+stix:sectors
+	a owl:DatatypeProperty ;
+	.
+
+stix:sophistication
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:spec_version
+	a owl:DatatypeProperty ;
+	.
+
+stix:target_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:tool_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:type
+	a owl:DatatypeProperty ;
+	.
+
+stix:url
+	a owl:DatatypeProperty ;
+	.
+
+stix:valid_from
+	a owl:DatatypeProperty ;
+	.
+
+example:attack-pattern--19da6e1c-71ab-4c2f-886d-d620d09d3b5a
+	a stix:StixObject ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:external_reference stix:ExternalReference-96e4c119-1209-4910-9267-a6534343d813 ;
+	stix:id "attack-pattern--19da6e1c-71ab-4c2f-886d-d620d09d3b5a" ;
+	stix:modified "2017-01-30T21:15:04.127Z"^^xsd:dateTime ;
+	stix:name "Content Spoofing" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+example:attack-pattern--f6050ea6-a9a3-4524-93ed-c27858d6cb3c
+	a stix:StixObject ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:external_reference stix:ExternalReference-7e19e144-5b42-4764-88eb-a1df6f743cac ;
+	stix:id "attack-pattern--f6050ea6-a9a3-4524-93ed-c27858d6cb3c" ;
+	stix:modified "2017-01-30T21:15:04.127Z"^^xsd:dateTime ;
+	stix:name "HTTP Flood" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727
+	a stix:StixObject ;
+	stix:alias "ORB" ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:description "A DDOS campaign to flood BPP web servers." ;
+	stix:first_seen "2016-02-07T19:45:32.126Z"^^xsd:dateTime ;
+	stix:id "campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "Operation Raisin Bran" ;
+	stix:objective "Flood www.bpp.bn" ;
+	stix:spec_version "2.1" ;
+	stix:type "campaign" ;
+	.
+
+example:campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e
+	a stix:StixObject ;
+	stix:alias "OBF" ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:description "A concerted effort to insert false information into the BPP's web pages." ;
+	stix:first_seen "2016-01-08T12:50:40.123Z"^^xsd:dateTime ;
+	stix:id "campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "Operation Bran Flakes" ;
+	stix:objective "Hack www.bpp.bn" ;
+	stix:spec_version "2.1" ;
+	stix:type "campaign" ;
+	.
+
+example:identity--8c6af861-7b20-41ef-9b59-6344fd872a8f
+	a stix:StixObject ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:id "identity--8c6af861-7b20-41ef-9b59-6344fd872a8f" ;
+	stix:identity_class "organization" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "Franistan Intelligence" ;
+	stix:spec_version "2.1" ;
+	stix:type "identity" ;
+	.
+
+example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b
+	a stix:StixObject ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:external_reference stix:ExternalReference-501f2d6b-4ce0-45bc-b7a3-e0c33f35147e ;
+	stix:id "identity--ddfe7140-2ba4-48e4-b19a-df069432103b" ;
+	stix:identity_class "organization" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "Branistan Peoples Party" ;
+	stix:spec_version "2.1" ;
+	stix:type "identity" ;
+	.
+
+example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713
+	a stix:StixObject ;
+	stix:alias "Bran-teaser" ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:description "An advanced persistent threat that seeks to disrupt Branistan's election with multiple attacks." ;
+	stix:first_seen "2016-01-08T12:50:40.123Z"^^xsd:dateTime ;
+	stix:goals
+		"Disrupt the BPP" ,
+		"Influence the Branistan election"
+		;
+	stix:id "intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "APT BPP" ;
+	stix:primary_motivation "ideology" ;
+	stix:resource_level "government" ;
+	stix:secondary_motivations "dominance" ;
+	stix:spec_version "2.1" ;
+	stix:type "intrusion-set" ;
+	.
+
+example:relationship--06964095-5750-41fe-a9af-6c6a9d995489
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:id "relationship--06964095-5750-41fe-a9af-6c6a9d995489" ;
+	stix:modified "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--19da6e1c-71ab-4c2f-886d-d620d09d3b5a ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--1f4ee02a-7f6e-45a6-aedd-c1492af5e179
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:id "relationship--1f4ee02a-7f6e-45a6-aedd-c1492af5e179" ;
+	stix:modified "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--33c22977-d104-45d8-be19-273f7ab03de1
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:id "relationship--33c22977-d104-45d8-be19-273f7ab03de1" ;
+	stix:modified "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--19da6e1c-71ab-4c2f-886d-d620d09d3b5a ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--4292a6df-fb16-43d1-805d-dc1b33946fdf
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:id "relationship--4292a6df-fb16-43d1-805d-dc1b33946fdf" ;
+	stix:modified "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--4bd67b9e-d112-4ea6-98bb-080a051667c7
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:id "relationship--4bd67b9e-d112-4ea6-98bb-080a051667c7" ;
+	stix:modified "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--8c6af861-7b20-41ef-9b59-6344fd872a8f ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--4fe5dab1-fd6d-41aa-b8b1-d3118a708284
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:id "relationship--4fe5dab1-fd6d-41aa-b8b1-d3118a708284" ;
+	stix:modified "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--f6050ea6-a9a3-4524-93ed-c27858d6cb3c ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--5047c2c0-524b-4afd-9cd6-e197efe59495
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:id "relationship--5047c2c0-524b-4afd-9cd6-e197efe59495" ;
+	stix:modified "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--53a55c73-f2c8-47b9-8e50-ae34d8c5da4d
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.938Z"^^xsd:dateTime ;
+	stix:id "relationship--53a55c73-f2c8-47b9-8e50-ae34d8c5da4d" ;
+	stix:modified "2020-02-29T17:41:44.938Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--554e3341-d7b1-4b3c-a522-28ef52fbb49b
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:id "relationship--554e3341-d7b1-4b3c-a522-28ef52fbb49b" ;
+	stix:modified "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--70880ead-0b19-4785-be52-a69064d4cb6c
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:id "relationship--70880ead-0b19-4785-be52-a69064d4cb6c" ;
+	stix:modified "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--f6050ea6-a9a3-4524-93ed-c27858d6cb3c ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--8848cba9-4c7b-4695-bc09-5033a6f20ff4
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:id "relationship--8848cba9-4c7b-4695-bc09-5033a6f20ff4" ;
+	stix:modified "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--f6050ea6-a9a3-4524-93ed-c27858d6cb3c ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--96cfbc6f-5c08-4372-b811-b90fbb2ec180
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:id "relationship--96cfbc6f-5c08-4372-b811-b90fbb2ec180" ;
+	stix:modified "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--98765000-efdf-4a86-8681-36481ceae57f
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.938Z"^^xsd:dateTime ;
+	stix:id "relationship--98765000-efdf-4a86-8681-36481ceae57f" ;
+	stix:modified "2020-02-29T17:41:44.938Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--9cc131ca-b64d-4ab1-a300-5e4a0073280a
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:id "relationship--9cc131ca-b64d-4ab1-a300-5e4a0073280a" ;
+	stix:modified "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:campaign--1d8897a7-fdc2-4e59-afc9-becbe04df727 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--a97b3ea5-4ca1-46a0-a7ad-f10143ce22b2
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:id "relationship--a97b3ea5-4ca1-46a0-a7ad-f10143ce22b2" ;
+	stix:modified "2020-02-29T17:41:44.941Z"^^xsd:dateTime ;
+	stix:relationship_type "impersonates" ;
+	stix:source_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--ba30893a-400a-43f3-b193-69d65d2a8f40
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:id "relationship--ba30893a-400a-43f3-b193-69d65d2a8f40" ;
+	stix:modified "2020-02-29T17:41:44.942Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:attack-pattern--19da6e1c-71ab-4c2f-886d-d620d09d3b5a ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--c171fd27-2a8a-42b7-8293-34016b70c1c8
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:id "relationship--c171fd27-2a8a-42b7-8293-34016b70c1c8" ;
+	stix:modified "2020-02-29T17:41:44.939Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref example:intrusion-set--ed69450a-f067-4b51-9ba2-c4616b9a6713 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500 ;
+	stix:type "relationship" ;
+	.
+
+example:relationship--d8b7932d-0ecb-4891-b021-c78ff2b63747
+	a stix:StixObject ;
+	stix:created "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:id "relationship--d8b7932d-0ecb-4891-b021-c78ff2b63747" ;
+	stix:modified "2020-02-29T17:41:44.940Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref example:campaign--e5268b6e-4931-42f1-b379-87f48eb41b1e ;
+	stix:spec_version "2.1" ;
+	stix:target_ref example:identity--ddfe7140-2ba4-48e4-b19a-df069432103b ;
+	stix:type "relationship" ;
+	.
+
+example:threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500
+	a stix:StixObject ;
+	stix:created "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:goals "Influence the election in Branistan" ;
+	stix:id "threat-actor--56f3f0db-b5d5-431c-ae56-c18f02caf500" ;
+	stix:modified "2016-08-08T15:50:10.983Z"^^xsd:dateTime ;
+	stix:name "Fake BPP (Branistan Peoples Party)" ;
+	stix:primary_motivation "ideology" ;
+	stix:resource_level "government" ;
+	stix:roles "director" ;
+	stix:secondary_motivations "dominance" ;
+	stix:sophistication "strategic" ;
+	stix:spec_version "2.1" ;
+	stix:type "threat-actor" ;
+	.
+

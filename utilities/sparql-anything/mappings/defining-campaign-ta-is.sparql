@@ -17,19 +17,23 @@ CONSTRUCT {
 	stix:created ?dt_created;
 	stix:description ?description;
 	stix:first_seen ?dt_first_seen;
+	stix:goals ?goal_list;
 	stix:identity_class ?identity_class;
-	stix:kill_chain_phases ?chains;
 	stix:indicator_types ?indicator_list;
+	stix:kill_chain_phases ?chains;
 	stix:malware_types ?malware_type;
 	stix:modified ?dt_modified;
 	stix:name ?name;
+	stix:objective ?objective;
 	stix:resource_level ?resource_level;
 	stix:pattern_type ?pattern_type;
 	stix:pattern ?pattern;
 	stix:primary_motivation ?primary_motivation;
 	stix:relationship_type ?relationship_type;
 	stix:roles ?role_list;
+	stix:secondary_motivations ?secondary_motivation_list;
 	stix:sectors ?sector_list;
+	stix:sophistication ?sophistication;
 	stix:source_ref ?source_ref_iri;
 	stix:spec_version ?spec_version;
 	stix:target_ref ?target_ref_iri;
@@ -55,6 +59,7 @@ CONSTRUCT {
 	stix:malware_types a owl:DatatypeProperty .
 	stix:modified a owl:DatatypeProperty .
 	stix:name a owl:DatatypeProperty .
+	stix:objective a owl:DatatypeProperty .
 
 	stix:resource_level a owl:DatatypeProperty .
 
@@ -64,7 +69,10 @@ CONSTRUCT {
 	stix:relationship_type a owl:DatatypeProperty .
 
 	stix:roles a owl:DatatypeProperty .
+	stix:goals a owl:DatatypeProperty .
+	stix:secondary_motivations a owl:DatatypeProperty .
 	stix:sectors a owl:DatatypeProperty .
+	stix:sophistication a owl:DatatypeProperty .
 
 	stix:source_ref a owl:ObjectProperty .
 	stix:spec_version a owl:DatatypeProperty .
@@ -102,7 +110,7 @@ CONSTRUCT {
 }
 WHERE {
 	SERVICE <x-sparql-anything:blank-nodes=false> {
-		fx:properties fx:location "input/apt1.json" .
+		fx:properties fx:location "input/defining-campaign-ta-is.json" .
 
 
 	# root array of objects
@@ -175,6 +183,9 @@ WHERE {
 	# name
 			OPTIONAL {?object xyz:name ?name . }
 
+	# objective
+			OPTIONAL {?object xyz:objective ?objective . }
+
 	# pattern
 			OPTIONAL {?object xyz:pattern ?pattern . }
 
@@ -196,9 +207,24 @@ WHERE {
 				?roles ?roles_slot ?role_list .	
 			}
 
+	# goals
+			OPTIONAL {
+				?object xyz:goals ?goals . 
+				?goals ?goals_slot ?goal_list .	
+			}
+
+	# secondary_motivations
+			OPTIONAL {
+				?object xyz:secondary_motivations ?secondary_motivations . 
+				?secondary_motivations ?secondary_motivations_slot ?secondary_motivation_list .	
+			}
+
 	# sectors
 			OPTIONAL {?object xyz:sectors ?sectors . 
 				?sectors ?sectors_slot ?sector_list .	}
+
+	# name
+			OPTIONAL {?object xyz:sophistication ?sophistication . }
 
 	# source_ref
 			OPTIONAL {?object xyz:source_ref ?source_ref . }
