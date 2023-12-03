@@ -1,0 +1,46 @@
+# baseURI: http://hohimer.net/hal-example
+# imports: http://docs.oasis-open.org/tac/ns/tac
+# imports: http://www.hc-ta.org/ns/hal-library
+# imports: http://www.intel.com/ns/ta-library
+
+@base <http://hohimer.net/hal-example> .
+@prefix : <http://hohimer.net/hal-example#> .
+@prefix demo: <http://hohimer.net/hal-example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix tac: <http://docs.oasis-open.org/tac/ns/tac#> .
+@prefix tal: <http://www.intel.com/ns/ta-library#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://hohimer.net/hal-example>
+	a owl:Ontology ;
+	owl:imports
+		<http://docs.oasis-open.org/tac/ns/tac> ,
+		<http://www.hc-ta.org/ns/hal-library> ,
+		<http://www.intel.com/ns/ta-library>
+		;
+	.
+
+demo:Person-of-Interest
+	a
+		owl:NamedIndividual ,
+		stix:ThreatActor
+		;
+	tac:categorizedBy
+		<http://www.hc-ta.org/ns/hal-library#Curiosity> ,
+		<http://www.hc-ta.org/ns/hal-library#PolicyViolationOutcome> ,
+		tal:AdeptSkills ,
+		tal:CovertVisibility ,
+		tal:DamageOutcome ,
+		tal:EmbarrassmentOutcome ,
+		tal:IndividualResources ,
+		tal:InternalAccess ,
+		tal:LegalLimits ,
+		tal:PersonalStatisfaction
+		;
+	.
+

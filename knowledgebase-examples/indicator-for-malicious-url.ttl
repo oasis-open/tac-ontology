@@ -1,9 +1,9 @@
-# baseURI: http://hohimer.net/indicator-for-malicious-url
-# imports: http://docs.oasis-open.org/cti/ns/stix#
+# baseURI: http://hohimer.net/poison-ivy-report
+# imports: http://docs.oasis-open.org/cti/ns/stix
 # imports: http://docs.oasis-open.org/tac/ns/tac
 # imports: http://www.intel.com/ns/ta-library
 
-@base <http://hohimer.net/indicator-for-malicious-url> .
+@base <http://hohimer.net/poison-ivy-report> .
 @prefix example: <http://example/ns/> .
 @prefix fx: <http://sparql.xyz/facade-x/ns/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,10 +17,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xyz: <http://sparql.xyz/facade-x/data/> .
 
-<http://hohimer.net/indicator-for-malicious-url>
+<http://hohimer.net/poison-ivy-report>
 	a owl:Ontology ;
 	owl:imports
-		<http://docs.oasis-open.org/cti/ns/stix#> ,
+		<http://docs.oasis-open.org/cti/ns/stix> ,
 		<http://docs.oasis-open.org/tac/ns/tac> ,
 		<http://www.intel.com/ns/ta-library>
 		;
