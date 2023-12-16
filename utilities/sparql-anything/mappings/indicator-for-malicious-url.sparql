@@ -77,6 +77,12 @@ CONSTRUCT {
 	stix:source_ref a owl:ObjectProperty .
 	stix:spec_version a owl:DatatypeProperty .
 	stix:target_ref a owl:ObjectProperty .
+	
+	# explicitly typing uses and indicates as ObjectProperties
+	stix:uses a owl:ObjectProperty .
+	stix:indicates a owl:ObjectProperty .
+	?source_ref_iri ?relation_iri ?target_ref_iri .
+
 	stix:tool_types a owl:DatatypeProperty .
 	stix:valid_from a owl:DatatypeProperty .
 
@@ -257,7 +263,16 @@ WHERE {
 	BIND(IRI(CONCAT("http://example/ns/", ?source_ref)) AS ?source_ref_iri )
 	BIND(IRI(CONCAT("http://example/ns/", ?target_ref)) AS ?target_ref_iri )
 	
-	BIND( IF(?relationship_type = "uses", stix:uses, ?nothing ) AS ?relation_iri )
+	# bind the appropriate predicate based on relationship_type
+	# The binding must be in a nested IF series of statements
+	# BIND( IF(?relationship_type = "uses", stix:uses, ?nothing ) AS ?relation_iri )
+#	BIND( IF(?relationship_type = "uses", IRI(stix:uses), 
+#			IF(?relationship_type = "indicates", IRI(stix:indicates), ?nothing ) ) AS ?relation_iri )
+#	BIND( IF(?relationship_type = "indicates", IRI(stix:indicates), 
+#			IRI(stix:uses) ) AS ?relation_iri )
+	BIND (IRI(CONCAT("http://docs.oasis-open.org/cti/ns/stix#", STR(?relationship_type))) AS ?relation_iri )
+	
+	
 	
 	# Form the stix type of either stix:Bundle or stix:StixObject
 	BIND ((IF(?type = "bundle", IRI("http://docs.oasis-open.org/cti/ns/stix#Bundle"),  IRI("http://docs.oasis-open.org/cti/ns/stix#StixObject"))) AS ?stixType )

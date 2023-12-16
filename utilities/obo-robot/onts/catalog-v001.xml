@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix" uri="stix.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/artifact" uri="artifact.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/attack-pattern" uri="attack-pattern.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/autonomous-system" uri="autonomous-system.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/bundle" uri="bundle.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/campaign" uri="campaign.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/common-properties" uri="common-properties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/course-of-action" uri="course-of-action.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/data-marking" uri="data-marking.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/data-types" uri="data-types.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/directory" uri="directory.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/domain-name" uri="domain-name.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/email-address" uri="email-address.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/email-message" uri="email-message.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="extension-definition.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/file" uri="file.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/grouping" uri="grouping.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/identity" uri="identity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/incident" uri="incident.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/indicator" uri="indicator.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/infrastructure" uri="infrastructure.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/intrusion-set" uri="intrusion-set.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/ipv4-address" uri="ipv4-address.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/ipv6-address" uri="ipv6-address.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/language-content" uri="language-content.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/location" uri="location.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/mac-address" uri="mac-address.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/malware" uri="malware.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/mutex" uri="mutex.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/network-traffic" uri="network-traffic.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/note" uri="note.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/observed-data" uri="observed-data.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/opinion" uri="opinion.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/process" uri="process.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/relationship" uri="relationship.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/relationship-types" uri="relationship-types.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/report" uri="report.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/sighting" uri="sighting.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/software" uri="software.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/threat-actor" uri="threat-actor.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/tool" uri="tool.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/url" uri="url.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/user-account" uri="user-account.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/vocabulary" uri="vocabularies.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/vulnerability" uri="vulnerability.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/windows-registry" uri="windows-registry-key.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/cti/ns/stix/x509-certificate" uri="x509-certificate.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/tac/ns/adversary" uri="adversary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702687472548" name="http://www.intel.com/ns/ta-library" uri="ta-library.owl"/>
+    </group>
+</catalog>

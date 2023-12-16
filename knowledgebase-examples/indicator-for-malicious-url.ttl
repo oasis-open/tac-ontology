@@ -1,9 +1,9 @@
-# baseURI: http://hohimer.net/poison-ivy-report
+# baseURI: http://hohimer.net/indicator-for-malicious-url
 # imports: http://docs.oasis-open.org/cti/ns/stix
 # imports: http://docs.oasis-open.org/tac/ns/tac
 # imports: http://www.intel.com/ns/ta-library
 
-@base <http://hohimer.net/poison-ivy-report> .
+@base <http://hohimer.net/indicator-for-malicious-url> .
 @prefix example: <http://example/ns/> .
 @prefix fx: <http://sparql.xyz/facade-x/ns/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,7 +17,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xyz: <http://sparql.xyz/facade-x/data/> .
 
-<http://hohimer.net/poison-ivy-report>
+<http://hohimer.net/indicator-for-malicious-url>
 	a owl:Ontology ;
 	owl:imports
 		<http://docs.oasis-open.org/cti/ns/stix> ,
@@ -26,7 +26,7 @@
 		;
 	.
 
-stix:KillChainPhase-e7eb9a1c-4d27-4051-9ff3-76d07ed4afac
+stix:KillChainPhase-6926e51e-886c-4313-833f-755b03c0973d
 	a stix:StixObject ;
 	stix:kill_chain_name "mandiant-attack-lifecycle-model" ;
 	stix:kill_chain_phase_name "establish-foothold" ;
@@ -66,6 +66,10 @@ stix:id
 
 stix:identity_class
 	a owl:DatatypeProperty ;
+	.
+
+stix:indicates
+	a owl:ObjectProperty ;
 	.
 
 stix:indicator_types
@@ -168,6 +172,10 @@ stix:url
 	a owl:DatatypeProperty ;
 	.
 
+stix:uses
+	a owl:ObjectProperty ;
+	.
+
 stix:valid_from
 	a owl:DatatypeProperty ;
 	.
@@ -177,6 +185,7 @@ example:indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f
 	stix:created "2014-06-29T13:49:37.079Z"^^xsd:dateTime ;
 	stix:description "This organized threat actor group operates to create profit from all types of crime." ;
 	stix:id "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f" ;
+	stix:indicates example:malware--162d917e-766f-4611-b5d6-652791454fca ;
 	stix:indicator_types "malicious-activity" ;
 	stix:modified "2014-06-29T13:49:37.079Z"^^xsd:dateTime ;
 	stix:name "Malicious site hosting downloader" ;
@@ -192,7 +201,7 @@ example:malware--162d917e-766f-4611-b5d6-652791454fca
 	stix:created "2014-06-30T09:15:17.182Z"^^xsd:dateTime ;
 	stix:description "This malware attempts to download remote files after establishing a foothold as a backdoor." ;
 	stix:id "malware--162d917e-766f-4611-b5d6-652791454fca" ;
-	stix:kill_chain_phase stix:KillChainPhase-e7eb9a1c-4d27-4051-9ff3-76d07ed4afac ;
+	stix:kill_chain_phase stix:KillChainPhase-6926e51e-886c-4313-833f-755b03c0973d ;
 	stix:malware_types
 		"backdoor" ,
 		"remote-access-trojan"

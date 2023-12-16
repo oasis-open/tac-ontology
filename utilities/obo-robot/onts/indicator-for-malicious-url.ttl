@@ -1,14 +1,37 @@
+# baseURI: http://hohimer.net/indicator-for-malicious-url
+# imports: http://docs.oasis-open.org/cti/ns/stix
+# imports: http://docs.oasis-open.org/tac/ns/tac
+# imports: http://www.intel.com/ns/ta-library
+
+@base <http://hohimer.net/indicator-for-malicious-url> .
+@prefix : <http://hohimer.net/indicator-for-malicious-url#> .
 @prefix example: <http://example/ns/> .
 @prefix fx: <http://sparql.xyz/facade-x/ns/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix tac: <http://docs.oasis-open.org/tac/ns/tac#> .
+@prefix tal: <http://www.intel.com/ns/ta-library#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xyz: <http://sparql.xyz/facade-x/data/> .
 
+<http://hohimer.net/indicator-for-malicious-url>
+	a owl:Ontology ;
+	owl:imports
+		<http://docs.oasis-open.org/cti/ns/stix> ,
+		<http://docs.oasis-open.org/tac/ns/tac> ,
+		<http://www.intel.com/ns/ta-library>
+		;
+	.
+
 stix:KillChainPhase-6926e51e-886c-4313-833f-755b03c0973d
-	a stix:StixObject ;
+	a
+		owl:NamedIndividual ,
+		stix:StixObject
+		;
 	stix:kill_chain_name "mandiant-attack-lifecycle-model" ;
 	stix:kill_chain_phase_name "establish-foothold" ;
 	.
@@ -162,7 +185,10 @@ stix:valid_from
 	.
 
 example:indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f
-	a stix:StixObject ;
+	a
+		owl:NamedIndividual ,
+		stix:StixObject
+		;
 	stix:created "2014-06-29T13:49:37.079Z"^^xsd:dateTime ;
 	stix:description "This organized threat actor group operates to create profit from all types of crime." ;
 	stix:id "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f" ;
@@ -178,7 +204,10 @@ example:indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f
 	.
 
 example:malware--162d917e-766f-4611-b5d6-652791454fca
-	a stix:StixObject ;
+	a
+		owl:NamedIndividual ,
+		stix:StixObject
+		;
 	stix:created "2014-06-30T09:15:17.182Z"^^xsd:dateTime ;
 	stix:description "This malware attempts to download remote files after establishing a foothold as a backdoor." ;
 	stix:id "malware--162d917e-766f-4611-b5d6-652791454fca" ;
@@ -194,7 +223,10 @@ example:malware--162d917e-766f-4611-b5d6-652791454fca
 	.
 
 example:relationship--864af2ea-46f9-4d23-b3a2-1c2adf81c265
-	a stix:StixObject ;
+	a
+		owl:NamedIndividual ,
+		stix:StixObject
+		;
 	stix:created "2020-02-29T18:03:58.029Z"^^xsd:dateTime ;
 	stix:id "relationship--864af2ea-46f9-4d23-b3a2-1c2adf81c265" ;
 	stix:modified "2020-02-29T18:03:58.029Z"^^xsd:dateTime ;

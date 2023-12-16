@@ -119,9 +119,6 @@
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;dictionary_value">
-		<rdfs:label xml:lang="en-us">dictionary_value</rdfs:label>
-		<rdfs:comment xml:lang="en-us">A key value is the data that is associated with the key identified. The values MUST be valid property base types.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;StixObject"/>
 		<rdfs:range rdf:resource="&xsd;anyURI"/>
 		<rdfs:range rdf:resource="&xsd;float"/>
 		<rdfs:range rdf:resource="&xsd;integer"/>

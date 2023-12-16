@@ -50,10 +50,10 @@
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/extension-definition" uri="../stix/meta-objects/extension-definition/extension-definition.owl"/>
     <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix/data-types" uri="../stix/core-objects/data-types.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="candidate-concepts.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/adversary" uri="tac-objects/adversary.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1674687801029" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702747066906" name="http://docs.oasis-open.org/cti/ns/candidate-concepts" uri="candidate-concepts.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702747066906" name="http://docs.oasis-open.org/tac/ns/adversary" uri="tac-objects/adversary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702747066906" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702747066906" name="http://docs.oasis-open.org/tac/ns/tac-objects" uri="tac-objects/tac-objects.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1702747066906" name="http://docs.oasis-open.org/tac/ns/tac-properties" uri="tac-properties/tac-properties.owl"/>
     </group>
 </catalog>
