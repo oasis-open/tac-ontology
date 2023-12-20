@@ -15,18 +15,11 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/bundle">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
 	<owl:Class rdf:about="&stix;Bundle">
 		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;id"/>
-				<owl:someValuesFrom rdf:resource="&stix;identifier"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;id_string"/>
@@ -43,10 +36,12 @@
 		<rdfs:comment xml:lang="en-us">A Bundle is a collection of arbitrary STIX Objects grouped together in a single container. A Bundle does not have any semantic meaning and the objects contained within the Bundle are not considered related by virtue of being in the same Bundle. \n\n A STIX Bundle Object is not a STIX Object but makes use of the type and id Common Properties. A Bundle is transient, and implementations SHOULD NOT assume that other implementations will treat it as a persistent object or keep any custom properties found on the bundle itself. \n\n The JSON MTI serialization uses the JSON Object type [RFC8259] when representing bundle.</rdfs:comment>
 	</owl:Class>
 	
+	<owl:Class rdf:about="&stix;StixObject">
+	</owl:Class>
+	
 	<owl:DatatypeProperty rdf:about="&stix;id">
 		<rdfs:label xml:lang="en">id</rdfs:label>
 		<rdfs:comment xml:lang="en">An identifier for this Bundle. The id property for the Bundle is designed to help tools that may need it for processing, however, tools are not required to store or track it. Tools that consume STIX should not rely on the ability to refer to bundles by ID.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;identifier"/>
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;id_string">

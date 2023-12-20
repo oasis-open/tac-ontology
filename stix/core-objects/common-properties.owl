@@ -15,10 +15,11 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/common-properties">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-marking"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/data-types"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Identity">
+	</owl:Class>
 	
 	<owl:Class rdf:about="&stix;StixCyberObservable">
 		<rdfs:subClassOf rdf:resource="&stix;StixObject"/>
@@ -86,12 +87,6 @@
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&stix;granular_markings"/>
 				<owl:someValuesFrom rdf:resource="&stix;GranularMarking"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&stix;id"/>
-				<owl:someValuesFrom rdf:resource="&stix;identifier"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -221,7 +216,9 @@
 	<owl:DatatypeProperty rdf:about="&stix;id">
 		<rdfs:label xml:lang="en-us">id</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The id property uniquely identifies this object. For objects that support versioning, all objects with the same id are considered different versions of the same object and the version of the object is identified by its modified property.</rdfs:comment>
-		<rdfs:range rdf:resource="&stix;identifier"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;id_string">
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;labels">
@@ -258,6 +255,9 @@
 		<rdfs:label xml:lang="en-us">object_marking_refs_string</rdfs:label>
 		<rdfs:comment xml:lang="en-us">The object_marking_refs_string property specifies a list of id properties of marking-definition objects that apply to this object. \n\n In some cases, though uncommon, marking definitions themselves may be marked with sharing or handling guidance. In this case, this property MUST NOT contain any references to the same Marking Definition object (i.e., it cannot contain any circular references). \n\n See section 7.2 for further definition of data markings.</rdfs:comment>
 		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;object_type">
 	</owl:DatatypeProperty>
 	
 	<owl:DatatypeProperty rdf:about="&stix;revoked">

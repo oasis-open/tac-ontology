@@ -14,9 +14,6 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<owl:Ontology rdf:about="http://docs.oasis-open.org/cti/ns/stix/ipv4-address">
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/autonomous-system"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/common-properties"/>
-		<owl:imports rdf:resource="http://docs.oasis-open.org/cti/ns/stix/mac-address"/>
 		<owl:versionInfo>2.1.0</owl:versionInfo>
 	</owl:Ontology>
 	
