@@ -1,0 +1,297 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix stix:  <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix synsh: <urn:synapse:tac-v2-shapes:> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+synsh:IndicatorShape
+    a sh:NodeShape ;
+    sh:targetClass stix:Indicator ;
+    sh:name "STIX 2.1 Indicator conformance shape" ;
+
+    sh:property [
+        sh:path stix:type ;
+        sh:datatype xsd:string ;
+        sh:hasValue "indicator" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An Indicator must have exactly one stix:type value equal to 'indicator'."
+    ] ;
+
+    sh:property [
+        sh:path stix:spec_version ;
+        sh:datatype xsd:string ;
+        sh:hasValue "2.1" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An Indicator must have exactly one stix:spec_version value equal to '2.1'."
+    ] ;
+
+    sh:property [
+        sh:path stix:id ;
+        sh:nodeKind sh:Literal ;
+        sh:pattern "^indicator--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An Indicator identifier must use the form indicator--RFC4122-UUID."
+    ] ;
+
+    sh:property [
+        sh:path stix:created ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:lessThanOrEquals stix:modified ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "stix:created must be a UTC STIX timestamp and must not be later than stix:modified."
+    ] ;
+
+    sh:property [
+        sh:path stix:modified ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "stix:modified must be exactly one UTC STIX timestamp."
+    ] ;
+
+    # name is optional in STIX 2.1, but recommended for analyst usability.
+    sh:property [
+        sh:path stix:name ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:maxCount 1
+    ] ;
+    sh:property [
+        sh:path stix:name ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "A human-readable Indicator name is recommended by the TAC/SYNAPSE quality profile."
+    ] ;
+
+    # indicator_types is optional in STIX 2.1, but useful for semantic classification.
+    sh:property [
+        sh:path stix:indicator_types ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$"
+    ] ;
+    sh:property [
+        sh:path stix:indicator_types ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "At least one Indicator categorisation is recommended by the TAC/SYNAPSE quality profile."
+    ] ;
+
+    sh:property [
+        sh:path stix:description ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:pattern ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An Indicator must contain exactly one non-empty detection pattern."
+    ] ;
+
+    sh:property [
+        sh:path stix:pattern_type ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An Indicator must identify exactly one pattern language."
+    ] ;
+
+    sh:property [
+        sh:path stix:pattern_version ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:valid_from ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:lessThan stix:valid_until ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "stix:valid_from must be a UTC STIX timestamp and must precede stix:valid_until when the latter is present."
+    ] ;
+
+    sh:property [
+        sh:path stix:valid_until ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:maxCount 1
+    ] .
+
+
+synsh:ThreatActorShape
+    a sh:NodeShape ;
+    sh:targetClass stix:ThreatActor ;
+    sh:name "STIX 2.1 Threat Actor conformance and quality shape" ;
+
+    sh:property [
+        sh:path stix:type ;
+        sh:datatype xsd:string ;
+        sh:hasValue "threat-actor" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Threat Actor must have exactly one stix:type value equal to 'threat-actor'."
+    ] ;
+
+    sh:property [
+        sh:path stix:spec_version ;
+        sh:datatype xsd:string ;
+        sh:hasValue "2.1" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Threat Actor must have exactly one stix:spec_version value equal to '2.1'."
+    ] ;
+
+    sh:property [
+        sh:path stix:id ;
+        sh:nodeKind sh:Literal ;
+        sh:pattern "^threat-actor--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Threat Actor identifier must use the form threat-actor--RFC4122-UUID."
+    ] ;
+
+    sh:property [
+        sh:path stix:created ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:lessThanOrEquals stix:modified ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "stix:created must be a UTC STIX timestamp and must not be later than stix:modified."
+    ] ;
+
+    sh:property [
+        sh:path stix:modified ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "stix:modified must be exactly one UTC STIX timestamp."
+    ] ;
+
+    sh:property [
+        sh:path stix:name ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Threat Actor must have exactly one non-empty name."
+    ] ;
+
+    # threat_actor_types is optional in STIX 2.1, but recommended for analysis.
+    sh:property [
+        sh:path stix:threat_actor_types ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$"
+    ] ;
+    sh:property [
+        sh:path stix:threat_actor_types ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "At least one Threat Actor type is recommended by the TAC/SYNAPSE quality profile."
+    ] ;
+
+    sh:property [
+        sh:path stix:description ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:aliases ;
+        sh:datatype xsd:string ;
+        sh:minLength 1
+    ] ;
+
+    sh:property [
+        sh:path stix:roles ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$"
+    ] ;
+
+    sh:property [
+        sh:path stix:goals ;
+        sh:datatype xsd:string ;
+        sh:minLength 1
+    ] ;
+
+    sh:property [
+        sh:path stix:first_seen ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:lessThanOrEquals stix:last_seen ;
+        sh:maxCount 1 ;
+        sh:message "stix:first_seen must not be later than stix:last_seen when both values are present."
+    ] ;
+
+    sh:property [
+        sh:path stix:last_seen ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:sophistication ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$" ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:resource_level ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$" ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:primary_motivation ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$" ;
+        sh:maxCount 1
+    ] ;
+
+    sh:property [
+        sh:path stix:secondary_motivations ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$"
+    ] ;
+
+    sh:property [
+        sh:path stix:personal_motivations ;
+        sh:datatype xsd:string ;
+        sh:minLength 3 ;
+        sh:maxLength 250 ;
+        sh:pattern "^[a-z0-9][a-z0-9-]*$"
+    ] .
